@@ -1,3 +1,33 @@
 
 <!-- saved from url=(0012)about:srcdoc -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>window.onmessage = function(event) {event.source.postMessage({iframeId: event.data, scrollHeight: document.body.getBoundingClientRect().height || document.body.scrollHeight}, event.origin);};</script></head><body style="margin: 0"><div class="substack-post-embed" style="max-width: 500px; margin-top: 10px; margin-bottom: 10px; display: flex;"><iframe id="substack-frame-9697" src="https://substack.com/embed/c/244898121?origin=null&amp;fullURL=about%3Asrcdoc" scrolling="no" sandbox="allow-scripts allow-same-origin allow-top-navigation allow-popups" allow="clipboard-read clipboard-write allow-top-navigation allow-scripts allow-same-origin allow-popups" height="507" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; display: block; flex-grow: 1;"></iframe></div><script async="" src="https://substack.com/embedjs/embed.js" charset="utf-8"></script></body></html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>window.onmessage = function(event) {event.source.postMessage({iframeId: event.data, scrollHeight: document.body.getBoundingClientRect().height || document.body.scrollHeight}, event.origin);};</script>
+<style>
+  /* Fixes image stretching globally across single-line layouts */
+  img[data-ux="Image"],
+  img, 
+  .x-el-img {
+    object-fit: cover !important;
+    max-width: 100% !important;
+  }
+  
+  /* TARGETS THE HERO SECTION: Restores the background blur look safely via pure CSS */
+  picture:first-of-type,
+  [data-ux="ImageContainer"]:first-of-type,
+  .widget-gallery-gallery-2 div[role="img"]:first-child,
+  div[data-ux="Background"] {
+    filter: blur(20px) brightness(0.8) !important; /* Emulates the original blurred backing look */
+    transform: scale(1.05) !important; /* Prevents white artifacts on edge boundaries */
+    opacity: 0.85 !important;
+  }
+
+  /* Ensures the foreground sharp image layer breaks out of the blur styling rule */
+  img:only-of-type,
+  img[data-aid="HERO_IMAGE_RENDERED"], 
+  [data-ux="Image"] {
+    filter: none !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+</style>
+</head><body style="margin: 0"><div class="substack-post-embed" style="max-width: 500px; margin-top: 10px; margin-bottom: 10px; display: flex;"><iframe id="substack-frame-9697" src="https://substack.com/embed/c/244898121?origin=null&amp;fullURL=about%3Asrcdoc" scrolling="no" sandbox="allow-scripts allow-same-origin allow-top-navigation allow-popups" allow="clipboard-read clipboard-write allow-top-navigation allow-scripts allow-same-origin allow-popups" height="507" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; display: block; flex-grow: 1;"></iframe></div></body></html>
