@@ -4113,7 +4113,37 @@ if ('serviceWorker' in navigator) {
   <script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-navigationDrawer-27f5f1f5.js.download"></script>
   <script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-searchFormLocations-c86f2a99.js.download"></script>
   <script crossorigin="Anonymous" src="./Publications_White Papers_files/_commonjsHelpers-67085353.js.download"></script>
-  <script crossorigin="Anonymous" src="./Publications_White Papers_files/_react_commonjs-external-a1351e34.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/_rollupPluginBabelHelpers-8ce54c82.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/interopRequireDefault-c83974f7.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/dynamicFontScaler-ecd443bf.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-FlyoutMenu-Component-b4b95853.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-LinkAwareComponent-0e7597ad.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-gallery2-Gallery-1c62877d.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Component-d5508f7a.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Toggle-0f009dec.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-dataAids-71c78b3f.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-GalleryImage-cac21684.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-renderLightbox-52de508b.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-util-c935f491.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-CustomArrows-49960b5a.js.download"></script><script src="./Publications_White Papers_files/pdf.min.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Hamburger-Component-8956ad4f.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-MobileFlyoutMenu-Component-cde69336.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-AbsLink-5de6a485.js.download"></script></head>
+  <script crossorigin="Anonymous" src="./Publications_White Papers_files/_react_commonjs-external-a1351e34.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/_rollupPluginBabelHelpers-8ce54c82.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/interopRequireDefault-c83974f7.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/dynamicFontScaler-ecd443bf.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-FlyoutMenu-Component-b4b95853.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-LinkAwareComponent-0e7597ad.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-gallery2-Gallery-1c62877d.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Component-d5508f7a.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Toggle-0f009dec.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-dataAids-71c78b3f.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-GalleryImage-cac21684.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-renderLightbox-52de508b.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-util-c935f491.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-CustomArrows-49960b5a.js.download"></script><script src="./Publications_White Papers_files/pdf.min.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Hamburger-Component-8956ad4f.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-MobileFlyoutMenu-Component-cde69336.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-AbsLink-5de6a485.js.download"></script>
+<style>
+  /* Fixes image stretching globally across single-line layouts */
+  img[data-ux="Image"],
+  img, 
+  .x-el-img {
+    object-fit: cover !important;
+    max-width: 100% !important;
+  }
+  
+  /* TARGETS THE HERO SECTION: Restores the background blur look safely via pure CSS */
+  picture:first-of-type,
+  [data-ux="ImageContainer"]:first-of-type,
+  .widget-gallery-gallery-2 div[role="img"]:first-child,
+  div[data-ux="Background"] {
+    filter: blur(20px) brightness(0.8) !important; /* Emulates the original blurred backing look */
+    transform: scale(1.05) !important; /* Prevents white artifacts on edge boundaries */
+    opacity: 0.85 !important;
+  }
+
+  /* Ensures the foreground sharp image layer breaks out of the blur styling rule */
+  img:only-of-type,
+  img[data-aid="HERO_IMAGE_RENDERED"], 
+  [data-ux="Image"] {
+    filter: none !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+</style>
+</head>
  <!-- pdfs begin -->
   <body class="x  x-fonts-josefin-slab x-fonts-righteous x-fonts-playfair-display x-fonts-dancing-script x-fonts-eb-garamond">
   <div id="layout-6-a-88-dc-85-1938-47-c-8-a-24-d-4-fd-9523-a-22-aa" class="layout layout-layout layout-layout-layout-28 locale-en-US lang-en">
@@ -4431,5 +4461,5 @@ href="wp2-countingstillbirthsglobally.pdf" data-typography="LinkAlpha" class="x-
 <script defer="" src="./Publications_White Papers_files/scc-c2.min.js.download" crossorigin=""></script>
 <script>"use strict";Core.utils.onAllowCookieTracking(function () {const queryString = window.location.search;const urlParams = new URLSearchParams(queryString);const whiteList = ['gclid', 'fbclid', 'gdan_clid'];const belongToList = list => item => list.includes(item);const belongToWhiteList = belongToList(whiteList);Array.from(urlParams).forEach(param => {const [queryKey, queryResult] = param;if (!belongToWhiteList(queryKey)) return;localStorage.setItem(queryKey, queryResult);});});
 "use strict";Core.utils.onAllowCookieTracking(() => {if (!document.cookie.includes("x-visitor-id")) {!function (o, i, e = 60) {const t = new Date();t.setTime(t.getTime() + 864e5 * e);const n = `expires=${t.toUTCString()}`;document.cookie = `${o}=${i};${n};path=/`;}("x-visitor-id", crypto.randomUUID(), 60);}});</script><script defer="" src="./Publications_White Papers_files/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;5c9457fe1e7849b2b0c4181a04e3e590&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
-<script src="router.js"></script>
+
 </body></html>
