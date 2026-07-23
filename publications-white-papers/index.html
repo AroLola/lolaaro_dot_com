@@ -3998,143 +3998,8 @@ if ('serviceWorker' in navigator) {
   <script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-searchFormLocations-c86f2a99.js.download"></script>
   <script crossorigin="Anonymous" src="./Publications_White Papers_files/_commonjsHelpers-67085353.js.download"></script>
   <script crossorigin="Anonymous" src="./Publications_White Papers_files/_react_commonjs-external-a1351e34.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/_rollupPluginBabelHelpers-8ce54c82.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/interopRequireDefault-c83974f7.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/dynamicFontScaler-ecd443bf.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-FlyoutMenu-Component-b4b95853.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-LinkAwareComponent-0e7597ad.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-gallery2-Gallery-1c62877d.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Component-d5508f7a.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Toggle-0f009dec.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-dataAids-71c78b3f.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-GalleryImage-cac21684.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-renderLightbox-52de508b.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-util-c935f491.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-CustomArrows-49960b5a.js.download"></script><script src="./Publications_White Papers_files/pdf.min.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-Hamburger-Component-8956ad4f.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-MobileFlyoutMenu-Component-cde69336.js.download"></script><script crossorigin="Anonymous" src="./Publications_White Papers_files/bs-AbsLink-5de6a485.js.download"></script>
-<style>
-  /* Fixes image stretching globally across single-line layouts */
-  img[data-ux="Image"],
-  img, 
-  .x-el-img {
-    object-fit: cover !important;
-    max-width: 100% !important;
-  }
   
-  /* TARGETS THE HERO SECTION: Restores the background blur look safely via pure CSS */
-  picture:first-of-type,
-  [data-ux="ImageContainer"]:first-of-type,
-  .widget-gallery-gallery-2 div[role="img"]:first-child,
-  div[data-ux="Background"] {
-    filter: blur(20px) brightness(0.8) !important; /* Emulates the original blurred backing look */
-    transform: scale(1.05) !important; /* Prevents white artifacts on edge boundaries */
-    opacity: 0.85 !important;
-  }
-
-  /* Ensures the foreground sharp image layer breaks out of the blur styling rule */
-  img:only-of-type,
-  img[data-aid="HERO_IMAGE_RENDERED"], 
-  [data-ux="Image"] {
-    filter: none !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 5 !important;
-  }
-</style>
-
-<style>
-  /* 1. RESET ALL IMAGES TO BE CRISP AND PROPORTIONAL BY DEFAULT */
-  img, 
-  picture, 
-  .x-el-img, 
-  [data-ux="Image"],
-  [data-ux="ImageContainer"],
-  div[data-ux="Background"] {
-    filter: none !important;
-    backdrop-filter: none !important;
-    opacity: 1 !important;
-    object-fit: cover !important;
-  }
-
-  /* 2. TARGET ONLY THE GENUINE HERO BACKGROUND LAYER THAT LIVES UNDERNEATH A SHARP IMAGE */
-  /* This looks for containers that have a sibling container or are designated background layers */
-  [data-ux="ImageContainer"] + [data-ux="ImageContainer"] img,
-  div[role="img"]:first-child:not(:only-child),
-  .dim + div div[data-ux="Background"] {
-    filter: blur(20px) brightness(0.8) !important;
-    transform: scale(1.05) !important;
-    opacity: 0.85 !important;
-  }
-
-  /* 3. HARD LOCK FOREGROUND FACE IMAGES TO ALWAYS REMAIN CRISP */
-  img:only-of-type,
-  img[data-aid="HERO_IMAGE_RENDERED"],
-  [data-ux="ImageContainer"]:last-child img,
-  .widget-gallery-gallery-2 img {
-    filter: none !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 5 !important;
-  }
-</style>
-
-<style>
-  /* 1. FORCE ABSOLUTELY EVERYTHING ON THE HOME PAGE TO BE PURE CRISP */
-  img, 
-  picture, 
-  .x-el-img, 
-  [data-ux="Image"],
-  [data-ux="ImageContainer"],
-  div[data-ux="Background"],
-  div[role="img"] {
-    filter: none !important;
-    backdrop-filter: none !important;
-    opacity: 1 !important;
-    object-fit: cover !important;
-  }
-
-  /* 2. REVERSE LAYER FIX: TARGET THE FIRST IMAGE CONTAINER IN THE STACK WHICH ACTS AS THE UNDERLAY BACKGROUND */
-  [data-ux="ImageContainer"]:first-child img,
-  div[role="img"]:first-child,
-  div[data-aid="HERO_IMAGE_RENDERED"]:first-of-type {
-    filter: blur(25px) brightness(0.75) !important; /* Locks blur onto the background photo only */
-    transform: scale(1.06) !important; /* Expands edges slightly to hide edge bleeding */
-    opacity: 0.9 !important;
-  }
-
-  /* 3. ABSOLUTE SAFEGUARD FOR FOREGROUND FACES AND GALLERIES */
-  /* This says if an image is the last child or a lone image, keep it 100% sharp */
-  [data-ux="ImageContainer"]:last-child img,
-  [data-ux="ImageContainer"]:only-child img,
-  img:only-of-type,
-  .widget-gallery-grid img,
-  .plain-gallery-grid img {
-    filter: none !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 10 !important;
-  }
-</style>
-
-<style>
-  /* 1. RESET RECOVERY: GUARANTEE EVERY IMAGE ON THE SITE IS CRISP BY DEFAULT */
-  img, 
-  picture, 
-  .x-el-img, 
-  [data-ux="Image"],
-  [data-ux="ImageContainer"],
-  div[data-ux="Background"],
-  div[role="img"] {
-    filter: none !important;
-    backdrop-filter: none !important;
-    opacity: 1 !important;
-    object-fit: cover !important;
-  }
-
-  /* 2. ISOLATED TARGET: ONLY BLUR THE UNDERLAY IMAGE INSIDE THE SPECIFIC HERO ID CONTAINER */
-  #e2874a70-b322-4691-aede-1a4eeb19c879 div[role="img"]:first-child,
-  #e2874a70-b322-4691-aede-1a4eeb19c879 [data-ux="ImageContainer"]:first-child img {
-    filter: blur(25px) brightness(0.75) !important;
-    transform: scale(1.06) !important;
-    opacity: 0.9 !important;
-  }
-
-  /* 3. HARD RE-SHARPEN THE FOREGROUND FACE IMAGE IN THAT SAME CONTAINER */
-  #e2874a70-b322-4691-aede-1a4eeb19c879 div[role="img"]:last-child,
-  #e2874a70-b322-4691-aede-1a4eeb19c879 [data-ux="ImageContainer"]:last-child img {
-    filter: none !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 10 !important;
-  }
-</style>
-</head>
+ </head>
  <!-- pdfs begin -->
   <body class="x  x-fonts-josefin-slab x-fonts-righteous x-fonts-playfair-display x-fonts-dancing-script x-fonts-eb-garamond">
   <div id="layout-6-a-88-dc-85-1938-47-c-8-a-24-d-4-fd-9523-a-22-aa" class="layout layout-layout layout-layout-layout-28 locale-en-US lang-en">
@@ -4321,7 +4186,77 @@ href="wp2-countingstillbirthsglobally.pdf" data-typography="LinkAlpha" class="x-
   </iframe>
 </div>  
   <a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" data-aid="PDF_LINK_OVERLAY" target="_blank" href="wp4-addressingxenophobictension.pdf" data-typography="LinkAlpha" class="x-el x-el-a c2-57 c2-58 c2-a c2-b c2-c c2-59 c2-e c2-24 c2-23 c2-5a c2-1u c2-3 c2-5b c2-4 c2-5c c2-5d c2-v c2-5e c2-5 c2-6 c2-7 c2-8"></a></div></div><div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-5v c2-5w c2-d c2-f c2-5g c2-9i c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><p data-ux="Text" data-aid="PDF_PAGE_NOTATION_RENDERED" data-typography="BodyAlpha" class="x-el x-el-p c2-1 c2-2 c2-b c2-c c2-5y c2-1m c2-1o c2-5n c2-9i c2-3 c2-4 c2-5q c2-5 c2-6 c2-7 c2-8">1/14</p>
-  <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-5z c2-f c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div data-ux="Pipe" class="x-el x-el-div c2-1 c2-2 c2-60 c2-61 c2-62 c2-63 c2-64 c2-9j c2-66 c2-x c2-67 c2-68 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"></div><a rel="" role="button" aria-haspopup="menu" data-ux="MoreLinkForward" data-tccl="ux2.pdf.next_button.click,click,pageNum,2,numPages,14,layout,vertical" data-aid="PDF_NEXT_BTN_RENDERED" data-edit-interactive="true" tabindex="0" data-typography="LinkAlpha" class="x-el x-el-a c2-57 c2-58 c2-a c2-b c2-c c2-5z c2-e c2-69 c2-6a c2-f c2-9k c2-3 c2-5b c2-4 c2-5c c2-5d c2-v c2-5 c2-6 c2-7 c2-8"><span data-ux="Element" class="x-el x-el-span c2-1 c2-2 c2-10 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">Next</span><svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" data-ux="Icon" data-aid="chevronRight" class="x-el x-el-svg c2-1 c2-2 c2-w c2-x c2-10 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><path fill-rule="evenodd" d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.697 0 0 1 .032-1.016"></path></svg></a></div></div></div></span></div></div></div></section>  </div></div></div><div id="e2874a70-b322-4691-aede-1a4eeb19c879" class="widget widget-gallery widget-gallery-gallery-2"><div data-ux="WidgetBanner" role="region" id="e2874a70-b322-4691-aede-1a4eeb19c879" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> <div data-ux="Element" id="bs-14" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><span data-ux="Element" class="x-el x-el-span c2-1 c2-2 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><section data-ux="SectionBanner" class="x-el x-el-section c2-1 c2-2 c2-14 c2-15 c2-16 c2-17 c2-18 c2-3 c2-4 c2-19 c2-1a c2-5 c2-6 c2-7 c2-8"><div data-ux="SectionContainer" class="x-el x-el-div c2-1 c2-2 c2-1b c2-1c c2-1d c2-1e c2-1f c2-1g c2-3 c2-4 c2-5 c2-1h c2-1i c2-6 c2-7 c2-8"><div data-ux="Grid" class="x-el x-el-div c2-1 c2-2 c2-d c2-1j c2-1k c2-1l c2-1m c2-1n c2-1o c2-1p c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div data-ux="GridCell" class="x-el x-el-div c2-1 c2-2 c2-1j c2-1q c2-1r c2-1s c2-1t c2-15 c2-17 c2-16 c2-18 c2-1u c2-1v c2-1w c2-g c2-e c2-3 c2-4 c2-1z c2-5 c2-20 c2-6 c2-21 c2-22 c2-7 c2-8"><div data-ux="Block" class="x-el x-el-div dim c2-1 c2-2 c2-23 c2-24 c2-1u c2-3 c2-4 c2-5 c2-25 c2-26 c2-27 c2-6 c2-7 c2-8"><div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-24 c2-1u c2-28 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div role="img" data-aid="GALLERY_IMAGE0_RENDERED" data-ux="Background" class="x-el x-el-div image c2-1 c2-2 c2-29 c2-24 c2-1u c2-28 c2-7v c2-2b c2-2c c2-2d c2-3 c2-4 c2-7w c2-7x c2-7y c2-7z c2-80 c2-81 c2-82 c2-83 c2-84 c2-85 c2-86 c2-87 c2-88 c2-89 c2-8a c2-8b c2-8c c2-8d c2-8e c2-8f c2-8g c2-5 c2-6 c2-7 c2-8"></div></div></div></div><div data-ux="GridCell" class="x-el x-el-div c2-1 c2-2 c2-1j c2-1q c2-1r c2-1s c2-1t c2-15 c2-17 c2-16 c2-18 c2-1u c2-1v c2-1w c2-g c2-e c2-3 c2-4 c2-1z c2-5 c2-20 c2-6 c2-21 c2-22 c2-7 c2-8"><div data-ux="Block" class="x-el x-el-div dim c2-1 c2-2 c2-23 c2-24 c2-1u c2-3 c2-4 c2-5 c2-25 c2-26 c2-27 c2-6 c2-7 c2-8"><div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-24 c2-1u c2-28 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div role="img" data-aid="GALLERY_IMAGE1_RENDERED" data-ux="Background" class="x-el x-el-div image c2-1 c2-2 c2-29 c2-24 c2-1u c2-28 c2-8h c2-2b c2-2c c2-2d c2-3 c2-4 c2-7w c2-7x c2-7y c2-7z c2-80 c2-81 c2-82 c2-83 c2-84 c2-85 c2-86 c2-87 c2-88 c2-89 c2-8a c2-8b c2-8c c2-8d c2-8e c2-8f c2-8g c2-5 c2-6 c2-7 c2-8"></div></div></div></div></div></div></section></span></div>  </div></div></div><div id="0e260b7c-ea67-4420-a4f2-13f94a30ee6b" class="widget widget-pdf widget-pdf-pdf-1"><div data-ux="Widget" role="region" id="0e260b7c-ea67-4420-a4f2-13f94a30ee6b" class="x-el x-el-div x-el c1-1 c1-2 c1-bx c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> <section data-ux="Section" class="x-el x-el-section c1-1 c1-2 c1-bx c1-i c1-j c1-b c1-c c1-m c1-n c1-d c1-e c1-f c1-g"><div data-ux="SectionContainer" class="x-el x-el-div c1-1 c1-2 c1-25 c1-26 c1-17 c1-15 c1-27 c1-b c1-c c1-5e c1-d c1-5f c1-6g c1-6h c1-e c1-5g c1-f c1-5h c1-g"><h2 role="heading" aria-level="2" data-ux="SectionHeading" data-aid="PDF_SECTION_TITLE_RENDERED" data-typography="HeadingEpsilon" data-font-scaled="true" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-9k c1-13 c1-11 c1-10 c1-9l c1-9m c1-30 c1-ad c1-9o c1-31 c1-ae c1-9p c1-9q c1-9r c1-9s c1-9t">
+  <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-5z c2-f c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div data-ux="Pipe" class="x-el x-el-div c2-1 c2-2 c2-60 c2-61 c2-62 c2-63 c2-64 c2-9j c2-66 c2-x c2-67 c2-68 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"></div><a rel="" role="button" aria-haspopup="menu" data-ux="MoreLinkForward" data-tccl="ux2.pdf.next_button.click,click,pageNum,2,numPages,14,layout,vertical" data-aid="PDF_NEXT_BTN_RENDERED" data-edit-interactive="true" tabindex="0" data-typography="LinkAlpha" class="x-el x-el-a c2-57 c2-58 c2-a c2-b c2-c c2-5z c2-e c2-69 c2-6a c2-f c2-9k c2-3 c2-5b c2-4 c2-5c c2-5d c2-v c2-5 c2-6 c2-7 c2-8">
+    <span data-ux="Element" class="x-el x-el-span c2-1 c2-2 c2-10 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">Next</span><svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" data-ux="Icon" data-aid="chevronRight" class="x-el x-el-svg c2-1 c2-2 c2-w c2-x c2-10 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
+      <path fill-rule="evenodd" d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.697 0 0 1 .032-1.016"></path></svg></a></div></div></div></span></div></div></div></section>  </div></div></div>
+    <div id="e2874a70-b322-4691-aede-1a4eeb19c879" class="widget widget-gallery widget-gallery-gallery-2">
+     <!-- black container -->
+      <style>
+  [data-ux="sectioncontainer"] {
+    background-color: #000000 !important;
+    padding-left: 65px !important;
+    padding-right: 65px !important;
+  }
+</style>
+
+      <div data-ux="WidgetBanner" role="region" id="e2874a70-b322-4691-aede-1a4eeb19c879" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> 
+        <div data-ux="Element" id="bs-14" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
+          <span data-ux="Element" class="x-el x-el-span c2-1 c2-2 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
+            <section data-ux="SectionBanner" class="x-el x-el-section c2-1 c2-2 c2-14 c2-15 c2-16 c2-17 c2-18 c2-3 c2-4 c2-19 c2-1a c2-5 c2-6 c2-7 c2-8">
+              <div data-ux="SectionContainer" class="x-el x-el-div c2-1 c2-2 c2-1b c2-1c c2-1d c2-1e c2-1f c2-1g c2-3 c2-4 c2-5 c2-1h c2-1i c2-6 c2-7 c2-8">
+                <div data-ux="Grid" class="x-el x-el-div c2-1 c2-2 c2-d c2-1j c2-1k c2-1l c2-1m c2-1n c2-1o c2-1p c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
+                  <div data-ux="GridCell" class="x-el x-el-div c2-1 c2-2 c2-1j c2-1q c2-1r c2-1s c2-1t c2-15 c2-17 c2-16 c2-18 c2-1u c2-1v c2-1w c2-g c2-e c2-3 c2-4 c2-1z c2-5 c2-20 c2-6 c2-21 c2-22 c2-7 c2-8">
+                    <div data-ux="Block" class="x-el x-el-div dim c2-1 c2-2 c2-23 c2-24 c2-1u c2-3 c2-4 c2-5 c2-25 c2-26 c2-27 c2-6 c2-7 c2-8">
+                      <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-24 c2-1u c2-28 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
+<!-- Full-Width Section Divider Gallery -->
+<style>
+  .divider-gallery-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+  }
+  .divider-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 0;
+  }
+  .divider-gallery-item {
+    width: 100%;
+    height: 350px; /* Adjust height to fit your design */
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .divider-gallery-grid {
+      grid-template-columns: 1fr; /* Stacks on mobile screens */
+    }
+    .divider-gallery-item {
+      height: 250px;
+    }
+  }
+</style>
+
+<div class="divider-gallery-container">
+  <div class="divider-gallery-grid">
+    <!-- Image 1 -->
+    <img src="blob-9fea508.png" alt="Divider Panel 1" class="divider-gallery-item">
+    
+    <!-- Image 2 -->
+    <img src="2ecowassim2tracedunif.png" alt="Divider Panel 2" class="divider-gallery-item">
+  </div>
+</div>
+
+                        <div role="img" data-aid="GALLERY_IMAGE0_RENDERED" data-ux="Background" class="x-el x-el-div image c2-1 c2-2 c2-29 c2-24 c2-1u c2-28 c2-7v c2-2b c2-2c c2-2d c2-3 c2-4 c2-7w c2-7x c2-7y c2-7z c2-80 c2-81 c2-82 c2-83 c2-84 c2-85 c2-86 c2-87 c2-88 c2-89 c2-8a c2-8b c2-8c c2-8d c2-8e c2-8f c2-8g c2-5 c2-6 c2-7 c2-8"></div></div></div></div>
+                  <div data-ux="GridCell" class="x-el x-el-div c2-1 c2-2 c2-1j c2-1q c2-1r c2-1s c2-1t c2-15 c2-17 c2-16 c2-18 c2-1u c2-1v c2-1w c2-g c2-e c2-3 c2-4 c2-1z c2-5 c2-20 c2-6 c2-21 c2-22 c2-7 c2-8"><div data-ux="Block" class="x-el x-el-div dim c2-1 c2-2 c2-23 c2-24 c2-1u c2-3 c2-4 c2-5 c2-25 c2-26 c2-27 c2-6 c2-7 c2-8">
+                    <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-24 c2-1u c2-28 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div role="img" data-aid="GALLERY_IMAGE1_RENDERED" data-ux="Background" class="x-el x-el-div image c2-1 c2-2 c2-29 c2-24 c2-1u c2-28 c2-8h c2-2b c2-2c c2-2d c2-3 c2-4 c2-7w c2-7x c2-7y c2-7z c2-80 c2-81 c2-82 c2-83 c2-84 c2-85 c2-86 c2-87 c2-88 c2-89 c2-8a c2-8b c2-8c c2-8d c2-8e c2-8f c2-8g c2-5 c2-6 c2-7 c2-8"></div></div></div></div></div></div></section></span></div>  </div></div></div><div id="0e260b7c-ea67-4420-a4f2-13f94a30ee6b" class="widget widget-pdf widget-pdf-pdf-1">
+                      <div data-ux="Widget" role="region" id="0e260b7c-ea67-4420-a4f2-13f94a30ee6b" class="x-el x-el-div x-el c1-1 c1-2 c1-bx c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> 
+                        
+                        <section data-ux="Section" class="x-el x-el-section c1-1 c1-2 c1-bx c1-i c1-j c1-b c1-c c1-m c1-n c1-d c1-e c1-f c1-g"><div data-ux="SectionContainer" class="x-el x-el-div c1-1 c1-2 c1-25 c1-26 c1-17 c1-15 c1-27 c1-b c1-c c1-5e c1-d c1-5f c1-6g c1-6h c1-e c1-5g c1-f c1-5h c1-g"><h2 role="heading" aria-level="2" data-ux="SectionHeading" data-aid="PDF_SECTION_TITLE_RENDERED" data-typography="HeadingEpsilon" data-font-scaled="true" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-9k c1-13 c1-11 c1-10 c1-9l c1-9m c1-30 c1-ad c1-9o c1-31 c1-ae c1-9p c1-9q c1-9r c1-9s c1-9t">
     <span data-ux="Element" class="">   WORKING PAPERS</span></h2><div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-6i c1-6c c1-6l c1-9y c1-27 c1-2l c1-1b c1-2m c1-1c c1-b c1-c c1-9z c1-a0 c1-a1 c1-d c1-a2 c1-a3 c1-a4 c1-e c1-f c1-g"><div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-a5 c1-9m c1-a6 c1-b c1-c c1-a7 c1-d c1-e c1-f c1-g"><p data-ux="Text" data-aid="PDF_HEADING_RENDERED" data-typography="HeadingDelta" data-font-scaled="true" class="x-el x-el-p c1-2v c1-2 c1-1g c1-1h c1-4j c1-10 c1-12 c1-a8 c1-b c1-a9 c1-5r c1-aa c1-ab c1-5t c1-5v c1-5w c1-5x">Structural Equation Modeling - A Specification Search</p><div data-ux="Text" data-aid="PDF_DESCRIPTION_RENDERED" fontscalemultiplier="0.88" data-typography="BodyAlpha" data-font-scaled="true" class="x-el c1-1 c1-2 c1-1g c1-1h c1-4j c1-10 c1-12 c1-a8 c1-9m c1-b c1-by c1-bz c1-aa c1-c0 c1-c1 c1-c2 c1-c3 x-rt"><p style="margin:0"><span>The Effects of Social Constructs on the Behavior of Female Students: &nbsp;A Structural Equation Model Specification Search&nbsp;</span></p><p style="margin:0"><span><br></span></p><p style="margin:0"><span>&nbsp;View on <a class="x-el x-el-a c1-1d c1-1e c1-am c1-1g c1-1h c1-an c1-1i c1-9u c1-b c1-c4 c1-1p c1-c5 c1-c6" href="https://drlolaarow.substack.com/p/the-effects-of-social-constructs" rel="noopener" target="_blank">Substack</a>&nbsp;</span></p><p style="margin:0"><span><br></span></p></div><a rel="noopener" role="link" aria-haspopup="true" data-ux="MoreLinkForward" target="_blank" data-aid="PDF_DOWNLOAD_LINK_RENDERED" data-tccl="ux2.pdf.download_link.click,click" href="workingpap1-streqmodel.pdf" data-typography="LinkAlpha" class="x-el x-el-a c1-1d c1-1e c1-1f c1-1g c1-1h c1-ao c1-1i c1-ap c1-x c1-b c1-c4 c1-c c1-1p c1-c5 c1-c6 c1-d c1-e c1-f c1-g"><span data-ux="Element" class="x-el x-el-span c1-1 c1-2 c1-3e c1-b c1-c c1-d c1-e c1-f c1-g">Download PDF</span><svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" data-ux="Icon" data-aid="chevronRight" class="x-el x-el-svg c1-1 c1-2 c1-3b c1-1s c1-3e c1-b c1-c c1-d c1-e c1-f c1-g"><path fill-rule="evenodd" d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.697 0 0 1 .032-1.016"></path></svg></a></div></div><div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Element" id="bs-15" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><span data-ux="Element" class="x-el x-el-span c2-1 c2-2 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div data-ux="GridCell" class="x-el x-el-div c2-1 c2-2 c2-1j c2-1q c2-1r c2-4t c2-1f c2-15 c2-17 c2-16 c2-18 c2-3 c2-4 c2-4u c2-4v c2-4w c2-5 c2-4x c2-4y c2-4z c2-6 c2-7 c2-8"><div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-d c2-8i c2-51 c2-52 c2-53 c2-54 c2-55 c2-56 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><div tabindex="0" style="width: 100%; position: relative; outline: none;">
       <!-- SEM Native Browser Multi-Page PDF Embed Engine -->
 <div style="width: 100%; max-width: 1000px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc;">
