@@ -3283,118 +3283,7 @@
 }
 </style>
 
-<style>
-/* ==========================================================================
-   SECTION 1: DESKTOP SINGLE ROW BUTTON LAYOUT
-   ========================================================================== */
-ul[data-ux="List"] {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
 
-ul[data-ux="List"] li {
-    display: inline-block !important;
-    white-space: nowrap !important;
-}
-
-ul[data-ux="List"] li a,
-.nav-item a,
-div[id^="bs-"] a {
-    display: inline-block !important;
-    padding: 6px 14px !important;
-    margin: 2px 4px !important;
-    border-radius: 6px !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    color: #dedebd !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    font-family: sans-serif !important;
-}
-
-ul[data-ux="List"] li a:hover, 
-.nav-item a:hover,
-div[id^="bs-"] a:hover,
-ul[data-ux="List"] li a:active, 
-.nav-item a:active,
-ul[data-ux="List"] li a:focus,
-.nav-item a:focus {
-    background-color: #060645 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-color: #060645 !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* ==========================================================================
-   SECTION 2: DROPDOWN CLOSERS AND SNAP-OPEN TRIGGERS
-   ========================================================================== */
-ul[data-ux="NavDropdown"], 
-ul[role="menu"],
-[id*="more-"],
-ul#more-32864 {
-    display: none !important;
-    background-color: #00000a !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-    padding: 6px !important;
-}
-
-li:hover > ul[data-ux="NavDropdown"],
-li:hover > ul[role="menu"],
-li:hover > [id*="more-"],
-div:hover + ul[data-ux="NavDropdown"],
-div[id^="bs-"]:hover > ul {
-    display: block !important;
-    position: absolute !important;
-    z-index: 99999 !important;
-}
-
-ul[data-ux="NavDropdown"] li a,
-ul[role="menu"] li a,
-[id*="more-"] li a {
-    border-radius: 4px !important;
-    margin: 1px 0 !important;
-    padding: 6px 12px !important;
-    display: block !important;
-    border: none !important;
-    background: transparent !important;
-    color: #dedebd !important;
-    text-align: left !important;
-    text-decoration: none !important;
-}
-
-ul[data-ux="NavDropdown"] li a:hover,
-ul[role="menu"] li a:hover,
-[id*="more-"] li a:hover {
-    background-color: #060645 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-}
-
-/* ==========================================================================
-   SECTION 3: SURGICAL HIDDEN DUPLICATE MOBILE DRAWER LOGIC
-   ========================================================================== */
-a[data-aid="HAMBURGER_MENU_LINK"],
-div[id*="-navId-mobile"],
-div[id*="-navContainerId-mobile"],
-ul[id*="-navListId-mobile"],
-#n-12125-navListId-mobile,
-ul#n-12125-navListId-mobile,
-#n-32856-navId-mobile {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-}
-</style>
 
 <script>
   /* ==========================================================================
@@ -3516,6 +3405,44 @@ if ('serviceWorker' in navigator) {
     opacity: 1 !important;
     position: relative !important;
     z-index: 5 !important;
+  }
+</style>
+
+<style>
+  /* 1. FORCE ABSOLUTELY EVERYTHING ON THE HOME PAGE TO BE PURE CRISP */
+  img, 
+  picture, 
+  .x-el-img, 
+  [data-ux="Image"],
+  [data-ux="ImageContainer"],
+  div[data-ux="Background"],
+  div[role="img"] {
+    filter: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    object-fit: cover !important;
+  }
+
+  /* 2. REVERSE LAYER FIX: TARGET THE FIRST IMAGE CONTAINER IN THE STACK WHICH ACTS AS THE UNDERLAY BACKGROUND */
+  [data-ux="ImageContainer"]:first-child img,
+  div[role="img"]:first-child,
+  div[data-aid="HERO_IMAGE_RENDERED"]:first-of-type {
+    filter: blur(25px) brightness(0.75) !important; /* Locks blur onto the background photo only */
+    transform: scale(1.06) !important; /* Expands edges slightly to hide edge bleeding */
+    opacity: 0.9 !important;
+  }
+
+  /* 3. ABSOLUTE SAFEGUARD FOR FOREGROUND FACES AND GALLERIES */
+  /* This says if an image is the last child or a lone image, keep it 100% sharp */
+  [data-ux="ImageContainer"]:last-child img,
+  [data-ux="ImageContainer"]:only-child img,
+  img:only-of-type,
+  .widget-gallery-grid img,
+  .plain-gallery-grid img {
+    filter: none !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
   }
 </style>
 </head>

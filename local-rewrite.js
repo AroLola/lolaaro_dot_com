@@ -6,46 +6,47 @@ const TARGET_FOLDER = 'sitepics';
 function processFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
 
-    // 1. Inject a highly selective CSS engine to isolate the true background blur
     const precisionFix = `
 <style>
-  /* 1. RESET ALL IMAGES TO BE CRISP AND PROPORTIONAL BY DEFAULT */
+  /* 1. FORCE ABSOLUTELY EVERYTHING ON THE HOME PAGE TO BE PURE CRISP */
   img, 
   picture, 
   .x-el-img, 
   [data-ux="Image"],
   [data-ux="ImageContainer"],
-  div[data-ux="Background"] {
+  div[data-ux="Background"],
+  div[role="img"] {
     filter: none !important;
     backdrop-filter: none !important;
     opacity: 1 !important;
     object-fit: cover !important;
   }
 
-  /* 2. TARGET ONLY THE GENUINE HERO BACKGROUND LAYER THAT LIVES UNDERNEATH A SHARP IMAGE */
-  /* This looks for containers that have a sibling container or are designated background layers */
-  [data-ux="ImageContainer"] + [data-ux="ImageContainer"] img,
-  div[role="img"]:first-child:not(:only-child),
-  .dim + div div[data-ux="Background"] {
-    filter: blur(20px) brightness(0.8) !important;
-    transform: scale(1.05) !important;
-    opacity: 0.85 !important;
+  /* 2. REVERSE LAYER FIX: TARGET THE FIRST IMAGE CONTAINER IN THE STACK WHICH ACTS AS THE UNDERLAY BACKGROUND */
+  [data-ux="ImageContainer"]:first-child img,
+  div[role="img"]:first-child,
+  div[data-aid="HERO_IMAGE_RENDERED"]:first-of-type {
+    filter: blur(25px) brightness(0.75) !important; /* Locks blur onto the background photo only */
+    transform: scale(1.06) !important; /* Expands edges slightly to hide edge bleeding */
+    opacity: 0.9 !important;
   }
 
-  /* 3. HARD LOCK FOREGROUND FACE IMAGES TO ALWAYS REMAIN CRISP */
-  img:only-of-type,
-  img[data-aid="HERO_IMAGE_RENDERED"],
+  /* 3. ABSOLUTE SAFEGUARD FOR FOREGROUND FACES AND GALLERIES */
+  /* This says if an image is the last child or a lone image, keep it 100% sharp */
   [data-ux="ImageContainer"]:last-child img,
-  .widget-gallery-gallery-2 img {
+  [data-ux="ImageContainer"]:only-child img,
+  img:only-of-type,
+  .widget-gallery-grid img,
+  .plain-gallery-grid img {
     filter: none !important;
     opacity: 1 !important;
     position: relative !important;
-    z-index: 5 !important;
+    z-index: 10 !important;
   }
 </style>
 `;
 
-    // Strip out the previous messy style block if it exists, then add the clean one
+    // Clean out previous style overrides to prevent layout conflicts
     content = content.replace(/<style>[\s\S]*?<\/style>/i, '');
     
     if (content.includes('</head>')) {
@@ -55,7 +56,7 @@ function processFile(filePath) {
     }
 
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`✓ Isolated hero blur successfully in: ${filePath}`);
+    console.log(`✓ Reversed and corrected image blur targets in: ${filePath}`);
 }
 
 function scanDirectory(dir) {
@@ -71,6 +72,6 @@ function scanDirectory(dir) {
     }
 }
 
-console.log("Isolating background layers and sharpening standard images...");
+console.log("Re-aligning stacked layer targets and unblurring profiles...");
 scanDirectory('./');
-console.log("\nTargeted correction complete! Force push to deploy live.");
+console.log("\nLayer flip adjustments applied successfully! Push to GitHub to deploy.");
