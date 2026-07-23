@@ -6,36 +6,37 @@ const TARGET_FOLDER = 'sitepics';
 function processFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
 
-    // 1. Remove GoDaddy's broken tracking scripts causing MIME errors
-    content = content.replace(/<script[^>]*src=["'](?:js\/)?script\.js["'][^>]*><\/script>/gi, '');
-    content = content.replace(/<script[^>]*src=["'](?:index_files\/)?[^"'\s>]+\.js["'][^>]*><\/script>/gi, '');
-    content = content.replace(/srcset=["'][^"']*["']/gi, '');
-
-    // 2. Inject CSS layout fixes to fix image stretching and restore the blur background effect
-    const styleFix = `
+    // 1. Inject a highly selective CSS engine to isolate the true background blur
+    const precisionFix = `
 <style>
-  /* Fixes image stretching globally across single-line layouts */
-  img[data-ux="Image"],
+  /* 1. RESET ALL IMAGES TO BE CRISP AND PROPORTIONAL BY DEFAULT */
   img, 
-  .x-el-img {
-    object-fit: cover !important;
-    max-width: 100% !important;
-  }
-  
-  /* TARGETS THE HERO SECTION: Restores the background blur look safely via pure CSS */
-  picture:first-of-type,
-  [data-ux="ImageContainer"]:first-of-type,
-  .widget-gallery-gallery-2 div[role="img"]:first-child,
+  picture, 
+  .x-el-img, 
+  [data-ux="Image"],
+  [data-ux="ImageContainer"],
   div[data-ux="Background"] {
-    filter: blur(20px) brightness(0.8) !important; /* Emulates the original blurred backing look */
-    transform: scale(1.05) !important; /* Prevents white artifacts on edge boundaries */
+    filter: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    object-fit: cover !important;
+  }
+
+  /* 2. TARGET ONLY THE GENUINE HERO BACKGROUND LAYER THAT LIVES UNDERNEATH A SHARP IMAGE */
+  /* This looks for containers that have a sibling container or are designated background layers */
+  [data-ux="ImageContainer"] + [data-ux="ImageContainer"] img,
+  div[role="img"]:first-child:not(:only-child),
+  .dim + div div[data-ux="Background"] {
+    filter: blur(20px) brightness(0.8) !important;
+    transform: scale(1.05) !important;
     opacity: 0.85 !important;
   }
 
-  /* Ensures the foreground sharp image layer breaks out of the blur styling rule */
+  /* 3. HARD LOCK FOREGROUND FACE IMAGES TO ALWAYS REMAIN CRISP */
   img:only-of-type,
-  img[data-aid="HERO_IMAGE_RENDERED"], 
-  [data-ux="Image"] {
+  img[data-aid="HERO_IMAGE_RENDERED"],
+  [data-ux="ImageContainer"]:last-child img,
+  .widget-gallery-gallery-2 img {
     filter: none !important;
     opacity: 1 !important;
     position: relative !important;
@@ -44,15 +45,17 @@ function processFile(filePath) {
 </style>
 `;
 
+    // Strip out the previous messy style block if it exists, then add the clean one
+    content = content.replace(/<style>[\s\S]*?<\/style>/i, '');
+    
     if (content.includes('</head>')) {
-        content = content.replace('</head>', `${styleFix}</head>`);
+        content = content.replace('</head>', `${precisionFix}</head>`);
     } else {
-        content = styleFix + content;
+        content = precisionFix + content;
     }
 
-    fs.readFileSync(filePath, 'utf8');
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`✓ Re-applied look configuration on: ${filePath}`);
+    console.log(`✓ Isolated hero blur successfully in: ${filePath}`);
 }
 
 function scanDirectory(dir) {
@@ -60,7 +63,6 @@ function scanDirectory(dir) {
     for (const file of files) {
         const fullPath = path.join(dir, file);
         const stat = fs.statSync(fullPath);
-        
         if (stat.isDirectory() && file !== 'node_modules' && file !== '.git' && file !== TARGET_FOLDER) {
             scanDirectory(fullPath);
         } else if (stat.isFile() && path.extname(file).toLowerCase() === '.html') {
@@ -69,6 +71,6 @@ function scanDirectory(dir) {
     }
 }
 
-console.log("Restoring graphic blur layers and locking layouts...");
+console.log("Isolating background layers and sharpening standard images...");
 scanDirectory('./');
-console.log("\nLayout adjustments complete! Push to GitHub to verify production.");
+console.log("\nTargeted correction complete! Force push to deploy live.");
