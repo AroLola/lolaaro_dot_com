@@ -8,7 +8,7 @@ function processFile(filePath) {
 
     const precisionFix = `
 <style>
-  /* 1. FORCE ABSOLUTELY EVERYTHING ON THE HOME PAGE TO BE PURE CRISP */
+  /* 1. RESET RECOVERY: GUARANTEE EVERY IMAGE ON THE SITE IS CRISP BY DEFAULT */
   img, 
   picture, 
   .x-el-img, 
@@ -22,22 +22,17 @@ function processFile(filePath) {
     object-fit: cover !important;
   }
 
-  /* 2. REVERSE LAYER FIX: TARGET THE FIRST IMAGE CONTAINER IN THE STACK WHICH ACTS AS THE UNDERLAY BACKGROUND */
-  [data-ux="ImageContainer"]:first-child img,
-  div[role="img"]:first-child,
-  div[data-aid="HERO_IMAGE_RENDERED"]:first-of-type {
-    filter: blur(25px) brightness(0.75) !important; /* Locks blur onto the background photo only */
-    transform: scale(1.06) !important; /* Expands edges slightly to hide edge bleeding */
+  /* 2. ISOLATED TARGET: ONLY BLUR THE UNDERLAY IMAGE INSIDE THE SPECIFIC HERO ID CONTAINER */
+  #e2874a70-b322-4691-aede-1a4eeb19c879 div[role="img"]:first-child,
+  #e2874a70-b322-4691-aede-1a4eeb19c879 [data-ux="ImageContainer"]:first-child img {
+    filter: blur(25px) brightness(0.75) !important;
+    transform: scale(1.06) !important;
     opacity: 0.9 !important;
   }
 
-  /* 3. ABSOLUTE SAFEGUARD FOR FOREGROUND FACES AND GALLERIES */
-  /* This says if an image is the last child or a lone image, keep it 100% sharp */
-  [data-ux="ImageContainer"]:last-child img,
-  [data-ux="ImageContainer"]:only-child img,
-  img:only-of-type,
-  .widget-gallery-grid img,
-  .plain-gallery-grid img {
+  /* 3. HARD RE-SHARPEN THE FOREGROUND FACE IMAGE IN THAT SAME CONTAINER */
+  #e2874a70-b322-4691-aede-1a4eeb19c879 div[role="img"]:last-child,
+  #e2874a70-b322-4691-aede-1a4eeb19c879 [data-ux="ImageContainer"]:last-child img {
     filter: none !important;
     opacity: 1 !important;
     position: relative !important;
@@ -46,7 +41,7 @@ function processFile(filePath) {
 </style>
 `;
 
-    // Clean out previous style overrides to prevent layout conflicts
+    // Strip previous style blocks to avoid rule stacking confusion
     content = content.replace(/<style>[\s\S]*?<\/style>/i, '');
     
     if (content.includes('</head>')) {
@@ -56,7 +51,7 @@ function processFile(filePath) {
     }
 
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`✓ Reversed and corrected image blur targets in: ${filePath}`);
+    console.log(`✓ Locked unique ID targeting filters on: ${filePath}`);
 }
 
 function scanDirectory(dir) {
@@ -72,6 +67,6 @@ function scanDirectory(dir) {
     }
 }
 
-console.log("Re-aligning stacked layer targets and unblurring profiles...");
+console.log("Applying hyper-targeted ID constraints to clear global image blur...");
 scanDirectory('./');
-console.log("\nLayer flip adjustments applied successfully! Push to GitHub to deploy.");
+console.log("\nID filtering applied successfully! Push to GitHub to deploy.");

@@ -2381,11 +2381,7 @@
 <style data-glamor="cxs-md-sheet">@media (min-width: 1024px){.x .c1-e{font-size:16px}}@media (min-width: 1024px){.x .c1-p{display:block}}@media (min-width: 1024px){.x .c1-t{padding-top:0px}}@media (min-width: 1024px){.x .c1-u{padding-bottom:0px}}@media (min-width: 1024px){.x .c1-v{padding-left:0px}}@media (min-width: 1024px){.x .c1-w{padding-right:0px}}@media (min-width: 1024px){.x .c1-19{display:none}}@media (min-width: 1024px){.x .c1-28{display:flex}}@media (min-width: 1024px){.x .c1-29{width:100%}}@media (min-width: 1024px){.x .c1-2a{flex-direction:column}}@media (min-width: 1024px) and (max-width: 1279px){.x .c1-3q{right:0px}}@media (min-width: 1024px){.x .c1-3s{border-radius:0}}@media (min-width: 1024px){.x .c1-3t{margin-top:0px}}@media (min-width: 1024px){.x .c1-3u{padding-top:32px}}@media (min-width: 1024px){.x .c1-3v{padding-bottom:32px}}@media (min-width: 1024px){.x .c1-3w{padding-left:32px}}@media (min-width: 1024px){.x .c1-3x{padding-right:32px}}@media (min-width: 1024px){.x .c1-3y{border-color:rgb(5, 5, 104)}}@media (min-width: 1024px){.x .c1-3z{border-style:solid}}@media (min-width: 1024px){.x .c1-40{box-shadow:none}}@media (min-width: 1024px){.x .c1-41{line-height:1.65}}@media (min-width: 1024px){.x .c1-42{border-top-width:1px}}@media (min-width: 1024px){.x .c1-43{border-right-width:1px}}@media (min-width: 1024px){.x .c1-44{border-bottom-width:1px}}@media (min-width: 1024px){.x .c1-45{border-left-width:1px}}@media (min-width: 1024px){.x .c1-57{font-size:30px}}@media (min-width: 1024px){.x .c1-5f{width:984px}}@media (min-width: 1024px){.x .c1-5u{min-width:300px}}@media (min-width: 1024px){.x .c1-5v{font-size:22px}}@media (min-width: 1024px){.x .c1-6e{padding-left:56px}}@media (min-width: 1024px){.x .c1-6f{padding-right:56px}}@media (min-width: 1024px){.x .c1-71{margin-left:16.666666666666664%}}@media (min-width: 1024px){.x .c1-72{flex-basis:66.66666666666666%}}@media (min-width: 1024px){.x .c1-73{max-width:66.66666666666666%}}@media (min-width: 1024px){.x .c1-7m{margin-bottom:100px}}@media (min-width: 1024px){.x .c1-81{margin-bottom:0}}@media (min-width: 1024px){.x .c1-9m{font-size:20px}}@media (min-width: 1024px){.x .c1-a3{min-width:100%}}@media (min-width: 1024px){.x .c1-a8{flex-basis:0%}}@media (min-width: 1024px){.x .c1-a9{max-width:none}}@media (min-width: 1024px){.x .c1-ad{text-align:left}}@media (min-width: 1024px){.x .c1-ae{font-size:14px}}@media (min-width: 1024px){.x .c1-ah{text-align:right}}</style>
 <style data-glamor="cxs-lg-sheet">@media (min-width: 1280px){.x .c1-f{font-size:16px}}@media (min-width: 1280px){.x .c1-58{font-size:32px}}@media (min-width: 1280px){.x .c1-5g{width:1160px}}@media (min-width: 1280px){.x .c1-5w{font-size:22px}}@media (min-width: 1280px){.x .c1-9n{font-size:20px}}@media (min-width: 1280px){.x .c1-af{font-size:14px}}</style>
 <style data-glamor="cxs-xl-sheet">@media (min-width: 1536px){.x .c1-g{font-size:18px}}@media (min-width: 1536px){.x .c1-59{font-size:36px}}@media (min-width: 1536px){.x .c1-5h{width:1280px}}@media (min-width: 1536px){.x .c1-5x{font-size:24px}}@media (min-width: 1536px){.x .c1-9o{font-size:23px}}@media (min-width: 1536px){.x .c1-ag{font-size:16px}}</style>
-<style>@keyframes opacity-bounce { 
-      0% {opacity: 0;transform: translateY(100%); } 
-      60% { transform: translateY(-20%); } 
-      100% { opacity: 1; transform: translateY(0); }
-    }</style>
+
 <style>.gd-ad-flex-parent {
           animation-name: opacity-bounce; 
           animation-duration: 800ms; 
@@ -2498,6 +2494,39 @@ if ('serviceWorker' in navigator) {
   img:only-of-type,
   .widget-gallery-grid img,
   .plain-gallery-grid img {
+    filter: none !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+</style>
+
+<style>
+  /* 1. RESET RECOVERY: GUARANTEE EVERY IMAGE ON THE SITE IS CRISP BY DEFAULT */
+  img, 
+  picture, 
+  .x-el-img, 
+  [data-ux="Image"],
+  [data-ux="ImageContainer"],
+  div[data-ux="Background"],
+  div[role="img"] {
+    filter: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    object-fit: cover !important;
+  }
+
+  /* 2. ISOLATED TARGET: ONLY BLUR THE UNDERLAY IMAGE INSIDE THE SPECIFIC HERO ID CONTAINER */
+  #e2874a70-b322-4691-aede-1a4eeb19c879 div[role="img"]:first-child,
+  #e2874a70-b322-4691-aede-1a4eeb19c879 [data-ux="ImageContainer"]:first-child img {
+    filter: blur(25px) brightness(0.75) !important;
+    transform: scale(1.06) !important;
+    opacity: 0.9 !important;
+  }
+
+  /* 3. HARD RE-SHARPEN THE FOREGROUND FACE IMAGE IN THAT SAME CONTAINER */
+  #e2874a70-b322-4691-aede-1a4eeb19c879 div[role="img"]:last-child,
+  #e2874a70-b322-4691-aede-1a4eeb19c879 [data-ux="ImageContainer"]:last-child img {
     filter: none !important;
     opacity: 1 !important;
     position: relative !important;
