@@ -1,29 +1,37 @@
 
 <!-- saved from url=(0011)about:blank -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
 <style>
-  /* Fixes image stretching globally across single-line layouts */
-  img[data-ux="Image"],
+  /* 1. RESET ALL IMAGES TO BE CRISP AND PROPORTIONAL BY DEFAULT */
   img, 
-  .x-el-img {
-    object-fit: cover !important;
-    max-width: 100% !important;
-  }
-  
-  /* TARGETS THE HERO SECTION: Restores the background blur look safely via pure CSS */
-  picture:first-of-type,
-  [data-ux="ImageContainer"]:first-of-type,
-  .widget-gallery-gallery-2 div[role="img"]:first-child,
+  picture, 
+  .x-el-img, 
+  [data-ux="Image"],
+  [data-ux="ImageContainer"],
   div[data-ux="Background"] {
-    filter: blur(20px) brightness(0.8) !important; /* Emulates the original blurred backing look */
-    transform: scale(1.05) !important; /* Prevents white artifacts on edge boundaries */
+    filter: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    object-fit: cover !important;
+  }
+
+  /* 2. TARGET ONLY THE GENUINE HERO BACKGROUND LAYER THAT LIVES UNDERNEATH A SHARP IMAGE */
+  /* This looks for containers that have a sibling container or are designated background layers */
+  [data-ux="ImageContainer"] + [data-ux="ImageContainer"] img,
+  div[role="img"]:first-child:not(:only-child),
+  .dim + div div[data-ux="Background"] {
+    filter: blur(20px) brightness(0.8) !important;
+    transform: scale(1.05) !important;
     opacity: 0.85 !important;
   }
 
-  /* Ensures the foreground sharp image layer breaks out of the blur styling rule */
+  /* 3. HARD LOCK FOREGROUND FACE IMAGES TO ALWAYS REMAIN CRISP */
   img:only-of-type,
-  img[data-aid="HERO_IMAGE_RENDERED"], 
-  [data-ux="Image"] {
+  img[data-aid="HERO_IMAGE_RENDERED"],
+  [data-ux="ImageContainer"]:last-child img,
+  .widget-gallery-gallery-2 img {
     filter: none !important;
     opacity: 1 !important;
     position: relative !important;
