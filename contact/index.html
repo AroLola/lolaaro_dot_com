@@ -1882,16 +1882,22 @@ ul#n-12125-navListId-mobile,
     min-height: 100vh; 
 }
 
-/* 3. Forces the widget and fallback popups to the front layer over the blue background */
-.grecaptcha-badge,
+/* 3. Ensures the CAPTCHA widget pops clearly over the blue background */
+.grecaptcha-badge { 
+    visibility: visible !important; 
+    display: block !important;
+    z-index: 999999999 !important; 
+}
+
+/* 4. Ensures layout popups stay on top */
 div[style*="z-index: 2000000000"],
 .rc-imageselect-bubble-wrapper {
     z-index: 999999999 !important;
 }
 </style>
 
-<!-- REMOVED THE HIDING RULES & USED DIRECT SECURE SOURCE TO RESOLVE THE EMPTY BOX -->
-<script type="text/javascript" async src="https://google.com"></script>
+<!-- FIXED: Removed the mismatched integrity and crossorigin rules blocking the script -->
+<script type="text/javascript" async src="https://www.google.com/recaptcha/api.js"></script>
 
 <script>
 "use strict";
