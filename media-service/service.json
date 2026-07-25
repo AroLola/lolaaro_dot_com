@@ -1,0 +1,22 @@
+{
+  "photoEvents": [
+    {
+      "id": "red-cross-hispanic-drive-gallery-album",
+      "name": "Red Cross Hispanic Community Drive",
+      "media": [
+        { "id": "r-1", "src": "/sitepics/a1.jpg", "caption": "" },
+        { "id": "r-2", "src": "/sitepics/a2.jpg", "caption": "" },
+        { "id": "r-3", "src": "/sitepics/a3.jpg", "caption": "" }
+      ]
+    },
+    {
+      "id": "kenyon-martin-foundation-gallery-album",
+      "name": "Kenyon Martin Foundation",
+      "media": [
+        { "id": "k-1", "src": "/sitepics/km11.jpg", "caption": "" },
+        { "id": "k-2", "src": "/sitepics/km2.jpg", "caption": "" },
+         { "id": "k-3", "src": "/sitepics/km3.jpg", "caption": "" },
+      ]
+    }
+  ]
+}
