@@ -3179,12 +3179,7 @@ ul[role="menu"] li a:hover,
     text-decoration: none !important;
 }
 
-  /* ==========================================================================
-   SECTION 3: REPAIRING THE MOBILE DRAWER LOGIC
-   ========================================================================== */
-
-/* 3.1. RESTORE VISIBILITY TO YOUR ACTIVE HAMBURGER BUTTON ICON */
-a[data-aid="HAMBURGER_MENU_LINK"] {
+  a[data-aid="HAMBURGER_MENU_LINK"] {
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -3193,9 +3188,10 @@ a[data-aid="HAMBURGER_MENU_LINK"] {
     pointer-events: auto !important;
 }
 
-/* 3.2. ISOLATE AND HIDE ONLY THE SPECIFIC OLD REPEATING NAV LIST ENTRIES */
-ul#n-12125-navListId-mobile,
+ 
+ul[id*="-navListId-mobile"],
 #n-12125-navListId-mobile,
+ul#n-12125-navListId-mobile,
 #n-32856-navId-mobile {
     display: none !important;
     visibility: hidden !important;
@@ -3205,6 +3201,7 @@ ul#n-12125-navListId-mobile,
     overflow: hidden !important;
     pointer-events: none !important;
 }
+</style>
 
 <script>
   /* ==========================================================================
