@@ -3026,17 +3026,11 @@
 <style data-glamor="cxs-lg-sheet">@media (min-width: 1280px){.x .c1-f{font-size:16px}}@media (min-width: 1280px){.x .c1-58{font-size:32px}}@media (min-width: 1280px){.x .c1-5g{width:1160px}}@media (min-width: 1280px){.x .c1-5w{font-size:22px}}@media (min-width: 1280px){.x .c1-8k{font-size:14px}}</style>
 <style data-glamor="cxs-xl-sheet">@media (min-width: 1536px){.x .c1-g{font-size:18px}}@media (min-width: 1536px){.x .c1-59{font-size:36px}}@media (min-width: 1536px){.x .c1-5h{width:1280px}}@media (min-width: 1536px){.x .c1-5x{font-size:24px}}@media (min-width: 1536px){.x .c1-8l{font-size:16px}}</style>
 
-<style>.gd-ad-flex-parent {
-          animation-name: opacity-bounce; 
-          animation-duration: 800ms; 
-          animation-delay: 400ms; 
-          animation-fill-mode: forwards; 
-          animation-timing-function: ease; 
-          opacity: 0;</style>
-<style id="carousel-stylesheet">.carousel {
+<style id="carousel-stylesheet">
+.carousel {
   text-align: center;
   position: relative;
-  opacity: 0;
+  opacity: 1 !important; /* Force all carousels to be visible instantly */
   margin: 0 auto;
   transition: opacity 0.5s;
 }
@@ -3044,10 +3038,17 @@
   margin: 0 auto;
   position: relative;
 }
+
+/* HORIZONTAL ALIGNMENT CONTAINER FIX */
 .carousel .carousel-viewport {
-  overflow: hidden;
-  white-space: nowrap;
+  overflow-x: auto !important; /* Enables smooth native swipe layout */
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
   text-align: left;
+  width: 100% !important;
+  display: block !important;
+  scroll-snap-type: x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 .carousel .carousel-arrow-default {
   border: 3px solid !important;
@@ -3106,16 +3107,30 @@
   content: '\142F';
   padding-top: 2px;
 }
+
+/* FORCE TRACK INTO AN INFINITE SIDEWAYS TIMELINE */
 .carousel .carousel-track {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  touch-action: pan-y pinch-zoom;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  touch-action: pan-x pinch-zoom !important; /* Switched to horizontal panning */
+  display: block !important;
+  white-space: nowrap !important;
+  width: max-content !important; /* Lets slide tray expand sideways endlessly */
+  transform: none !important; /* Disables broken translateX parameters */
 }
+
+/* FORCE INDIVIDUAL THUMBNAILS TO STAND SIDE-BY-SIDE */
 .carousel .carousel-track .carousel-slide {
-  display: inline-block;
-  opacity: 0.7;
-  transition: opacity 0.5s ease-in-out;
+  display: inline-block !important; /* Knocks down vertical stack behavior */
+  opacity: 1 !important; /* Makes photos visible instantly */
+  vertical-align: top !important;
+  width: 85vw !important; /* Optimal image display card width */
+  max-width: 450px !important;
+  margin-right: 15px !important;
+  scroll-snap-align: center !important;
+  height: auto !important;
+  white-space: normal !important;
 }
 .carousel .carousel-track .carousel-slide > * {
   display: block;
@@ -3125,17 +3140,17 @@
   background: rgba(204, 204, 204, 0.7);
 }
 .carousel .carousel-track .carousel-slide.carousel-slide-fade {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
+  position: relative !important;
+  left: auto !important;
+  transform: none !important;
+  opacity: 1 !important;
 }
 .carousel .carousel-track .carousel-slide.carousel-slide-selected {
-  opacity: 1;
+  opacity: 1 !important;
   z-index: 1;
 }
 .carousel.loaded {
-  opacity: 1;
+  opacity: 1 !important;
 }
 .carousel .carousel-dots {
   list-style: none;
@@ -3165,6 +3180,8 @@
 .carousel .carousel-dots button:focus {
   outline: none;
 }
+
+/* RIGHT-TO-LEFT ARROW CONFIGURATIONS */
 [dir="rtl"] .carousel .carousel-viewport {
   text-align: right;
 }
@@ -3183,60 +3200,18 @@
 [dir="rtl"] .carousel .carousel-right-arrow.carousel-arrow-default:before {
   padding-right: 2px;
   padding-left: unset;
-}</style>
+}
 
-  <style>
-  /* Your existing page settings */
-  .page-inner { background-color: rgb(8, 13, 153); min-height: 100vh; }
-
-  /* Your existing slider arrow adjustments */
-  [dir="rtl"] .carousel .carousel-left-arrow.carousel-arrow-default:before {
-    padding-left: 2px;
-    padding-right: unset;
-  }
-  [dir="rtl"] .carousel .carousel-right-arrow.carousel-arrow-default:before {
-    padding-right: 2px;
-    padding-left: unset;
-  }
-
-  /* GLOBAL FIX FOR ALL 13 SECTIONS: Forces vertical layout to align horizontally */
-  ul.carousel-track {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    list-style: none !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  /* Prevents thumbnails from shrinking or breaking vertical columns */
-  li.carousel-slide {
-    flex-shrink: 0 !important;
-    width: 85% !important;
-    max-width: 450px !important;
-    height: auto !important;
-    min-height: auto !important;
-    scroll-snap-align: center !important;
-    list-style: none !important;
-    display: inline-block !important;
-  }
-
-  /* Stabilizes your viewports so they do not collapse */
-  .carousel-viewport {
-    height: auto !important;
-    min-height: 400px !important;
-    overflow: hidden !important;
-  }
-
-  li.carousel-slide img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important;
-  }
+/* ENSURES RESPONSIVE HANDLING FOR RENDERED IMAGES */
+.carousel-slide img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 550px !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+}
 </style>
+
 
 <script>"use strict";
 
