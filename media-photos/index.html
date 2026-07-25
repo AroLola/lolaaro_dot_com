@@ -3206,6 +3206,42 @@
   justify-content: center;
   border-radius: 50%;
 }
+   /* THE FILTER BAR ROW CANVAS */
+.filter-pills-row-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 0 auto 40px auto !important;
+  max-width: 1000px !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* INDIVIDUAL NAV PILL BUTTONS */
+.filter-nav-pill-btn {
+  display: inline-block !important;
+  padding: 8px 18px !important;
+  border-radius: 9999px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease-in-out !important;
+  cursor: pointer !important;
+}
+
+/* HOVER FEEDBACK STATES */
+.filter-nav-pill-btn:hover {
+  background: #ffffff !important;
+  color: #080d99 !important; /* Matches your core theme dark blue */
+  border-color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
 </style>
 
 <!-- END CAROUSEL LIGHTBOX-->
@@ -3222,20 +3258,27 @@ if ('serviceWorker' in navigator) {
 <h1 role="heading" aria-level="1" data-ux="FeaturedHeading" data-aid="CONTENT_WELCOME_TITLE_RENDERED" data-promoted-from="4" data-order="0" fontpack="italiana" data-typography="HeadingEpsilon" class="x-el x-el-h1 c1-1g c1-1h c1-79 c1-13 c1-11 c1-10 c1-7a c1-7b c1-7c c1-7d c1-7e c1-7f c1-7g c1-7h c1-2v c1-2 c1-7i">PHOTOS</h1></div></div></div></div></section>  
 
   <!-- begin target injection -->
-<!-- MAIN GALLEY INTERCEPTOR WIDGET FRAME -->
+<!-- MAIN GALLERY WIDGET RUNTIME INNER FRAME -->
 <div id="9abed1c0-a2bb-4a95-9bb5-081633e68b66" class="widget widget-gallery widget-gallery-gallery-1">
   <div data-ux="Widget" role="region" id="9abed1c0-a2bb-4a95-9bb5-081633e68b66" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
     <div> 
       <section data-ux="Section" data-test-radpack="client" class="x-el x-el-section c1-1 c1-2 c1-3 c1-i c1-j c1-b c1-c c1-m c1-n c1-d c1-e c1-f g">
         <div data-ux="SectionContainer" class="x-el x-el-div c1-1 c1-2 c1-25 c1-26 c1-17 c1-15 c1-27 c1-b c1-c c1-5e c1-d c1-5f c1-6e c1-6f c1-e c1-5g c1-f c1-5h c1-g">
           
-          <!-- This is your theme's native h2 roof header block - left empty now to avoid duplication -->
-          <h2 data-ux="SectionHeading" data-typography="HeadingBeta" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="display:none !important;"></h2>
+          <!-- REMOVED NATIVE REPEATING HEADING STYLES -->
+          <style>
+            #9abed1c0-a2bb-4a95-9bb5-081633e68b66 h2[data-aid="GALLERY_SECTION_TITLE_RENDERED"] {
+              display: none !important;
+            }
+          </style>
           
-          <!-- 1. THE SINGLE DYNAMIC MOUNT INSERTION NODE -->
+          <!-- A. NEW AUTOMATED PILLS FILTER NAVIGATION BAR MOUNT TARGET -->
+          <div id="filter-bar-mount" class="filter-pills-row-container"></div>
+          
+          <!-- B. Master dynamic media elements injection mount node -->
           <div id="dynamic-gallery-root"></div>
 
-          <!-- 2. AUTOMATED SHOWCASE SLIDER MOTOR & DATA LOADER ENGINE -->
+          <!-- AUTOMATED ASYNCHRONOUS BUILD ENGINE SCRIPT OVERRIDE -->
           <script>
             fetch('./photos.json')
               .then(response => {
@@ -3243,27 +3286,43 @@ if ('serviceWorker' in navigator) {
                 return response.json();
               })
               .then(galleryData => {
+                const filterMount = document.getElementById('filter-bar-mount');
                 const rootElement = document.getElementById('dynamic-gallery-root');
+                
+                let pillsOutput = '';
                 let htmlOutput = '';
                 let lightboxOutput = '';
 
-                // Loop over the albums dynamically
                 galleryData.photoEvents.forEach((event, eventIdx) => {
+                  pillsOutput += `
+                    <a href="#${event.id}-section" class="filter-nav-pill-btn">
+                      ${event.name === 'Sports Day' ? 'Sports' : event.name}
+                    </a>
+                  `;
+
+                  const hasDescription = event.description && event.description.trim() !== "";
+                  const descriptionHTML = hasDescription ? `
+                    <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
+                      <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
+                        ${event.description}
+                      </p>
+                    </div>
+                  ` : '';
+
                   htmlOutput += `
-                    <div class="gallery-section-wrapper" id="${event.id}-section">
+                    <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px;">
                       
-                      <!-- FIXED UNIQUE HEADER TITLE USING NATIVE PACK DESIGN CLASSES -->
                       <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px;">
                         <span class="x-el x-el-span">${event.name}</span>
                       </h2>
 
-                      <!-- THE ANIMATED RECTANGULAR VIEWER BOX -->
+                      ${descriptionHTML}
+
                       <div class="dynamic-carousel-box">
                         <div class="dynamic-carousel-viewport">
                           <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
                   `;
 
-                  // Build out the slides
                   event.media.forEach(item => {
                     const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
                     const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
@@ -3287,11 +3346,9 @@ if ('serviceWorker' in navigator) {
                         </div>
                       </div>
 
-                      <!-- LARGE READABLE STATIC THUMBNAILS LIST BELOW VIEWER -->
                       <div class="thumb-row-container">
                   `;
 
-                  // Build out clickable thumbnails matching popup frameworks
                   event.media.forEach((item, itemIdx) => {
                     htmlOutput += `
                       <a href="#pop-${item.id}" class="thumb-card">
@@ -3315,23 +3372,20 @@ if ('serviceWorker' in navigator) {
                   `;
                 });
 
-                // Inject markup layouts into structural mount node instantly
+                filterMount.innerHTML = pillsOutput;
                 rootElement.innerHTML = htmlOutput + lightboxOutput;
 
-                // 3. RUN THE RUNTIME ASYNCHRONOUS AUTOMATED ROTATION LOOPER ENGINE
                 galleryData.photoEvents.forEach((event, eventIdx) => {
                   const trackNode = document.getElementById(`track-${eventIdx}`);
                   const totalSlidesCount = event.media.length;
                   let currentSlideIndex = 0;
 
-                  // Skip running loop calculations if an event album contains only 1 photo
                   if (totalSlidesCount <= 1) return;
 
-                  // Sets up smooth 3 second (3000ms) interval stepping transformations
                   setInterval(() => {
                     currentSlideIndex++;
                     if (currentSlideIndex >= totalSlidesCount) {
-                      currentSlideIndex = 0; // Seamless rewind back to first slide
+                      currentSlideIndex = 0;
                     }
                     const translateCalculation = currentSlideIndex * -100;
                     trackNode.style.transform = `translateX(${translateCalculation}%)`;
@@ -3340,13 +3394,13 @@ if ('serviceWorker' in navigator) {
 
               })
               .catch(error => {
-                console.error('Gallery Runtime Engine Error:', error);
+                console.error('Gallery Engine Render Crash:', error);
                 document.getElementById('dynamic-gallery-root').innerHTML = 
                   `<p style="color:#ffffff; text-align:center; padding:40px; opacity:0.7;">Error generating media galleries. Verify JSON data paths.</p>`;
               });
           </script>
 
-<!-- CLEAN PAGE STRUCTURAL LAYOUT BOTTOM CLOSURES -->
+<!-- SYSTEM PAGE WRAPPER CLOSE TAG BRICK WALL -->
 </div></div></div></section></div></div></div>
 
           <!-- ======================================================= -->
