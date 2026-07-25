@@ -2,19 +2,36 @@
   "photoEvents": [
     {
       "id": "hbs-connext-gallery-album",
-      "name": "HBS Online Connext - May 2026",
+      "name": "HBS Online Connext",
+       "description": "At Harvard's stunning campus, reconnecting with fellow HBSO colleagues during Connext 2026",
       "media": [
         { "id": "h-1", "src": "/sitepics/485a914a-c30e-4b4b-becc-af87e9277cd6.jpg", "caption": "" },
-        { "id": "h-2", "src": "/sitepics/85412c5b-c9ab-4d4e-9726-a7b52980f18e", "caption": "" },
-        { "id": "h-3", "src": "/sitepics/pjday16.jpg", "caption": "" }
+        { "id": "h-2", "src": "/sitepics/85412c5b-c9ab-4d4e-9726-a7b52980f18e.jpg", "caption": "" },
+        { "id": "h-3", "src": "/sitepics/35887977-dc44-4e27-ad75-fa850ad706a0.jpg", "caption": "" },
+        { "id": "h-4", "src": "/sitepics/img_4695.jpg", "caption": "" },
+        { "id": "h-5", "src": "/sitepics/img_4724.jpg", "caption": "" },
+        { "id": "h-6", "src": "/sitepics/img_4742.jpg", "caption": "" }
       ]
     },
     {
       "id": "unanca-hr-luncheon-gallery-album",
       "name": "UNANCA Human Rights Luncheon",
+      "description": "Photos from the Annual UNA-NCA Human Rights Luncheon, held December 10, 2010, at the Cannon House Office Building, Capitol Hill, Washington, D.C..
+Photos also include snapshots from UN Week -- a celebratioon of United Nations Day spread out over a week of events, which we ended with a special tribute for former UNA-NCA president, Andrew E. Rice.
+",
       "media": [
-        { "id": "c-1", "src": "/sitepics/una1.jpg", "caption": "" },
-        { "id": "c-2", "src": "/sitepics/una2.jpg", "caption": "" }
+        { "id": "u-1", "src": "/sitepics/una1.jpg", "caption": "" },
+        { "id": "u-2", "src": "/sitepics/una2.jpg", "caption": "" },
+        { "id": "u-3", "src": "/sitepics/una3.jpg", "caption": "" },
+        { "id": "u-4", "src": "/sitepics/una4.jpg", "caption": "" },
+        { "id": "u-5", "src": "/sitepics/una5.jpg", "caption": "" },
+        { "id": "u-6", "src": "/sitepics/una6.jpg", "caption": "" },
+        { "id": "u-7", "src": "/sitepics/una7.jpg", "caption": "" },
+        { "id": "u-8", "src": "/sitepics/una8.jpg", "caption": "" },
+        { "id": "u-9", "src": "/sitepics/una9.jpg", "caption": "" },
+        { "id": "u-10", "src": "/sitepics/una10.jpg", "caption": "" },
+        { "id": "u-11", "src": "/sitepics/una11.jpg", "caption": "" },
+        { "id": "u-12", "src": "/sitepics/una12.jpg", "caption": "" },
       ]
     }
   ]
