@@ -3184,7 +3184,60 @@
   padding-right: 2px;
   padding-left: unset;
 }</style>
-<style>.page-inner { background-color: rgb(8, 13, 153); min-height: 100vh; }</style>
+
+  <style>
+  /* Your existing page settings */
+  .page-inner { background-color: rgb(8, 13, 153); min-height: 100vh; }
+
+  /* Your existing slider arrow adjustments */
+  [dir="rtl"] .carousel .carousel-left-arrow.carousel-arrow-default:before {
+    padding-left: 2px;
+    padding-right: unset;
+  }
+  [dir="rtl"] .carousel .carousel-right-arrow.carousel-arrow-default:before {
+    padding-right: 2px;
+    padding-left: unset;
+  }
+
+  /* GLOBAL FIX FOR ALL 13 SECTIONS: Forces vertical layout to align horizontally */
+  ul.carousel-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Prevents thumbnails from shrinking or breaking vertical columns */
+  li.carousel-slide {
+    flex-shrink: 0 !important;
+    width: 85% !important;
+    max-width: 450px !important;
+    height: auto !important;
+    min-height: auto !important;
+    scroll-snap-align: center !important;
+    list-style: none !important;
+    display: inline-block !important;
+  }
+
+  /* Stabilizes your viewports so they do not collapse */
+  .carousel-viewport {
+    height: auto !important;
+    min-height: 400px !important;
+    overflow: hidden !important;
+  }
+
+  li.carousel-slide img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+</style>
+
 <script>"use strict";
 
 if ('serviceWorker' in navigator) {
