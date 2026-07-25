@@ -3,22 +3,17 @@
     {
       "id": "red-cross-hispanic-drive-gallery-album",
       "name": "Red Cross Hispanic Community Drive",
+      "description": "Photos from the Annual Red Cross Hispanic Community Drive. [Annual Report I wrote and designed accessible here <a href='https://unanca.org' target='_blank' style='color: #0088cc; text-decoration: underline; font-weight: bold;'>here</a>].",
       "media": [
-       { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" },
-        { "id": "r-2", "src": "/sitepics/rc2.png", "caption": "" },
-        { "id": "r-3", "src": "/sitepics/rc3.png", "caption": "" },
-        { "id": "r-4", "src": "/sitepics/a1.jpg", "caption": "" },
-        { "id": "r-5", "src": "/sitepics/a2.jpg", "caption": "" },
-        { "id": "r-6", "src": "/sitepics/a3.jpg", "caption": "" }
+        { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" }
       ]
     },
     {
       "id": "kenyon-martin-foundation-gallery-album",
       "name": "Kenyon Martin Foundation",
+      "description": "Snapshots capturing volunteer training sessions and community development efforts.",
       "media": [
-        { "id": "k-1", "src": "/sitepics/km1.jpg", "caption": "" },
-        { "id": "k-2", "src": "/sitepics/km2.png", "caption": "" },
-         { "id": "k-3", "src": "/sitepics/km3.png", "caption": "" }
+        { "id": "k-1", "src": "/sitepics/km1.jpg", "caption": "" }
       ]
     }
   ]
