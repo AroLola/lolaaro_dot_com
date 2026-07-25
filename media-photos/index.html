@@ -3349,19 +3349,35 @@ ul#n-12125-navListId-mobile,
   border-color: #ffffff !important;
   transform: translateY(-1px);
 }
-/* FORCES ALL ALBUM DESCRIPTIONS TO RENDER IN SOLID BLACK */
-.gallery-section-wrapper div p {
-  color: #000000 !important;
-  opacity: 1 !important;
-  font-weight: 600 !important;
-}
- 
-/* FORCES ALL CAROUSEL SECTION ALBUM TITLES TO RENDER IN SOLID BLACK */
+/* 1. LIGHTENS TITLES: CHANGES FROM BOLD TO SLEEK SLIM TYPE */
 .gallery-section-wrapper h2.x-el-h2,
 .gallery-section-wrapper h2.x-el-h2 span {
-  color: #000000 !important;
+  color: #333333 !important; /* Soft charcoal black instead of harsh solid black */
+  font-weight: 400 !important; /* Removes the heavy bold thickness */
   opacity: 1 !important;
 }
+
+/* 2. LIGHTENS DESCRIPTIONS */
+.gallery-section-wrapper div p {
+  color: #4a4a4a !important; /* Muted charcoal grey instead of harsh black */
+  font-weight: 400 !important; /* Normal text weight instead of bold */
+  opacity: 1 !important;
+}
+
+/* 3. FIXES PILL BOX VISIBILITY AGAINST LIGHT BACKGROUNDS */
+.filter-nav-pill-btn {
+  color: #333333 !important; /* Dark text so it is visible */
+  background: rgba(0, 0, 0, 0.05) !important; /* Subtle soft grey button background */
+  border: 1px solid rgba(0, 0, 0, 0.15) !important; /* Defined dark border outline */
+}
+
+/* Pill Box Hover State */
+.filter-nav-pill-btn:hover {
+  background: #080d99 !important; /* Pops into your theme's royal dark blue on hover */
+  color: #ffffff !important; /* White text on hover */
+  border-color: #080d99 !important;
+}
+
 
 </style>
 
