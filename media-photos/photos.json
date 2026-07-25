@@ -1,0 +1,21 @@
+{
+  "photoEvents": [
+    {
+      "id": "hbs-connext-gallery-album",
+      "name": "HBS Online Connext - May 2026",
+      "media": [
+        { "id": "h-1", "src": "/sitepics/485a914a-c30e-4b4b-becc-af87e9277cd6.jpg", "caption": "" },
+        { "id": "h-2", "src": "/sitepics/85412c5b-c9ab-4d4e-9726-a7b52980f18e", "caption": "" },
+        { "id": "h-3", "src": "/sitepics/pjday16.jpg", "caption": "" }
+      ]
+    },
+    {
+      "id": "unanca-hr-luncheon-gallery-album",
+      "name": "UNANCA Human Rights Luncheon",
+      "media": [
+        { "id": "c-1", "src": "/sitepics/una1.jpg", "caption": "" },
+        { "id": "c-2", "src": "/sitepics/una2.jpg", "caption": "" }
+      ]
+    }
+  ]
+}
