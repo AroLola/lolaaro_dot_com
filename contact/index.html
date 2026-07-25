@@ -2041,4 +2041,36 @@ if ('serviceWorker' in navigator) {
 <script defer="" src="./scc-c2.min.js" crossorigin=""></script>
 <script>"use strict";Core.utils.onAllowCookieTracking(function () {const queryString = window.location.search;const urlParams = new URLSearchParams(queryString);const whiteList = ['gclid', 'fbclid', 'gdan_clid'];const belongToList = list => item => list.includes(item);const belongToWhiteList = belongToList(whiteList);Array.from(urlParams).forEach(param => {const [queryKey, queryResult] = param;if (!belongToWhiteList(queryKey)) return;localStorage.setItem(queryKey, queryResult);});});
 "use strict";Core.utils.onAllowCookieTracking(() => {if (!document.cookie.includes("x-visitor-id")) {!function (o, i, e = 60) {const t = new Date();t.setTime(t.getTime() + 864e5 * e);const n = `expires=${t.toUTCString()}`;document.cookie = `${o}=${i};${n};path=/`;}("x-visitor-id", crypto.randomUUID(), 60);}});</script><script defer="" src="./v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;5c9457fe1e7849b2b0c4181a04e3e590&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
-<style type="text/css" data-glamor="cxs-media-sheet"></style><script src="./js" async="async"></script><script src="./api.js" id="recaptcha-script" async="true" defer="true"></script><div><div class="grecaptcha-badge" data-style="bottomright" hidden="true" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-pamug3qbs8xi" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./anchor.html"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="saved-resource2.html"></iframe></div><script src="router.js"></script></body></html>
+<style type="text/css" data-glamor="cxs-media-sheet"></style><script src="./js" async="async"></script><script src="./api.js" id="recaptcha-script" async="true" defer="true"></script><div><div class="grecaptcha-badge" data-style="bottomright" hidden="true" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-pamug3qbs8xi" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./anchor.html"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="saved-resource2.html"></iframe></div><script src="router.js"></script>
+<!-- MANUAL TRIGGER TO OPEN BROKEN GODADDY MOBILE HAMBURGER MENUS ON GITHUB -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Target the button and your theme's native mobile navigation container drawers
+    const hamburgerBtn = document.querySelector('a[data-aid="HAMBURGER_MENU_LINK"]');
+    const mobileNavDrawer = document.getElementById('n-32919-navId-mobile') || document.querySelector('[id*="-navId-mobile"]');
+
+    if (hamburgerBtn && mobileNavDrawer) {
+      // Force custom drawer default styles so it handles layout visibility natively
+      mobileNavDrawer.style.transition = "transform 0.3s ease-in-out, opacity 0.3s ease";
+      
+      hamburgerBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // Stop the link from trying to jump the page
+        
+        // 2. Toggle the template's visibility state values directly on click
+        if (mobileNavDrawer.style.display === "block" || mobileNavDrawer.style.opacity === "1") {
+          mobileNavDrawer.style.display = "none";
+          mobileNavDrawer.style.opacity = "0";
+          mobileNavDrawer.style.transform = "translateX(100%)"; // Slides it shut
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+        } else {
+          mobileNavDrawer.style.display = "block";
+          mobileNavDrawer.style.opacity = "1";
+          mobileNavDrawer.style.transform = "translateX(0)"; // Slides it open
+          hamburgerBtn.setAttribute("aria-expanded", "true");
+        }
+      });
+    }
+  });
+</script>
+
+</body></html>
