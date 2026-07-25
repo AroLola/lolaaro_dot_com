@@ -17,8 +17,7 @@
       "id": "unanca-hr-luncheon-gallery-album",
       "name": "UNANCA Human Rights Luncheon",
       "description": "Photos from the Annual UNA-NCA Human Rights Luncheon, held December 10, 2010, at the Cannon House Office Building, Capitol Hill, Washington, D.C..
-Photos also include snapshots from UN Week -- a celebratioon of United Nations Day spread out over a week of events, which we ended with a special tribute for former UNA-NCA president, Andrew E. Rice.
-",
+      Photos also include snapshots from UN Week -- a celebratioon of United Nations Day spread out over a week of events, which we ended with a special tribute for former UNA-NCA president, Andrew E. Rice.",
       "media": [
         { "id": "u-1", "src": "/sitepics/una1.jpg", "caption": "" },
         { "id": "u-2", "src": "/sitepics/una2.jpg", "caption": "" },
@@ -31,7 +30,7 @@ Photos also include snapshots from UN Week -- a celebratioon of United Nations D
         { "id": "u-9", "src": "/sitepics/una9.jpg", "caption": "" },
         { "id": "u-10", "src": "/sitepics/una10.jpg", "caption": "" },
         { "id": "u-11", "src": "/sitepics/una11.jpg", "caption": "" },
-        { "id": "u-12", "src": "/sitepics/una12.jpg", "caption": "" },
+        { "id": "u-12", "src": "/sitepics/una12.jpg", "caption": "" }
       ]
     }
   ]
