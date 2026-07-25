@@ -3,15 +3,14 @@
     {
       "id": "red-cross-hispanic-drive-gallery-album",
       "name": "Red Cross Hispanic Community Drive",
-      "description": "Photos from the Annual Red Cross Hispanic Community Drive. [Annual Report I wrote and designed accessible here <a href='https://unanca.org' target='_blank' style='color: #0088cc; text-decoration: underline; font-weight: bold;'>here</a>].",
-      "media": [
+      "description": "Red Cross - Hispanic Community Drive. Full album accessible here <a href='https://www.flickr.com/photos/dfwredcross/albums/72157635571453372/' target='_blank' style='color: #00e6ff; text-decoration: underline; font-weight: bold;'>here</a>.",    "media": [
         { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" }
       ]
     },
     {
       "id": "kenyon-martin-foundation-gallery-album",
       "name": "Kenyon Martin Foundation",
-      "description": "Snapshots capturing volunteer training sessions and community development efforts.",
+      "description": "Basketball camp for kids in, Dallas, TX , funded by NY Knicks Power Forward, Kenyon Martin’s Foundation. Collage 1: Kenyon Martin Foundation summer basketball camp. Collages 2 & 3: Soireé & fundraiser",
       "media": [
         { "id": "k-1", "src": "/sitepics/km1.jpg", "caption": "" }
       ]
