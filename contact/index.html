@@ -1836,10 +1836,15 @@ ul[role="menu"] li a:hover,
     text-decoration: none !important;
 }
 
-/* SURGICAL WIPE LOGIC FOR ALL REPEATING STICKY CODE SITES */
-a[data-aid="HAMBURGER_MENU_LINK"],
-div[id*="-navId-mobile"],
-div[id*="-navContainerId-mobile"],
+ a[data-aid="HAMBURGER_MENU_LINK"] {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    width: auto !important;
+    pointer-events: auto !important;
+}
+ 
 ul[id*="-navListId-mobile"],
 #n-12125-navListId-mobile,
 ul#n-12125-navListId-mobile,
