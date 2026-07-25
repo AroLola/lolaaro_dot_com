@@ -3,9 +3,9 @@
     {
       "id": "red-cross-hispanic-drive-gallery-album",
       "name": "Red Cross Hispanic Community Drive",
-      "description": "Red Cross - Hispanic Community Drive. Full album accessible here <a href='https://www.flickr.com/photos/dfwredcross/albums/72157635571453372/' target='_blank' style='color: #00e6ff; text-decoration: underline; font-weight: bold;'>here</a>.",    "media": [
-     "media": [
-       { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" },
+      "description": "Red Cross - Hispanic Community Drive. Full album accessible here <a href='https://www.flickr.com/photos/dfwredcross/albums/72157635571453372/' target='_blank' style='color: #00e6ff; text-decoration: underline; font-weight: bold;'>here</a>.",    
+      "media": [
+        { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" },
         { "id": "r-2", "src": "/sitepics/rc2.png", "caption": "" },
         { "id": "r-3", "src": "/sitepics/rc3.png", "caption": "" },
         { "id": "r-4", "src": "/sitepics/a1.jpg", "caption": "" },
