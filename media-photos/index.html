@@ -3381,6 +3381,20 @@ ul#n-12125-navListId-mobile,
   border-color: #080d99 !important;
 }
 
+ /* BREAKS THE TOUCH SCREEN FREEZE BY REMOVING THE INVISIBLE BACKDROP OVERLAY */
+div[class*="FlyoutMenu"],
+div[class*="MobileFlyoutMenu"],
+div[id*="freemium-ad"] {
+    pointer-events: none !important;
+    display: none !important;
+    z-index: -9999 !important;
+}
+
+/* KEEPS ONLY YOUR EXPLICIT LINKS INTERACTIVE */
+div[id*="-navId-mobile"],
+div[id*="-navId-mobile"] * {
+    pointer-events: auto !important;
+}
 
 </style>
 
