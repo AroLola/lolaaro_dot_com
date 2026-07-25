@@ -4,7 +4,13 @@
       "id": "red-cross-hispanic-drive-gallery-album",
       "name": "Red Cross Hispanic Community Drive",
       "description": "Red Cross - Hispanic Community Drive. Full album accessible here <a href='https://www.flickr.com/photos/dfwredcross/albums/72157635571453372/' target='_blank' style='color: #00e6ff; text-decoration: underline; font-weight: bold;'>here</a>.",    "media": [
-        { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" }
+     "media": [
+       { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" },
+        { "id": "r-2", "src": "/sitepics/rc2.png", "caption": "" },
+        { "id": "r-3", "src": "/sitepics/rc3.png", "caption": "" },
+        { "id": "r-4", "src": "/sitepics/a1.jpg", "caption": "" },
+        { "id": "r-5", "src": "/sitepics/a2.jpg", "caption": "" },
+        { "id": "r-6", "src": "/sitepics/a3.jpg", "caption": "" }
       ]
     },
     {
@@ -12,7 +18,9 @@
       "name": "Kenyon Martin Foundation",
       "description": "Basketball camp for kids in, Dallas, TX , funded by NY Knicks Power Forward, Kenyon Martin’s Foundation. Collage 1: Kenyon Martin Foundation summer basketball camp. Collages 2 & 3: Soireé & fundraiser",
       "media": [
-        { "id": "k-1", "src": "/sitepics/km1.jpg", "caption": "" }
+        { "id": "k-1", "src": "/sitepics/km1.jpg", "caption": "" },
+        { "id": "k-2", "src": "/sitepics/km2.png", "caption": "" },
+         { "id": "k-3", "src": "/sitepics/km3.png", "caption": "" }
       ]
     }
   ]
