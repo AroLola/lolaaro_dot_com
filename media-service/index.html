@@ -2399,12 +2399,11 @@ ul#n-12125-navListId-mobile,
 /* ---- chunk 1: GLOBAL INDEPENDENT NAVIGATION MENU ZERO GODADDY TAGS; Chunk 2: Enables smooth native swipe on mobile*/  
 /*-- chunk 3: Mobile responsive fallback: align left and allow scroll if links overflow; chunk 4: THE NAV PILL BUTTONS */  
 /*-- chunk 5: HOVER & ACTIVE FEEDBACK STATES; chunk 6: Shifts text to theme dark blue; chunk 7:FORCE-HIDE ALL OF GODADDY'S ORIGINAL BROKEN MENUS PERMANENTLY */  
-<style>
-global-nav-wrapper {
+ .global-nav-wrapper {
   width: 100% !important;
-  background-color: rgb(8, 13, 153) !important;  
+  background-color: rgb(8, 13, 153) !important; /* FORCES YOUR SOLID ROYAL BLUE BACKGROUND */
   padding: 16px 0 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
   display: flex !important;
   justify-content: center !important;
   box-sizing: border-box !important;
@@ -2415,48 +2414,59 @@ global-nav-wrapper {
 .global-nav-container {
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;  
+  flex-wrap: wrap !important; /* FIXED DESKTOP: Wraps buttons to a second row instead of stretching off-screen */
   justify-content: center !important;
-  gap: 12px !important;
-  max-width: 1200px !important;
+  gap: 12px 10px !important; /* Adds clean spacing between vertical rows */
+  max-width: 1100px !important;
   width: 100% !important;
-  padding: 0 16px !important;
+  padding: 0 20px !important;
   box-sizing: border-box !important;
-  -webkit-overflow-scrolling: touch !important;
 }
 
+/* FIXED MOBILE: Switches from wrapping into a smooth horizontal swipe-tray on small screens */
 @media (max-width: 768px) {
+  .global-nav-wrapper {
+    background-color: rgb(5, 9, 110) !important; /* Slightly darker midnight blue for distinct mobile separation */
+    padding: 12px 0 !important;
+  }
   .global-nav-container {
-    justify-content: flex-start !important;
+    flex-wrap: nowrap !important; /* Keeps pills in a single line on mobile */
+    justify-content: flex-start !important; /* Aligns items to the left to indicate scroll direction */
+    overflow-x: auto !important; /* Activates fluid horizontal touch swiping */
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important; /* Accelerates touch scrolling on iOS and Android */
+    padding-bottom: 4px !important; /* Extra room for a clean scroll boundary */
   }
 }
 
+/* THE NAV PILL BUTTONS (STABILIZED CONTRAST FOR LIGHT BACKGROUND BLOCKS) */
 .global-nav-pill-item {
   display: inline-block !important;
   white-space: nowrap !important;
-  padding: 10px 20px !important;
+  padding: 10px 18px !important;
   border-radius: 9999px !important;
   font-family: system-ui, -apple-system, sans-serif !important;
-  font-size: 0.9rem !important;
+  font-size: 0.88rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important; /* Crisp white text readable against dark blue */
+  background: rgba(255, 255, 255, 0.15) !important; /* Semi-transparent white capsule fill */
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   text-decoration: none !important;
-  transition: all 0.25s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
   cursor: pointer !important;
 }
 
+/* HOVER & PRESENTATION PAGE HIGH-CONTRAST SELECTION POP */
 .global-nav-pill-item:hover,
 .global-nav-pill-item.active-page {
-  background: #ffffff !important;
-  color: #080d99 !important; 
+  background: #ffffff !important; /* Pops to clean, solid bright white */
+  color: #080d99 !important; /* Flips text to your bold dark blue theme color */
   border-color: #ffffff !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
+/* PERMANENT SUPPRESSION OF BROKEN THEME BLOCKS */
 #freemium-ad,
 div[class*="widget-header"],
 div[class*="widget-navigation"],
@@ -2470,6 +2480,7 @@ div[id*="-navContainerId-mobile"] {
   pointer-events: none !important;
   height: 0 !important;
 }
+
 </style>
 
 <!-- END CAROUSEL LIGHTBOX-->
