@@ -3087,13 +3087,10 @@ if ('serviceWorker' in navigator) {
 </style>
 
   <!-- START OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET -->
-<style id="global-navigation-and-pdf-override">
-/* ==================================================== */
-/* REFINED DROPDOWN NAV (DARKER ROYAL BLUE BACKDROP)    */
-/* ==================================================== */
+  <style>
 .global-nav-wrapper {
   width: 100% !important;
-  background-color: rgb(4, 7, 92) !important; /* Deep, rich dark royal blue */
+  background-color: rgb(4, 7, 92) !important; /* UPDATED: Deep, rich dark royal blue color backdrop */
   padding: 16px 0 !important;
   border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important;
   display: flex !important;
@@ -3126,7 +3123,7 @@ if ('serviceWorker' in navigator) {
   font-size: 0.88rem !important;
   font-weight: 600 !important;
   color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.12) !important; /* Slightly softened capsule overlay contrast */
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
   text-decoration: none !important;
   transition: all 0.2s ease-in-out !important;
@@ -3137,7 +3134,7 @@ if ('serviceWorker' in navigator) {
 .global-nav-pill-item.active-page,
 .global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
   background: #ffffff !important;
-  color: rgb(4, 7, 92) !important; /* Flips text to dark royal blue */
+  color: rgb(4, 7, 92) !important; /* Flips text directly to your dark theme color text */
   border-color: #ffffff !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
@@ -3192,7 +3189,7 @@ if ('serviceWorker' in navigator) {
 /* RESPONSIVE MOBILE DROP-DOWN HANDLERS */
 @media (max-width: 768px) {
   .global-nav-wrapper {
-    background-color: rgb(2, 4, 56) !important; /* Midnight dark blue for mobile */
+    background-color: rgb(2, 4, 56) !important; /* Midnight dark shade blue logic for mobile device frames */
   }
   .global-nav-container {
     flex-direction: column !important;
@@ -3265,6 +3262,7 @@ section[class*="Welcome"] {
 }
 </style>
 <!-- END OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET -->
+
 
 <script>
   /* ==========================================================================
