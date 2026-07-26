@@ -2342,239 +2342,12 @@
 }
 </style>
 
-<style>
-/* ==========================================================================
-   SECTION 1: DESKTOP SINGLE ROW BUTTON LAYOUT
-   ========================================================================== */
-ul[data-ux="List"] {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-ul[data-ux="List"] li {
-    display: inline-block !important;
-    white-space: nowrap !important;
-}
-
-ul[data-ux="List"] li a,
-.nav-item a,
-div[id^="bs-"] a {
-    display: inline-block !important;
-    padding: 6px 14px !important;
-    margin: 2px 4px !important;
-    border-radius: 6px !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    color: #dedebd !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    font-family: sans-serif !important;
-}
-
-ul[data-ux="List"] li a:hover, 
-.nav-item a:hover,
-div[id^="bs-"] a:hover,
-ul[data-ux="List"] li a:active, 
-.nav-item a:active,
-ul[data-ux="List"] li a:focus,
-.nav-item a:focus {
-    background-color: #060645 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-color: #060645 !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* ==========================================================================
-   SECTION 2: DROPDOWN CLOSERS AND SNAP-OPEN TRIGGERS
-   ========================================================================== */
-ul[data-ux="NavDropdown"], 
-ul[role="menu"],
-[id*="more-"],
-ul#more-32864 {
-    display: none !important;
-    background-color: #00000a !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-    padding: 6px !important;
-}
-
-li:hover > ul[data-ux="NavDropdown"],
-li:hover > ul[role="menu"],
-li:hover > [id*="more-"],
-div:hover + ul[data-ux="NavDropdown"],
-div[id^="bs-"]:hover > ul {
-    display: block !important;
-    position: absolute !important;
-    z-index: 99999 !important;
-}
-
-ul[data-ux="NavDropdown"] li a,
-ul[role="menu"] li a,
-[id*="more-"] li a {
-    border-radius: 4px !important;
-    margin: 1px 0 !important;
-    padding: 6px 12px !important;
-    display: block !important;
-    border: none !important;
-    background: transparent !important;
-    color: #dedebd !important;
-    text-align: left !important;
-    text-decoration: none !important;
-}
-
-ul[data-ux="NavDropdown"] li a:hover,
-ul[role="menu"] li a:hover,
-[id*="more-"] li a:hover {
-    background-color: #060645 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-}
-
-/* ==========================================================================
-   SECTION 3: SURGICAL HIDDEN DUPLICATE MOBILE DRAWER LOGIC
-   ========================================================================== */
-a[data-aid="HAMBURGER_MENU_LINK"],
-div[id*="-navId-mobile"],
-div[id*="-navContainerId-mobile"],
-ul[id*="-navListId-mobile"],
-#n-12125-navListId-mobile,
-ul#n-12125-navListId-mobile,
-#n-32856-navId-mobile {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-}
-</style>
-<style>
-/* ==========================================================================
-   SECTION 1: DESKTOP SINGLE ROW BUTTON LAYOUT
-   ========================================================================== */
-ul[data-ux="List"] {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-ul[data-ux="List"] li {
-    display: inline-block !important;
-    white-space: nowrap !important;
-}
-
-ul[data-ux="List"] li a,
-.nav-item a,
-div[id^="bs-"] a {
-    display: inline-block !important;
-    padding: 6px 14px !important;
-    margin: 2px 4px !important;
-    border-radius: 6px !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    color: #dedebd !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    font-family: sans-serif !important;
-}
-
-ul[data-ux="List"] li a:hover, 
-.nav-item a:hover,
-div[id^="bs-"] a:hover,
-ul[data-ux="List"] li a:active, 
-.nav-item a:active,
-ul[data-ux="List"] li a:focus,
-.nav-item a:focus {
-    background-color: #060645 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-color: #060645 !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* ==========================================================================
-   SECTION 2: DROPDOWN CLOSERS AND SNAP-OPEN TRIGGERS
-   ========================================================================== */
-ul[data-ux="NavDropdown"], 
-ul[role="menu"],
-[id*="more-"],
-ul#more-32864 {
-    display: none !important;
-    background-color: #00000a !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-    padding: 6px !important;
-}
-
-li:hover > ul[data-ux="NavDropdown"],
-li:hover > ul[role="menu"],
-li:hover > [id*="more-"],
-div:hover + ul[data-ux="NavDropdown"],
-div[id^="bs-"]:hover > ul {
-    display: block !important;
-    position: absolute !important;
-    z-index: 99999 !important;
-}
-
-ul[data-ux="NavDropdown"] li a,
-ul[role="menu"] li a,
-[id*="more-"] li a {
-    border-radius: 4px !important;
-    margin: 1px 0 !important;
-    padding: 6px 12px !important;
-    display: block !important;
-    border: none !important;
-    background: transparent !important;
-    color: #dedebd !important;
-    text-align: left !important;
-    text-decoration: none !important;
-}
-
-ul[data-ux="NavDropdown"] li a:hover,
-ul[role="menu"] li a:hover,
-[id*="more-"] li a:hover {
-    background-color: #060645 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-}
-  a[data-aid="HAMBURGER_MENU_LINK"] {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    width: auto !important;
-    pointer-events: auto !important;
-}
-ul[id*="-navListId-mobile"],
-#n-12125-navListId-mobile,
-ul#n-12125-navListId-mobile,
-#n-32856-navId-mobile {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-}
-
-    /* ---- chunk 1: GLOBAL INDEPENDENT NAVIGATION MENU ZERO GODADDY TAGS; Chunk 2: Enables smooth native swipe on mobile*/  
-/*-- chunk 3: Mobile responsive fallback: align left and allow scroll if links overflow; chunk 4: THE NAV PILL BUTTONS */  
-/*-- chunk 5: HOVER & ACTIVE FEEDBACK STATES; chunk 6: Shifts text to theme dark blue; chunk 7:FORCE-HIDE ALL OF GODADDY'S ORIGINAL BROKEN MENUS PERMANENTLY */  
+  <style>
 .global-nav-wrapper {
   width: 100% !important;
-  background-color: rgb(8, 13, 153) !important; /* FORCES YOUR SOLID ROYAL BLUE BACKGROUND */
+  background-color: rgb(19, 20, 33) !important; /* UPDATED: Deep, rich dark royal blue color backdrop */
   padding: 16px 0 !important;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important;
   display: flex !important;
   justify-content: center !important;
   box-sizing: border-box !important;
@@ -2585,33 +2358,18 @@ ul#n-12125-navListId-mobile,
 .global-nav-container {
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: wrap !important; /* FIXED DESKTOP: Wraps buttons to a second row instead of stretching off-screen */
+  flex-wrap: wrap !important;
   justify-content: center !important;
-  gap: 12px 10px !important; /* Adds clean spacing between vertical rows */
+  align-items: center !important;
+  gap: 12px 10px !important;
   max-width: 1100px !important;
   width: 100% !important;
   padding: 0 20px !important;
   box-sizing: border-box !important;
 }
 
-/* FIXED MOBILE: Switches from wrapping into a smooth horizontal swipe-tray on small screens */
-@media (max-width: 768px) {
-  .global-nav-wrapper {
-    background-color: rgb(5, 9, 110) !important; /* Slightly darker midnight blue for distinct mobile separation */
-    padding: 12px 0 !important;
-  }
-  .global-nav-container {
-    flex-wrap: nowrap !important; /* Keeps pills in a single line on mobile */
-    justify-content: flex-start !important; /* Aligns items to the left to indicate scroll direction */
-    overflow-x: auto !important; /* Activates fluid horizontal touch swiping */
-    overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch !important; /* Accelerates touch scrolling on iOS and Android */
-    padding-bottom: 4px !important; /* Extra room for a clean scroll boundary */
-  }
-}
-
-/* THE NAV PILL BUTTONS (STABILIZED CONTRAST FOR LIGHT BACKGROUND BLOCKS) */
-.global-nav-pill-item {
+/* THE NAV PILL BUTTONS */
+.global-nav-pill-item, .global-nav-dropdown-trigger {
   display: inline-block !important;
   white-space: nowrap !important;
   padding: 10px 18px !important;
@@ -2619,31 +2377,127 @@ ul#n-12125-navListId-mobile,
   font-family: system-ui, -apple-system, sans-serif !important;
   font-size: 0.88rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important; /* Crisp white text readable against dark blue */
-  background: rgba(255, 255, 255, 0.15) !important; /* Semi-transparent white capsule fill */
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important; /* Slightly softened capsule overlay contrast */
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
   text-decoration: none !important;
   transition: all 0.2s ease-in-out !important;
   cursor: pointer !important;
 }
 
-/* HOVER & PRESENTATION PAGE HIGH-CONTRAST SELECTION POP */
 .global-nav-pill-item:hover,
-.global-nav-pill-item.active-page {
-  background: #ffffff !important; /* Pops to clean, solid bright white */
-  color: #080d99 !important; /* Flips text to your bold dark blue theme color */
+.global-nav-pill-item.active-page,
+.global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
+  background: #ffffff !important;
+  color: rgb(4, 7, 92) !important; /* Flips text directly to your dark theme color text */
   border-color: #ffffff !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* PERMANENT SUPPRESSION OF BROKEN THEME BLOCKS */
-#freemium-ad,
-div[class*="widget-header"],
-div[class*="widget-navigation"],
-nav[data-ux="Block"],
-a[data-aid="HAMBURGER_MENU_LINK"],
-div[id*="-navId-mobile"],
+/* THE DROPDOWN POSITIONING ARCHITECTURE */
+.global-nav-dropdown-container {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.global-nav-dropdown-menu {
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(8px) !important;
+  background-color: #ffffff !important;
+  min-width: 220px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  padding: 8px 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  z-index: 1000000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.global-nav-dropdown-container:hover .global-nav-dropdown-menu {
+  display: block !important;
+}
+
+.global-nav-dropdown-link {
+  display: block !important;
+  padding: 10px 20px !important;
+  color: #333333 !important;
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  text-align: left !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.global-nav-dropdown-link:hover,
+.global-nav-dropdown-link.active-subpage {
+  background-color: rgba(4, 7, 92, 0.08) !important;
+  color: rgb(4, 7, 92) !important;
+}
+
+/* RESPONSIVE MOBILE DROP-DOWN HANDLERS */
+@media (max-width: 768px) {
+  .global-nav-wrapper {
+    background-color: rgb(0, 2, 20) !important; /* Midnight dark shade blue logic for mobile device frames */
+  }
+  .global-nav-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    padding: 0 16px !important;
+  }
+  .global-nav-dropdown-container {
+    width: 100% !important;
+  }
+  .global-nav-dropdown-trigger, .global-nav-pill-item {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .global-nav-dropdown-container:hover .global-nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    display: block !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    margin-top: 4px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  .global-nav-dropdown-link {
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 12px 20px !important;
+  }
+  .global-nav-dropdown-link:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+  }
+}
+
+/* MOBILE PDF AUTO-FIT FIX RESIZER */
+iframe[src*=".pdf"], object[data*=".pdf"], embed[src*=".pdf"], .pdf-viewer-frame {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 500px !important;
+  height: 75vh !important;
+  box-sizing: border-box !important;
+}
+
+/* Permanent concealment of broken site builder scripts - ADJUSTED FOR INDEX */
+#freemium-ad, 
+div[class*="widget-navigation"], 
+nav[data-ux="Block"], 
+a[data-aid="HAMBURGER_MENU_LINK"], 
+div[id*="-navId-mobile"], 
 div[id*="-navContainerId-mobile"] {
   display: none !important;
   visibility: hidden !important;
@@ -2651,7 +2505,18 @@ div[id*="-navContainerId-mobile"] {
   pointer-events: none !important;
   height: 0 !important;
 }
+
+/* SAFELY FORCES YOUR INDEX WELCOME HEADER BANNER BOX TO BE VISIBLE */
+header[data-aid="HEADER"], 
+div[class*="Welcome"], 
+section[class*="Welcome"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
 </style>
+<!-- END OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET --> 
 
 <script>
   /* ==========================================================================
@@ -2709,23 +2574,31 @@ if ('serviceWorker' in navigator) {
 }</script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-layout28-Theme-publish-Theme-bd6e6d3f.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-_rollupPluginBabelHelpers-5804ec33.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-defaultSocialIconPack-a2c518b6.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-imageToHeaderTreatments-cbda470b.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-index-52fbaa26.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-index2-30d4bb8e.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-index3-f772c0ef.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-linkIndicator-c1af92dd.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-loaders-fffeeba5.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-modernThinRound-ced97fbd.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-overlayTypes-6afcb3a5.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/Carousel-7574d33c.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/ColorSwatch-4196a0a9.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/DynamicFontScaler-6cccd626.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-dataAids-dc689f22.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-navigationDrawer-27f5f1f5.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-searchFormLocations-c86f2a99.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/_commonjsHelpers-67085353.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/_react_commonjs-external-a1351e34.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/_rollupPluginBabelHelpers-8ce54c82.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/interopRequireDefault-c83974f7.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/dynamicFontScaler-ecd443bf.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-FlyoutMenu-Component-b4b95853.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-LinkAwareComponent-0e7597ad.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-Toggle-0f009dec.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-Hamburger-Component-8956ad4f.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-MobileFlyoutMenu-Component-cde69336.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-Component-d5508f7a.js.download"></script><script crossorigin="Anonymous" src="./Publications_Reports_files/bs-AbsLink-5de6a485.js.download"></script><script src="./Publications_Reports_files/pdf.min.js.download"></script><script src="./Publications_Reports_files/pdf.min.js.download"></script>
 </head>
 <body class="x  x-fonts-josefin-slab x-fonts-italiana x-fonts-josefin-slab x-fonts-righteous x-fonts-dancing-script x-fonts-eb-garamond">
-  <!-- THE STABLE GLOBAL MENU BAR -->
+<!-- THE STABLE INDEPENDENT SINGLE-DROPDOWN NAVIGATION BAR -->
 <div class="global-nav-wrapper">
   <div class="global-nav-container">
     
-    <!-- class to include "active-page" to highlight the page the user is currently on -->
-   <a href="https://lolaarowolo.com" class="global-nav-pill-item">Home</a>
-    <a href="https://lolaarowolo.com/media-photos/" class="global-nav-pill-item">Photos</a>
-    <a href="https://lolaarowolo.com/media-service/" class="global-nav-pill-item">Service</a>
-    <a href="https://lolaarowolo.com/publications-white-papers/" class="global-nav-pill-item">White Papers</a>
-    <a href="https://lolaarowolo.com/publications-reports/" class="global-nav-pill-item">Reports</a>
-    <a href="https://lolaarowolo.com/publications-contributions/" class="global-nav-pill-item">Contributions</a>
-    <a href="https://lolaarowolo.com/publications-lectures/" class="global-nav-pill-item">Lectures</a>
-    <a href="https://lolaarowolo.com/professional-experience/" class="global-nav-pill-item">Professional Experience</a>
-    <a href="https://lolaarowolo.com/contact/" class="global-nav-pill-item">Contact</a>
-      
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Home</a>
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Photos</a>
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Service</a>
+    
+    <!-- SINGLE PUBLICATIONS DROPDOWN BUCKET -->
+    <div class="global-nav-dropdown-container">
+      <a class="global-nav-dropdown-trigger">Publications ▾</a>
+      <div class="global-nav-dropdown-menu">
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link">White Papers</a>
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link">Reports</a>
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link">Contributions</a>
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link">Lectures</a>
+      </div>
+    </div>
+    
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Professional Experience</a>
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Contact</a>
+
   </div>
 </div>
+
 
   <!-- reports layout -->
   <div id="layout-6-a-88-dc-85-1938-47-c-8-a-24-d-4-fd-9523-a-22-aa" class="layout layout-layout layout-layout-layout-28 locale-en-US lang-en">
