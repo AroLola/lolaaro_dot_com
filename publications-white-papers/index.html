@@ -4149,6 +4149,80 @@ ul#n-12125-navListId-mobile,
     overflow: hidden !important;
     pointer-events: none !important;
 }
+  /* ---- chunk 1: GLOBAL INDEPENDENT NAVIGATION MENU ZERO GODADDY TAGS; Chunk 2: Enables smooth native swipe on mobile*/  
+/*-- chunk 3: Mobile responsive fallback: align left and allow scroll if links overflow; chunk 4: THE NAV PILL BUTTONS */  
+/*-- chunk 5: HOVER & ACTIVE FEEDBACK STATES; chunk 6: Shifts text to theme dark blue; chunk 7:FORCE-HIDE ALL OF GODADDY'S ORIGINAL BROKEN MENUS PERMANENTLY */  
+<style>
+global-nav-wrapper {
+  width: 100% !important;
+  background-color: rgb(8, 13, 153) !important;  
+  padding: 16px 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: flex !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 999999 !important;
+}
+
+.global-nav-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;  
+  justify-content: center !important;
+  gap: 12px !important;
+  max-width: 1200px !important;
+  width: 100% !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+@media (max-width: 768px) {
+  .global-nav-container {
+    justify-content: flex-start !important;
+  }
+}
+
+.global-nav-pill-item {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  padding: 10px 20px !important;
+  border-radius: 9999px !important;
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease-in-out !important;
+  cursor: pointer !important;
+}
+
+.global-nav-pill-item:hover,
+.global-nav-pill-item.active-page {
+  background: #ffffff !important;
+  color: #080d99 !important; 
+  border-color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+#freemium-ad,
+div[class*="widget-header"],
+div[class*="widget-navigation"],
+nav[data-ux="Block"],
+a[data-aid="HAMBURGER_MENU_LINK"],
+div[id*="-navId-mobile"],
+div[id*="-navContainerId-mobile"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+}
 </style>
 
 <script>
@@ -4225,6 +4299,24 @@ if ('serviceWorker' in navigator) {
  </head>
  <!-- pdfs begin -->
   <body class="x  x-fonts-josefin-slab x-fonts-righteous x-fonts-playfair-display x-fonts-dancing-script x-fonts-eb-garamond">
+ <!-- THE STABLE GLOBAL MENU BAR -->
+<div class="global-nav-wrapper">
+  <div class="global-nav-container">
+    
+    <!-- class to include "active-page" to highlight the page the user is currently on -->
+   <a href="https://lolaarowolo.com" class="global-nav-pill-item">Home</a>
+    <a href="https://lolaarowolo.com/media-photos/" class="global-nav-pill-item">Photos</a>
+    <a href="https://lolaarowolo.com/media-service/" class="global-nav-pill-item">Service</a>
+    <a href="https://lolaarowolo.com/publications-white-papers/" class="global-nav-pill-item">White Papers</a>
+    <a href="https://lolaarowolo.com/publications-reports/" class="global-nav-pill-item">Reports</a>
+    <a href="https://lolaarowolo.com/publications-contributions/" class="global-nav-pill-item">Contributions</a>
+    <a href="https://lolaarowolo.com/publications-lectures/" class="global-nav-pill-item">Lectures</a>
+    <a href="https://lolaarowolo.com/professional-experience/" class="global-nav-pill-item">Professional Experience</a>
+    <a href="https://lolaarowolo.com/contact/" class="global-nav-pill-item">Contact</a>
+      
+  </div>
+</div>
+   
   <div id="layout-6-a-88-dc-85-1938-47-c-8-a-24-d-4-fd-9523-a-22-aa" class="layout layout-layout layout-layout-layout-28 locale-en-US lang-en">
 <div data-ux="Page" id="page-12124" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-4 c1-5 c1-6 c1-7 c1-8 c1-9 c1-a c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
   <div data-ux="Block" class="x-el x-el-div page-inner c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
