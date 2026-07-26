@@ -3240,13 +3240,28 @@ iframe[src*=".pdf"], object[data*=".pdf"], embed[src*=".pdf"], .pdf-viewer-frame
   box-sizing: border-box !important;
 }
 
-/* Permanent concealment of broken site builder scripts */
-#freemium-ad, div[class*="widget-header"], div[class*="widget-navigation"], nav[data-ux="Block"], a[data-aid="HAMBURGER_MENU_LINK"], div[id*="-navId-mobile"], div[id*="-navContainerId-mobile"] {
+/* Permanent concealment of broken site builder scripts - ADJUSTED FOR INDEX */
+#freemium-ad, 
+div[class*="widget-navigation"], 
+nav[data-ux="Block"], 
+a[data-aid="HAMBURGER_MENU_LINK"], 
+div[id*="-navId-mobile"], 
+div[id*="-navContainerId-mobile"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
   height: 0 !important;
+}
+
+/* SAFELY FORCES YOUR INDEX WELCOME HEADER BANNER BOX TO BE VISIBLE */
+header[data-aid="HEADER"], 
+div[class*="Welcome"], 
+section[class*="Welcome"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
 }
 </style>
 <!-- END OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET -->
