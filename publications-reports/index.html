@@ -2566,7 +2566,91 @@ ul#n-12125-navListId-mobile,
     overflow: hidden !important;
     pointer-events: none !important;
 }
-  
+
+    /* ---- chunk 1: GLOBAL INDEPENDENT NAVIGATION MENU ZERO GODADDY TAGS; Chunk 2: Enables smooth native swipe on mobile*/  
+/*-- chunk 3: Mobile responsive fallback: align left and allow scroll if links overflow; chunk 4: THE NAV PILL BUTTONS */  
+/*-- chunk 5: HOVER & ACTIVE FEEDBACK STATES; chunk 6: Shifts text to theme dark blue; chunk 7:FORCE-HIDE ALL OF GODADDY'S ORIGINAL BROKEN MENUS PERMANENTLY */  
+.global-nav-wrapper {
+  width: 100% !important;
+  background-color: rgb(8, 13, 153) !important; /* FORCES YOUR SOLID ROYAL BLUE BACKGROUND */
+  padding: 16px 0 !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
+  display: flex !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 999999 !important;
+}
+
+.global-nav-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important; /* FIXED DESKTOP: Wraps buttons to a second row instead of stretching off-screen */
+  justify-content: center !important;
+  gap: 12px 10px !important; /* Adds clean spacing between vertical rows */
+  max-width: 1100px !important;
+  width: 100% !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* FIXED MOBILE: Switches from wrapping into a smooth horizontal swipe-tray on small screens */
+@media (max-width: 768px) {
+  .global-nav-wrapper {
+    background-color: rgb(5, 9, 110) !important; /* Slightly darker midnight blue for distinct mobile separation */
+    padding: 12px 0 !important;
+  }
+  .global-nav-container {
+    flex-wrap: nowrap !important; /* Keeps pills in a single line on mobile */
+    justify-content: flex-start !important; /* Aligns items to the left to indicate scroll direction */
+    overflow-x: auto !important; /* Activates fluid horizontal touch swiping */
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important; /* Accelerates touch scrolling on iOS and Android */
+    padding-bottom: 4px !important; /* Extra room for a clean scroll boundary */
+  }
+}
+
+/* THE NAV PILL BUTTONS (STABILIZED CONTRAST FOR LIGHT BACKGROUND BLOCKS) */
+.global-nav-pill-item {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  padding: 10px 18px !important;
+  border-radius: 9999px !important;
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important; /* Crisp white text readable against dark blue */
+  background: rgba(255, 255, 255, 0.15) !important; /* Semi-transparent white capsule fill */
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease-in-out !important;
+  cursor: pointer !important;
+}
+
+/* HOVER & PRESENTATION PAGE HIGH-CONTRAST SELECTION POP */
+.global-nav-pill-item:hover,
+.global-nav-pill-item.active-page {
+  background: #ffffff !important; /* Pops to clean, solid bright white */
+  color: #080d99 !important; /* Flips text to your bold dark blue theme color */
+  border-color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* PERMANENT SUPPRESSION OF BROKEN THEME BLOCKS */
+#freemium-ad,
+div[class*="widget-header"],
+div[class*="widget-navigation"],
+nav[data-ux="Block"],
+a[data-aid="HAMBURGER_MENU_LINK"],
+div[id*="-navId-mobile"],
+div[id*="-navContainerId-mobile"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+}
 </style>
 
 <script>
@@ -2599,81 +2683,6 @@ ul#n-12125-navListId-mobile,
     });
   });
 
-  /* ---- chunk 1: GLOBAL INDEPENDENT NAVIGATION MENU ZERO GODADDY TAGS; Chunk 2: Enables smooth native swipe on mobile*/  
-/*-- chunk 3: Mobile responsive fallback: align left and allow scroll if links overflow; chunk 4: THE NAV PILL BUTTONS */  
-/*-- chunk 5: HOVER & ACTIVE FEEDBACK STATES; chunk 6: Shifts text to theme dark blue; chunk 7:FORCE-HIDE ALL OF GODADDY'S ORIGINAL BROKEN MENUS PERMANENTLY */  
-<style>
-global-nav-wrapper {
-  width: 100% !important;
-  background-color: rgb(8, 13, 153) !important;  
-  padding: 16px 0 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  display: flex !important;
-  justify-content: center !important;
-  box-sizing: border-box !important;
-  position: relative !important;
-  z-index: 999999 !important;
-}
-
-.global-nav-container {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;  
-  justify-content: center !important;
-  gap: 12px !important;
-  max-width: 1200px !important;
-  width: 100% !important;
-  padding: 0 16px !important;
-  box-sizing: border-box !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-
-@media (max-width: 768px) {
-  .global-nav-container {
-    justify-content: flex-start !important;
-  }
-}
-
-.global-nav-pill-item {
-  display: inline-block !important;
-  white-space: nowrap !important;
-  padding: 10px 20px !important;
-  border-radius: 9999px !important;
-  font-family: system-ui, -apple-system, sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  text-decoration: none !important;
-  transition: all 0.25s ease-in-out !important;
-  cursor: pointer !important;
-}
-
-.global-nav-pill-item:hover,
-.global-nav-pill-item.active-page {
-  background: #ffffff !important;
-  color: #080d99 !important; 
-  border-color: #ffffff !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-}
-
-#freemium-ad,
-div[class*="widget-header"],
-div[class*="widget-navigation"],
-nav[data-ux="Block"],
-a[data-aid="HAMBURGER_MENU_LINK"],
-div[id*="-navId-mobile"],
-div[id*="-navContainerId-mobile"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  height: 0 !important;
-}
-  
 </script>
 
 <style data-glamor="cxs-default-sheet">.x .c1-1{letter-spacing:normal}.x .c1-2{text-transform:none}.x .c1-3{background-color:rgb(255, 255, 255)}.x .c1-4{width:100%}.x .c1-5 > div{position:relative}.x .c1-6 > div{overflow:hidden}.x .c1-7 > div{margin-top:auto}.x .c1-8 > div{margin-right:auto}.x .c1-9 > div{margin-bottom:auto}.x .c1-a > div{margin-left:auto}.x .c1-b{font-family:'Cantarell', Arial, sans-serif}.x .c1-c{font-size:16px}.x .c1-h{background-color:rgb(0, 0, 10)}.x .c1-i{padding-top:100px}.x .c1-j{padding-bottom:100px}.x .c1-k{overflow:visible}.x .c1-l{padding:0px !important}.x .c1-o{display:none}.x .c1-q{position:relative}.x .c1-r{background-color:rgba(0, 0, 10, 0.25)}.x .c1-s{z-index:auto}.x .c1-x{align-items:center}.x .c1-y{flex-wrap:nowrap}.x .c1-z{display:flex}.x .c1-10{margin-top:0px}.x .c1-11{margin-right:0px}.x .c1-12{margin-bottom:0px}.x .c1-13{margin-left:0px}.x .c1-14{padding-top:24px}.x .c1-15{padding-right:24px}.x .c1-16{padding-bottom:24px}.x .c1-17{padding-left:24px}.x .c1-18{[object -object]:0px}.x .c1-1a{width:30%}.x .c1-1b{padding-right:0px}.x .c1-1c{padding-left:0px}.x .c1-1d{letter-spacing:inherit}.x .c1-1e{text-transform:inherit}.x .c1-1f{text-decoration:none}.x .c1-1g{word-wrap:break-word}.x .c1-1h{overflow-wrap:break-word}.x .c1-1i{cursor:pointer}.x .c1-1j{justify-content:flex-start}.x .c1-1k{border-top:0px}.x .c1-1l{border-right:0px}.x .c1-1m{border-bottom:0px}.x .c1-1n{border-left:0px}.x .c1-1o{color:rgb(227, 227, 230)}.x .c1-1p{font-weight:inherit}.x .c1-1q:hover{color:rgb(255, 255, 255)}.x .c1-1r:active{color:rgb(255, 255, 255)}.x .c1-1s{display:inline-block}.x .c1-1t{vertical-align:top}.x .c1-1u{padding-top:6px}.x .c1-1v{padding-right:6px}.x .c1-1w{padding-bottom:6px}.x .c1-1x{padding-left:6px}.x .c1-1y:hover{color:rgb(227, 227, 230)}.x .c1-1z:hover{opacity:0.5}.x .c1-20{width:70%}.x .c1-21{text-align:left}.x .c1-22{padding-left:8px}.x .c1-23{padding-right:8px}.x .c1-24{justify-content:flex-end}.x .c1-25{margin-left:auto}.x .c1-26{margin-right:auto}.x .c1-27{max-width:100%}.x .c1-2b{padding-left:48px}.x .c1-2c{padding-right:48px}.x .c1-2d{justify-content:center}.x .c1-2e{gap:32px}.x .c1-2f{flex-basis:100%}.x .c1-2g{padding-top:5px}.x .c1-2h{line-height:24px}.x .c1-2i{-webkit-margin-before:0}.x .c1-2j{-webkit-margin-after:0}.x .c1-2k{-webkit-padding-start:0}.x .c1-2l{padding-top:0}.x .c1-2m{padding-bottom:0}.x .c1-2n{color:rgb(141, 141, 190)}.x .c1-2o{margin-bottom:none}.x .c1-2p{list-style:none}.x .c1-2q{padding-left:32px}.x .c1-2r{white-space:nowrap}.x .c1-2s{visibility:hidden}.x .c1-2t:first-child{margin-left:0}.x .c1-2u:first-child{padding-left:0}.x .c1-2v{letter-spacing:2px}.x .c1-2w{margin-left:-6px}.x .c1-2x{margin-right:-6px}.x .c1-2y{margin-top:-6px}.x .c1-2z{margin-bottom:-6px}.x .c1-30{font-family:'Josefin Slab', Rockwell, Georgia, serif}.x .c1-31{font-weight:600}.x .c1-32:before{content:""}.x .c1-33:before{margin-right:0.5em}.x .c1-34:before{display:inline-block}.x .c1-35:before{height:1px}.x .c1-36:before{width:0.5em}.x .c1-37:before{background-color:rgb(227, 227, 230)}.x .c1-38:before{transition:inherit}.x .c1-39:before{vertical-align:middle}.x .c1-3a:before{opacity:0}.x .c1-3b{color:inherit}.x .c1-3c{transition:transform .33s ease-in-out}.x .c1-3d{transform:rotate(0deg)}.x .c1-3e{vertical-align:middle}.x .c1-3f{padding-top:16px}.x .c1-3g{padding-bottom:16px}.x .c1-3h{padding-left:16px}.x .c1-3i{padding-right:16px}.x .c1-3j{border-radius:4px}.x .c1-3k{box-shadow:0 3px 6px 3px rgba(0,0,0,0.24)}.x .c1-3l{position:absolute}.x .c1-3m{top:32px}.x .c1-3n{max-height:45vh}.x .c1-3o{overflow-y:auto}.x .c1-3p{z-index:1003}.x .c1-46{display:block}.x .c1-47:last-child{margin-bottom:0}.x .c1-48{padding-top:4px}.x .c1-49{padding-bottom:4px}.x .c1-4a:before{height:2px}.x .c1-4b:before{opacity:1}.x .c1-4c:before{transform:translateY(-50%)}.x .c1-4d{color:rgb(255, 255, 255)}.x .c1-4e{font-weight:700}.x .c1-4f:hover{color:rgb(198, 198, 198)}.x .c1-4g{right:0px}.x .c1-4h{margin-top:8px}.x .c1-4i{margin-bottom:8px}.x .c1-4j{line-height:1.5}.x .c1-4k{cursor:default}.x .c1-4l{margin-left:24px}.x .c1-4m{position:fixed}.x .c1-4n{top:0px}.x .c1-4o{height:100%}.x .c1-4p{z-index:10002}.x .c1-4q{padding-top:72px}.x .c1-4r{-webkit-overflow-scrolling:touch}.x .c1-4s{transform:translateX(-249vw)}.x .c1-4t{overscroll-behavior:contain}.x .c1-4u{box-shadow:0 2px 6px 0px rgba(0,0,0,0.2)}.x .c1-4v{transition:transform .3s ease-in-out}.x .c1-4w li a{justify-content:left}.x .c1-4x{overflow:hidden}.x .c1-4y{flex-direction:column}.x .c1-4z{color:#737373}.x .c1-50{line-height:1.3em}.x .c1-51{font-style:normal}.x .c1-52{top:15px}.x .c1-53{right:10px}.x .c1-54{font-size:28px}.x .c1-55:hover{color:#abb2b2}.x .c1-5a{overflow-x:hidden}.x .c1-5b{overscroll-behavior:none}.x .c1-5c{margin-bottom:32px}.x .c1-5d::-webkit-scrollbar{display:none}.x .c1-5i{margin-bottom:24px}.x .c1-5j li{border-style:none}.x .c1-5k{color:rgb(94, 94, 94)}.x .c1-5l{border-color:rgba(185, 185, 185, 0.5)}.x .c1-5m{border-bottom-width:0px}.x .c1-5n{border-bottom-style:solid}.x .c1-5o:last-child{border-bottom:0}.x .c1-5p{min-width:200px}.x .c1-5q{color:rgb(27, 27, 27)}.x .c1-5r{font-size:22px}.x .c1-5s:active{color:rgb(0, 0, 10)}.x .c1-5y{margin-left:8px}.x .c1-5z{flex-shrink:0}.x .c1-60{pointer-events:none}.x .c1-61:hover{color:rgb(27, 27, 27)}.x .c1-62:last-child{padding-bottom:24px}.x .c1-63{color:black}.x .c1-64:before{background-color:rgb(119, 119, 119)}.x .c1-65:before{position:absolute}.x .c1-66:before{right:100%}.x .c1-67:before{top:50%}.x .c1-68:before{margin-left:8px}.x .c1-69:before{left:100%}.x .c1-6a{margin-top:24px}.x .c1-6b{margin-left:16px}.x .c1-6c{flex-grow:1}.x .c1-6d{background-color:rgb(38, 6, 6)}.x .c1-6g{box-sizing:border-box}.x .c1-6h{flex-direction:row}.x .c1-6i{flex-wrap:wrap}.x .c1-6j{margin-right:-12px}.x .c1-6k{margin-left:-12px}.x .c1-6l{text-align:center}.x .c1-6q{flex-shrink:1}.x .c1-6r{flex-basis:0%}.x .c1-6s{padding-right:12px}.x .c1-6t{padding-left:12px}.x .c1-74 > *{max-width:100%}.x .c1-75 > :nth-child(n){margin-bottom:24px}.x .c1-76  > :last-child{margin-bottom:0 !important}.x .c1-79{line-height:1.25}.x .c1-7a{margin-bottom:40px !important}.x .c1-7b{font-family:'Italiana', Georgia, serif}.x .c1-7c{color:rgb(241, 240, 240)}.x .c1-7d{font-size:32px}.x .c1-7e{font-weight:400}.x .c1-7f{font:'Italiana', Georgia, serif}.x .c1-7g  *{font-family:'Italiana', Georgia, serif !important}.x .c1-7h  *{font:'Italiana', Georgia, serif !important}.x .c1-7i{background-color:rgb(153, 151, 107)}.x .c1-7j{line-height:1.4}.x .c1-7k{margin-bottom:40px}.x .c1-7l{color:rgb(0, 0, 0)}.x .c1-7n{font:'Josefin Slab', Rockwell, Georgia, serif}.x .c1-7o  *{font-family:'Josefin Slab', Rockwell, Georgia, serif !important}.x .c1-7p  *{font:'Josefin Slab', Rockwell, Georgia, serif !important}.x .c1-7q{font-size:unset}.x .c1-7r{font-family:unset}.x .c1-7s{letter-spacing:unset}.x .c1-7t{text-transform:unset}.x .c1-7u{margin-bottom:-24px}.x .c1-7w{padding-bottom:48px}.x .c1-7y{align-self:flex-start}.x .c1-82{border-width:0 !important}.x .c1-83{aspect-ratio:0.7728864432216108 / 1}.x .c1-84{order:-1}.x .c1-85{z-index:1}.x .c1-86{border-radius:0px}.x .c1-87{align-items:flex-start}.x .c1-88{text-wrap:pretty}.x .c1-89 > p > ol{text-align:left}.x .c1-8a > p > ol{display:block}.x .c1-8b > p > ol{padding-left:1.3em}.x .c1-8c > p > ol{margin-left:16px}.x .c1-8d > p > ol{margin-right:16px}.x .c1-8e > p > ol{margin-top:auto}.x .c1-8f > p > ol{margin-bottom:auto}.x .c1-8g > p > ol{text-wrap:pretty}.x .c1-8h > p > ul{text-align:left}.x .c1-8i > p > ul{display:block}.x .c1-8j > p > ul{padding-left:1.3em}.x .c1-8k > p > ul{margin-left:16px}.x .c1-8l > p > ul{margin-right:16px}.x .c1-8m > p > ul{margin-top:auto}.x .c1-8n > p > ul{margin-bottom:auto}.x .c1-8o > p > ul{text-wrap:pretty}.x .c1-8p > ul{text-align:left}.x .c1-8q > ul{display:block}.x .c1-8r > ul{padding-left:1.3em}.x .c1-8s > ul{margin-left:16px}.x .c1-8t > ul{margin-right:16px}.x .c1-8u > ul{margin-top:auto}.x .c1-8v > ul{margin-bottom:auto}.x .c1-8w > ul{text-wrap:pretty}.x .c1-8x > ol{text-align:left}.x .c1-8y > ol{display:block}.x .c1-8z > ol{padding-left:1.3em}.x .c1-90 > ol{margin-left:16px}.x .c1-91 > ol{margin-right:16px}.x .c1-92 > ol{margin-top:auto}.x .c1-93 > ol{margin-bottom:auto}.x .c1-94 > ol{text-wrap:pretty}.x .c1-95 > p{line-height:1.8}.x .c1-96{font-family:'Josefin Sans', Arial, sans-serif}.x .c1-97{font-size:18px}.x .c1-98{font:'Josefin Sans', Arial, sans-serif}.x .c1-99  *{font-family:'Josefin Sans', Arial, sans-serif !important}.x .c1-9a  *{font:'Josefin Sans', Arial, sans-serif !important}.x .c1-9b{font-size:inherit !important}.x .c1-9c{line-height:inherit}.x .c1-9d{font-style:italic}.x .c1-9e{text-decoration:line-through}.x .c1-9f{text-decoration:underline}.x .c1-9g{background-color:rgb(107, 105, 77)}.x .c1-9h{margin-bottom:56px}.x .c1-9i > :not(:last-child){margin-bottom:16px}.x .c1-9k{font-size:20px}.x .c1-9p{display:inline-flex}.x .c1-9q > :nth-child(2){margin-left:.25em}.x .c1-9r{background-color:rgb(95, 93, 68)}.x .c1-9s > div > canvas{width:100%}.x .c1-9t > div > canvas{height:100%}.x .c1-9u{padding-right:4px}.x .c1-9v{padding-left:4px}.x .c1-9x{background-color:rgb(7, 4, 28)}.x .c1-9y{color:rgb(232, 232, 233)}.x .c1-9z{background-color:rgb(21, 14, 57)}.x .c1-a0{background-color:rgb(3, 9, 25)}.x .c1-a1{padding-top:56px}.x .c1-a2{padding-bottom:56px}.x .c1-a5{margin-bottom:16px}.x .c1-a6{color:#1c1a1a !important}.x .c1-a7  *{color:#1c1a1a !important}.x .c1-aa{color:rgb(233, 234, 235)}.x .c1-ab{font-size:14px}</style>
