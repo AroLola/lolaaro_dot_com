@@ -4114,6 +4114,17 @@ ul#n-12125-navListId-mobile,
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
+/* make dropdown stick when clicked */
+.global-nav-dropdown-menu::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -12px !important; /* Reaches upward 12 pixels to seal the gap completely */
+  left: 0 !important;
+  width: 100% !important;
+  height: 12px !important; /* Total bridge block height */
+  background: transparent !important; /* Stays completely invisible to users */
+}
+
 .global-nav-dropdown-container:hover .global-nav-dropdown-menu {
   display: block !important;
 }
