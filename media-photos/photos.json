@@ -40,6 +40,25 @@
       ]
     },
     {
+      "id": "unhq-gallery-album",
+      "name": "United Nations - General Assembly",
+      "description": "UN Internship - group photo with former Secretary General, Ban Ki Moon. Location: UNHQ, New York, NY.",
+      "media": [        
+        { "id": "g-1", "src": "/sitepics/ungawdesc1.jpg", "caption": "" },
+        { "id": "g-2", "src": "/sitepics/unga1.png", "caption": "" },
+        { "id": "g-3", "src": "/sitepics/unga2.jpg", "caption": "" },
+        { "id": "g-4", "src": "/sitepics/unga5.jpg", "caption": "" },
+        { "id": "g-5", "src": "/sitepics/blob-735df17.png", "caption": "" },
+        { "id": "g-6", "src": "/sitepics/blob-9d4586b.png", "caption": "" },
+        { "id": "g-7", "src": "/sitepics/blob-b5b9324.png", "caption": "" },
+        { "id": "g-8", "src": "/sitepics/blob-c2317c4.png", "caption": "" },
+        { "id": "g-9", "src": "/sitepics/blob-c747556.png", "caption": "" },
+        { "id": "g-10", "src": "/sitepics/blob-d6299ac.png", "caption": "" },
+        { "id": "g-11", "src": "/sitepics/unga-7.jpg", "caption": "" },
+        { "id": "g-12", "src": "/sitepics/unga3.jpg", "caption": "" }
+      ]
+    },
+    {
       "id": "unanca-hr-luncheon-gallery-album",
       "name": "UNANCA Human Rights Luncheon",
       "description": "Photos from the Annual UNA-NCA Human Rights Luncheon, held December 10, 2010, at the Cannon House Office Building, Capitol Hill, Washington, D.C.. Photos also include snapshots from UN Week -- a celebration of United Nations Day spread out over a week of events, which we ended with a special tribute for former UNA-NCA president, Andrew E. Rice. [Annual Report I wrote and designed accessible <a href='https://unanca.org' target='_blank' style='color: #00e6ff; text-decoration: underline; font-weight: normal;'> here]</a>",
