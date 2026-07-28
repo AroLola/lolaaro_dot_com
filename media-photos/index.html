@@ -2991,6 +2991,7 @@
 <style data-glamor="cxs-lg-sheet">@media (min-width: 1280px){.x .c1-f{font-size:16px}}@media (min-width: 1280px){.x .c1-58{font-size:32px}}@media (min-width: 1280px){.x .c1-5g{width:1160px}}@media (min-width: 1280px){.x .c1-5w{font-size:22px}}@media (min-width: 1280px){.x .c1-8k{font-size:14px}}</style>
 <style data-glamor="cxs-xl-sheet">@media (min-width: 1536px){.x .c1-g{font-size:18px}}@media (min-width: 1536px){.x .c1-59{font-size:36px}}@media (min-width: 1536px){.x .c1-5h{width:1280px}}@media (min-width: 1536px){.x .c1-5x{font-size:24px}}@media (min-width: 1536px){.x .c1-8l{font-size:16px}}</style>
 
+
   <!-- BEGIN CAROUSEL LIGHTBOX-->
 <style id="carousel-stylesheet">
 .gallery-section-wrapper {
@@ -3006,7 +3007,7 @@
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
-  background-color: #050b14;
+  background-color: #f0f2f5;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
@@ -3031,7 +3032,7 @@
 
 /* 4. INDIVIDUAL SIDE-BY-SIDE SPLIT SLIDES */
 .dynamic-carousel-slide {
-  flex: 0 0 100% !important; /* Force each slide item to match the viewport container width perfectly */
+  flex: 0 0 100% !important;
   width: 100% !important;
   max-width: 900px !important;
   display: inline-block;
@@ -3043,12 +3044,12 @@
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   width: 100% !important;
-  height: 480px !important; /* Fixed height for consistent sliding math */
+  height: 480px !important;
   align-items: center;
 }
 
 .slide-media-box {
-  flex: 1 1 65% !important; /* Take up 65% horizontal area */
+  flex: 1 1 65% !important;
   height: 100% !important;
   display: flex !important;
   align-items: center;
@@ -3058,19 +3059,19 @@
 .slide-media-box img {
   max-width: 100% !important;
   max-height: 100% !important;
-  object-fit: contain !important; /* Fixes photo cropping completely */
+  object-fit: contain !important;
 }
 
 .slide-caption-box {
-  flex: 1 1 35% !important; /* Take up 35% horizontal area */
+  flex: 1 1 35% !important;
   height: 100% !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
   padding: 24px !important;
   box-sizing: border-box !important;
-  background: #0b1424;
-  white-space: normal !important; /* Allows caption text to wrap downwards */
+  background: #000000;
+  white-space: normal !important;
 }
 .slide-caption-box p {
   margin: 0 !important;
@@ -3103,7 +3104,7 @@
 }
 .thumb-card {
   flex-shrink: 0 !important;
-  width: 120px !important; /* Large readable size */
+  width: 120px !important;
   height: 85px !important;
   margin: 0 6px !important;
   border-radius: 6px;
@@ -3173,7 +3174,7 @@
   justify-content: center;
   border-radius: 50%;
 }
-   /* THE FILTER BAR ROW CANVAS */
+  /* THE FILTER BAR ROW CANVAS */
 .filter-pills-row-container {
   display: flex !important;
   flex-direction: row !important;
@@ -3186,6 +3187,56 @@
   box-sizing: border-box !important;
 }
 
+/* INDIVIDUAL NAV PILL BUTTONS */
+.filter-nav-pill-btn {
+  display: inline-block !important;
+  padding: 8px 18px !important;
+  border-radius: 9999px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease-in-out !important;
+  cursor: pointer !important;
+}
+
+/* HOVER FEEDBACK STATES */
+.filter-nav-pill-btn:hover {
+  background: #ffffff !important;
+  color: #080d99 !important; /* Matches your core theme dark blue */
+  border-color: #ffffff !important;
+  transform: translateY(-1px);
+}
+/* 1. LIGHTENS TITLES: CHANGES FROM BOLD TO SLEEK SLIM TYPE */
+.gallery-section-wrapper h2.x-el-h2,
+.gallery-section-wrapper h2.x-el-h2 span {
+  color: #333333 !important; /* Soft charcoal black instead of harsh solid black */
+  font-weight: 400 !important; /* Removes the heavy bold thickness */
+  opacity: 1 !important;
+}
+
+/* 2. LIGHTENS DESCRIPTIONS */
+.gallery-section-wrapper div p {
+  color: #4a4a4a !important; /* Muted charcoal grey instead of harsh black */
+  font-weight: 400 !important; /* Normal text weight instead of bold */
+  opacity: 1 !important;
+}
+
+/* 3. FIXES PILL BOX VISIBILITY AGAINST LIGHT BACKGROUNDS */
+.filter-nav-pill-btn {
+  color: #333333 !important; /* Dark text so it is visible */
+  background: rgba(0, 0, 0, 0.05) !important; /* Subtle soft grey button background */
+  border: 1px solid rgba(0, 0, 0, 0.15) !important; /* Defined dark border outline */
+}
+
+/* Pill Box Hover State */
+.filter-nav-pill-btn:hover {
+  background: #080d99 !important; /* Pops into your theme's royal dark blue on hover */
+  color: #ffffff !important; /* White text on hover */
+  border-color: #080d99 !important;
+}
 /* 1. START OF THE FIXED PHOTOS NAVIGATION, TYPOGRAPHY & PDF STYLESHEET. REFINED NAVIGATION BAR (DARK MIDNIGHT NAVY BACKDROP) */
 .global-nav-wrapper {
   width: 100% !important;
