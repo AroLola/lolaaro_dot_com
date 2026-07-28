@@ -3216,12 +3216,14 @@
   box-sizing: border-box !important;
 }
 
-    /* START OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET */ 
- .global-nav-wrapper {
+
+<style id="global-navigation-and-pdf-override">
+/* 1. START OF THE FIXED PHOTOS NAVIGATION, TYPOGRAPHY & PDF STYLESHEET. REFINED NAVIGATION BAR (DARK MIDNIGHT NAVY BACKDROP) */
+.global-nav-wrapper {
   width: 100% !important;
-  background-color: rgb(19, 20, 33) !important; /* UPDATED: Deep, rich dark royal blue color backdrop */
+  background-color: #0f1429 !important; /* Matches your welcome page tint exactly */
   padding: 16px 0 !important;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important;
+  border-bottom: 1px solid rgba(19, 20, 33) !important;
   display: flex !important;
   justify-content: center !important;
   box-sizing: border-box !important;
@@ -3252,8 +3254,8 @@
   font-size: 0.88rem !important;
   font-weight: 600 !important;
   color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important; /* Slightly softened capsule overlay contrast */
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   text-decoration: none !important;
   transition: all 0.2s ease-in-out !important;
   cursor: pointer !important;
@@ -3263,7 +3265,7 @@
 .global-nav-pill-item.active-page,
 .global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
   background: #ffffff !important;
-  color: rgb(4, 7, 92) !important; /* Flips text directly to your dark theme color text */
+  color: #0f1429 !important;
   border-color: #ffffff !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
@@ -3292,18 +3294,19 @@
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
-  /* make dropdown stick when clicked */
+.global-nav-dropdown-container:hover .global-nav-dropdown-menu {
+  display: block !important;
+}
+
+/* THE DROPDOWN INVISIBLE GAP MOUSE SAFETY BRIDGE */
 .global-nav-dropdown-menu::before {
   content: "" !important;
   position: absolute !important;
-  top: -12px !important; /* Reaches upward 12 pixels to seal the gap completely */
+  top: -12px !important;
   left: 0 !important;
   width: 100% !important;
-  height: 12px !important; /* Total bridge block height */
-  background: transparent !important; /* Stays completely invisible to users */
-}
-.global-nav-dropdown-container:hover .global-nav-dropdown-menu {
-  display: block !important;
+  height: 12px !important;
+  background: transparent !important;
 }
 
 .global-nav-dropdown-link {
@@ -3321,14 +3324,14 @@
 
 .global-nav-dropdown-link:hover,
 .global-nav-dropdown-link.active-subpage {
-  background-color: rgba(4, 7, 92, 0.08) !important;
-  color: rgb(4, 7, 92) !important;
+  background-color: rgba(15, 20, 41, 0.08) !important;
+  color: #0f1429 !important;
 }
 
-/* RESPONSIVE MOBILE DROP-DOWN HANDLERS */
+/* 2. RESPONSIVE MOBILE DROP-DOWN HANDLERS */
 @media (max-width: 768px) {
   .global-nav-wrapper {
-    background-color: rgb(0, 2, 20) !important; /* Midnight dark shade blue logic for mobile device frames */
+    background-color: #090c1a !important;
   }
   .global-nav-container {
     flex-direction: column !important;
@@ -3367,16 +3370,21 @@
   }
 }
 
-/* MOBILE PDF AUTO-FIT FIX RESIZER */
-iframe[src*=".pdf"], object[data*=".pdf"], embed[src*=".pdf"], .pdf-viewer-frame {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 500px !important;
-  height: 75vh !important;
-  box-sizing: border-box !important;
+/* 3. FIXED PHOTOS CAROUSEL TYPOGRAPHY OVERRIDES (FORCES CRISP CHARCOAL BLACK) */
+.gallery-section-wrapper h2.x-el-h2,
+.gallery-section-wrapper h2.x-el-h2 span {
+  color: #333333 !important; /* Soft charcoal black instead of harsh solid black */
+  font-weight: 400 !important; /* Sleek, slim type look instead of heavy bold thickness */
+  opacity: 1 !important;
 }
 
-/* Permanent concealment of broken site builder scripts - ADJUSTED FOR INDEX */
+.gallery-section-wrapper div p {
+  color: #4a4a4a !important; /* Muted charcoal grey instead of harsh black or white */
+  font-weight: 400 !important;
+  opacity: 1 !important;
+}
+
+/* Permanent concealment of broken GoDaddy site builder scripts and native headers */
 #freemium-ad, 
 div[class*="widget-navigation"], 
 nav[data-ux="Block"], 
@@ -3389,19 +3397,11 @@ div[id*="-navContainerId-mobile"] {
   pointer-events: none !important;
   height: 0 !important;
 }
-
-/* SAFELY FORCES YOUR INDEX WELCOME HEADER BANNER BOX TO BE VISIBLE */
-header[data-aid="HEADER"], 
-div[class*="Welcome"], 
-section[class*="Welcome"] {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  height: auto !important;
+#9abed1c0-a2bb-4a95-9bb5-081633e68b66 h2[data-aid="GALLERY_SECTION_TITLE_RENDERED"] {
+  display: none !important;
 }
-
 </style>
-  <!-- END OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET --> 
+<!-- END OF THE FIXED NAVIGATION, TYPOGRAPHY & PDF STYLESHEET -->
 <!-- END CAROUSEL LIGHTBOX-->
  
 <script>"use strict";
