@@ -1,0 +1,43 @@
+in folder: cmd 
+
+then: dir /b > filenames.txt
+
+
+
+        { "id": "h-1", "src": "/sitepics/485a914a-c30e-4b4b-becc-af87e9277cd6.jpg", "caption": "" },
+        { "id": "h-2", "src": "/sitepics/85412c5b-c9ab-4d4e-9726-a7b52980f18e.jpg", "caption": "" },
+        { "id": "h-3", "src": "/sitepics/35887977-dc44-4e27-ad75-fa850ad706a0.jpg", "caption": "" },
+        { "id": "h-4", "src": "/sitepics/img_4695.jpg", "caption": "" },
+        { "id": "h-5", "src": "/sitepics/img_4724.jpg", "caption": "" },
+        { "id": "h-6", "src": "/sitepics/img_4742.jpg", "caption": "" }
+
+
+img_4695.jpg
+img_4724.jpg
+img_4742.jpg
+img_4744.jpg
+img_4769.jpg
+img_4857.jpg
+img_5009.jpg
+img_5012.jpg
+img_5072.jpg
+img_5094.png
+img_5099.jpg
+img_5100.jpg
+img_5101.jpg
+img_5119.jpg
+img_5122.jpg
+img_5126.jpg
+img_5127.jpg
+img_5129.jpg
+img_5146.jpg
+img_5150.jpg
+img_5154.jpg
+img_5156.jpg
+img_5176.jpg
+img_5185.jpg
+img_5187.jpg
+img_5189.jpg
+img_5190.jpg
+img_5498.png
+img_5531.jpg
