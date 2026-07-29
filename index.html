@@ -455,143 +455,122 @@ section[class*="Welcome"] {
 
  <!-- welcome -->
 
-<!-- ISOLATED WELCOME SECTION SYSTEM (Fixed Mobile Stacking & Tangerine/Allura Mobile Font) -->
-<div style="width: 100%; clear: both; display: block; overflow: hidden; position: relative; margin: 0; padding: 0; box-sizing: border-box;">
+<!-- ISOLATED WELCOME BANNER WITH SECURE DIRECT-LOAD MOBILE FONTS -->
+<div style="position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; padding: 40px 0; overflow: hidden; box-sizing: border-box; margin: 0;">
 
-  <div class="custom-hero-container-system" style="
-    position: relative;
+  <!-- BACKGROUND BLUR LAYER: Enforced edge-to-edge container boundary -->
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 400px;
-    display: flex;
+    height: 100%;
+    background-image: url('/sitepics/blob-da7c4a6.png');
+    background-size: cover;
+    background-position: center 60%;
+    filter: blur(60px) brightness(0.5);
+    transform: scale(1.1);
+    z-index: 1;
+  "></div>
+
+  <!-- DIRECT FONTS INJECTION ENGINE: Forces mobile browsers to download the fonts instantly -->
+  <style>
+    @import url('https://googleapis.com');
+
+    @media (max-width: 767px) {
+      .force-handwriting-mobile {
+        font-family: 'Tangerine', 'Allura', cursive !important;
+        font-size: 64px !important;  /* Bumps size up significantly since Tangerine runs thin */
+        font-weight: 700 !important; /* Thickens line elements for mobile screens */
+        letter-spacing: 1px !important;
+        line-height: 1.1 !important;
+        text-shadow: none !important;
+      }
+    }
+  </style>
+
+  <!-- FOREGROUND MATRIX: Strict 1-Row, 2-Column Desktop Layout -->
+  <div class="hero-inner-strict-grid" style="
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 450px; 
+    gap: 50px;
     align-items: center;
-    justify-content: center;
-    background-color: #010214;
     box-sizing: border-box;
-    padding: 60px 40px;
-    overflow: hidden;
   ">
-    
-    <!-- BACKGROUND BLUR LAYER: Filled cleanly without overflow -->
+
+    <!-- ROW 1 COLUMN 1 (r1c1): TEXT LEFT-ALIGNED & VERTICALLY CENTERED -->
     <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('/sitepics/blob-da7c4a6.png');
-      background-size: cover;
-      background-position: center 60%;
-      filter: blur(60px) brightness(0.5);
-      transform: scale(1.1);
-      z-index: 1;
-    "></div>
-
-    <!-- FOREGROUND CONTAINER: 1-Row, 2-Cols on Desktop / Stacks to 2-Rows, 1-Col on Mobile -->
-    <div class="hero-inner-flex-grid" style="
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1050px;
-      display: flex;
-      flex-wrap: wrap; 
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
+      text-align: left; 
+      color: #ffffff;
       box-sizing: border-box;
+      width: 100%;
     ">
+      <p style="
+        font-family: 'Cantarell', Arial, sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin: 0 0 10px 0;
+        opacity: 0.9;
+      ">Welcome</p>
       
-      <!-- COLUMN 1: WELCOME TEXT -->
-      <div class="hero-left-text-block" style="
-        flex: 1 1 500px; 
-        color: #ffffff;
-        text-align: left;
-        box-sizing: border-box;
+      <!-- INLINE NAME HOOK: Uses class engine to force Tangerine/Allura styling on mobile -->
+      <h1 class="force-handwriting-mobile" style="
+        font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
+        font-weight: 300 !important;   /* Thin handwriting for desktop viewports */
+        font-size: 40px !important;    
+        line-height: 1.2 !important;   
+        letter-spacing: 4px !important;
+        margin: 0 0 15px 0;
+        padding: 0;
+        text-shadow: none !important;  
+        word-break: normal;
+        overflow-wrap: break-word;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      ">Olufunlola Arowolo, Ph.D.</h1>
+      
+      <div style="
+        font-family: 'Cantarell', Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0;
+        opacity: 0.95;
       ">
-        <p style="
-          font-family: 'Cantarell', Arial, sans-serif;
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          margin: 0 0 10px 0;
-          opacity: 0.9;
-        ">Welcome</p>
-        
-        <h1 class="target-signature-handwriting" style="
-          font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
-          font-weight: 300 !important; 
-          font-size: 40px !important;
-          line-height: 1.2 !important;
-          margin: 0 0 15px 0;
-          padding: 0;
-          letter-spacing: 2px !important;
-          text-shadow: none !important;
-          word-break: normal;
-        ">Olufunlola Arowolo, Ph.D.</h1>
-        
-        <div style="
-          font-family: 'Cantarell', Arial, sans-serif;
-          font-size: 20px;
-          font-weight: 400;
-          margin: 0;
-          opacity: 0.95;
-        ">
-          <p style="margin: 0; padding: 0;">Public Policy Analyst</p>
-        </div>
+        <p style="margin: 0; padding: 0;">Public Policy Analyst</p>
       </div>
-
-      <!-- COLUMN 2: PORTRAIT PHOTO -->
-      <div class="hero-right-photo-block" style="
-        flex: 0 1 450px; 
-        display: flex;
-        justify-content: center;
-        box-sizing: border-box;
-      ">
-        <img src="/sitepics/blob-da7c4a6.png" style="
-          width: 100%;
-          max-width: 450px;
-          height: auto;
-          aspect-ratio: 1 / 1;
-          object-fit: cover;
-          border-radius: 2px;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-          display: block;
-        " alt="Olufunlola Arowolo Presentation Headshot Portrait">
-      </div>
-
     </div>
+
+    <!-- ROW 1 COLUMN 2 (r1c2): IMAGE CENTERED -->
+    <div style="
+      display: flex;
+      justify-content: center; 
+      align-items: center;     
+      box-sizing: border-box;
+      width: 100%;
+    ">
+      <img src="/sitepics/blob-da7c4a6.png" style="
+        width: 100%;
+        max-width: 450px;      
+        height: 450px;         
+        object-fit: cover;
+        border-radius: 2px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        display: block;
+      " alt="Olufunlola Arowolo Presentation Headshot Portrait">
+    </div>
+
   </div>
 </div>
 
-<!-- STYLING SYSTEM PATCH: Handles mobile conversions and loads Tangerine/Allura cursive options -->
-<style>
-  @media (max-width: 767px) {
-    .custom-hero-container-system {
-      padding: 40px 20px !important;
-    }
-    .hero-inner-flex-grid {
-      flex-direction: column !important; 
-      justify-content: center !important;
-      gap: 30px !important;
-    }
-    .hero-left-text-block {
-      text-align: center !important;
-      flex: 1 1 100% !important;
-    }
-    .hero-right-photo-block {
-      flex: 1 1 100% !important;
-      max-width: 280px !important;
-    }
-    /* Enforces Tangerine and Allura handwriting exclusively on mobile devices */
-    .target-signature-handwriting {
-      font-family: 'Tangerine', 'Allura', cursive !important;
-      font-weight: 700 !important; /* Tangerine reads beautifully on phone resolutions with a 700 weight */
-      font-size: 54px !important;  /* Elevated layout size scale so thin script font properties look clean */
-      letter-spacing: 1px !important;
-    }
-  }
-</style>
-
-<div style="clear: both; display: block; width: 100%; height: 30px; background-color: transparent;"></div>
+<!-- HARD LAYOUT DIVIDER: Separates sections cleanly -->
+<div style="clear: both; display: block; width: 100%; height: 10px; background-color: transparent;"></div>
 
 
 <!-- ABOUT SECTION -->
@@ -893,42 +872,59 @@ section[class*="Welcome"] {
       <span>Copyright © 2026 Olufunlola A. Arowolo, Ph.D. - All Rights Reserved.</span></p></div></div><div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-6q c1-r c1-6t c1-2t c1-2l c1-2z c1-1p c1-30 c1-1q c1-b c1-c c1-d c1-di c1-dj c1-e c1-f c1-g"><p data-ux="FooterDetails" data-aid="FOOTER_POWERED_BY_RENDERED" data-typography="DetailsAlpha" class="x-el x-el-p c1-1 c1-2 c1-1u c1-1v c1-4x c1-4w c1-1g c1-78 c1-b c1-dk c1-bc c1-7a c1-bi c1-dl c1-47 c1-bn c1-bo c1-bp"><span> </span></p></div></div></div></div></section>  </div></div></div>
  <div id="5a738609-ec16-49fc-a1e0-720422db138c" class="widget widget-messaging widget-messaging-messaging-1"></div><div id="65c2bf75-fbe6-4c23-926a-8717fc9d3021" class="widget widget-popup widget-popup-popup-1"></div>
  <div id="d9a056ca-1592-4ba3-b584-797013950eb5" class="widget widget-cookie-banner widget-cookie-banner-cookie-1"></div></div></div></div>
-<!-- SECURE WEB3FORMS CONTACT PROCESSOR ENGINE (Keep Active) -->
-<script src="https://web3forms.com/client/script.js" async defer></script>
 
-<!-- RECAPTCHA API HANDLER (Maintains your secure contact form protection layer) -->
-<script src="https://google.com" async defer></script>
-
-<!-- STATIC APP ROUTER -->
-<script src="router.js"></script>
-
-<!-- MANUAL TRIGGER TO OPEN MOBILE HAMBURGER MENUS ON GITHUB -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const hamburgerBtn = document.querySelector('a[data-aid="HAMBURGER_MENU_LINK"]');
-    const mobileNavDrawer = document.getElementById('n-32919-navId-mobile') || document.querySelector('[id*="-navId-mobile"]');
-
-    if (hamburgerBtn && mobileNavDrawer) {
-      mobileNavDrawer.style.transition = "transform 0.3s ease-in-out, opacity 0.3s ease";
-      
-      hamburgerBtn.addEventListener("click", function(event) {
-        event.preventDefault(); 
-        
-        if (mobileNavDrawer.style.display === "block" || mobileNavDrawer.style.opacity === "1") {
-          mobileNavDrawer.style.display = "none";
-          mobileNavDrawer.style.opacity = "0";
-          mobileNavDrawer.style.transform = "translateX(100%)"; 
-          hamburgerBtn.setAttribute("aria-expanded", "false");
-        } else {
-          mobileNavDrawer.style.display = "block";
-          mobileNavDrawer.style.opacity = "1";
-          mobileNavDrawer.style.transform = "translateX(0)"; 
-          hamburgerBtn.setAttribute("aria-expanded", "true");
-        }
-      });
-    }
-  });
+  <!-- SECURE LOCAL BUSINESS SEO FOOTPRINT SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "image": [
+    "https://lolaarowolo.com"
+  ],
+  "@id": "https://lolaarowolo.com",
+  "url": "https://lolaarowolo.com",
+  "name": "Olufunlola A. Arowolo, Ph.D.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Dallas-Fort Worth",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "32.7078751",
+    "longitude": "-96.9209135"
+  }
+}
 </script>
+
+<!-- RESTORED LOCAL SITE REPOSITORY UTILITIES (Powers your carousels & sliders safely) -->
+<script crossorigin="Anonymous" src="./index/bs-FlyoutMenu-Component-b4b95853.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-Toggle-0f009dec.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-Hamburger-Component-8956ad4f.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-LinkAwareComponent-0e7597ad.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-MobileFlyoutMenu-Component-cde69336.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-gallery1-Gallery-6c519392.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-AbsLink-5de6a485.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-CustomArrows-49960b5a.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-dataAids-71c78b3f.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-directionalKeyHandlers-43e11c5a.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-util-c935f491.js"></script>
+<script crossorigin="Anonymous" src="./index/bs-wrapWithDeviceDetection-f9dc1d72.js"></script>
+
+<!-- INLINE RESPONSIVE DRIVER: Swaps font weight and family cleanly on mobile views -->
+<style>
+  @media (max-width: 767px) {
+    .force-tangerine-mobile-override,
+    [fontPack="dancing-script"],
+    #dynamic-tagline-32910 {
+      font-family: 'Tangerine', 'Allura', cursive !important;
+      font-size: 54px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      line-height: 1.1 !important;
+    }
+  }
+</style>
 
 </body>
 </html>
