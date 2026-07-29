@@ -456,160 +456,197 @@ section[class*="Welcome"] {
 
  <!-- welcome -->
 
-<div style="position: relative; width: 100%; min-height: 550px; overflow: hidden; box-sizing: border-box; margin: 0; padding: 0;">
+<!-- ISOLATED WELCOME SECTION SYSTEM (Fixed Mobile Stacking & Font) -->
+<div style="width: 100%; clear: both; display: block; overflow: hidden; position: relative; margin: 0; padding: 0; box-sizing: border-box;">
 
-  <!-- BACKGROUND BLUR LAYER: Enforced edge-to-edge container boundary -->
-  <div style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/sitepics/blob-da7c4a6.png');
-    background-size: cover;
-    background-position: center 60%;
-    filter: blur(60px) brightness(0.5);
-    transform: scale(1.1); /* Prevents white background edges during blur */
-    z-index: 1;
-  "></div>
-
-   <!-- FOREGROUND EXECUTION BLOCK: 1-Row, 2-Column Strict Layout -->
-  <div class="hero-inner-strict-grid" style="
+  <div class="custom-hero-container-system" style="
     position: relative;
-    z-index: 2;
     width: 100%;
-    max-width: 1100px;
-    min-height: 550px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: grid;
-    grid-template-columns: 1fr 450px; 
-    gap: 50px;
-    align-items: center; /* Vertically centers the text with the image mid-point */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #010214;
     box-sizing: border-box;
+    padding: 60px 40px;
+    overflow: hidden;
   ">
-
-    <!-- ROW 1 COLUMN 1 (r1c1): TEXT LEFT-ALIGNED & VERTICALLY CENTERED -->
+    
+    <!-- BACKGROUND BLUR LAYER: Filled cleanly without overflow -->
     <div style="
-      text-align: left; 
-      color: #ffffff;
-      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-    ">
-      <p style="
-        font-family: 'Cantarell', Arial, sans-serif;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin: 0 0 10px 0;
-        opacity: 0.9;
-      ">Welcome</p>
-      
-      <!-- UPDATED FOR THE TRUE THIN LOGO LOOK (Matches GoDaddy Class standards) -->
-      <h1 style="
-        font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
-        font-weight: 100 !important;   /* Pulls the genuine thin handwriting weight */
-        font-size: 40px !important;    /* Locks size footprint to your exact class 7i spec */
-        line-height: 1.2 !important;   /* Matches class 7g spacing */
-        letter-spacing: 2px !important;/* Adds elegant letter breathing room from class 7k */
-        margin: 0 0 15px 0;
-        padding: 0;
-        text-shadow: none !important;  /* Purges dark shadows that artificial bloat thin fonts */
-        word-break: normal;
-        overflow-wrap: break-word;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      ">Olufunlola Arowolo, Ph.D.</h1>
-      
-      <div style="
-        font-family: 'Cantarell', Arial, sans-serif;
-        font-size: 20px;
-        font-weight: 400;
-        margin: 0;
-        opacity: 0.95;
-      ">
-        <p style="margin: 0; padding: 0;">Public Policy Analyst</p>
-      </div>
-    </div>
+      height: 100%;
+      background-image: url('/sitepics/blob-da7c4a6.png');
+      background-size: cover;
+      background-position: center 60%;
+      filter: blur(60px) brightness(0.5);
+      transform: scale(1.1);
+      z-index: 1;
+    "></div>
 
-    <!-- ROW 1 COLUMN 2 (r1c2): IMAGE CENTERED -->
-    <div style="
+    <!-- FOREGROUND CONTAINER: 1-Row, 2-Cols on Desktop / Stacks to 2-Rows, 1-Col on Mobile -->
+    <div class="hero-inner-flex-grid" style="
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1050px;
       display: flex;
-      justify-content: center; 
-      align-items: center;     
+      flex-wrap: wrap; /* Allows vertical stacking on phone viewports */
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
       box-sizing: border-box;
-      width: 100%;
     ">
-      <img src="/sitepics/blob-da7c4a6.png" style="
-        width: 100%;
-        max-width: 450px;      
-        height: 450px;         
-        object-fit: cover;
-        border-radius: 2px;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-        display: block;
-      " alt="Olufunlola Arowolo Presentation Headshot Portrait">
-    </div>
+      
+      <!-- COLUMN 1: WELCOME TEXT -->
+      <div class="hero-left-text-block" style="
+        flex: 1 1 500px; /* Expands on desktop, fills 100% width when stacked */
+        color: #ffffff;
+        text-align: left;
+        box-sizing: border-box;
+      ">
+        <p style="
+          font-family: 'Cantarell', Arial, sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          margin: 0 0 10px 0;
+          opacity: 0.9;
+        ">Welcome</p>
+        
+        <h1 class="target-signature-handwriting" style="
+          font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
+          font-weight: 100 !important; 
+          font-size: 40px !important;
+          line-height: 1.2 !important;
+          margin: 0 0 15px 0;
+          padding: 0;
+          letter-spacing: 1px !important;
+          text-shadow: none !important;
+          word-break: normal;
+        ">Olufunlola Arowolo, Ph.D.</h1>
+        
+        <div style="
+          font-family: 'Cantarell', Arial, sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          margin: 0;
+          opacity: 0.95;
+        ">
+          <p style="margin: 0; padding: 0;">Public Policy Analyst</p>
+        </div>
+      </div>
 
+      <!-- COLUMN 2: PORTRAIT PHOTO -->
+      <div class="hero-right-photo-block" style="
+        flex: 0 1 350px; /* Caps at 450px on desktop, shrinks on mobile */
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+      ">
+        <img src="/sitepics/blob-da7c4a6.png" style="
+          width: 100%;
+          max-width: 350px;
+          height: auto;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          border-radius: 2px;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+          display: block;
+        " alt="Olufunlola Arowolo Presentation Headshot Portrait">
+      </div>
+
+    </div>
   </div>
 </div>
 
-<!-- HARD LAYOUT DIVIDER: Forces the browser to completely separate the sections -->
-<div style="clear: both; display: block; width: 100%; height: 40px; background-color: transparent;"></div>
+<!-- STYLING SYSTEM PATCH: Forces mobile transformations and font file mappings -->
+<style>
+  @media (max-width: 767px) {
+    .custom-hero-container-system {
+      padding: 40px 20px !important;
+    }
+    .hero-inner-flex-grid {
+      flex-direction: column !important; /* Forces row-1 (text) to stack top, row-2 (image) to bottom */
+      justify-content: center !important;
+      gap: 30px !important;
+    }
+    .hero-left-text-block {
+      text-align: center !important;
+      flex: 1 1 100% !important;
+    }
+    .hero-left-text-block h1 {
+      font-size: 32px !important; /* Shrings text box footprint safely on small screen layers */
+    }
+    .hero-right-photo-block {
+      flex: 1 1 100% !important;
+      max-width: 280px !important;
+    }
+    .target-signature-handwriting {
+      font-family: 'Dancing Script', josefine-slab !important;
+      font-weight: 200 !important; /* WebKit/Mobile engines render weight 400 cursive best */
+    }
+  }
+</style>
+
+<div style="clear: both; display: block; width: 100%; height: 30px; background-color: transparent;"></div>
+
 
 <!-- ABOUT SECTION -->
-<!-- THE START OF (ABOUT) SECTION WITH FIXED BACKGROUND, LAYOUT, AND TYPOGRAPHY -->
+<!-- THE START OF (ABOUT) SECTION WITH ALIGNED MOBILE STACKING -->
 <div id="44ac7e1b-292e-478f-9e15-cee629698fb5" class="widget widget-about widget-about-about-2" style="
   width: 100%; 
   clear: both; 
   display: block; 
-  background-color: #010214; /* Restores the permanent deep blue background */
+  background-color: #010214; 
   box-sizing: border-box; 
-  padding: 60px 0; 
+  padding: 50px 0; 
   margin: 0;
 ">
   
-  <!-- SECTION CONTAINER: Centers the content area -->
-  <div style="width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+  <div style="width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 30px; box-sizing: border-box;">
     
-    <!-- SECTION TITLE: White and centered -->
- <h2 role="heading" aria-level="2" style="
-  font-family: 'Roboto', josefin-slab, serif;
-  font-weight: 200 !important; /* Sets the text to light font weight */
-  color: #ffffff !important;
-  text-align: center !important;
-  font-size: 25px;
-  letter-spacing: 2px;
-  margin: 0 0 60px 0;
-  padding: 0;
-  text-transform: uppercase;
-">
-  <span>ABOUT</span>
-</h2>
+    <!-- HEADER TITLE -->
+    <h2 role="heading" aria-level="2" style="
+      font-family: 'Roboto', josefin-slab, sans-serif;
+      font-weight: 200 !important;
+      color: #ffffff !important;
+      text-align: center !important;
+      font-size: 25px;
+      letter-spacing: 2px;
+      margin: 0 0 35px 0;
+      padding: 0;
+      text-transform: uppercase;
+    ">
+      <span>ABOUT</span>
+    </h2>
 
-   <!-- GRID LAYOUT MODULE: 1-Row, 2-Columns (r1c1 for Image, r1c2 for Text Description) -->
-    <div style="
-      display: grid;
-      grid-template-columns: 350px 1fr; /* Image locks at 450px, Text column takes the rest */
-      gap: 50px;
-      align-items: center; /* Vertically centers the text with the image */
+    <!-- FLEX WRAP MATRIX MODULE: 1-Row on Desktop / Automatically Stacks on Mobile -->
+    <div class="about-responsive-flex-matrix" style="
+      display: flex;
+      flex-wrap: wrap; /* Enables clean fluid cell breaking */
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
       box-sizing: border-box;
       width: 100%;
     ">
 
-      <!-- ROW 1 COLUMN 1 (r1c1): IMAGE CONTAINER -->
-      <div style="
+      <!-- COLUMN 1: IMAGE -->
+      <div class="about-matrix-photo-box" style="
+        flex: 0 1 350px; /* Constrained width on desktop */
         display: flex;
         justify-content: center;
-        align-items: center;
         box-sizing: border-box;
-        width: 100%;
       ">
-        <!-- Photo adjustment: shifted down to center 22% to fix top crop and reveal the roof -->
         <img data-ux="Image" src="/sitepics/img_1173.jpg" style="
           width: 100%;
           max-width: 350px;      
-          height: 330px;         
+          height: auto;
+          aspect-ratio: 1 / 1;       
           object-fit: cover;
           object-position: center 22%; 
           border-radius: 2px;
@@ -619,21 +656,21 @@ section[class*="Welcome"] {
         " alt="About Section Image Layout Component">
       </div>
 
-      <!-- ROW 1 COLUMN 2 (r1c2): TEXT DESCRIPTION COMPONENT (Left Aligned & Centered) -->
-      <div style="
-        text-align: left; /* Enforces text left-alignment */
+      <!-- COLUMN 2: DESCRIPTION TEXT -->
+      <div class="about-matrix-text-box" style="
+        flex: 1 1 550px; /* Fills remaining desktop layout, scales to full width on phone */
+        text-align: left;
         color: #ffffff;
         box-sizing: border-box;
-        width: 100%;
       ">
         <div style="
-  font-family: 'Roboto', Arial, sans-serif;
-  font-weight: 300; /* Sets the body paragraph text to light font weight */
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 0;
-  opacity: 0.95;
-">
+         font-family: 'Roboto', josefin-slab, serif;
+          font-weight: 200;
+          font-size: 16px;
+          line-height: 1.7;
+          margin: 0;
+          opacity: 0.95;
+        ">
           <p style="margin: 0; padding: 0; text-align: left;">
             Foreign policy analyst and political economist with senior-level government relations, public relations, and brand management experience. Doctoral degree in Public Policy and Political Economy, earned at The University of Texas at Dallas. Professional history in the international affairs industry; working experience with non-profit organizations. Industry experience in government relations, branding, event management, media relations, and executing B2C &amp; B2B event marketing campaigns targeting varied publics - either as part of a general brand awareness strategy, or as part of a focused set of multi-touch, strategic branding directives, issued by a nuclear conglomerate of executives. Skilled in data assessment and processing; data analyses; analytical outcome evaluation; policy analyses. Certified in Economic and Demographic Data Analyses; Dynamic Modeling; &amp; R Programming.
           </p>
@@ -644,6 +681,27 @@ section[class*="Welcome"] {
 
   </div>
 </div>
+
+<!-- MATRIX ADAPTATION PATCH: Manages viewport container formatting seamlessly -->
+<style>
+  @media (max-width: 767px) {
+    .about-responsive-flex-matrix {
+      flex-direction: column !important; /* Replicates education stacking: Image Top, Text Bottom */
+      justify-content: center !important;
+      gap: 25px !important;
+    }
+    .about-matrix-photo-box {
+      flex: 1 1 100% !important;
+      max-width: 280px !important; /* Safely downsizes square image footprint on phones */
+    }
+    .about-matrix-text-box {
+      flex: 1 1 100% !important;
+      text-align: left !important;
+    }
+  }
+</style>
+
+<div style="clear: both; display: block; width: 100%; height: 30px; background-color: transparent;"></div>
 
  <!-- education -->
 <div id="32490cd1-4cb1-405e-bcc8-2d8b2ce3e100" class="widget widget-content widget-content-content-1"><div data-ux="Widget" role="region" id="32490cd1-4cb1-405e-bcc8-2d8b2ce3e100" class="x-el x-el-div x-el c1-1 c1-2 c1-ak c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> 
