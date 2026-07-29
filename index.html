@@ -590,7 +590,7 @@ section[class*="Welcome"] {
   }
 </style>
 
-<div style="clear: both; display: block; width: 100%; height: 40px; background-color: transparent;"></div>
+<div style="clear: both; display: block; width: 100%; height: 10px; background-color: transparent;"></div>
 
 
 <!-- ABOUT SECTION -->
@@ -619,11 +619,11 @@ section[class*="Welcome"] {
    
     <!-- HEADER TITLE: Swapped to thin Josefin Slab styling -->
     <h2 role="heading" aria-level="2" style="
-      font-family: 'Josefin Slab', serif;
-      font-weight: 300 !important;
+      font-family: 'Roboto', serif;
+      font-weight: 200 !important;
       color: #ffffff !important;
       text-align: center !important;
-      font-size: 28px;
+      font-size: 25px;
       letter-spacing: 2px;
       margin: 0 0 35px 0;
       padding: 0;
@@ -643,26 +643,31 @@ section[class*="Welcome"] {
       width: 100%;
     ">
 
-      <!-- COLUMN 1: IMAGE -->
-      <div class="about-matrix-photo-box" style="
-        flex: 0 1 350px; 
-        display: flex;
-        justify-content: center;
-        box-sizing: border-box;
-      ">
-        <img data-ux="Image" src="/sitepics/img_1173.jpg" style="
-          width: 100%;
-          max-width: 350px;      
-          height: auto;
-          aspect-ratio: 1 / 1;       
-          object-fit: cover;
-          object-position: center 22%; 
-          border-radius: 2px;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-          filter: saturate(1.25) contrast(1.05);
-          display: block;
-        " alt="About Section Image Layout Component">
-      </div>
+  <!-- COLUMN 1: IMAGE -->
+<div class="about-matrix-photo-box" style="
+  flex: 0 1 350px; 
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+">
+    
+  <img data-ux="Image" src="/sitepics/img_1173.jpg" style="
+  width: 100%;
+  max-width: 100%;      
+  min-width: 0;
+  height: auto;
+  aspect-ratio: 1 / 1;       
+  object-fit: cover;
+  object-position: center 22%; 
+  border-radius: 2px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  filter: saturate(1.25) contrast(1.05);
+  display: block;
+" alt="About Section Image Layout Component">
+
 
       <!-- COLUMN 2: DESCRIPTION TEXT (Swapped to Light Josefin Slab) -->
       <div class="about-matrix-text-box" style="
@@ -672,16 +677,15 @@ section[class*="Welcome"] {
         box-sizing: border-box;
       ">
         <div style="
-          font-family: 'Josefin Slab', Georgia, serif;
-          font-weight: 300; /* Thin look configuration */
+          font-family: 'Roboto', josefine-slab, serif;
+          font-weight: 200; /* Thin look configuration */
           font-size: 17px; /* Increased by 1px since serif fonts naturally display slightly smaller than san-serif */
           line-height: 1.7;
           margin: 0;
           opacity: 0.95;
         ">
-          <p style="margin: 0; padding: 0; text-align: left;">
-            Foreign policy analyst and political economist with senior-level government relations, public relations, and brand management experience. Doctoral degree in Public Policy and Political Economy, earned at The University of Texas at Dallas. Professional history in the international affairs industry; working experience with non-profit organizations. Industry experience in government relations, branding, event management, media relations, and executing B2C &amp; B2B event marketing campaigns targeting varied publics - either as part of a general brand awareness strategy, or as part of a focused set of multi-touch, strategic branding directives, issued by a nuclear conglomerate of executives. Skilled in data assessment and processing; data analyses; analytical outcome evaluation; policy analyses. Certified in Economic and Demographic Data Analyses; Dynamic Modeling; &amp; R Programming.
-          </p>
+          <div style="flex: 1 1 0%; min-width: 0; max-width: 100%; box-sizing: border-box;">
+  <p style="margin: 0; padding: 0; text-align: left; -webkit-hyphens: auto; hyphens: auto; word-break: break-word;">Foreign policy analyst and political economist with senior-level government relations, public relations, and brand management experience. Doctoral degree in Public Policy and Political Economy, earned at The University of Texas at Dallas. Professional history in the international affairs industry; working experience with non-profit organizations. Industry experience in government relations, branding, event management, media relations, and executing B2C &amp; B2B event marketing campaigns targeting varied publics - either as part of a general brand awareness strategy, or as part of a focused set of multi-touch, strategic branding directives, issued by a nuclear conglomerate of executives. Skilled in data assessment and processing; data analyses; analytical outcome evaluation; policy analyses. Certified in Economic and Demographic Data Analyses; Dynamic Modeling; &amp; R Programming.</p>
         </div>
       </div>
 
