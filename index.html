@@ -22,7 +22,7 @@
 <title>Home</title>
 <link rel="preconnect" href="https://googleapis.com">
 <link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@100..700&display=swap" rel="stylesheet">
+<link href="https://googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@300;400;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gentium+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Italiana&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
  
  <!--layout alignments, form inputs, animations -->
@@ -472,7 +472,7 @@ section[class*="Welcome"] {
     z-index: 1;
   "></div>
 
-  <!-- FOREGROUND EXECUTION BLOCK: 1-Row, 2-Column Strict Layout -->
+   <!-- FOREGROUND EXECUTION BLOCK: 1-Row, 2-Column Strict Layout -->
   <div class="hero-inner-strict-grid" style="
     position: relative;
     z-index: 2;
@@ -482,16 +482,15 @@ section[class*="Welcome"] {
     margin: 0 auto;
     padding: 0 40px;
     display: grid;
-    /* Locks layout into exactly 2 columns: left column expands, right column locks at 450px */
     grid-template-columns: 1fr 450px; 
     gap: 50px;
-    align-items: center; /* Vertically centers both columns perfectly */
+    align-items: center; /* Vertically centers the text with the image mid-point */
     box-sizing: border-box;
   ">
 
     <!-- ROW 1 COLUMN 1 (r1c1): TEXT LEFT-ALIGNED & VERTICALLY CENTERED -->
     <div style="
-      text-align: left; /* Enforces text left-alignment */
+      text-align: left; 
       color: #ffffff;
       box-sizing: border-box;
       width: 100%;
@@ -505,20 +504,20 @@ section[class*="Welcome"] {
         opacity: 0.9;
       ">Welcome</p>
       
-      <!-- FIXED THIN FONT NAME -->
+      <!-- UPDATED FOR THE TRUE THIN LOGO LOOK (Matches GoDaddy Class standards) -->
       <h1 style="
         font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
-        font-weight: 100 !important;
-        font-size: 35px !important;
-        line-height: 1.2;
+        font-weight: 300 !important;   /* Pulls the genuine thin handwriting weight */
+        font-size: 40px !important;    /* Locks size footprint to your exact class 7i spec */
+        line-height: 1.2 !important;   /* Matches class 7g spacing */
+        letter-spacing: 4px !important;/* Adds elegant letter breathing room from class 7k */
         margin: 0 0 15px 0;
         padding: 0;
-        text-shadow: none;
+        text-shadow: none !important;  /* Purges dark shadows that artificial bloat thin fonts */
         word-break: normal;
         overflow-wrap: break-word;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        -webkit-text-stroke: 0.5px rgba(255,255,255,0.1); 
       ">Olufunlola Arowolo, Ph.D.</h1>
       
       <div style="
@@ -535,8 +534,8 @@ section[class*="Welcome"] {
     <!-- ROW 1 COLUMN 2 (r1c2): IMAGE CENTERED -->
     <div style="
       display: flex;
-      justify-content: center; /* Horizontally centers the image within column 2 */
-      align-items: center;     /* Vertically centers the image within column 2 */
+      justify-content: center; 
+      align-items: center;     
       box-sizing: border-box;
       width: 100%;
     ">
