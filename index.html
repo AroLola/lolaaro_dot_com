@@ -533,7 +533,7 @@ section[class*="Welcome"] {
         visibility: visible !important;
       }
       .force-dancing-signature {
-        font-family: 'Dancing Script', 'Josephine-Slab', cursive !important;
+        font-family: 'Dancing Script', 'Josefin Slab', cursive !important;
         font-size: 30px !important; /* Expanded sizing matrix to make thin handwriting clear */
         font-weight: 100 !important;
         letter-spacing: 1px !important;
@@ -690,6 +690,9 @@ section[class*="Welcome"] {
 <!-- ======================================================================= -->
 <!-- MASTER 16-IMAGE INTERACTIVE VIEWER & THUMBNAIL MATRIX SYSTEM            -->
 <!-- ======================================================================= -->
+ <!-- ======================================================================= -->
+<!-- MASTER 16-IMAGE POP-ANIMATED VIEWER & TOP-ALIGNED THUMBNAIL MATRIX       -->
+<!-- ======================================================================= -->
 <div id="c9c473d6-9b51-4d21-9526-1ce6573f6b1d" class="widget widget-gallery widget-gallery-gallery-1" style="
   width: 100%; 
   clear: both; 
@@ -715,18 +718,20 @@ section[class*="Welcome"] {
       box-sizing: border-box;
       background-color: #000000;
     ">
-      <!-- Starts automatically with your first photo item in the array -->
+      <!-- Added scale(1) and smooth transitions for the pop-out animation effect -->
       <img id="mainSlideshowViewer" src="/sitepics/img_0639.jpg" style="
         width: 100%; 
         height: 100%; 
         object-fit: cover; 
+        object-position: center top !important; /* Locks focus to top of image, cutting off the bottom */
         display: block; 
-        transition: opacity 0.4s ease-in-out; 
+        transition: opacity 0.3s ease-in-out, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Custom elastic pop curves */
+        transform: scale(1);
         opacity: 1;
       " alt="Featured Presentation Showcase Image Viewer">
     </div>
 
-    <!-- 2. INTERACTIVE THUMBNAIL MATRIX GRID (Populated with all 16 unique assets) -->
+    <!-- 2. INTERACTIVE THUMBNAIL MATRIX GRID -->
     <div class="interactive-thumbnail-grid" style="
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
@@ -755,9 +760,8 @@ section[class*="Welcome"] {
   </div>
 </div>
 
-<!-- 3. AUTOMATED LOOP TIMER ENGINE -->
+<!-- 3. SLIDESHOW SCRIPT WITH POP TRANSITION ENGINE -->
 <script>
-  // Complete indexed file location library matching your exact folder contents
   const masterImageTracks = [
     "/sitepics/img_0639.jpg",
     "/sitepics/img_0713.jpg",
@@ -786,15 +790,18 @@ section[class*="Welcome"] {
 
     currentActiveIndex = selectedIndex;
 
-    // Smooth fade configuration
-    mainViewer.style.opacity = "0.15";
+    // Forces a smooth fade-down and scale-down "pop out" prep state
+    mainViewer.style.opacity = "0.05";
+    mainViewer.style.transform = "scale(0.96)";
     
     setTimeout(() => {
       mainViewer.src = targetImgSrc;
+      // Snaps back up with a clean scale spring animation
       mainViewer.style.opacity = "1";
-    }, 200);
+      mainViewer.style.transform = "scale(1)";
+    }, 250);
 
-    // Coordinate selected state highlights
+    // Coordinate selected thumbnail highlight borders
     thumbnailItems.forEach((thumbnail, idx) => {
       if (idx === selectedIndex) {
         thumbnail.style.borderColor = "#ffffff";
@@ -805,7 +812,6 @@ section[class*="Welcome"] {
       }
     });
 
-    // Reset loop timer interval upon manual click overrides
     resetSlideshowIntervalClock();
   }
 
@@ -816,7 +822,6 @@ section[class*="Welcome"] {
   }
 
   function beginSlideshowIntervalClock() {
-    // 4000ms = Strict 4-second slide loop rotation parameter
     galleryCycleInstance = setInterval(runSlideAdvanceCycle, 4000);
   }
 
@@ -825,7 +830,6 @@ section[class*="Welcome"] {
     beginSlideshowIntervalClock();
   }
 
-  // Load rotation background processes natively when DOM rendering completes
   document.addEventListener("DOMContentLoaded", function() {
     beginSlideshowIntervalClock();
   });
@@ -835,10 +839,11 @@ section[class*="Welcome"] {
 <style>
   @media (max-width: 768px) {
     #mainSlideshowViewer {
-      height: 280px !important; /* Locks layout height cleanly to avoid mobile view stretching */
+      height: 280px !important;
+      object-position: center top !important; /* Retains top alignment lock on mobile viewports */
     }
     .interactive-thumbnail-grid {
-      grid-template-columns: repeat(4, 1fr) !important; /* Standardized mobile thumbnail row buttons matrix */
+      grid-template-columns: repeat(4, 1fr) !important;
       gap: 8px !important;
     }
     .gallery-thumbnail-item {
@@ -848,18 +853,9 @@ section[class*="Welcome"] {
 </style>
 
 
+
    <!-- UL and UTD image grid -->
-   <div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-b0 c1-b c1-c c1-d c1-e c1-f c1-g"><div style="overflow:hidden;width:100%"><div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-q c1-b c1-c c1-d c1-e c1-f c1-g">
-    <button data-ux="Block" class="x-el x-el-button c1-1 c1-2 c1-o c1-b c1-c c1-d c1-e c1-f c1-g"><svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" data-ux="Icon" data-edit-interactive="true" class="x-el x-el-svg c1-1 c1-2 c1-b1 c1-26 c1-3s c1-b c1-c c1-d c1-e c1-f c1-g">
- <path fill-rule="evenodd" d="M15.804 19.544a.774.774 0 0 1-1.061-.03L7 11.63l7.742-7.42a.773.773 0 0 1 1.061 0 .697.697 0 0 1 0 1.017L9.09 11.66l6.745 6.867a.698.698 0 0 1-.031 1.016"></path></svg></button><ul style="list-style:none;padding:0;margin:0;text-align:left;white-space:nowrap;transition:margin-left 0.5s;margin-left:0" data-aid="THUMBNAIL_NAV_LIST"></ul>
- <button data-ux="Block" class="x-el x-el-button c1-1 c1-2 c1-3a c1-3z c1-s c1-1y c1-1z c1-20 c1-21 c1-b2 c1-b3 c1-b4 c1-1w c1-b5 c1-51 c1-b6 c1-2z c1-1p c1-30 c1-1q c1-1m c1-b c1-c c1-d c1-e c1-f c1-g"><svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" data-ux="Icon" data-edit-interactive="true" class="x-el x-el-svg c1-1 c1-2 c1-b1 c1-26 c1-3s c1-b c1-c c1-d c1-e c1-f c1-g">
- <path fill-rule="evenodd" d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.697 0 0 1 .032-1.016"></path></svg></button></div></div></div><div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-b7 c1-b8 c1-b c1-c c1-b9 c1-d c1-e c1-f c1-g"><button data-ux="CarouselButtonPrevious" data-aid="GALLERY_SCROLL_LEFT_ARROW" class="x-el x-el-button c1-1 c1-2 c1-7s c1-1w c1-1y c1-1z c1-20 c1-21 c1-ba c1-bb c1-1q c1-1p c1-b5 c1-8a c1-4s c1-bc c1-51 c1-bd c1-3z c1-s c1-be c1-bf c1-b c1-bg c1-bh c1-bi c1-bj c1-bk c1-bl c1-bm c1-bn c1-bo c1-bp">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" data-ux="Icon" data-edit-interactive="true" class="x-el x-el-svg c1-1 c1-2 c1-3p c1-26 c1-3s c1-b c1-bc c1-bi c1-bn c1-bo c1-bp"><path fill-rule="evenodd" d="M15.804 19.544a.774.774 0 0 1-1.061-.03L7 11.63l7.742-7.42a.773.773 0 0 1 1.061 0 .697.697 0 0 1 0 1.017L9.09 11.66l6.745 6.867a.698.698 0 0 1-.031 1.016"></path></svg></button><button data-ux="CarouselButtonNext" data-aid="GALLERY_SCROLL_RIGHT_ARROW" class="x-el x-el-button c1-1 c1-2 c1-b6 c1-1w c1-1y c1-1z c1-20 c1-21 c1-ba c1-bb c1-1q c1-1p c1-b5 c1-8a c1-4s c1-bc c1-51 c1-bd c1-3z c1-s c1-be c1-bf c1-b c1-bg c1-bh c1-bi c1-bj c1-bk c1-bl c1-bm c1-bn c1-bo c1-bp">
-   <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" data-ux="Icon" data-edit-interactive="true" class="x-el x-el-svg c1-1 c1-2 c1-3p c1-26 c1-3s c1-b c1-bc c1-bi c1-bn c1-bo c1-bp"><path fill-rule="evenodd" d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.697 0 0 1 .032-1.016"></path></svg></button></div></div></div></div></div></div></div></div></div></section>  </div></div></div><div id="39fd0566-a5be-49dc-a3a7-a5b795ec5249" class="widget widget-content widget-content-content-5">
-    <div data-ux="WidgetBanner" role="region" id="39fd0566-a5be-49dc-a3a7-a5b795ec5249" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> 
-    <div role="img" data-aid="BACKGROUND_IMAGE_RENDERED" data-ux="Background" dataAid="CONTENT_BACKGROUND_IMAGE_RENDERED" class="x-el x-el-div c1-1 c1-2 c1-bq c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Block" data-lazybg="true" class="x-el x-el-div d-none c1-1 c1-2 c1-br c1-u c1-v c1-w c1-x c1-b c1-c c1-bs c1-bt c1-bu c1-bv c1-bw c1-bx c1-by c1-bz c1-c0 c1-c1 c1-c2 c1-c3 c1-c4 c1-c5 c1-c6 c1-c7 c1-c8 c1-c9 c1-ca c1-cb c1-cc c1-d c1-e c1-f c1-g"></div>
-     
-<section data-ux="SectionBanner" class="x-el x-el-section c1-1 c1-2 c1-15 c1-i c1-j c1-b c1-c c1-m c1-n c1-d c1-e c1-f c1-g">
+ <section data-ux="SectionBanner" class="x-el x-el-section c1-1 c1-2 c1-15 c1-i c1-j c1-b c1-c c1-m c1-n c1-d c1-e c1-f c1-g">
  <div data-ux="SectionContainer" class="x-el x-el-div c1-1 c1-2 c1-2j c1-2k c1-1l c1-1j c1-2l c1-b c1-c c1-5r c1-d c1-5s c1-19 c1-1a c1-e c1-5t c1-f c1-5u c1-g">
   <div data-ux="CardBanner" class="x-el x-el-div x-el c1-1 c1-2 c1-b c1-c c1-d c1-cd c1-e c1-f c1-g c1-1 c1-2 c1-2j c1-2k c1-1l c1-1j c1-2l c1-1d c1-1b c1-2r c1-5b c1-1i c1-1k c1-ce c1-b c1-c c1-5r c1-d c1-5s c1-cf c1-cg c1-ch c1-ci c1-cj c1-ck c1-cl c1-cm c1-cn c1-co c1-cp c1-cq c1-cr c1-cs c1-e c1-5t c1-f c1-5u c1-g"><div data-ux="CardBannerBlock" class="x-el x-el-div c1-1 c1-2 c1-1d c1-r c1-86 c1-2z c1-30 c1-6u c1-ct c1-4 c1-b c1-c c1-d c1-cu c1-cv c1-e c1-f c1-g">
    <h2 role="heading" aria-level="2" data-ux="CardBannerHeading" data-aid="CONTENT_SECTION_TITLE_RENDERED" data-typography="HeadingBeta" data-font-scaled="true" class="x-el x-el-h2 c1-39 c1-2 c1-1u c1-1v c1-cw c1-1h c1-1f c1-1e c1-1g c1-3b c1-64 c1-4s c1-3c c1-66 c1-cx c1-cy c1-68 c1-69 c1-6a"> </h2></div></div></div></section></div>  </div></div></div><div id="77167d40-2c7b-4a2f-a1bb-2affd5188ad6" class="widget widget-about widget-about-about-3">
