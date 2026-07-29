@@ -17,6 +17,7 @@
 <meta name="twitter:description" content="Olufunlola Arowolo,Ph.D.">
 <meta name="twitter:image" content="https://img1.wsimg.com/isteam/ip/6a88dc85-1938-47c8-a24d-4fd9523a22aa/blob-da7c4a6.png">
 <meta name="twitter:image:alt" content="Olufunlola A. Arowolo, Ph.D.">
+<meta name="theme-color" content="#010214">
 <meta charset="UTF-8">
 <title>Home</title>
 <link rel="preconnect" href="https://googleapis.com">
@@ -464,7 +465,7 @@ section[class*="Welcome"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #010214;
+    background-color: #080d99;
     box-sizing: border-box;
     padding: 60px 40px;
     overflow: hidden;
@@ -583,14 +584,14 @@ section[class*="Welcome"] {
     /* Enforces Tangerine and Allura handwriting exclusively on mobile devices */
     .target-signature-handwriting {
       font-family: 'Tangerine', 'Allura', cursive !important;
-      font-weight: 300 !important; /* Tangerine reads beautifully on phone resolutions with a 700 weight */
-      font-size: 40px !important;  /* Elevated layout size scale so thin script font properties look clean */
+      font-weight: 700 !important; /* Tangerine reads beautifully on phone resolutions with a 700 weight */
+      font-size: 54px !important;  /* Elevated layout size scale so thin script font properties look clean */
       letter-spacing: 1px !important;
     }
   }
 </style>
 
-<div style="clear: both; display: block; width: 100%; height: 10px; background-color: transparent;"></div>
+<div style="clear: both; display: block; width: 100%; height: 30px; background-color: transparent;"></div>
 
 
 <!-- ABOUT SECTION -->
@@ -599,7 +600,7 @@ section[class*="Welcome"] {
   width: 100%; 
   clear: both; 
   display: block; 
-  background-color: #010214; 
+  background-color: #080d99; 
   box-sizing: border-box; 
   padding: 50px 0; 
   margin: 0;
@@ -616,14 +617,15 @@ section[class*="Welcome"] {
     }
   </style>
   
-   
+  <div style="width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 30px; box-sizing: border-box;">
+    
     <!-- HEADER TITLE: Swapped to thin Josefin Slab styling -->
     <h2 role="heading" aria-level="2" style="
-      font-family: 'Roboto', serif;
-      font-weight: 200 !important;
+      font-family: 'Josefin Slab', serif;
+      font-weight: 300 !important;
       color: #ffffff !important;
       text-align: center !important;
-      font-size: 25px;
+      font-size: 28px;
       letter-spacing: 2px;
       margin: 0 0 35px 0;
       padding: 0;
@@ -643,31 +645,26 @@ section[class*="Welcome"] {
       width: 100%;
     ">
 
-  <!-- COLUMN 1: IMAGE -->
-<div class="about-matrix-photo-box" style="
-  flex: 0 1 350px; 
-  min-width: 0;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-  overflow: hidden;
-">
-    
-  <img data-ux="Image" src="/sitepics/img_1173.jpg" style="
-  width: 100%;
-  max-width: 100%;      
-  min-width: 0;
-  height: auto;
-  aspect-ratio: 1 / 1;       
-  object-fit: cover;
-  object-position: center 22%; 
-  border-radius: 2px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-  filter: saturate(1.25) contrast(1.05);
-  display: block;
-" alt="About Section Image Layout Component">
-
+      <!-- COLUMN 1: IMAGE -->
+      <div class="about-matrix-photo-box" style="
+        flex: 0 1 350px; 
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+      ">
+        <img data-ux="Image" src="/sitepics/img_1173.jpg" style="
+          width: 100%;
+          max-width: 350px;      
+          height: auto;
+          aspect-ratio: 1 / 1;       
+          object-fit: cover;
+          object-position: center 22%; 
+          border-radius: 2px;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+          filter: saturate(1.25) contrast(1.05);
+          display: block;
+        " alt="About Section Image Layout Component">
+      </div>
 
       <!-- COLUMN 2: DESCRIPTION TEXT (Swapped to Light Josefin Slab) -->
       <div class="about-matrix-text-box" style="
@@ -677,15 +674,16 @@ section[class*="Welcome"] {
         box-sizing: border-box;
       ">
         <div style="
-          font-family: 'Roboto', josefine-slab, serif;
-          font-weight: 200; /* Thin look configuration */
+          font-family: 'Josefin Slab', Georgia, serif;
+          font-weight: 300; /* Thin look configuration */
           font-size: 17px; /* Increased by 1px since serif fonts naturally display slightly smaller than san-serif */
           line-height: 1.7;
           margin: 0;
           opacity: 0.95;
         ">
-          <div style="flex: 1 1 0%; min-width: 0; max-width: 100%; box-sizing: border-box;">
-  <p style="margin: 0; padding: 0; text-align: left; -webkit-hyphens: auto; hyphens: auto; word-break: break-word;">Foreign policy analyst and political economist with senior-level government relations, public relations, and brand management experience. Doctoral degree in Public Policy and Political Economy, earned at The University of Texas at Dallas. Professional history in the international affairs industry; working experience with non-profit organizations. Industry experience in government relations, branding, event management, media relations, and executing B2C &amp; B2B event marketing campaigns targeting varied publics - either as part of a general brand awareness strategy, or as part of a focused set of multi-touch, strategic branding directives, issued by a nuclear conglomerate of executives. Skilled in data assessment and processing; data analyses; analytical outcome evaluation; policy analyses. Certified in Economic and Demographic Data Analyses; Dynamic Modeling; &amp; R Programming.</p>
+          <p style="margin: 0; padding: 0; text-align: left;">
+            Foreign policy analyst and political economist with senior-level government relations, public relations, and brand management experience. Doctoral degree in Public Policy and Political Economy, earned at The University of Texas at Dallas. Professional history in the international affairs industry; working experience with non-profit organizations. Industry experience in government relations, branding, event management, media relations, and executing B2C &amp; B2B event marketing campaigns targeting varied publics - either as part of a general brand awareness strategy, or as part of a focused set of multi-touch, strategic branding directives, issued by a nuclear conglomerate of executives. Skilled in data assessment and processing; data analyses; analytical outcome evaluation; policy analyses. Certified in Economic and Demographic Data Analyses; Dynamic Modeling; &amp; R Programming.
+          </p>
         </div>
       </div>
 
@@ -713,7 +711,7 @@ section[class*="Welcome"] {
   }
 </style>
 
-<div style="clear: both; display: block; width: 100%; height: 40px; background-color: transparent;"></div>
+<div style="clear: both; display: block; width: 100%; height: 30px; background-color: transparent;"></div>
 
  <!-- education -->
 <div id="32490cd1-4cb1-405e-bcc8-2d8b2ce3e100" class="widget widget-content widget-content-content-1"><div data-ux="Widget" role="region" id="32490cd1-4cb1-405e-bcc8-2d8b2ce3e100" class="x-el x-el-div x-el c1-1 c1-2 c1-ak c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g"><div> 
