@@ -1232,19 +1232,24 @@ section[class*="Welcome"] {
 <script crossorigin="Anonymous" src="./index/bs-wrapWithDeviceDetection-f9dc1d72.js"></script>
 
 <!-- INLINE RESPONSIVE DRIVER: Swaps font weight and family cleanly on mobile views -->
+<!-- GLOBAL MOBILE HANDWRITING OVERRIDE SHEET -->
 <style>
   @media (max-width: 767px) {
-    .force-tangerine-mobile-override,
-    [fontPack="dancing-script"],
-    #dynamic-tagline-32910 {
-      font-family: 'Tangerine', 'Allura', cursive !important;
-      font-size: 54px !important;
-      font-weight: 700 !important;
+    #tagline-container-32909 h1,
+    #tagline-container-32909 span,
+    #dynamic-tagline-32910,
+    .target-signature-handwriting,
+    .force-tangerine-mobile-override {
+      font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
+      font-weight: 500 !important; /* Locks into a clean, legible script density */
+      font-size: 34px !important;  /* Balanced font size for a perfect single-line mobile fit */
       letter-spacing: 1px !important;
-      line-height: 1.1 !important;
+      line-height: 1.2 !important;
+      text-shadow: none !important; /* Shaves off dark shadow weights that bloat cursive lines */
     }
   }
 </style>
+
 
 </body>
 </html>
