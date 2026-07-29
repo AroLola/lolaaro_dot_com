@@ -623,10 +623,22 @@ section[class*="Welcome"] {
     <!-- GRID FLEX COMPONENT -->
     <div class="about-responsive-flex-matrix">
       
-      <!-- COLUMN 1: LEFT PHOTO SIDE HOUSING -->
+     
+      <!-- COLUMN 1: PHOTO HOUSING (CONVERTED TO RECTANGLE) -->
       <div class="about-matrix-photo-box" style="flex: 0 1 350px; display: flex; justify-content: center; box-sizing: border-box;">
-        <img data-ux="Image" src="/sitepics/img_1173.jpg" style="width: 100%; max-width: 450px; height: 350px !important; object-fit: cover; object-position: center 22%; border-radius: 2px; box-shadow: 0 12px 30px rgba(0,0,0,0.4); filter: saturate(1.25) contrast(1.05); display: block;" alt="About Section Architectural Feature Photo Component">
+        <img data-ux="Image" src="/sitepics/img_1173.jpg" style="
+          width: 100%; 
+          max-width: 350px; 
+          height: 240px !important; /* Decreased from 350px to force a sleek rectangular crop */
+          object-fit: cover; 
+          object-position: center 22%; 
+          border-radius: 2px; 
+          box-shadow: 0 12px 30px rgba(0,0,0,0.4); 
+          filter: saturate(1.25) contrast(1.05); 
+          display: block;
+        " alt="About Section Architectural Feature Photo Component">
       </div>
+      
 
       <!-- COLUMN 2: RIGHT TEXT DESCRIPTION HOUSING -->
       <div class="about-matrix-text-box" style="flex: 1 1 550px; text-align: left; color: #ffffff; box-sizing: border-box; max-width: 100%; overflow: hidden;">
@@ -864,25 +876,29 @@ section[class*="Welcome"] {
   width: 100%; 
   clear: both; 
   display: block !important; 
-  margin-top: 40px; /* <--- ADD THIS LINE to create perfect spacing above the image */
+  margin-top: 50px; 
   margin-bottom: 0; 
   padding: 0; 
   overflow: hidden; 
   background-color: #010214;
 ">
-  <!-- Forces the single b&w image to behave exactly like your clean multi-panel divider -->
-  <img src="/sitepics/blob-7bfdc94.png" 
-       alt="Book Detail Divider Panel" 
-       style="
-         width: 100%; 
-         height: 320px; 
-         object-fit: cover !important; 
-         object-position: center 60% !important; 
-         display: block !important;
-         filter: brightness(0.7);
-         border: none;
-       " />
+  <img src="/sitepics/blob-744fb83" alt="Book Detail Divider Panel" style="width: 100%; height: 320px; object-fit: cover !important; object-position: center 60% !important; display: block !important; filter: brightness(0.7); border: none;" />
 </div>
+
+<!-- ======================================================================= -->
+<!-- TIGHTENED TOP COMPONENT: Closes up whitespace gaps below the divider pic -->
+<!-- ======================================================================= -->
+<div id="77167d40-2c7b-4a2f-a1bb-2affd5188ad6" class="widget widget-about widget-about-about-3" style="
+  width: 100%; 
+  clear: both; 
+  display: block !important; 
+  background-color: #010214; 
+  box-sizing: border-box; 
+  padding: 15px 0 20px 0; /* Tightened top padding down to 15px */
+  margin: 0;
+  border: none !important;
+">
+
 
 <!-- ======================================================================= -->
 <!-- START OF THE NEXT CARD SECTION                                         -->
