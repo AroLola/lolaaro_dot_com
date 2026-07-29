@@ -709,173 +709,353 @@ section[class*="Welcome"] {
 <!-- ======================================================================= -->
 <!-- PRELOADED ZERO-FLICKER INTERACTIVE SHOWCASE MODULE                      -->
 <!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- MASTER RE-ENGINEERED AUTOMATED PHOTO ENGINE GALLERY SECTION             -->
+<!-- ======================================================================= -->
 <div id="c9c473d6-9b51-4d21-9526-1ce6573f6b1d" class="widget widget-gallery widget-gallery-gallery-1" style="
   width: 100%; 
   clear: both; 
   display: block !important; 
-  background-color: #010214; 
+  background-color: #010214; /* Your preferred deep midnight canvas backdrop choice */
   box-sizing: border-box; 
-  padding: 40px 0;
+  padding: 50px 0;
   margin: 0;
   border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 ">
-  
-  <div style="width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 30px; box-sizing: border-box;">
-    
-    <!-- 1. LARGE RECTANGULAR VIEWER (Fills top layout space completely) -->
-    <div style="
-      width: 100%; 
-      height: 520px; 
-      overflow: hidden; 
-      position: relative; 
-      border-radius: 4px; 
-      box-shadow: 0 12px 35px rgba(0,0,0,0.5); 
+
+  <!-- LOCAL COMPONENT VIEWPORT ENGINE: Custom layout classes for pure CSS sliders and lightboxes -->
+  <style>
+    /* Filter Nav Pill Layout Controls */
+    .filter-nav-bar-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .filter-nav-pill-btn {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+    .filter-nav-pill-btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: #ffffff;
+    }
+
+    /* Core Slider Presentation Framework */
+    .gallery-section-wrapper {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+      padding: 0 30px;
+      box-sizing: border-box;
+    }
+    .dynamic-carousel-box {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 4px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
       margin-bottom: 25px;
       box-sizing: border-box;
-      background-color: #010214;
-    ">
-      <img id="mainSlideshowViewer" src="/sitepics/img_0639.jpg" style="
-        width: 100%; 
-        height: 100%; 
-        object-fit: cover; 
-        object-position: center top !important; 
-        display: block; 
-        transition: opacity 0.25s ease-in-out, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        transform: scale(1);
-        opacity: 1;
-      " alt="Featured Presentation Showcase Image Viewer">
-    </div>
+      background-color: #000000;
+    }
+    .dynamic-carousel-viewport {
+      width: 100%;
+      position: relative;
+    }
+    .dynamic-carousel-track {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .dynamic-carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .slide-split-row {
+      width: 100%;
+      height: 520px; /* Locked presentation box height matching your viewer preference */
+      position: relative;
+    }
+    .slide-media-box {
+      width: 100%;
+      height: 100%;
+    }
+    .slide-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover !important;
+      object-position: center top !important; /* Forces the bottom section of photos to crop out cleanly */
+      display: block;
+    }
+    .slide-caption-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 30px 20px 20px 20px;
+      box-sizing: border-box;
+      color: #ffffff;
+    }
+    .slide-caption-box p {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.4;
+      margin: 0;
+      opacity: 0.95;
+    }
+    .empty-caption .slide-caption-box {
+      display: none !important; /* Auto-hides empty caption panels elegantly */
+    }
 
-    <!-- 2. INTERACTIVE THUMBNAIL MATRIX GRID -->
-    <div class="interactive-thumbnail-grid" style="
+    /* Interactive Grid Button Tray Elements */
+    .thumb-row-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
       gap: 12px;
       width: 100%;
       box-sizing: border-box;
-    ">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0639.jpg" onclick="switchActivePhoto(this.src, 0)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #ffffff; opacity: 1; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 1">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0713.jpg" onclick="switchActivePhoto(this.src, 1)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 2">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0875.jpg" onclick="switchActivePhoto(this.src, 2)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 3">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0916.jpg" onclick="switchActivePhoto(this.src, 3)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 4">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0928.jpg" onclick="switchActivePhoto(this.src, 4)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 5">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0930.jpg" onclick="switchActivePhoto(this.src, 5)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 6">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0953.jpg" onclick="switchActivePhoto(this.src, 6)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 7">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0964.jpg" onclick="switchActivePhoto(this.src, 7)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 8">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_0965.jpg" onclick="switchActivePhoto(this.src, 8)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 9">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_1173.jpg" onclick="switchActivePhoto(this.src, 9)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 10">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_1953.jpg" onclick="switchActivePhoto(this.src, 10)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 11">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_2226.jpg" onclick="switchActivePhoto(this.src, 11)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 12">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_222611.jpg" onclick="switchActivePhoto(this.src, 12)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 13">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_2276.jpg" onclick="switchActivePhoto(this.src, 13)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 14">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_2462.jpg" onclick="switchActivePhoto(this.src, 14)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 15">
-      <img class="gallery-thumbnail-item" src="/sitepics/img_2464.jpg" onclick="switchActivePhoto(this.src, 15)" style="width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid transparent; opacity: 0.5; transition: border-color 0.2s, opacity 0.2s;" alt="Select Image 16">
-    </div>
+    }
+    .thumb-card {
+      width: 100%;
+      height: 80px;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .thumb-card:hover {
+      transform: scale(1.03);
+      opacity: 0.85;
+    }
+    .thumb-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
 
+    /* Pop-out Interactive Lightbox Structure */
+    .expert-lightbox-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(1, 2, 20, 0.95); /* Midnight background mask tint */
+      z-index: 999999;
+      justify-content: center;
+      align-items: center;
+    }
+    .expert-lightbox-overlay:target {
+      display: flex; /* Opens up the pop-out window natively using clean CSS anchoring anchors */
+    }
+    .lightbox-content-box {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      animation: lightboxPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .lightbox-content-box img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      display: block;
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      color: #ffffff !important;
+      font-size: 28px;
+      text-decoration: none !important;
+      font-family: Arial, sans-serif;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close-btn:hover {
+      opacity: 0.7;
+    }
+
+    @keyframes lightboxPopIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Mobile Responsive Scaling Configuration Styles */
+    @media (max-width: 768px) {
+      .slide-split-row {
+        height: 280px !important; /* Automatically shrinks slider box height cleanly on phone resolutions */
+      }
+      .thumb-row-container {
+        grid-template-columns: repeat(4, 1fr) !important; /* Locks small navigation row trays for phone views */
+        gap: 8px !important;
+      }
+      .thumb-card {
+        height: 55px !important;
+      }
+      .lightbox-close-btn {
+        right: 10px;
+        top: -40px;
+      }
+    }
+  </style>
+
+  <!-- 1. MOUNT POINT: Navigation Pills Output Container -->
+  <div class="filter-nav-bar-container" id="filter-bar-mount"></div>
+
+  <!-- 2. MOUNT POINT: Dynamic Automated Content Output Container -->
+  <div id="dynamic-gallery-root" style="width: 100%; clear: both; display: block; box-sizing: border-box; margin: 0; padding: 0;">
+    <!-- Background loading indicator string placeholder -->
+    <p style="color: #ffffff; text-align: center; font-family: 'Roboto', Arial, sans-serif; font-weight: 300; padding: 60px; opacity: 0.6; margin: 0;">Generating interactive image blocks...</p>
   </div>
+
 </div>
 
-<!-- 3. INLINE JAVASCRIPT PRELOAD CONTROLLER ENGINE -->
+<!-- 3. RUNTIME ASYNCHRONOUS BUILD ENGINE HOOK -->
 <script>
-  const masterImageTracks = [
-    "/sitepics/img_0639.jpg",
-    "/sitepics/img_0713.jpg",
-    "/sitepics/img_0875.jpg",
-    "/sitepics/img_0916.jpg",
-    "/sitepics/img_0928.jpg",
-    "/sitepics/img_0930.jpg",
-    "/sitepics/img_0953.jpg",
-    "/sitepics/img_0964.jpg",
-    "/sitepics/img_0965.jpg",
-    "/sitepics/img_1173.jpg",
-    "/sitepics/img_1953.jpg",
-    "/sitepics/img_2226.jpg",
-    "/sitepics/img_222611.jpg",
-    "/sitepics/img_2276.jpg",
-    "/sitepics/img_2462.jpg",
-    "/sitepics/img_2464.jpg"
-  ];
-
-  // BACKGROUND MEMORY PRELOADER: Forces browser cache registration instantly
-  const preloadedImagesCache = [];
-  masterImageTracks.forEach((src) => {
-    const imgObj = new Image();
-    imgObj.src = src;
-    preloadedImagesCache.push(imgObj);
-  });
-
-  let currentActiveIndex = 0;
-  let galleryCycleInstance = null;
-
-  function switchActivePhoto(targetImgSrc, selectedIndex) {
-    const mainViewer = document.getElementById("mainSlideshowViewer");
-    const thumbnailItems = document.querySelectorAll(".gallery-thumbnail-item");
-
-    currentActiveIndex = selectedIndex;
-
-    // Trigger explicit animation shrinking "pop-out" phase
-    mainViewer.style.opacity = "0";
-    mainViewer.style.transform = "scale(0.96)";
-    
-    // Tiny delay to allow animation frame down-scale to clear smoothly
-    setTimeout(() => {
-      mainViewer.src = targetImgSrc;
+  fetch('./showcase.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Could not read showcase.json file assets');
+      return response.json();
+    })
+    .then(galleryData => {
+      const filterMount = document.getElementById('filter-bar-mount');
+      const rootElement = document.getElementById('dynamic-gallery-root');
       
-      // Forces animation spring snap expansion once image updates instantly from cache
-      setTimeout(() => {
-        mainViewer.style.opacity = "1";
-        mainViewer.style.transform = "scale(1)";
-      }, 50);
-    }, 200);
+      let pillsOutput = '';
+      let htmlOutput = '';
+      let lightboxOutput = '';
 
-    // Coordinate highlight border states
-    thumbnailItems.forEach((thumbnail, idx) => {
-      if (idx === selectedIndex) {
-        thumbnail.style.borderColor = "#ffffff";
-        thumbnail.style.opacity = "1";
-      } else {
-        thumbnail.style.borderColor = "transparent";
-        thumbnail.style.opacity = "0.5";
-      }
+      galleryData.photoEvents.forEach((event, eventIdx) => {
+        pillsOutput += `
+          <a href="#${event.id}-section" class="filter-nav-pill-btn">
+            ${event.name === 'Sports Day' ? 'Sports' : event.name}
+          </a>
+        `;
+
+        const hasDescription = event.description && event.description.trim() !== "";
+        const descriptionHTML = hasDescription ? `
+          <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
+            <p style="color: rgba(255, 255, 255, 0.75); font-family: 'Roboto', Arial, sans-serif; font-weight: 300; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
+              ${event.description}
+            </p>
+          </div>
+        ` : '';
+
+        // Restores your clean thin Roboto title layout parameters dynamically
+        htmlOutput += `
+          <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px; width: 100%; box-sizing: border-box;">
+            
+            <h2 role="heading" aria-level="2" style="font-family: 'Roboto', Arial, sans-serif !important; font-weight: 300 !important; color: #ffffff !important; text-align: center !important; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; padding: 0;">
+              <span>${event.name}</span>
+            </h2>
+
+            ${descriptionHTML}
+
+            <div class="dynamic-carousel-box">
+              <div class="dynamic-carousel-viewport">
+                <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
+        `;
+
+        event.media.forEach(item => {
+          const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
+          const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
+
+          htmlOutput += `
+            <li class="dynamic-carousel-slide">
+              <div class="slide-split-row ${emptyClassFlag}">
+                <div class="slide-media-box">
+                  <img src="${item.src}" alt="${item.caption || 'Gallery Media Content'}">
+                </div>
+                <div class="slide-caption-box">
+                  <p>${item.caption}</p>
+                </div>
+              </div>
+            </li>
+          `;
+        });
+
+        htmlOutput += `
+                </ul>
+              </div>
+            </div>
+
+            <div class="thumb-row-container">
+        `;
+
+        event.media.forEach((item, itemIdx) => {
+          htmlOutput += `
+            <a href="#pop-${item.id}" class="thumb-card">
+              <img src="${item.src}" alt="Thumb click trigger button">
+            </a>
+          `;
+
+          lightboxOutput += `
+            <div class="expert-lightbox-overlay" id="pop-${item.id}">
+              <div class="lightbox-content-box">
+                <a class="lightbox-close-btn" href="#${event.id}-section">✕</a>
+                <img src="${item.src}" alt="Expanded Lightbox Focus Display Asset">
+              </div>
+            </div>
+          `;
+        });
+
+        htmlOutput += `
+            </div>
+          </div>
+        `;
+      });
+
+      filterMount.innerHTML = pillsOutput;
+      rootElement.innerHTML = htmlOutput + lightboxOutput;
+
+      // Automated image carousel advancing timeline loop engine
+      galleryData.photoEvents.forEach((event, eventIdx) => {
+        const trackNode = document.getElementById(`track-${eventIdx}`);
+        const totalSlidesCount = event.media.length;
+        let currentSlideIndex = 0;
+
+        if (totalSlidesCount <= 1) return;
+
+        // Auto-rotates image sets gracefully on an absolute 3-second runtime loop cycle
+        setInterval(() => {
+          currentSlideIndex++;
+          if (currentSlideIndex >= totalSlidesCount) {
+            currentSlideIndex = 0;
+          }
+          const translateCalculation = currentSlideIndex * -100;
+          trackNode.style.transform = `translateX(${translateCalculation}%)`;
+        }, 3000);
+      });
+
+    })
+    .catch(error => {
+      console.error('Gallery Engine Render Crash:', error);
+      document.getElementById('dynamic-gallery-root').innerHTML = 
+        `<p style="color:#ffffff; font-family: 'Roboto', Arial, sans-serif; font-weight: 300; text-align:center; padding:60px; opacity:0.6; margin: 0;">Error generating media galleries. Verify JSON data paths.</p>`;
     });
-
-    resetSlideshowIntervalClock();
-  }
-
-  function runSlideAdvanceCycle() {
-    currentActiveIndex = (currentActiveIndex + 1) % masterImageTracks.length;
-    const targetNextUrlSrc = masterImageTracks[currentActiveIndex];
-    switchActivePhoto(targetNextUrlSrc, currentActiveIndex);
-  }
-
-  function beginSlideshowIntervalClock() {
-    galleryCycleInstance = setInterval(runSlideAdvanceCycle, 4000);
-  }
-
-  function resetSlideshowIntervalClock() {
-    clearInterval(galleryCycleInstance);
-    beginSlideshowIntervalClock();
-  }
-
-  document.addEventListener("DOMContentLoaded", function() {
-    beginSlideshowIntervalClock();
-  });
 </script>
-
-<style>
-  @media (max-width: 768px) {
-    #mainSlideshowViewer {
-      height: 280px !important;
-    }
-    .interactive-thumbnail-grid {
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 8px !important;
-    }
-    .gallery-thumbnail-item {
-      height: 55px !important;
-    }
-  }
-</style>
 
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
 <div style="display: block; width: 100%; height: 60px; background-color: #010214;"></div>
