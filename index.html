@@ -774,7 +774,9 @@ section[class*="Welcome"] {
 </div>
 
 <!-- 3. SLIDESHOW SCRIPT WITH POP TRANSITION ENGINE -->
+<!-- AUTOMATED POP ENGINE WITH DOUBLE-FRAME CACHE ANTIFLICKER CONTROL -->
 <script>
+  // Complete indexed file location library matching your exact folder contents
   const masterImageTracks = [
     "/sitepics/img_0639.jpg",
     "/sitepics/img_0713.jpg",
@@ -803,18 +805,24 @@ section[class*="Welcome"] {
 
     currentActiveIndex = selectedIndex;
 
-    // Forces a smooth fade-down and scale-down "pop out" prep state
-    mainViewer.style.opacity = "0.05";
-    mainViewer.style.transform = "scale(0.96)";
-    
-    setTimeout(() => {
-      mainViewer.src = targetImgSrc;
-      // Snaps back up with a clean scale spring animation
-      mainViewer.style.opacity = "1";
-      mainViewer.style.transform = "scale(1)";
-    }, 250);
+    // STEP 1: Immediately hide the old image to prepare for the change
+    mainViewer.style.transition = "none"; 
+    mainViewer.style.opacity = "0";
+    mainViewer.style.transform = "scale(0.94)"; // Shrinks slightly for the pop-out animation
 
-    // Coordinate selected thumbnail highlight borders
+    // STEP 2: Use a double-frame browser request to safely swap the image source file behind the scenes
+    requestAnimationFrame(() => {
+      mainViewer.src = targetImgSrc;
+      
+      requestAnimationFrame(() => {
+        // STEP 3: Re-apply the elastic cubic transition styles cleanly without flickering
+        mainViewer.style.transition = "opacity 0.35s ease-in-out, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)";
+        mainViewer.style.opacity = "1";
+        mainViewer.style.transform = "scale(1)"; // Snaps out beautifully with a spring pop effect
+      });
+    });
+
+    // Update the white highlight borders on the active thumbnail item
     thumbnailItems.forEach((thumbnail, idx) => {
       if (idx === selectedIndex) {
         thumbnail.style.borderColor = "#ffffff";
@@ -848,25 +856,8 @@ section[class*="Welcome"] {
   });
 </script>
 
-<!-- RESPONSIVE PATCH SHEET -->
-<style>
-  @media (max-width: 768px) {
-    #mainSlideshowViewer {
-      height: 280px !important;
-      object-position: center top !important; /* Retains top alignment lock on mobile viewports */
-    }
-    .interactive-thumbnail-grid {
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 8px !important;
-    }
-    .gallery-thumbnail-item {
-      height: 55px !important;
-    }
-  }
-</style>
-
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
-<div style="display: block; width: 100%; height: 40px; background-color: #010214;"></div>
+<div style="display: block; width: 100%; height: 60px; background-color: #010214;"></div>
   
    <!-- thesis pic  -->
 
