@@ -697,21 +697,7 @@ section[class*="Welcome"] {
              <p style="margin:0"><span>&nbsp;</span></p></div></div></div></div></div></section>  </div></div></div>
  
  <!-- carousel -->
-<!-- ======================================================================= -->
-<!-- RESTORED PHOTO GALLERY (Replaces Broken Script Carousel Natively)       -->
-<!-- ======================================================================= -->
-<!-- ======================================================================= -->
-<!-- MASTER 16-IMAGE INTERACTIVE VIEWER & THUMBNAIL MATRIX SYSTEM            -->
-<!-- ======================================================================= -->
- <!-- ======================================================================= -->
-<!-- MASTER 16-IMAGE POP-ANIMATED VIEWER & TOP-ALIGNED THUMBNAIL MATRIX       -->
-<!-- ======================================================================= -->
-<!-- ======================================================================= -->
-<!-- PRELOADED ZERO-FLICKER INTERACTIVE SHOWCASE MODULE                      -->
-<!-- ======================================================================= -->
-<!-- ======================================================================= -->
-<!-- MASTER RE-ENGINEERED AUTOMATED PHOTO ENGINE GALLERY SECTION             -->
-<!-- ======================================================================= -->
+
 <div id="c9c473d6-9b51-4d21-9526-1ce6573f6b1d" class="widget widget-gallery widget-gallery-gallery-1" style="
   width: 100%; 
   clear: both; 
@@ -934,9 +920,9 @@ section[class*="Welcome"] {
 
 <!-- 3. RUNTIME ASYNCHRONOUS BUILD ENGINE HOOK -->
 <script>
-  fetch('./showcase.json')
+  fetch('./index.json')
     .then(response => {
-      if (!response.ok) throw new Error('Could not read showcase.json file assets');
+      if (!response.ok) throw new Error('Could not read index.json file assets');
       return response.json();
     })
     .then(galleryData => {
