@@ -1,0 +1,27 @@
+{
+  "photoEvents": [
+    {
+      "id": "forbes-30u30-gallery",
+      "name": "Forbes 30U20, 2025",
+      "description": "Featured photos from the Forbes Under-30, 3-day Summit. Loction: Columbus, OH",
+      "media": [
+        { "id": "f-1", "src": "/sitepics/img_0639.jpg", "caption": "" },
+        { "id": "f-2", "src": "/sitepics/img_0713.jpg", "caption": "" },
+        { "id": "f-3", "src": "/sitepics/img_0875.jpg", "caption": "" },
+        { "id": "f-4", "src": "/sitepics/img_0916.jpg", "caption": "" },
+        { "id": "f-5", "src": "/sitepics/img_0928.jpg", "caption": "" },
+        { "id": "f-6", "src": "/sitepics/img_0930.jpg", "caption": "" },
+        { "id": "f-7", "src": "/sitepics/img_0953.jpg", "caption": "" },
+        { "id": "f-8", "src": "/sitepics/img_0964.jpg", "caption": "" },
+        { "id": "f-9", "src": "/sitepics/img_0965.jpg", "caption": "" },
+        { "id": "f-10", "src": "/sitepics/img_1173.jpg", "caption": "" },
+        { "id": "f-11", "src": "/sitepics/img_1953.jpg", "caption": "" },
+        { "id": "f-12", "src": "/sitepics/img_2226.jpg", "caption": "" },
+        { "id": "f-13", "src": "/sitepics/img_222611.jpg", "caption": "" },
+        { "id": "f-14", "src": "/sitepics/img_2276.jpg", "caption": "" },
+        { "id": "f-15", "src": "/sitepics/img_2462.jpg", "caption": "" },
+        { "id": "f-16", "src": "/sitepics/img_2464.jpg", "caption": "" }
+      ]
+    }
+  ]
+}
