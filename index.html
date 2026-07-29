@@ -1069,12 +1069,174 @@ section[class*="Welcome"] {
   height: 25px !important; 
   line-height: 25px !important;
   margin-top: 10px !important; 
-  margin-bottom: -50px !important; /* Forcefully crushes the whitespace underneath */
+  margin-bottom: 10px !important; /* Forcefully crushes the whitespace underneath */
   padding: 0 !important;
   overflow: hidden !important;
   visibility: visible !important;
 ">&nbsp;</div> 
 
+<!-- ======================================================================= -->
+<!-- SECTION START: FULL-WIDTH DIVIDER & SLIDER COMPONENT                   -->
+<!-- ======================================================================= -->
+<div class="custom-rebuilt-section">
+
+  <!-- TOP IMAGE BANNER WITH BUILT-IN BLUE DIVIDER STRIP -->
+  <div class="banner-wrapper">
+    <img src="/sitepics/blob-744fb83.png" alt="Book Detail Divider Panel" class="banner-image" />
+    <!-- This creates your exact blue breakup line physically beneath the graphic -->
+    <div class="blue-divider-break"></div>
+  </div>
+
+  <!-- SLIDER CONTENT SECTION -->
+  <div class="slider-content-container">
+    
+    <!-- SUB-HEADING ELEMENT (Cleaned up Roboto H4 replacement) -->
+    <h4 class="slider-subheading">REBUILT HEADLINE HERE</h4>
+
+    <!-- GALLERY CONTAINER (Houses your arrows, slides, and lists) -->
+    <div class="gallery-wrapper">
+      
+      <!-- Left Navigation Arrow -->
+      <button class="nav-arrow prev-arrow" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.804 19.544a.774.774 0 0 1-1.061-.03L7 11.63l7.742-7.42a.773.773 0 0 1 1.061 0 .697.697 0 0 1 0 1.017L9.09 11.66l6.745 6.867a.698.698 0 0 1-.031 1.016"></path></svg>
+      </button>
+
+      <!-- Central Slider Display Track -->
+      <div class="slider-track">
+        <div class="slide-card">
+          <!-- Your sliding image or content block goes here -->
+          <p style="color: #ffffff; text-align: center;">[ Insert Slide Image or Content Grid Here ]</p>
+        </div>
+      </div>
+
+      <!-- Right Navigation Arrow -->
+      <button class="nav-arrow next-arrow" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.773 0 0 1 .032-1.016"></path></svg>
+      </button>
+
+    </div> <!-- End Gallery Wrapper -->
+    
+  </div> <!-- End Content Container -->
+
+</div>
+<!-- ======================================================================= -->
+<!-- SECTION END                                                             -->
+<!-- ======================================================================= -->
+
+
+<!-- ======================================================================= -->
+<!-- STYLING CONTROLLER: Copy and paste this directly along with the HTML     -->
+<!-- ======================================================================= -->
+<style>
+  /* Root structural container styling */
+  .custom-rebuilt-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background-color: #010214 !important; /* Dark blue backdrop consistency */
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Banner image frame layout rules */
+  .banner-wrapper {
+    width: 100% !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important; /* Kills basic browser white text tracking gaps */
+  }
+  .banner-image {
+    width: 100% !important;
+    height: 380px !important;
+    object-fit: cover !important;
+    object-position: center 50% !important;
+    filter: brightness(0.8) !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* The Un-collapsible blue breakout bar */
+  .blue-divider-break {
+    width: 100% !important;
+    height: 25px !important; /* Exact thickness matching your request layout */
+    background-color: #010214 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Lower element slider canvas area */
+  .slider-content-container {
+    width: 100% !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 20px 40px 40px 40px !important; /* Completely crushed upper whitespace */
+    box-sizing: border-box !important;
+  }
+
+  /* Subheading adjustment layer layout rules */
+  .slider-subheading {
+    font-family: 'Roboto', Arial, sans-serif !important;
+    font-weight: 200 !important;
+    color: #ffffff !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+  }
+
+  /* Flexible gallery wrapper grid structure */
+  .gallery-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 20px !important;
+  }
+
+  /* Clean navigation arrows controller styling scripts */
+  .nav-arrow {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    padding: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .nav-arrow:hover {
+    opacity: 0.7 !important;
+  }
+  .nav-arrow svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  /* Display layout track system constraints rules */
+  .slider-track {
+    flex: 1 !important;
+    overflow: hidden !important;
+    min-height: 100px !important;
+  }
+
+  /* RESPONSIVE LAYOUT ENGINE FOR MOBILE PHONE RESOLUTIONS */
+  @media (max-width: 767px) {
+    .banner-image {
+      height: 240px !important; /* Scales image down slightly on smaller smartphone viewports */
+    }
+    .slider-content-container {
+      padding: 10px 20px 30px 20px !important; /* Minimizes side gutters on mobile */
+    }
+    .gallery-wrapper {
+      gap: 10px !important;
+    }
+  }
+</style>
 
 <!-- ======================================================================= -->
 <!-- START OF THE NEXT CARD SECTION                                         -->
