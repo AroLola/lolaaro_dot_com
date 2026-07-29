@@ -2,8 +2,8 @@
   "photoEvents": [
     {
       "id": "forbes-30u30-gallery",
-      "name": "Forbes 30U20, 2025",
-      "description": "Featured photos from the Forbes Under-30, 3-day Summit. Loction: Columbus, OH",
+      "name": "Forbes Under30 Summit, 2025",
+      "description": "Featured photos from the Forbes Under-30, 3-day Summit, October 2025. Loction: Columbus, OH",
       "media": [
         { "id": "f-1", "src": "/sitepics/img_0639.jpg", "caption": "" },
         { "id": "f-2", "src": "/sitepics/img_0713.jpg", "caption": "" },
