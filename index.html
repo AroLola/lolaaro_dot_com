@@ -552,7 +552,7 @@ section[class*="Welcome"] {
       <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 20px; font-weight: 400; margin: 0; opacity: 0.95; padding: 0;">Public Policy Analyst</p>
     </div>
     <div class="welcome-image-side">
-      <img src="/sitepics/blob-da7c4a6.png" class="welcome-portrait-image" alt="Olufunlola Arowolo Sharp Presentation Headshot Portrait">
+      <img src="/sitepics/blob-da25809a1.png" class="welcome-portrait-image" alt="Olufunlola Arowolo Sharp Presentation Headshot Portrait">
     </div>
   </div>
 
@@ -1337,23 +1337,31 @@ border-bottom: 40px solid #ffffff !important; /* Increased from 40px to 60px */
 <!-- INLINE RESPONSIVE DRIVER: Swaps font weight and family cleanly on mobile views -->
 <!-- GLOBAL MOBILE HANDWRITING OVERRIDE SHEET -->
 <style>
+  /* Global / Desktop Setting */
+  .force-dancing-signature {
+    font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
+  }
+
+  /* MOBILE PHONE OVERRIDES */
   @media (max-width: 767px) {
     #tagline-container-32909 h1,
     #tagline-container-32909 span,
     #dynamic-tagline-32910,
-    .target-signature-handwriting,
+    .force-dancing-signature,
     .force-tangerine-mobile-override {
-      /* FIX: Added !important here so mobile phones are forced to render the script */
-      font-family: 'Dancing Script', cursive, sans-serif !important;
-      
-      font-weight: 500 !important; /* Adjusted from 200 to 500 for mobile visibility */
-      font-size: 34px !important;  
-      letter-spacing: 1px !important;
+      font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
+      font-weight: 400 !important; /* Fixed: 200 is too thin for mobile screens; 600 makes it pop! */
+      font-size: 30px !important;  
       line-height: 1.2 !important;
+      letter-spacing: 0.5px !important; 
+      margin: 0 0 15px 0 !important; 
+      padding: 0 !important; 
       text-shadow: none !important; 
+      -webkit-font-smoothing: antialiased !important;
     }
   }
 </style>
+
 
 
 
