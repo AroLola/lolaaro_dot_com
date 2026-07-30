@@ -502,11 +502,11 @@ section[class*="Welcome"] {
       box-sizing: border-box;
       width: 100%;
     }
-    .welcome-portrait-image {
+     .welcome-portrait-image {
       width: 100%;
       max-width: 440px;
       height: 680px;
-      object-fit: cover;
+      object-fit: contain; /* FIXED: Prevents cropping on desktop */
       border-radius: 2px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
       display: block;
@@ -528,8 +528,9 @@ section[class*="Welcome"] {
         display: flex !important;
         visibility: visible !important;
       }
-      .welcome-portrait-image {
-        height: 380px !important; /* Keeps aspect ratios square on small screens */
+       .welcome-portrait-image {
+        height: 380px !important; 
+        object-fit: contain !important; /* FIXED: Prevents cropping on mobile */
         display: block !important;
         visibility: visible !important;
       }
@@ -1348,28 +1349,24 @@ border-bottom: 30px solid #ffffff !important; /* Increased from 40px to 60px */
     font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
   }
 
-  /* MOBILE PHONE OVERRIDES */
-  @media (max-width: 767px) {
-    #tagline-container-32909 h1,
-    #tagline-container-32909 span,
-    #dynamic-tagline-32910,
-    .force-dancing-signature,
-    .force-tangerine-mobile-override {
-      font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
-      font-weight: 400 !important; /* Fixed: 200 is too thin for mobile screens; 600 makes it pop! */
-      font-size: 30px !important;  
-      line-height: 1.2 !important;
-      letter-spacing: 0.5px !important; 
-      margin: 0 0 15px 0 !important; 
-      padding: 0 !important; 
-      text-shadow: none !important; 
-      -webkit-font-smoothing: antialiased !important;
+ /* Keeps your mobile text styling intact */
+  #tagline-container-32909 h1,
+  #tagline-container-32909 span,
+  #dynamic-tagline-32910,
+  .force-dancing-signature,
+  .force-tangerine-mobile-override {
+    font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
+    font-weight: 400 !important; 
+    font-size: 30px !important;  
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important; 
+    margin: 0 0 15px 0 !important; 
+    padding: 0 !important; 
+    text-shadow: none !important; 
+    -webkit-font-smoothing: antialiased !important;
     }
   }
 </style>
-
-
-
 
 </body>
 </html>
