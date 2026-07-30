@@ -525,87 +525,97 @@ div[id*="-navContainerId-mobile"] {
       let htmlOutput = '';
       let lightboxOutput = '';
 
-      galleryData.photoEvents.forEach((event, eventIdx) => {
-        pillsOutput += `
-          <a href="#${event.id}-section" class="filter-nav-pill-btn">
-            ${event.name === 'Sports Day' ? 'Sports' : event.name}
-          </a>
-        `;
+       // --- BLOCK 1: BUILD THE LAYOUT, FULL-WIDTH BREAKOUTS, & REFINED TEXT CONTRAST ---
+galleryData.photoEvents.forEach((event, eventIdx) => {
+  pillsOutput += `
+    <a href="#${event.id}-section" class="filter-nav-pill-btn">
+      ${event.name === 'Sports Day' ? 'Sports' : event.name}
+    </a>
+  `;
 
-        const hasDescription = event.description && event.description.trim() !== "";
-        const descriptionHTML = hasDescription ? `
-  <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
-    <!-- FIXED: Changed color parameter from rgba(255, 255, 255, 0.8) to solid #ffffff -->
-    <p style="color: #ffffff !important; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
-      ${event.description}
-    </p>
-  </div>
-` : '';
+  // 💡 SOFT COLOR CONTRAST ROUTER: Toggles optimized text colors based on row background
+  const isEvenAlbum = eventIdx % 2 === 0;
+  const currentBgColor = isEvenAlbum ? '#ffffff' : '#010214';
+  
+  // FIXED: Softened colors to prevent eye strain while preserving layout contrast
+  const currentTitleColor = isEvenAlbum ? '#1a1d21' : '#d5dbe6'; /* Charcoal on white / Ice-blue on dark blue */
+  const currentDescColor = isEvenAlbum ? 'rgba(34, 37, 42, 0.85)' : 'rgba(226, 232, 245, 0.85)';
+  const currentCaptionColor = isEvenAlbum ? '#33373e' : '#d1d9e6';
 
-        htmlOutput += `
-          <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px;">
-            
-            <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px;">
-              <span class="x-el x-el-span">${event.name}</span>
-            </h2>
+  const hasDescription = event.description && event.description.trim() !== "";
+  const descriptionHTML = hasDescription ? `
+    <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
+      <p style="color: ${currentDescColor} !important; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
+        ${event.description}
+      </p>
+    </div>
+  ` : '';
 
-            ${descriptionHTML}
+  // FIXED: Added width breakout layout math to stretch the backgrounds fully edge-to-edge
+  htmlOutput += `
+    <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px; background-color: ${currentBgColor} !important; padding: 60px 0 !important; width: 100vw !important; position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; box-sizing: border-box !important;">
+      
+      <!-- FIXED: Title text colors dynamically route to soft contrast values -->
+      <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px; color: ${currentTitleColor} !important;">
+        <span class="x-el x-el-span">${event.name}</span>
+      </h2>
 
-            <div class="dynamic-carousel-box">
-              <div class="dynamic-carousel-viewport">
-                <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
-        `;
+      ${descriptionHTML}
 
-        event.media.forEach(item => {
-          const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
-          const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
+      <div class="dynamic-carousel-box" style="width: 100% !important; max-width: 1100px !important; margin: 0 auto !important; padding: 0 20px !important; box-sizing: border-box !important;">
+        <div class="dynamic-carousel-viewport">
+          <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
+  `;
 
-          htmlOutput += `
-            <li class="dynamic-carousel-slide">
-              <div class="slide-split-row ${emptyClassFlag}">
-                <div class="slide-media-box">
-                  <img src="${item.src}" alt="${item.caption}">
-                </div>
-                <div class="slide-caption-box">
-                  <p>${item.caption}</p>
-                </div>
-              </div>
-            </li>
-          `;
-        });
+  event.media.forEach(item => {
+    const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
+    const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
 
-        htmlOutput += `
-                </ul>
-              </div>
-            </div>
-
-            <div class="thumb-row-container">
-        `;
-
-        event.media.forEach((item, itemIdx) => {
-          /* FIXED: Prepended ${event.id} to ensure thumbnail anchor targets are globally unique */
-          htmlOutput += `
-            <a href="#pop-${event.id}-${item.id}" class="thumb-card">
-              <img src="${item.src}" alt="Thumb button">
-            </a>
-          `;
-
-          /* FIXED: Prepended ${event.id} to lightbox overlay ID block to isolate across albums */
-          lightboxOutput += `
-            <div class="expert-lightbox-overlay" id="pop-${event.id}-${item.id}">
-              <div class="lightbox-content-box">
-                <a class="lightbox-close-btn" href="#${event.id}-section">✕</a>
-                <img src="${item.src}">
-              </div>
-            </div>
-          `;
-        });
-
-        htmlOutput += `
-            </div>
+    htmlOutput += `
+      <li class="dynamic-carousel-slide">
+        <div class="slide-split-row ${emptyClassFlag}">
+          <div class="slide-media-box">
+            <img src="${item.src}" alt="${item.caption}">
           </div>
-        `;
-      });
+          <!-- FIXED: Captions now pull high-contrast, softened text tones -->
+          <div class="slide-caption-box" style="color: ${currentCaptionColor} !important;">
+            <p>${item.caption}</p>
+          </div>
+        </div>
+      </li>
+    `;
+  });
+
+  htmlOutput += `
+          </ul>
+        </div>
+      </div>
+
+      <div class="thumb-row-container" style="width: 100% !important; max-width: 1100px !important; margin: 0 auto !important; padding: 0 20px !important; box-sizing: border-box !important;">
+  `;
+
+  event.media.forEach((item, itemIdx) => {
+    htmlOutput += `
+      <a href="#pop-${event.id}-${item.id}" class="thumb-card">
+        <img src="${item.src}" alt="Thumb button">
+      </a>
+    `;
+
+    lightboxOutput += `
+      <div class="expert-lightbox-overlay" id="pop-${event.id}-${item.id}">
+        <div class="lightbox-content-box">
+          <a class="lightbox-close-btn" href="#${event.id}-section">✕</a>
+          <img src="${item.src}">
+        </div>
+      </div>
+    `;
+  });
+
+  htmlOutput += `
+      </div>
+    </div>
+  `;
+});
 
       filterMount.innerHTML = pillsOutput;
       rootElement.innerHTML = htmlOutput + lightboxOutput;
