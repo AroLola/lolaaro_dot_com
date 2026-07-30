@@ -699,11 +699,10 @@ galleryData.photoEvents.forEach((event, eventIdx) => {
 
   // FIXED: Added width breakout layout math to stretch the backgrounds fully edge-to-edge
   htmlOutput += `
-    <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px; background-color: ${currentBgColor} !important; padding: 60px 0 !important; width: 100vw !important; position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; box-sizing: border-box !important;">
+   <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px; background-color: ${currentBgColor} !important; padding: 60px 0 !important; width: 100vw !important; position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; box-sizing: border-box !important;">
       
-      <!-- FIXED: Title text colors dynamically route to soft contrast values -->
       <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px; color: ${currentTitleColor} !important;">
-        <span class="x-el x-el-span">${event.name}</span>
+        <span class="x-el x-el-span" style="color: ${currentTitleColor} !important;">${event.name}</span>
       </h2>
 
       ${descriptionHTML}
