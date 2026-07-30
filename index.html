@@ -1114,6 +1114,7 @@ section[class*="Welcome"] {
     margin: 0 auto !important;
     box-sizing: border-box !important;
     background-color: #010214;
+    padding: 40px 20px !important; /* Added padding to give layout breathing room */
   }
 
   /* Unique column name - keeps styles away from the welcome section */
@@ -1130,7 +1131,7 @@ section[class*="Welcome"] {
   /* Specific constraints to force matching image sizing */
   .presentation-column-cell img {
     width: 100% !important;
-    max-width: 340px !important; /* Matches max width of welcome image if needed, or adjust to 500px */
+    max-width: 340px !important; /* Controls maximum size on desktop */
     height: auto !important;
     display: block !important;
     object-fit: contain !important; /* Prevents cropping */
@@ -1140,7 +1141,7 @@ section[class*="Welcome"] {
 
   .presentation-column-cell p {
     font-size: 15px !important;
-    color: #010214 !important; 
+    color: #ffffff !important; /* FIXED: Changed to white so text is visible on dark background */
     margin: 0 !important;
     padding: 0 10px !important;
   }
@@ -1151,35 +1152,38 @@ section[class*="Welcome"] {
   /* MOBILE PHONE OVERRIDES */
   @media (max-width: 767px) {
     .presentation-flex-wrapper {
-      flex-direction: column !important; /* Mobile vertical stacking */
+      flex-direction: column !important; /* Mobile vertical stacking: r1c1 r2c1 */
       gap: 30px !important;
-      padding: 0 20px !important;
+      align-items: center !important;
     }
   }
 </style>
 
- <!-- HTML STRUCTURE -->
+<!-- HTML STRUCTURE -->
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
- <div style="display: block; width: 100%; height: 50px; background-color: #ffffff;"></div>  
-<div class="responsive-grid-wrapper">
+<div style="display: block; width: 100%; height: 50px; background-color: #ffffff;"></div>  
+
+<!-- FIXED: Changed classes below to match the .presentation CSS rules defined above -->
+<div class="presentation-flex-wrapper">
 
   <!-- COLUMN 1 (Left Image + Text Description) -->
-  <div class="grid-column-cell">
+  <div class="presentation-column-cell">
     <img src="/sitepics/blob-ffa511d22.png" alt="UL Lafayette Presentation" />
-    <p class="font-arial">
+    <p class="pres-font-arial">
       UL Lafayette, Dept. of Communications
     </p>
   </div>
 
   <!-- COLUMN 2 (Right Image + Text Description) -->
-  <div class="grid-column-cell">
+  <div class="presentation-column-cell">
     <img src="/sitepics/blob-0c6e049.png" alt="UT Dallas Presentation" />
-    <p class="font-josefine">
+    <p class="pres-font-josefine">
       UT Dallas, Public Policy & Political Economy 
     </p>
   </div>
 
 </div> <!-- End Grid/Track Wrapper -->
+
 
       </div> <!-- End Grid/Track Wrapper -->
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
