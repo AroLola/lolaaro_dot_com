@@ -455,7 +455,10 @@ section[class*="Welcome"] {
 <!-- ======================================================================= -->
 <div style="position: relative; width: 100%; display: block; overflow: hidden; background-color: #010214; box-sizing: border-box; margin: 0; padding: 0; clear: both;">
 
-  <!-- BACKGROUND BLUR LAYER: Enforced edge-to-edge layout boundary -->
+ <!-- OUTER BOUNDARY WRAPPER: Pins and crops the absolute blur layer completely -->
+<div style="position: relative !important; width: 100% !important; overflow: hidden !important; background-color: #010214;">
+
+  <!-- BACKGROUND BLUR LAYER: Locked and bound edge-to-edge -->
   <div style="
     position: absolute;
     top: 0;
@@ -470,16 +473,37 @@ section[class*="Welcome"] {
     z-index: 1;
   "></div>
 
-  <!-- STYLING ENGINE - handles mobile transformation changes natively -->
- <style>
-  /* FIXED: Changed to the correct URL so 'Dancing Script' actually loads on your site */
+  <!-- CONTENT ELEMENT GRID MODULE: Sits cleanly on z-index 2 above the blur layer -->
+  <div class="custom-welcome-flex-grid">
+    <div class="welcome-text-side">
+      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 10px 0; opacity: 0.9; color: #ffffff;">Welcome</p>
+      
+      <h1 class="force-dancing-signature" style="font-family: 'Dancing Script', 'Tangerine', 'Brush Script MT', cursive !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.2 !important; letter-spacing: 0.5px !important; margin: 0 0 15px 0 !important; padding: 0 !important; text-shadow: none !important; -webkit-font-smoothing: antialiased !important; color: #ffffff !important;">
+        Olufunlola Arowolo, Ph.D.
+      </h1>
+      
+      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 20px; font-weight: 200; margin: 0; opacity: 0.95; padding: 0; color: #ffffff;">Public Policy Analyst</p>
+    </div>
+    
+    <div class="welcome-image-side">
+      <img src="/sitepics/blob-da25809a1.png" class="welcome-portrait-image" alt="Olufunlola Arowolo Sharp Presentation Headshot Portrait">
+    </div>
+  </div>
+
+</div> <!-- Closes the hard outer boundary wrapper safely -->
+
+<!-- SOLID COLOR BUFFER ELEMENT -->
+<div style="display: block; width: 100%; height: 10px; background-color: #010214; position: relative; z-index: 3;"></div>
+
+<!-- STYLING ENGINE -->
+<style>
+  /* FIXED: Changed to correct URL so the fonts pull from the Google Font network */
   @import url('https://googleapis.com');
 
-  /* --- DESKTOP STYLES (Applies to all screen sizes by default) --- */
-
-   .custom-welcome-flex-grid {
+  /* --- DESKTOP STYLES --- */
+  .custom-welcome-flex-grid {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Keeps content layered cleanly above the absolute blur layer */
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -490,24 +514,37 @@ section[class*="Welcome"] {
     justify-content: space-between;
     gap: 40px;
     box-sizing: border-box;
-
-    /* RE-APPLY YOUR BACKGROUND ASSET */
-    background-image: url('/sitepics/your-blurred-background.jpg') !important; /* Keep your exact image path here */
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-
-    /* --- ADD THESE CODES TO LOCK IT INSIDE THE BOX --- */
-    overflow: hidden !important;          /* Hard-crops anything trying to leak out of the welcome box */
-    background-attachment: scroll !important; /* FIXED: Stops background-attachment: fixed/parallax from scrolling into other sections */
-    background-position: center center !important; /* Pins the absolute center of your blur asset to the exact middle */
+    /* REMOVED: Duplicate background-image properties from here to let your absolute div do the heavy lifting cleanly */
   }
 
+  .welcome-text-side {
+    flex: 1 1 500px;
+    box-sizing: border-box;
+  }
+  
+  .welcome-image-side {
+    flex: 0 1 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .welcome-portrait-image {
+    width: 100%;
+    max-width: 340px;
+    height: 480px;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    display: block;
+  }
 
-  /* FIXED: Moved OUTSIDE the media query so it scales down on desktop too */
   .force-dancing-signature {
-    font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
-    font-weight: 400 !important; /* Note: 200 is too thin for Dancing Script, 400 is regular */
-    font-size: 24px !important;  /* Adjusted from 10px (tiny) to 24px, edit this number to change desktop size */
+    font-family: 'Dancing Script', 'Tangerine', 'Brush Script MT', cursive !important;      
+    font-weight: 400 !important; 
+    font-size: 32px !important;  
     line-height: 1.2 !important;
     letter-spacing: 0.5px !important; 
     margin: 0 0 15px 0 !important; 
@@ -516,8 +553,7 @@ section[class*="Welcome"] {
     -webkit-font-smoothing: antialiased !important;
   }
 
-
-  /* --- MOBILE PHONE OVERRIDES (Only applies below 767px wide) --- */
+  /* --- MOBILE PHONE OVERRIDES --- */
   @media (max-width: 767px) {
     .custom-welcome-flex-grid {
       flex-direction: column !important;
@@ -531,22 +567,17 @@ section[class*="Welcome"] {
     .welcome-image-side {
       flex: 1 1 100% !important;
       max-width: 280px !important;
-      display: flex !important;
-      visibility: visible !important;
     }
     .welcome-portrait-image {
       height: 380px !important; 
       object-fit: contain !important;
-      display: block !important;
-      visibility: visible !important;
     }
-    
-    /* OPTIONAL MOBILE OVERRIDE: If you want a smaller font size on phones, change it here */
     .force-dancing-signature {
-      font-size: 18px !important; 
+      font-size: 24px !important; 
     }
-  } /* This closing brace safely finishes the mobile media query */
+  }
 </style>
+
 
   <!-- CONTENT ELEMENT GRID MODULE -->
 <div class="custom-welcome-flex-grid">
