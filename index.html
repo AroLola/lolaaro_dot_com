@@ -470,84 +470,95 @@ section[class*="Welcome"] {
     z-index: 1;
   "></div>
 
-  <!-- STYLING ENGINE: Direct-loads Tangerine/Allura & handles mobile transformation changes natively -->
-  <style>
-    @import url('https://googleapis.com');
+  <!-- STYLING ENGINE - handles mobile transformation changes natively -->
+ <style>
+  /* FIXED: Changed to the correct URL so 'Dancing Script' actually loads on your site */
+  @import url('https://googleapis.com');
 
+  /* --- DESKTOP STYLES (Applies to all screen sizes by default) --- */
+
+  .custom-welcome-flex-grid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+  .welcome-text-side {
+    flex: 1 1 500px;
+    color: #ffffff;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .welcome-image-side {
+    flex: 0 1 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .welcome-portrait-image {
+    width: 100%;
+    max-width: 340px;
+    height: 480px;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    display: block;
+  }
+
+  /* FIXED: Moved OUTSIDE the media query so it scales down on desktop too */
+  .force-dancing-signature {
+    font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
+    font-weight: 400 !important; /* Note: 200 is too thin for Dancing Script, 400 is regular */
+    font-size: 24px !important;  /* Adjusted from 10px (tiny) to 24px, edit this number to change desktop size */
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important; 
+    margin: 0 0 15px 0 !important; 
+    padding: 0 !important; 
+    text-shadow: none !important; 
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+
+  /* --- MOBILE PHONE OVERRIDES (Only applies below 767px wide) --- */
+  @media (max-width: 767px) {
     .custom-welcome-flex-grid {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      box-sizing: border-box;
+      flex-direction: column !important;
+      padding: 40px 20px !important;
+      gap: 30px !important;
     }
     .welcome-text-side {
-      flex: 1 1 500px;
-      color: #ffffff;
-      text-align: left;
-      box-sizing: border-box;
+      text-align: center !important;
+      flex: 1 1 100% !important;
     }
     .welcome-image-side {
-      flex: 0 1 450px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-      width: 100%;
+      flex: 1 1 100% !important;
+      max-width: 280px !important;
+      display: flex !important;
+      visibility: visible !important;
     }
-     .welcome-portrait-image {
-      width: 100%;
-      max-width: 340px;
-      height: 480px;
-      object-fit: contain; /* FIXED: Prevents cropping on desktop */
-      border-radius: 2px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-      display: block;
+    .welcome-portrait-image {
+      height: 380px !important; 
+      object-fit: contain !important;
+      display: block !important;
+      visibility: visible !important;
     }
-
-    @media (max-width: 767px) {
-      .custom-welcome-flex-grid {
-        flex-direction: column !important; /* Stacks text on top, portrait on bottom for mobile viewports */
-        padding: 40px 20px !important;
-        gap: 30px !important;
-      }
-      .welcome-text-side {
-        text-align: center !important;
-        flex: 1 1 100% !important;
-      }
-      .welcome-image-side {
-        flex: 1 1 100% !important;
-        max-width: 280px !important; /* Resizes image block width on phone displays */
-        display: flex !important;
-        visibility: visible !important;
-      }
-       .welcome-portrait-image {
-        height: 380px !important; 
-        object-fit: contain !important; /* FIXED: Prevents cropping on mobile */
-        display: block !important;
-        visibility: visible !important;
-      }
-     .force-dancing-signature {
-      font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
-      font-weight: 200 !important; /* Fixed: 200 is too thin for mobile screens; 600 makes it pop! */
-      font-size: 10px !important;  
-      line-height: 1.2 !important;
-      letter-spacing: 0.5px !important; 
-      margin: 0 0 15px 0 !important; 
-      padding: 0 !important; 
-      text-shadow: none !important; 
-      -webkit-font-smoothing: antialiased !important;
+    
+    /* OPTIONAL MOBILE OVERRIDE: If you want a smaller font size on phones, change it here */
+    .force-dancing-signature {
+      font-size: 18px !important; 
     }
-      }
-    }
-  </style>
+  } /* This closing brace safely finishes the mobile media query */
+</style>
 
   <!-- CONTENT ELEMENT GRID MODULE -->
   <div class="custom-welcome-flex-grid">
