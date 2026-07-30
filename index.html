@@ -1117,12 +1117,7 @@ section[class*="Welcome"] {
       </div> <!-- End Grid/Track Wrapper -->
 
 <!-- ======================================================================= -->
-<!-- SECTION END                                                             -->
-<!-- ======================================================================= -->
-
-
-<!-- ======================================================================= -->
-<!-- STYLING CONTROLLER: Copy and paste this directly along with the HTML     -->
+<!-- STYLING CONTROLLER for the above two-grid section                       -->
 <!-- ======================================================================= -->
 <style>
   /* Root structural container styling */
@@ -1136,7 +1131,9 @@ section[class*="Welcome"] {
     overflow: hidden !important;
     
     /* FIX 1: Creates a solid 40px white padding frame ONLY at the top and bottom edges */
-    box-shadow: inset 0 40px 0 #ffffff, inset 0 -40px 0 #ffffff !important;
+border-top: 60px solid #ffffff !important;    /* Increased from 40px to 60px */
+border-bottom: 60px solid #ffffff !important; /* Increased from 40px to 60px */
+
   }
 
   /* Banner image frame layout rules */
@@ -1144,7 +1141,7 @@ section[class*="Welcome"] {
     width: 100% !important;
     position: relative !important;
     /* FIX 2: Shoved down 40px to safely clear the new white inset top border padding */
-    margin-top: 40px !important; 
+    margin-top: 60px !important; 
     padding: 0 !important;
     line-height: 0 !important;
   }
@@ -1172,10 +1169,10 @@ section[class*="Welcome"] {
   .slider-content-container {
     width: 100% !important;
     /* FIX 3: Shrunk width from 1100px down to 800px to squeeze images toward the center */
-    max-width: 800px !important; 
+    max-width: 600px !important; 
     margin: 0 auto !important;
     /* FIX 4: Added a 40px bottom padding buffer to protect the white bottom shadow layout frame */
-    padding: 20px 40px 80px 40px !important; 
+    padding: 40px 60px 80px 60px !important; 
     box-sizing: border-box !important;
   }
 
@@ -1186,7 +1183,7 @@ section[class*="Welcome"] {
     color: #ffffff !important;
     margin: 0 0 30px 0 !important;
     padding: 0 !important;
-    letter-spacing: -0.5px !important;
+    letter-spacing: 0.1px !important;
     line-height: 1.1 !important;
     text-align: center !important;
   }
@@ -1227,7 +1224,6 @@ section[class*="Welcome"] {
     }
   }
 </style>
-
 
 <!-- ======================================================================= -->
 <!-- START OF THE NEXT CARD SECTION                                         -->
