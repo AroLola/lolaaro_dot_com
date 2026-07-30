@@ -534,12 +534,13 @@ div[id*="-navContainerId-mobile"] {
 
         const hasDescription = event.description && event.description.trim() !== "";
         const descriptionHTML = hasDescription ? `
-          <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
-            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
-              ${event.description}
-            </p>
-          </div>
-        ` : '';
+  <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
+    <!-- FIXED: Changed color parameter from rgba(255, 255, 255, 0.8) to solid #ffffff -->
+    <p style="color: #ffffff !important; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
+      ${event.description}
+    </p>
+  </div>
+` : '';
 
         htmlOutput += `
           <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px;">
