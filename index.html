@@ -476,13 +476,16 @@ section[class*="Welcome"] {
   <!-- CONTENT ELEMENT GRID MODULE: Sits cleanly on z-index 2 above the blur layer -->
   <div class="custom-welcome-flex-grid">
     <div class="welcome-text-side">
-      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 10px 0; opacity: 0.9; color: #ffffff;">Welcome</p>
+      
+      <!-- FIXED: Changed bottom margin from 10px to 25px to add space after Welcome -->
+      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 25px 0 !important; opacity: 0.9; color: #ffffff;">Welcome</p>
       
       <h1 class="force-dancing-signature" style="font-family: 'Dancing Script', 'Tangerine', 'Brush Script MT', cursive !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.2 !important; letter-spacing: 0.5px !important; margin: 0 0 15px 0 !important; padding: 0 !important; text-shadow: none !important; -webkit-font-smoothing: antialiased !important; color: #ffffff !important;">
         Olufunlola Arowolo, Ph.D.
       </h1>
       
-      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 20px; font-weight: 200; margin: 0; opacity: 0.95; padding: 0; color: #ffffff;">Public Policy Analyst</p>
+      <!-- FIXED: Changed bottom margin from 0 to 30px to add space right after Public Policy Analyst -->
+      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 20px; font-weight: 200; margin: 0 0 30px 0 !important; opacity: 0.95; padding: 0; color: #ffffff;">Public Policy Analyst</p>
     </div>
     
     <div class="welcome-image-side">
@@ -491,6 +494,7 @@ section[class*="Welcome"] {
   </div>
 
 </div> <!-- Closes the hard outer boundary wrapper safely -->
+
 
 <!-- SOLID COLOR BUFFER ELEMENT -->
 <div style="display: block; width: 100%; height: 10px; background-color: #010214; position: relative; z-index: 3;"></div>
@@ -586,7 +590,7 @@ section[class*="Welcome"] {
 
     /* Special selector that overrides the inline HTML style tag restriction */
     h1[class*="force-dancing-signature"] {
-      font-size: 15px !important;  /* Your exact mobile size reduction */
+      font-size: 10px !important;  /* Your exact mobile size reduction */
       text-align: left !important; /* Left justifies the signature text block */
     }
 
