@@ -656,129 +656,130 @@ section[class*="Welcome"] {
           <div id="filter-bar-mount" class="filter-pills-row-container"></div>
           <div id="dynamic-gallery-root"></div>
 
-          <script>
-            // Target the active layout database file directly
-            fetch('./service.json')
-              .then(response => {
-                if (!response.ok) throw new Error('Could not read service.json file assets');
-                return response.json();
-              })
-              .then(galleryData => {
-                const filterMount = document.getElementById('filter-bar-mount');
-                const rootElement = document.getElementById('dynamic-gallery-root');
-                
-                let pillsOutput = '';
-                let htmlOutput = '';
-                let lightboxOutput = '';
+          <!-- AUTOMATED ASYNCHRONOUS BUILD ENGINE SCRIPT OVERRIDE -->
+<script>
+  fetch('./service.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Could not read service.json file assets');
+      return response.json();
+    })
+    .then(galleryData => {
+      const filterMount = document.getElementById('filter-bar-mount');
+      const rootElement = document.getElementById('dynamic-gallery-root');
+      
+      let pillsOutput = '';
+      let htmlOutput = '';
+      let lightboxOutput = '';
 
-                galleryData.photoEvents.forEach((event, eventIdx) => {
-                  pillsOutput += `
-                    <a href="#${event.id}-section" class="filter-nav-pill-btn">
-                      ${event.name === 'Sports Day' ? 'Sports' : event.name}
-                    </a>
-                  `;
+      galleryData.photoEvents.forEach((event, eventIdx) => {
+        pillsOutput += `
+          <a href="#${event.id}-section" class="filter-nav-pill-btn">
+            ${event.name === 'Sports Day' ? 'Sports' : event.name}
+          </a>
+        `;
 
-                  // SAFE CONDITIONAL PARSING
-                  const hasDescription = event.description && event.description.trim() !== "";
-                  const descriptionHTML = hasDescription ? `
-                    <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
-                      <!-- CHANGED COLOR TO BLACK #000000 BELOW -->
-                      <p style="color: #000000 !important; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0; font-weight: 500;">
-                        ${event.description}
-                      </p>
-                    </div>
-                  ` : '';
+        const hasDescription = event.description && event.description.trim() !== "";
+        const descriptionHTML = hasDescription ? `
+          <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
+              ${event.description}
+            </p>
+          </div>
+        ` : '';
 
-                  htmlOutput += `
-                    <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px;">
-                      
-                      <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px;">
-                        <span class="x-el x-el-span">${event.name}</span>
-                      </h2>
+        htmlOutput += `
+          <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px;">
+            
+            <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px;">
+              <span class="x-el x-el-span">${event.name}</span>
+            </h2>
 
-                      ${descriptionHTML}
+            ${descriptionHTML}
 
-                      <div class="dynamic-carousel-box">
-                        <div class="dynamic-carousel-viewport">
-                          <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
-                  `;
+            <div class="dynamic-carousel-box">
+              <div class="dynamic-carousel-viewport">
+                <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
+        `;
 
-                  event.media.forEach(item => {
-                    const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
-                    const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
+        event.media.forEach(item => {
+          const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
+          const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
 
-                    htmlOutput += `
-                      <li class="dynamic-carousel-slide">
-                        <div class="slide-split-row ${emptyClassFlag}">
-                          <div class="slide-media-box">
-                            <img src="${item.src}" alt="${item.caption}">
-                          </div>
-                          <div class="slide-caption-box">
-                            <p>${item.caption}</p>
-                          </div>
-                        </div>
-                      </li>
-                    `;
-                  });
+          htmlOutput += `
+            <li class="dynamic-carousel-slide">
+              <div class="slide-split-row ${emptyClassFlag}">
+                <div class="slide-media-box">
+                  <img src="${item.src}" alt="${item.caption}">
+                </div>
+                <div class="slide-caption-box">
+                  <p>${item.caption}</p>
+                </div>
+              </div>
+            </li>
+          `;
+        });
 
-                  htmlOutput += `
-                          </ul>
-                        </div>
-                      </div>
+        htmlOutput += `
+                </ul>
+              </div>
+            </div>
 
-                      <div class="thumb-row-container">
-                  `;
+            <div class="thumb-row-container">
+        `;
 
-                  event.media.forEach((item, itemIdx) => {
-                    htmlOutput += `
-                      <a href="#pop-${item.id}" class="thumb-card">
-                        <img src="${item.src}" alt="Thumb button">
-                      </a>
-                    `;
+        event.media.forEach((item, itemIdx) => {
+          /* FIXED: Prepended ${event.id} to ensure thumbnail anchor targets are globally unique */
+          htmlOutput += `
+            <a href="#pop-${event.id}-${item.id}" class="thumb-card">
+              <img src="${item.src}" alt="Thumb button">
+            </a>
+          `;
 
-                    lightboxOutput += `
-                      <div class="expert-lightbox-overlay" id="pop-${item.id}">
-                        <div class="lightbox-content-box">
-                          <a class="lightbox-close-btn" href="#${event.id}-section">✕</a>
-                          <img src="${item.src}">
-                        </div>
-                      </div>
-                    `;
-                  });
+          /* FIXED: Prepended ${event.id} to lightbox overlay ID block to isolate across albums */
+          lightboxOutput += `
+            <div class="expert-lightbox-overlay" id="pop-${event.id}-${item.id}">
+              <div class="lightbox-content-box">
+                <a class="lightbox-close-btn" href="#${event.id}-section">✕</a>
+                <img src="${item.src}">
+              </div>
+            </div>
+          `;
+        });
 
-                  htmlOutput += `
-                      </div>
-                    </div>
-                  `;
-                });
+        htmlOutput += `
+            </div>
+          </div>
+        `;
+      });
 
-                filterMount.innerHTML = pillsOutput;
-                rootElement.innerHTML = htmlOutput + lightboxOutput;
+      filterMount.innerHTML = pillsOutput;
+      rootElement.innerHTML = htmlOutput + lightboxOutput;
 
-                galleryData.photoEvents.forEach((event, eventIdx) => {
-                  const trackNode = document.getElementById(`track-${eventIdx}`);
-                  const totalSlidesCount = event.media.length;
-                  let currentSlideIndex = 0;
+      galleryData.photoEvents.forEach((event, eventIdx) => {
+        const trackNode = document.getElementById(`track-${eventIdx}`);
+        const totalSlidesCount = event.media.length;
+        let currentSlideIndex = 0;
 
-                  if (totalSlidesCount <= 1) return;
+          if (totalSlidesCount <= 1) return;
 
-                  setInterval(() => {
-                    currentSlideIndex++;
-                    if (currentSlideIndex >= totalSlidesCount) {
-                      currentSlideIndex = 0;
-                    }
-                    const translateCalculation = currentSlideIndex * -100;
-                    trackNode.style.transform = `translateX(${translateCalculation}%)`;
-                  }, 3000);
-                });
+          setInterval(() => {
+            currentSlideIndex++;
+            if (currentSlideIndex >= totalSlidesCount) {
+              currentSlideIndex = 0;
+            }
+            const translateCalculation = currentSlideIndex * -100;
+            trackNode.style.transform = `translateX(${translateCalculation}%)`;
+          }, 3000);
+        });
 
-              })
-              .catch(error => {
-                console.error('Gallery Engine Render Crash:', error);
-                document.getElementById('dynamic-gallery-root').innerHTML = 
-                  `<p style="color:#ffffff; text-align:center; padding:40px; opacity:0.7;">Error generating media galleries. Verify JSON data paths.</p>`;
-              });
-          </script>
+      })
+      .catch(error => {
+        console.error('Gallery Engine Render Crash:', error);
+        document.getElementById('dynamic-gallery-root').innerHTML = 
+          `<p style="color:#ffffff; text-align:center; padding:40px; opacity:0.7;">Error generating media galleries. Verify JSON data paths.</p>`;
+      });
+  </script>
+
 
 </div></div></div></section></div></div></div>
 
