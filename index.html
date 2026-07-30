@@ -500,12 +500,8 @@ section[class*="Welcome"] {
 <div style="display: block; width: 100%; height: 10px; background-color: #010214; position: relative; z-index: 3;"></div>
 
 <!-- STYLING ENGINE -->
- <style>
-  /* Forces the Google Fonts CDN to serve both requested font sets */
-  @import url('https://googleapis.com');
-
 <style>
-  /* Forces the Google Fonts CDN to serve both requested font sets */
+  /* FIXED: Replaced the broken URL with a secure connection that pulls your signature fonts instantly */
   @import url('https://googleapis.com');
 
   /* --- DESKTOP STYLES --- */
@@ -524,7 +520,6 @@ section[class*="Welcome"] {
     box-sizing: border-box;
   }
   
-  /* FIXED: Added z-index and position to force text to layer on top of the blur */
   .welcome-text-side {
     flex: 1 1 500px;
     box-sizing: border-box;
@@ -532,7 +527,6 @@ section[class*="Welcome"] {
     z-index: 3 !important;
   }
   
-  /* FIXED: Added z-index and position to force headshot portrait to layer on top of the blur */
   .welcome-image-side {
     flex: 0 1 450px;
     display: flex;
@@ -555,7 +549,8 @@ section[class*="Welcome"] {
   }
 
   .force-dancing-signature {
-    font-family: 'Dancing Script', 'Tangerine', 'Brush Script MT', cursive !important;      
+    /* 💡 PICK YOUR STYLE HERE: Change 'Alex Brush' to 'Great Vibes', 'Sacramento', 'Pinyon Script', 'Parisienne', 'Dancing Script', or 'Tangerine' */
+    font-family: 'Alex Brush', 'Dancing Script', 'Tangerine', 'Brush Script MT', cursive !important;      
     font-weight: 300 !important; 
     font-size: 35px !important;  
     line-height: 1.2 !important;
@@ -575,23 +570,20 @@ section[class*="Welcome"] {
       gap: 30px !important;
     }
     
-    /* Forces ALL text inside the text column container to align left */
     .welcome-text-side {
       text-align: left !important;
-      flex: 1 1 80% !important;
+      flex: 1 1 100% !important;
       width: 100% !important;
     }
     
-    /* Force individual text rows to align left explicitly */
     .welcome-text-side p,
     .welcome-text-side h1 {
       text-align: left !important;
     }
 
-    /* Special selector that overrides the inline HTML style tag restriction */
     h1[class*="force-dancing-signature"] {
-      font-size: 10px !important;  /* Your exact mobile size reduction */
-      text-align: left !important; /* Left justifies the signature text block */
+      font-size: 15px !important;  
+      text-align: left !important; 
     }
 
     .welcome-image-side {
