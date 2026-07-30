@@ -534,11 +534,10 @@ section[class*="Welcome"] {
         display: block !important;
         visibility: visible !important;
       }
-     .force-dancing-signature,
-     .force-tangerine-mobile-override {
+     .force-dancing-signature {
       font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
-      font-weight: 400 !important; /* Fixed: 200 is too thin for mobile screens; 600 makes it pop! */
-      font-size: 30px !important;  
+      font-weight: 200 !important; /* Fixed: 200 is too thin for mobile screens; 600 makes it pop! */
+      font-size: 10px !important;  
       line-height: 1.2 !important;
       letter-spacing: 0.5px !important; 
       margin: 0 0 15px 0 !important; 
@@ -1310,32 +1309,6 @@ section[class*="Welcome"] {
 <script crossorigin="Anonymous" src="./index/bs-util-c935f491.js"></script>
 <script crossorigin="Anonymous" src="./index/bs-wrapWithDeviceDetection-f9dc1d72.js"></script>
 
-<!-- INLINE RESPONSIVE DRIVER: Swaps font weight and family cleanly on mobile views -->
-<!-- GLOBAL MOBILE HANDWRITING OVERRIDE SHEET -->
-<style>
-  /* Global / Desktop Setting */
-  .force-dancing-signature {
-    font-family: 'Dancing Script', 'Brush Script MT', cursive !important;
-  }
-
- /* Keeps your mobile text styling intact */
-  #tagline-container-32909 h1,
-  #tagline-container-32909 span,
-  #dynamic-tagline-32910,
-  .force-dancing-signature,
-  .force-tangerine-mobile-override {
-    font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
-    font-weight: 400 !important; 
-    font-size: 30px !important;  
-    line-height: 1.2 !important;
-    letter-spacing: 0.5px !important; 
-    margin: 0 0 15px 0 !important; 
-    padding: 0 !important; 
-    text-shadow: none !important; 
-    -webkit-font-smoothing: antialiased !important;
-    }
-  }
-</style>
 
 </body>
 </html>
