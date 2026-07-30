@@ -503,7 +503,7 @@ section[class*="Welcome"] {
   /* --- DESKTOP STYLES --- */
   .custom-welcome-flex-grid {
     position: relative;
-    z-index: 2; /* Keeps content layered cleanly above the absolute blur layer */
+    z-index: 2; 
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -514,9 +514,8 @@ section[class*="Welcome"] {
     justify-content: space-between;
     gap: 40px;
     box-sizing: border-box;
-    /* REMOVED: Duplicate background-image properties from here to let your absolute div do the heavy lifting cleanly */
+    /* REMOVED the duplicate background-image lines that were rendering the unblurred version */
   }
-
   .welcome-text-side {
     flex: 1 1 500px;
     box-sizing: border-box;
