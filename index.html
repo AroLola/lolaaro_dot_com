@@ -529,17 +529,22 @@ section[class*="Welcome"] {
         visibility: visible !important;
       }
       .welcome-portrait-image {
-        height: 280px !important; /* Keeps aspect ratios square on small screens */
+        height: 380px !important; /* Keeps aspect ratios square on small screens */
         display: block !important;
         visibility: visible !important;
       }
-      .force-dancing-signature {
-        font-family: 'Dancing Script', 'Josefin Slab', cursive !important;
-        font-size: 30px !important; /* Expanded sizing matrix to make thin handwriting clear */
-        font-weight: 100 !important;
-        letter-spacing: 1px !important;
-        line-height: 1.1 !important;
-        text-shadow: none !important;
+     .force-dancing-signature,
+     .force-tangerine-mobile-override {
+      font-family: 'Dancing Script', 'Brush Script MT', cursive !important;      
+      font-weight: 400 !important; /* Fixed: 200 is too thin for mobile screens; 600 makes it pop! */
+      font-size: 30px !important;  
+      line-height: 1.2 !important;
+      letter-spacing: 0.5px !important; 
+      margin: 0 0 15px 0 !important; 
+      padding: 0 !important; 
+      text-shadow: none !important; 
+      -webkit-font-smoothing: antialiased !important;
+    }
       }
     }
   </style>
