@@ -1084,7 +1084,7 @@ section[class*="Welcome"] {
 ">&nbsp;</div> 
 
 <!-- ======================================================================= -->
-<!-- SECTION START: FULL-WIDTH DIVIDER & SLIDER COMPONENT                   -->
+<!-- SECTION START: FULL-WIDTH DIVIDER                                       -->
 <!-- ======================================================================= -->
 <div class="custom-rebuilt-section">
 
@@ -1105,7 +1105,7 @@ section[class*="Welcome"] {
   .presentation-outer-viewport-section {
     width: 100% !important;
     background-color: #010214 !important;
-    padding: 60px 0 !important; /* Vertical spacing around the section */
+    padding: 60px 0 !important;
     box-sizing: border-box !important;
   }
 
@@ -1115,29 +1115,30 @@ section[class*="Welcome"] {
     flex-direction: row !important; /* Desktop side-by-side */
     justify-content: center !important;
     align-items: flex-start !important;
-    gap: 50px !important; /* Comfortable gutter between columns */
+    gap: 50px !important;
     width: 100% !important;
     max-width: 1100px !important;
     margin: 0 auto !important;
-    padding: 0 40px !important; /* Sidewall safety padding */
+    padding: 0 40px !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. COLUMNS: Explicitly sized to be perfectly equal */
+  /* 3. COLUMNS: Configured symmetrically like .welcome-image-side */
   .presentation-column-cell {
-    flex: 1 1 50% !important; /* Forces each column to claim exactly half the container */
-    max-width: 500px !important;
+    flex: 0 1 450px !important; /* MATCHED: Keeps structural boxes identical to upper side block */
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
+    width: 100% !important;
   }
 
-  /* 4. IMAGES: Forced into matching structural boxes to ignore raw file size variances */
+  /* 4. IMAGES: Scaled to replicate .welcome-portrait-image proportions */
   .presentation-image-box {
     width: 100% !important;
-    height: 250px !important; /* Hard height box forces equal sizing across both assets */
+    max-width: 340px !important; /* MATCHED */
+    height: 480px !important;    /* MATCHED: Stops them from looking like tiny thumbnails */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -1147,7 +1148,9 @@ section[class*="Welcome"] {
   .presentation-image-box img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important; /* No cropping, scales nicely inside the bounding box */
+    object-fit: contain !important; /* Perfect sizing with zero file cropping */
+    border-radius: 2px !important;   /* MATCHED styling */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important; /* MATCHED styling */
     display: block !important;
   }
 
@@ -1165,16 +1168,16 @@ section[class*="Welcome"] {
   /* MOBILE PHONE OVERRIDES */
   @media (max-width: 767px) {
     .presentation-flex-wrapper {
-      flex-direction: column !important; /* Stacks r1c1 to r2c1 cleanly */
+      flex-direction: column !important; /* Mobile vertical stacking: r1c1 to r2c1 */
       align-items: center !important;
       gap: 40px !important;
     }
     .presentation-column-cell {
       flex: 1 1 100% !important;
-      width: 100% !important;
+      max-width: 280px !important; /* MATCHED mobile width ceiling */
     }
     .presentation-image-box {
-      height: 200px !important; /* Slightly shallower scaling window on phones */
+      height: 380px !important; /* MATCHED mobile height constraint */
     }
   }
 </style>
@@ -1209,9 +1212,6 @@ section[class*="Welcome"] {
   </div>
 </div>
 
-
-
-      </div> <!-- End Grid/Track Wrapper -->
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
  <div style="display: block; width: 100%; height: 50px; background-color: #ffffff;"></div>
 <!-- ======================================================================= -->
