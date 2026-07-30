@@ -1098,79 +1098,84 @@ section[class*="Welcome"] {
  <!-- ======================================================================= -->
 <!-- STYLING CONTROLLER for the below two-grid section                       -->
 <!-- ======================================================================= -->
- <style>
-  .responsive-grid-wrapper {
-    display: flex;
-    flex-direction: row; /* Desktop: side-by-side */
-    justify-content: center;
-    align-items: flex-start; /* Keeps descriptions aligned at the top */
-    gap: 40px;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    box-sizing: border-box;
+<!-- CSS STYLES (Place in your <style> tag) -->
+<style>
+  /* Unique wrapper name to prevent global code bleeding */
+  .presentation-flex-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Desktop side-by-side */
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 40px !important;
+    width: 100% !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 
-  .grid-column-cell {
-    flex: 1 1 0px; /* Forces equal widths on desktop */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    width: 100%;
+  /* Unique column name - keeps styles away from the welcome section */
+  .presentation-column-cell {
+    flex: 1 1 0px !important; /* Forces columns to be exactly identical widths */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
   }
 
-  .grid-column-cell img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    object-fit: contain; /* FIXED: Changed from cover to prevent cropping */
-    border-radius: 4px;
-    margin-bottom: 12px;
+  /* Specific constraints to force matching image sizing */
+  .presentation-column-cell img {
+    width: 100% !important;
+    max-width: 440px !important; /* Matches max width of welcome image if needed, or adjust to 500px */
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important; /* Prevents cropping */
+    border-radius: 4px !important;
+    margin-bottom: 12px !important;
   }
 
-  .grid-column-cell p {
-    font-size: 15px;
-    color: #ffffff;
-    margin: 0;
-    padding: 0 10px;
+  .presentation-column-cell p {
+    font-size: 15px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
   }
 
-  /* Specific font overrides for individual columns */
-  .font-arial { font-family: Arial, sans-serif; line-height: 1.4; }
-  .font-josefine { font-family: 'Josefin Sans', sans-serif; line-height: 1.8; }
+  .pres-font-arial { font-family: Arial, sans-serif !important; line-height: 1.4 !important; }
+  .pres-font-josefine { font-family: 'Josefin Sans', sans-serif !important; line-height: 1.8 !important; }
 
   /* MOBILE PHONE OVERRIDES */
   @media (max-width: 767px) {
-    .responsive-grid-wrapper {
-      flex-direction: column !important; /* Mobile: stacks Column 1 on top of Column 2 */
+    .presentation-flex-wrapper {
+      flex-direction: column !important; /* Mobile vertical stacking */
       gap: 30px !important;
       padding: 0 20px !important;
     }
   }
 </style>
-    <!-- HTML STRUCTURE -->
-<div class="responsive-grid-wrapper">
+
+<!-- HTML STRUCTURE -->
+<div class="presentation-flex-wrapper">
 
   <!-- COLUMN 1 (Left Image + Text Description) -->
-  <div class="grid-column-cell">
+  <div class="presentation-column-cell">
     <img src="/sitepics/blob-ffa511d22.png" alt="UL Lafayette Presentation" />
-    <p class="font-arial">
+    <p class="pres-font-arial">
       UL Lafayette, Dept. of Communications
     </p>
   </div>
 
   <!-- COLUMN 2 (Right Image + Text Description) -->
-  <div class="grid-column-cell">
+  <div class="presentation-column-cell">
     <img src="/sitepics/blob-0c6e049.png" alt="UT Dallas Presentation" />
-    <p class="font-josefine">
+    <p class="pres-font-josefine">
       UT Dallas, Public Policy & Political Economy 
     </p>
   </div>
 
 </div> <!-- End Grid/Track Wrapper -->
+
 
 
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
