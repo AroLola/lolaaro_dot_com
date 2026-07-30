@@ -500,6 +500,10 @@ section[class*="Welcome"] {
   /* FIXED: Changed to correct URL so the fonts pull from the Google Font network */
   @import url('https://googleapis.com');
 
+ <style>
+  /* Forces the Google Fonts CDN to serve both requested font sets */
+  @import url('https://googleapis.com');
+
   /* --- DESKTOP STYLES --- */
   .custom-welcome-flex-grid {
     position: relative;
@@ -514,7 +518,6 @@ section[class*="Welcome"] {
     justify-content: space-between;
     gap: 40px;
     box-sizing: border-box;
-    /* REMOVED the duplicate background-image lines that were rendering the unblurred version */
   }
   .welcome-text-side {
     flex: 1 1 500px;
@@ -550,6 +553,7 @@ section[class*="Welcome"] {
     padding: 0 !important; 
     text-shadow: none !important; 
     -webkit-font-smoothing: antialiased !important;
+    white-space: nowrap !important; /* Keeps name flat on a single line */
   }
 
   /* --- MOBILE PHONE OVERRIDES --- */
@@ -559,10 +563,26 @@ section[class*="Welcome"] {
       padding: 40px 20px !important;
       gap: 30px !important;
     }
+    
+    /* Forces ALL text inside the text column container to align left */
     .welcome-text-side {
       text-align: left !important;
       flex: 1 1 100% !important;
+      width: 100% !important;
     }
+    
+    /* FIXED: Force individual text rows to align left explicitly */
+    .welcome-text-side p,
+    .welcome-text-side h1 {
+      text-align: left !important;
+    }
+
+    /* FIXED: Special selector that overrides the inline HTML style tag restriction */
+    h1[class*="force-dancing-signature"] {
+      font-size: 15px !important;  /* Your exact mobile size reduction */
+      text-align: left !important; /* Left justifies the signature text block */
+    }
+
     .welcome-image-side {
       flex: 1 1 100% !important;
       max-width: 280px !important;
@@ -570,9 +590,6 @@ section[class*="Welcome"] {
     .welcome-portrait-image {
       height: 380px !important; 
       object-fit: contain !important;
-    }
-    .force-dancing-signature {
-      font-size: 15px !important; 
     }
   }
 </style>
