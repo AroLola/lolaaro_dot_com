@@ -1158,33 +1158,28 @@ section[class*="Welcome"] {
   }
 </style>
 
-<!-- COLUMN 1 (Left Image + Text Description - Balanced, No Link) -->
-    <div class="grid-column-cell" style="flex: 1 1 280px !important; background-color: #010214; display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box !important;">
-  
-  <!-- Image sits cleanly on top -->
-  <img src="/sitepics/blob-ffa511d22.png" 
-       alt="Grid Presentation Left" 
-       style="width: 100% !important; max-width: 500px !important; height: auto !important; display: block !important; object-fit: cover !important; object-position: right 50% !important; border-radius: 4px; margin-bottom: 12px !important;" />
-  
-  <!-- Description stays locked underneath -->
-  <p style="font-family: Arial, sans-serif !important; font-size: 15px !important; color: #ffffff !important; line-height: 1.4 !important; margin: 0 !important; padding: 0 10px !important;">
-    UL Lafayette, Dept. of Communications
-  </p>
-</div>
+ <!-- HTML STRUCTURE -->
+<!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
+ <div style="display: block; width: 100%; height: 50px; background-color: #ffffff;"></div>  
+<div class="responsive-grid-wrapper">
 
-        <!-- COLUMN 2 (Right Image + Description Block) -->
-     <div class="grid-column-cell" style="flex: 1 1 280px !important; display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; margin-right: 25px !important;">
-      <img src="/sitepics/blob-0c6e049.png" 
-       alt="Grid Presentation Left" 
-       style="width: 100% !important; max-width: 500px !important; height: auto !important; display: block !important; object-fit: cover !important; object-position: right 50% !important; border-radius: 4px; margin-bottom: 12px !important;" />
-       </div>
+  <!-- COLUMN 1 (Left Image + Text Description) -->
+  <div class="grid-column-cell">
+    <img src="/sitepics/blob-ffa511d22.png" alt="UL Lafayette Presentation" />
+    <p class="font-arial">
+      UL Lafayette, Dept. of Communications
+    </p>
+  </div>
 
+  <!-- COLUMN 2 (Right Image + Text Description) -->
+  <div class="grid-column-cell">
+    <img src="/sitepics/blob-0c6e049.png" alt="UT Dallas Presentation" />
+    <p class="font-josefine">
+      UT Dallas, Public Policy & Political Economy 
+    </p>
+  </div>
 
-          <!-- Column 2 Text Description -->
-          <p style="font-family: Josefine, sans-serif !important; font-size: 15px !important; color: #ffffff !important; line-height: 1.8 !important; margin: 0 !important; padding: 0 10px !important;">
-            UT Dallas, Public Policy & Political Economy 
-           </p>
-        </div>
+</div> <!-- End Grid/Track Wrapper -->
 
       </div> <!-- End Grid/Track Wrapper -->
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
