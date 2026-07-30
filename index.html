@@ -908,7 +908,7 @@ section[class*="Welcome"] {
   <!-- 2. MOUNT POINT: Dynamic Automated Content Output Container -->
   <div id="dynamic-gallery-root" style="width: 100%; clear: both; display: block; box-sizing: border-box; margin: 0; padding: 0;">
     <!-- Background loading indicator string placeholder -->
-    <p style="color: #ffffff; text-align: center; font-family: 'Roboto', Arial, sans-serif; font-weight: 300; padding: 60px; opacity: 0.6; margin: 0;">Generating interactive image blocks...</p>
+    <p style="color: #ffffff; text-align: center; font-family: 'Roboto', Arial, sans-serif; font-weight: 200; padding: 60px; opacity: 0.6; margin: 0;">Generating interactive image blocks...</p>
   </div>
 
 </div>
@@ -1057,7 +1057,7 @@ section[class*="Welcome"] {
 ">
 <img src="/sitepics/blob-7bfdc94cut.jpg" 
      alt="Book Detail Divider Panel" 
-     style="width: 100%; height: 380px; object-fit: cover !important; object-position: right 50% !important; display: block !important; filter: brightness(0.6); border: none;" />
+     style="width: 100%; height: 340px; object-fit: cover !important; object-position: right 40% !important; display: block !important; filter: brightness(0.6); border: none;" />
 </div>
 
 <!-- ======================================================================= -->
@@ -1149,9 +1149,9 @@ border-bottom: 40px solid #ffffff !important; /* Increased from 40px to 60px */
   }
   .banner-image {
     width: 100% !important;
-    height: 380px !important;
+    height: 340px !important;
     object-fit: cover !important;
-    object-position: center 70% !important;
+    object-position: center 60% !important;
     filter: brightness(0.6) !important;
     border: none !important;
     margin: 0 !important;
@@ -1191,13 +1191,21 @@ border-bottom: 40px solid #ffffff !important; /* Increased from 40px to 60px */
   }
 
   /* Flexible gallery wrapper grid structure */
-  .gallery-wrapper {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important; /* Forces layout tracking contents tightly to the center */
-    width: 100% !important;
-    gap: 20px !important;
-  }
+.gallery-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; 
+  width: 100% !important;
+  
+  /* FIX 1: Caps the total width of the two columns combined */
+  max-width: 600px !important; 
+  
+  /* FIX 2: Centers this narrower block on the web page */
+  margin: 0 auto !important; 
+  
+  /* FIX 3: Keeps the gap between the two images tiny */
+  gap: 15px !important; 
+}
 
   /* Display layout track system constraints rules */
   .slider-track {
@@ -1222,14 +1230,14 @@ border-bottom: 40px solid #ffffff !important; /* Increased from 40px to 60px */
       padding: 10px 20px 50px 20px !important;
     }
     .gallery-wrapper {
-      gap: 20px !important;
+      gap: 15px !important;
     }
   }
 </style>
 
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
  <div style="display: block; width: 100%; height: 30px; background-color: #010214;"></div>
-<div style="display: block; width: 100%; height: 40px; background-color: #ffffff;"></div>
+<div style="display: block; width: 100%; height: 50px; background-color: #ffffff;"></div>
 <!-- ======================================================================= -->
 <!-- START OF THE NEXT CARD SECTION                                         -->
 <!-- ======================================================================= -->
