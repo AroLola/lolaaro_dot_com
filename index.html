@@ -1100,48 +1100,61 @@ section[class*="Welcome"] {
  <!-- ======================================================================= -->
 <!-- STYLING CONTROLLER for the below two-grid section                       -->
 <!-- ======================================================================= -->
-<!-- CSS STYLES (Place in your <style> tag) -->
 <style>
-  /* Unique wrapper name to prevent global code bleeding */
+  /* 1. SCREEN-WIDE BACKDROP: Spans 100% of the viewport width */
+  .presentation-outer-viewport-section {
+    width: 100% !important;
+    background-color: #010214 !important;
+    padding: 60px 0 !important; /* Vertical spacing around the section */
+    box-sizing: border-box !important;
+  }
+
+  /* 2. INNER CONTENT BOX: Restricts width and keeps layout centered */
   .presentation-flex-wrapper {
     display: flex !important;
     flex-direction: row !important; /* Desktop side-by-side */
     justify-content: center !important;
     align-items: flex-start !important;
-    gap: 40px !important;
+    gap: 50px !important; /* Comfortable gutter between columns */
     width: 100% !important;
     max-width: 1100px !important;
     margin: 0 auto !important;
+    padding: 0 40px !important; /* Sidewall safety padding */
     box-sizing: border-box !important;
-    background-color: #010214;
-    padding: 40px 20px !important; /* Added padding to give layout breathing room */
   }
 
-  /* Unique column name - keeps styles away from the welcome section */
+  /* 3. COLUMNS: Explicitly sized to be perfectly equal */
   .presentation-column-cell {
-    flex: 1 1 0px !important; /* Forces columns to be exactly identical widths */
+    flex: 1 1 50% !important; /* Forces each column to claim exactly half the container */
+    max-width: 500px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
-    width: 100% !important;
   }
 
-  /* Specific constraints to force matching image sizing */
-  .presentation-column-cell img {
+  /* 4. IMAGES: Forced into matching structural boxes to ignore raw file size variances */
+  .presentation-image-box {
     width: 100% !important;
-    max-width: 340px !important; /* Controls maximum size on desktop */
-    height: auto !important;
+    height: 250px !important; /* Hard height box forces equal sizing across both assets */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 16px !important;
+  }
+
+  .presentation-image-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* No cropping, scales nicely inside the bounding box */
     display: block !important;
-    object-fit: contain !important; /* Prevents cropping */
-    border-radius: 4px !important;
-    margin-bottom: 12px !important;
   }
 
+  /* 5. TYPOGRAPHY RULES */
   .presentation-column-cell p {
     font-size: 15px !important;
-    color: #ffffff !important; /* FIXED: Changed to white so text is visible on dark background */
+    color: #ffffff !important;
     margin: 0 !important;
     padding: 0 10px !important;
   }
@@ -1152,37 +1165,50 @@ section[class*="Welcome"] {
   /* MOBILE PHONE OVERRIDES */
   @media (max-width: 767px) {
     .presentation-flex-wrapper {
-      flex-direction: column !important; /* Mobile vertical stacking: r1c1 r2c1 */
-      gap: 30px !important;
+      flex-direction: column !important; /* Stacks r1c1 to r2c1 cleanly */
       align-items: center !important;
+      gap: 40px !important;
+    }
+    .presentation-column-cell {
+      flex: 1 1 100% !important;
+      width: 100% !important;
+    }
+    .presentation-image-box {
+      height: 200px !important; /* Slightly shallower scaling window on phones */
     }
   }
 </style>
 
-<!-- HTML STRUCTURE -->
-<!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
+<!-- HARD CANVASS SEPARATOR BOX -->
 <div style="display: block; width: 100%; height: 50px; background-color: #ffffff;"></div>  
 
-<!-- FIXED: Changed classes below to match the .presentation CSS rules defined above -->
-<div class="presentation-flex-wrapper">
+<!-- NEW LAYOUT STRUCTURE -->
+<div class="presentation-outer-viewport-section">
+  <div class="presentation-flex-wrapper">
 
-  <!-- COLUMN 1 (Left Image + Text Description) -->
-  <div class="presentation-column-cell">
-    <img src="/sitepics/blob-ffa511d22.png" alt="UL Lafayette Presentation" />
-    <p class="pres-font-arial">
-      UL Lafayette, Dept. of Communications
-    </p>
+    <!-- COLUMN 1 (Left Image + Text Description) -->
+    <div class="presentation-column-cell">
+      <div class="presentation-image-box">
+        <img src="/sitepics/blob-ffa511d22.png" alt="UL Lafayette Presentation" />
+      </div>
+      <p class="pres-font-arial">
+        UL Lafayette, Dept. of Communications
+      </p>
+    </div>
+
+    <!-- COLUMN 2 (Right Image + Text Description) -->
+    <div class="presentation-column-cell">
+      <div class="presentation-image-box">
+        <img src="/sitepics/blob-0c6e049.png" alt="UT Dallas Presentation" />
+      </div>
+      <p class="pres-font-josefine">
+        UT Dallas, Public Policy & Political Economy 
+      </p>
+    </div>
+
   </div>
+</div>
 
-  <!-- COLUMN 2 (Right Image + Text Description) -->
-  <div class="presentation-column-cell">
-    <img src="/sitepics/blob-0c6e049.png" alt="UT Dallas Presentation" />
-    <p class="pres-font-josefine">
-      UT Dallas, Public Policy & Political Economy 
-    </p>
-  </div>
-
-</div> <!-- End Grid/Track Wrapper -->
 
 
       </div> <!-- End Grid/Track Wrapper -->
