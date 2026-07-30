@@ -1095,152 +1095,83 @@ section[class*="Welcome"] {
     <div class="blue-divider-break"></div>
   </div>
 
-      <!-- COLUMN 1 (Left Image + Text Description - Balanced, No Link) -->
-    <div class="grid-column-cell" style="flex: 1 1 280px !important; display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box !important;">
-  
-  <!-- Image sits cleanly on top -->
-  <img src="/sitepics/blob-ffa511d22.png" 
-       alt="Grid Presentation Left" 
-       style="width: 100% !important; max-width: 500px !important; height: auto !important; display: block !important; object-fit: cover !important; object-position: right 50% !important; border-radius: 4px; margin-bottom: 12px !important;" />
-  
-  <!-- Description stays locked underneath -->
-  <p style="font-family: Arial, sans-serif !important; font-size: 15px !important; color: #ffffff !important; line-height: 1.4 !important; margin: 0 !important; padding: 0 10px !important;">
-    UL Lafayette, Dept. of Communications
-  </p>
-</div>
-
-        <!-- COLUMN 2 (Right Image + Description Block) -->
-     <div class="grid-column-cell" style="flex: 1 1 280px !important; display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; margin-right: 25px !important;">
-      <img src="/sitepics/blob-0c6e049.png" 
-       alt="Grid Presentation Left" 
-       style="width: 100% !important; max-width: 500px !important; height: auto !important; display: block !important; object-fit: cover !important; object-position: right 50% !important; border-radius: 4px; margin-bottom: 12px !important;" />
-       </div>
-
-
-          <!-- Column 2 Text Description -->
-          <p style="font-family: Josefine, sans-serif !important; font-size: 15px !important; color: #ffffff !important; line-height: 1.8 !important; margin: 0 !important; padding: 0 10px !important;">
-            UT Dallas, Public Policy & Political Economy 
-           </p>
-        </div>
-
-      </div> <!-- End Grid/Track Wrapper -->
-
+ <!-- ======================================================================= -->
+<!-- STYLING CONTROLLER for the below two-grid section                       -->
 <!-- ======================================================================= -->
-<!-- STYLING CONTROLLER for the above two-grid section                       -->
-<!-- ======================================================================= -->
-<style>
-  /* Root structural container styling */
-  .custom-rebuilt-section {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    background-color: #010214 !important; /* Dark blue backdrop consistency */
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    
-    /* FIX 1: Creates a solid 40px white padding frame ONLY at the top and bottom edges */
-border-top: 30px solid #ffffff !important;    /* Increased from 40px to 60px */
-border-bottom: 30px solid #ffffff !important; /* Increased from 40px to 60px */
-
+ <style>
+  .responsive-grid-wrapper {
+    display: flex;
+    flex-direction: row; /* Desktop: side-by-side */
+    justify-content: center;
+    align-items: flex-start; /* Keeps descriptions aligned at the top */
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
-  /* Banner image frame layout rules */
-  .banner-wrapper {
-    width: 100% !important;
-    position: relative !important;
-    /* FIX 2: Shoved down 40px to safely clear the new white inset top border padding */
-    margin-top: 40px !important; 
-    padding: 0 !important;
-    line-height: 0 !important;
-  }
-  .banner-image {
-    width: 100% !important;
-    height: 340px !important;
-    object-fit: cover !important;
-    object-position: center 60% !important;
-    filter: brightness(0.6) !important;
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+  .grid-column-cell {
+    flex: 1 1 0px; /* Forces equal widths on desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
   }
 
-  /* The Un-collapsible blue breakout bar */
-  .blue-divider-break {
-    width: 100% !important;
-    height: 25px !important;
-    background-color: #010214 !important;
-    margin: 0 !important;
-    padding: 0 !important;
+  .grid-column-cell img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    object-fit: contain; /* FIXED: Changed from cover to prevent cropping */
+    border-radius: 4px;
+    margin-bottom: 12px;
   }
 
-  /* Lower element slider canvas area */
-  .slider-content-container {
-    width: 100% !important;
-    /* FIX 3: Shrunk width from 1100px down to 800px to squeeze images toward the center */
-    max-width: 800px !important; 
-    margin: 100 auto !important;
-    /* FIX 4: Added a 40px bottom padding buffer to protect the white bottom shadow layout frame */
-    padding: 20px 40px 80px 40px !important; 
-    box-sizing: border-box !important;
+  .grid-column-cell p {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0 10px;
   }
 
-  /* Subheading adjustment layer layout rules */
-  .slider-subheading {
-    font-family: 'Roboto', Arial, sans-serif !important;
-    font-weight: 200 !important;
-    color: #ffffff !important;
-    margin: 0 0 30px 0 !important;
-    padding: 0 !important;
-    letter-spacing: 0.1px !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-  }
+  /* Specific font overrides for individual columns */
+  .font-arial { font-family: Arial, sans-serif; line-height: 1.4; }
+  .font-josefine { font-family: 'Josefin Sans', sans-serif; line-height: 1.8; }
 
-  /* Flexible gallery wrapper grid structure */
-.gallery-wrapper {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important; 
-  width: 100% !important;
-  
-  /* FIX 1: Caps the total width of the two columns combined */
-  max-width: 1000px !important; 
-  
-  /* FIX 2: Centers this narrower block on the web page */
-  margin: 0 auto !important; 
-  
-  /* FIX 3: Keeps the gap between the two images tiny */
-  gap: 15px !important; 
-}
-
-  /* Display layout track system constraints rules */
-  .slider-track {
-    flex: 1 !important;
-    overflow: hidden !important;
-    min-height: 100px !important;
-  }
-
-  /* RESPONSIVE LAYOUT ENGINE FOR MOBILE PHONE RESOLUTIONS */
+  /* MOBILE PHONE OVERRIDES */
   @media (max-width: 767px) {
-    .custom-rebuilt-section {
-      /* Shrinks the white padding bands down to 20px on small mobile viewports */
-      box-shadow: inset 0 20px 0 #ffffff, inset 0 -20px 0 #ffffff !important;
-    }
-    .banner-wrapper {
-      margin-top: 20px !important;
-    }
-    .banner-image {
-      height: 240px !important;
-    }
-    .slider-content-container {
-      padding: 10px 20px 50px 20px !important;
-    }
-    .gallery-wrapper {
-      gap: 15px !important;
+    .responsive-grid-wrapper {
+      flex-direction: column !important; /* Mobile: stacks Column 1 on top of Column 2 */
+      gap: 30px !important;
+      padding: 0 20px !important;
     }
   }
 </style>
+    <!-- HTML STRUCTURE -->
+<div class="responsive-grid-wrapper">
+
+  <!-- COLUMN 1 (Left Image + Text Description) -->
+  <div class="grid-column-cell">
+    <img src="/sitepics/blob-ffa511d22.png" alt="UL Lafayette Presentation" />
+    <p class="font-arial">
+      UL Lafayette, Dept. of Communications
+    </p>
+  </div>
+
+  <!-- COLUMN 2 (Right Image + Text Description) -->
+  <div class="grid-column-cell">
+    <img src="/sitepics/blob-0c6e049.png" alt="UT Dallas Presentation" />
+    <p class="font-josefine">
+      UT Dallas, Public Policy & Political Economy 
+    </p>
+  </div>
+
+</div> <!-- End Grid/Track Wrapper -->
+
 
 <!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
  <div style="display: block; width: 100%; height: 30px; background-color: #010214;"></div>
