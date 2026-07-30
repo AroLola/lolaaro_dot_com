@@ -672,85 +672,95 @@ section[class*="Welcome"] {
       let lightboxOutput = '';
 
       galleryData.photoEvents.forEach((event, eventIdx) => {
-        pillsOutput += `
-          <a href="#${event.id}-section" class="filter-nav-pill-btn">
-            ${event.name === 'Sports Day' ? 'Sports' : event.name}
-          </a>
-        `;
+  pillsOutput += `
+    <a href="#${event.id}-section" class="filter-nav-pill-btn">
+      ${event.name === 'Sports Day' ? 'Sports' : event.name}
+    </a>
+  `;
 
-        const hasDescription = event.description && event.description.trim() !== "";
-        const descriptionHTML = hasDescription ? `
-          <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
-            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
-              ${event.description}
-            </p>
+  // 💡 COLOR ROUTER: Determines background and text color based on even/odd indexes
+  // Even indexes (0, 2, 4...) get White background with Dark text
+  // Odd indexes (1, 3, 5...) get Dark Blue background with White text
+  const isEvenAlbum = eventIdx % 2 === 0;
+  const currentBgColor = isEvenAlbum ? '#ffffff' : '#010214';
+  const currentTextColor = isEvenAlbum ? '#010214' : '#ffffff';
+  const currentDescColor = isEvenAlbum ? 'rgba(1, 2, 20, 0.8)' : 'rgba(255, 255, 255, 0.8)';
+
+  const hasDescription = event.description && event.description.trim() !== "";
+  const descriptionHTML = hasDescription ? `
+    <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
+      <!-- FIXED: Text color dynamically shifts to guarantee readability -->
+      <p style="color: ${currentDescColor} !important; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
+        ${event.description}
+      </p>
+    </div>
+  ` : '';
+
+  // FIXED: Added background-color and vertical padding to the section wrapper tag
+  htmlOutput += `
+    <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px; background-color: ${currentBgColor} !important; padding: 60px 0 !important; width: 100% !important; box-sizing: border-box !important;">
+      
+      <!-- FIXED: Heading font color dynamically shifts -->
+      <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px; color: ${currentTextColor} !important;">
+        <span class="x-el x-el-span">${event.name}</span>
+      </h2>
+
+      ${descriptionHTML}
+
+      <div class="dynamic-carousel-box">
+        <div class="dynamic-carousel-viewport">
+          <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
+  `;
+
+  event.media.forEach(item => {
+    const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
+    const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
+
+    htmlOutput += `
+      <li class="dynamic-carousel-slide">
+        <div class="slide-split-row ${emptyClassFlag}">
+          <div class="slide-media-box">
+            <img src="${item.src}" alt="${item.caption}">
           </div>
-        ` : '';
-
-        htmlOutput += `
-          <div class="gallery-section-wrapper" id="${event.id}-section" style="scroll-margin-top: 100px;">
-            
-            <h2 role="heading" aria-level="2" class="x-el x-el-h2 c1-2v c1-2 c1-1g c1-1h c1-7j c1-13 c1-11 c1-10 c1-7k c1-6l c1-30 c1-5r c1-5q c1-31 c1-5t c1-7l c1-5v c1-5w c1-5x" style="text-align: center; margin-bottom: 24px;">
-              <span class="x-el x-el-span">${event.name}</span>
-            </h2>
-
-            ${descriptionHTML}
-
-            <div class="dynamic-carousel-box">
-              <div class="dynamic-carousel-viewport">
-                <ul class="dynamic-carousel-track" id="track-${eventIdx}" style="transition: transform 0.5s ease-in-out; transform: translateX(0);">
-        `;
-
-        event.media.forEach(item => {
-          const isCardEmpty = !item.caption || item.caption.trim() === '""' || item.caption.trim() === '';
-          const emptyClassFlag = isCardEmpty ? 'empty-caption' : '';
-
-          htmlOutput += `
-            <li class="dynamic-carousel-slide">
-              <div class="slide-split-row ${emptyClassFlag}">
-                <div class="slide-media-box">
-                  <img src="${item.src}" alt="${item.caption}">
-                </div>
-                <div class="slide-caption-box">
-                  <p>${item.caption}</p>
-                </div>
-              </div>
-            </li>
-          `;
-        });
-
-        htmlOutput += `
-                </ul>
-              </div>
-            </div>
-
-            <div class="thumb-row-container">
-        `;
-
-        event.media.forEach((item, itemIdx) => {
-          /* FIXED: Prepended ${event.id} to ensure thumbnail anchor targets are globally unique */
-          htmlOutput += `
-            <a href="#pop-${event.id}-${item.id}" class="thumb-card">
-              <img src="${item.src}" alt="Thumb button">
-            </a>
-          `;
-
-          /* FIXED: Prepended ${event.id} to lightbox overlay ID block to isolate across albums */
-          lightboxOutput += `
-            <div class="expert-lightbox-overlay" id="pop-${event.id}-${item.id}">
-              <div class="lightbox-content-box">
-                <a class="lightbox-close-btn" href="#${event.id}-section">✕</a>
-                <img src="${item.src}">
-              </div>
-            </div>
-          `;
-        });
-
-        htmlOutput += `
-            </div>
+          <!-- FIXED: Captions now inherit the matching high-contrast text color -->
+          <div class="slide-caption-box" style="color: ${currentTextColor} !important;">
+            <p>${item.caption}</p>
           </div>
-        `;
-      });
+        </div>
+      </li>
+    `;
+  });
+
+  htmlOutput += `
+          </ul>
+        </div>
+      </div>
+
+      <div class="thumb-row-container">
+  `;
+
+  event.media.forEach((item, itemIdx) => {
+    htmlOutput += `
+      <a href="#pop-${event.id}-${item.id}" class="thumb-card">
+        <img src="${item.src}" alt="Thumb button">
+      </a>
+    `;
+
+    lightboxOutput += `
+      <div class="expert-lightbox-overlay" id="pop-${event.id}-${item.id}">
+        <div class="lightbox-content-box">
+          <a class="lightbox-close-btn" href="#${event.id}-section">✕</a>
+          <img src="${item.src}">
+        </div>
+      </div>
+    `;
+  });
+
+  htmlOutput += `
+      </div>
+    </div>
+  `;
+});
 
       filterMount.innerHTML = pillsOutput;
       rootElement.innerHTML = htmlOutput + lightboxOutput;
