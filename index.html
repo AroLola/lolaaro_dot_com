@@ -1057,7 +1057,7 @@ section[class*="Welcome"] {
 ">
 <img src="/sitepics/blob-744fb83.png" 
      alt="Book Detail Divider Panel" 
-     style="width: 100%; height: 380px; object-fit: cover !important; object-position: right 50% !important; display: block !important; filter: brightness(0.8); border: none;" />
+     style="width: 100%; height: 380px; object-fit: cover !important; object-position: right 70% !important; display: block !important; filter: brightness(0.6); border: none;" />
 </div>
 
 <!-- ======================================================================= -->
@@ -1133,8 +1133,8 @@ section[class*="Welcome"] {
     overflow: hidden !important;
     
     /* FIX 1: Creates a solid 40px white padding frame ONLY at the top and bottom edges */
-border-top: 60px solid #ffffff !important;    /* Increased from 40px to 60px */
-border-bottom: 60px solid #ffffff !important; /* Increased from 40px to 60px */
+border-top: 30px solid #ffffff !important;    /* Increased from 40px to 60px */
+border-bottom: 30px solid #ffffff !important; /* Increased from 40px to 60px */
 
   }
 
@@ -1143,7 +1143,7 @@ border-bottom: 60px solid #ffffff !important; /* Increased from 40px to 60px */
     width: 100% !important;
     position: relative !important;
     /* FIX 2: Shoved down 40px to safely clear the new white inset top border padding */
-    margin-top: 60px !important; 
+    margin-top: 40px !important; 
     padding: 0 !important;
     line-height: 0 !important;
   }
@@ -1151,8 +1151,8 @@ border-bottom: 60px solid #ffffff !important; /* Increased from 40px to 60px */
     width: 100% !important;
     height: 380px !important;
     object-fit: cover !important;
-    object-position: center 50% !important;
-    filter: brightness(0.8) !important;
+    object-position: center 70% !important;
+    filter: brightness(0.6) !important;
     border: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -1174,7 +1174,7 @@ border-bottom: 60px solid #ffffff !important; /* Increased from 40px to 60px */
     max-width: 600px !important; 
     margin: 0 auto !important;
     /* FIX 4: Added a 40px bottom padding buffer to protect the white bottom shadow layout frame */
-    padding: 40px 60px 80px 60px !important; 
+    padding: 20px 40px 80px 40px !important; 
     box-sizing: border-box !important;
   }
 
@@ -1222,11 +1222,13 @@ border-bottom: 60px solid #ffffff !important; /* Increased from 40px to 60px */
       padding: 10px 20px 50px 20px !important;
     }
     .gallery-wrapper {
-      gap: 10px !important;
+      gap: 20px !important;
     }
   }
 </style>
 
+<!-- HARD CANVASS SEPARATOR BOX: Guarantees zero bleed tracks into Education rows underneath -->
+<div style="display: block; width: 100%; height: 20px; background-color: #ffffff;"></div>
 <!-- ======================================================================= -->
 <!-- START OF THE NEXT CARD SECTION                                         -->
 <!-- ======================================================================= -->
