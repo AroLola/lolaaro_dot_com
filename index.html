@@ -478,15 +478,15 @@ section[class*="Welcome"] {
     <div class="welcome-text-side">
       
       <!-- FIXED: Changed bottom margin from 10px to 25px to add space after Welcome -->
-      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 4px; margin: 0 0 25px 0 !important; opacity: 0.9; color: #ffffff;">Welcome</p>
+      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 4px; margin: 0 0 35px 0 !important; opacity: 0.9; color: #ffffff;">Welcome</p>
       
       <h1 class="force-dancing-signature" style="font-family: 'Alex Brush', 'Dancing Script', 'Tangerine', 'Brush Script MT', cursive !important;      
-    font-weight: 300 !important; font-weight: 200 !important; font-size: 30px !important; line-height: 1.2 !important; letter-spacing: 0.5px !important; margin: 0 0 15px 0 !important; padding: 0 !important; text-shadow: none !important; -webkit-font-smoothing: antialiased !important; color: #ffffff !important;">
+    font-weight: 300 !important; font-weight: 200 !important; font-size: 30px !important; line-height: 1.2 !important; letter-spacing: 0.5px !important; margin: 0 0 10px 0 !important; padding: 0 !important; text-shadow: none !important; -webkit-font-smoothing: antialiased !important; color: #ffffff !important;">
         Olufunlola Arowolo, Ph.D.
       </h1>
       
       <!-- FIXED: Changed bottom margin from 0 to 30px to add space right after Public Policy Analyst -->
-      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 14px; text-transform: lowercase; letter-spacing: 0.5px; margin: 0 0 25px 0 !important; opacity: 0.9; color: #ffffff;">Public Policy Analyst</p>
+      <p style="font-family: 'Roboto', Arial, sans-serif; font-size: 14px; text-transform: capitalize; letter-spacing: 0.5px; margin: 0 0 25px 0 !important; opacity: 0.9; color: #ffffff;">Public Policy Analyst</p>
     </div>
     
     <div class="welcome-image-side">
@@ -573,7 +573,7 @@ section[class*="Welcome"] {
     
     .welcome-text-side {
       text-align: left !important;
-      flex: 1 1 100% !important;
+      flex: 1 1 70% !important;
       width: 100% !important;
     }
     
@@ -582,9 +582,14 @@ section[class*="Welcome"] {
       text-align: left !important;
     }
 
+   /* Special selector that overrides the inline HTML style tag restriction */
     h1[class*="force-dancing-signature"] {
-      font-size: 10px !important;  
-      text-align: left !important; 
+      font-size: 14px !important;       /* Slightly smaller to prevent screen crowding */
+      text-align: left !important;
+      
+      /* --- ADD THESE PROPERTIES TO TIGHTEN UP THE TEXT --- */
+      letter-spacing: -0.2px !important; /* Pulls the handwriting letters closer together */
+      line-height: 1.1 !important;       /* Pulls the baseline closer to prevent loose spreading */
     }
 
     .welcome-image-side {
