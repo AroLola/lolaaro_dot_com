@@ -60,6 +60,34 @@
         { "id": "g-14", "src": "/sitepics/collage.jpg", "caption": "" }
       ]
     },
+      {
+      "id": "nabirm-launch-gallery-album",
+      "name": "NABIRM Launch",
+      "description": "NABIRM launch - in attendance: The Honorable Hage Geingob, former Minister of Trade & Industry, First Prime Minister, and Former President of Namibia (RIP)."
+        { "id": "n-1", "src": "/sitepics/a_img_0006.png", "caption": "" },
+        { "id": "n-2", "src": "/sitepics/a_yimg_6405.jpg", "caption": "" },
+        { "id": "n-3", "src": "/sitepics/a_yimg_6406.jpg", "caption": "" },
+        { "id": "n-4", "src": "/sitepics/img_3988.jpg", "caption": "" },
+        { "id": "n-5", "src": "/sitepics/img_3989.jpg", "caption": "" },
+        { "id": "n-6", "src": "/sitepics/img_3990.jpg", "caption": "" },
+        { "id": "n-7", "src": "/sitepics/img_3991.jpg", "caption": "" },
+        { "id": "n-8", "src": "/sitepics/img_3992.jpg", "caption": "" },
+        { "id": "n-9", "src": "/sitepics/img_3993.jpg", "caption": "" },
+        { "id": "n-10", "src": "/sitepics/img_3994.jpg", "caption": "" },
+        { "id": "n-11", "src": "/sitepics/img_3995.jpg", "caption": "" },
+        { "id": "n-12", "src": "/sitepics/img_3996.jpg", "caption": "" },
+        { "id": "n-13" "src": "/sitepics/img_3997.jpg", "caption": "" },
+        { "id": "-14", "src": "/sitepics/img_3998.jpg", "caption": "" },
+        { "id": "-15", "src": "/sitepics/img_3999.jpg", "caption": "" },
+        { "id": "-16", "src": "/sitepics/img_4001.jpg", "caption": "" },
+        { "id": "-17", "src": "/sitepics/img_4002.jpg", "caption": "" },
+        { "id": "-18", "src": "/sitepics/img_4003.jpg", "caption": "" },
+        { "id": "-19", "src": "/sitepics/img_4004.jpg", "caption": "" },
+        { "id": "-20", "src": "/sitepics/img_4005.jpg", "caption": "" },
+        { "id": "-21", "src": "/sitepics/img_4006.jpg", "caption": "" },
+        { "id": "-22", "src": "/sitepics/img_4007.jpg", "caption": "" } 
+      ]
+    },
     {
       "id": "unanca-hr-luncheon-gallery-album",
       "name": "UNANCA Human Rights Luncheon",
@@ -80,6 +108,18 @@
         { "id": "a-13", "src": "/sitepics/una13.jpg", "caption": "" },
         { "id": "a-14", "src": "/sitepics/una14.png", "caption": "" },
         { "id": "a-15", "src": "/sitepics/una21.jpg", "caption": "" }
+      ]
+    },
+     {
+      "id": "nabirm-press-gallery-album",
+      "name": "NABIRM Press",
+      "description": "NABIRM management Team was beyond honored to meet with former President and Founding Father of Namibia, His Excellency, Dr. Sam Nujoma (RIP). We were accompanied by a special delegation from the Cabinet of the President of Sierra Leone, His Excellency, Ernest Bai Koroma. The Sierra Leonean delegation was sent to Namibia to support the NABIRM launch. Group pictures: Standing: From left to right: Ipinge, A.; Hon. Dr. George John Komba-Kono, Minister of State, Office of the Vice President; Hon. Mr Sahr Fengai Korgbende Kaimachiande III, Paramount Chief of the Gbense Kingdom and Member of Parliament; His Excellency, the Founding Father of Namibia, Dr. Sam Nujoma; Hon. Amb. Dauda Sulaiman Kamara, Minister of Local Government and Rural Development; D. Watkins, Masada CEO;  Olayinka Arowolo, NABIRM CEO; Hon. Hage Geingob, former Minister of Trade & Industry, First Prime Minister, and former President of Namibia. Seated: Left to right: Dr. Olufunlola Arowolo; Alfred Seawright, NABIRM Founding Partner and CEO of Medical Place, Inc.; Dauda Kamara, Jr., former Managing Director, NABIRM, Sierra Leone Operations.",
+      "media": [
+         { "id": "n-1", "src": "/sitepics/ng1.jpg", "caption": "" },
+        { "id": "n-2", "src": "/sitepics/ng2.jpg", "caption": "Standing: From left to right: Ipinge, A.; Hon. Dr. George John Komba-Kono, Minister of State, Office of the Vice President; Hon. Mr Sahr Fengai Korgbende Kaimachiande III, Paramount Chief of the Gbense Kingdom and Member of Parliament; His Excellency, the Founding Father of Namibia, Dr. Sam Nujoma; Hon. Amb. Dauda Sulaiman Kamara, Minister of Local Government and Rural Development; D. Watkins, Masada CEO;  Olayinka Arowolo, NABIRM CEO; Hon. Hage Geingob, former Minister of Trade & Industry, First Prime Minister, and former President of Namibia. Seated: Left to right: Dr. Olufunlola Arowolo; Alfred Seawright, NABIRM Founding Partner and CEO of Medical Place, Inc.; Dauda Kamara, Jr., former Managing Director, NABIRM, Sierra Leone Operations." },
+        { "id": "n-3", "src": "/sitepics/ng3.jpg", "caption": "" },
+        { "id": "n-4", "src": "/sitepics/ng4.jpg", "caption": "" },
+        { "id": "n-5", "src": "/sitepics/ng5.jpg", "caption": "Standing: From left to right: Ipinge, A.; Hon. Dr. George John Komba-Kono, Minister of State, Office of the Vice President; Hon. Mr Sahr Fengai Korgbende Kaimachiande III, Paramount Chief of the Gbense Kingdom and Member of Parliament; His Excellency, the Founding Father of Namibia, Dr. Sam Nujoma; Hon. Amb. Dauda Sulaiman Kamara, Minister of Local Government and Rural Development; D. Watkins, Masada CEO;  Olayinka Arowolo, NABIRM CEO; Hon. Hage Geingob, former Minister of Trade & Industry, First Prime Minister, and former President of Namibia. Seated: Left to right: Dr. Olufunlola Arowolo; Alfred Seawright, NABIRM Founding Partner and CEO of Medical Place, Inc.; Dauda Kamara, Jr., former Managing Director, NABIRM, Sierra Leone Operations." }
       ]
     },
      {
@@ -152,11 +192,11 @@
       "name": "USGLC Tribute",
       "description": "USGLC Tribute Dinner. Location: Washington, D.C.",
       "media": [
-         { "id": "l-1", "src": "/sitepics/yimg_4104.jpg", "caption": "" },
-        { "id": "l-2", "src": "/sitepics/yimg_4105.jpg", "caption": "" },
-        { "id": "l-3", "src": "/sitepics/yimg_4123.jpg", "caption": "" },
-        { "id": "l-4", "src": "/sitepics/yimg_4128.jpg", "caption": "" },
-        { "id": "l-5", "src": "/sitepics/yimg_4151.jpg", "caption": "" } 
+         { "id": "e-1", "src": "/sitepics/yimg_4104.jpg", "caption": "" },
+        { "id": "e-2", "src": "/sitepics/yimg_4105.jpg", "caption": "" },
+        { "id": "e-3", "src": "/sitepics/yimg_4123.jpg", "caption": "" },
+        { "id": "e-4", "src": "/sitepics/yimg_4128.jpg", "caption": "" },
+        { "id": "e-5", "src": "/sitepics/yimg_4151.jpg", "caption": "" } 
       ]
     }
   ]
