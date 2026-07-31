@@ -201,6 +201,34 @@
         { "id": "l-4", "src": "/sitepics/yimg_4128.jpg", "caption": "" },
         { "id": "l-5", "src": "/sitepics/yimg_4151.jpg", "caption": "" } 
       ]
+    },
+    {
+      "id": "essex-gallery-album",
+      "name": "University of Essex",
+      "description": "Dynamic Modeling Seminar. Location: Essex, England",
+      "media": [
+         { "id": "y-1", "src": "/sitepics/yblob-6fcd506.png", "caption": "Dynamic Modeling training seminar with Dr. Harold Clarke (RIP)." }
+      ]
+    },
+    {
+      "id": "tdpamy-gallery-album",
+      "name": "Dinner & Fundraiser",
+      "description": "Fundraising dinner with Congresswoman Johnson and Former Presidential Candidate, Senator Amy Klobuchar. Location: Dallas, TX",
+      "media": [
+         { "id": "t-1", "src": "/sitepics/tdpann1.png", "caption": "" },
+        { "id": "t-2", "src": "/sitepics/tdpann2.png", "caption": "" },
+        { "id": "t-3", "src": "/sitepics/tdpann3.png", "caption": "" },
+        { "id": "t-4", "src": "/sitepics/tdpann4.png", "caption": "" },
+        { "id": "t-5", "src": "/sitepics/tdpann53.png", "caption": "" }
+      ]
+    },
+      {
+      "id": "tdppat-gallery-album",
+      "name": "Governor's Fundraiser",
+      "description": "Fundraiser for Gov. Deval Patrick. Location: Dallas, TX.",
+      "media": [
+        { "id": "v-1", "src": "/sitepics/patd1.jpg", "caption": "" }
+      ]
     }
   ]
 }
