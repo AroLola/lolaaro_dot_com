@@ -628,6 +628,24 @@ const descriptionHTML = hasDescription ? `
       filterMount.innerHTML = pillsOutput;
       rootElement.innerHTML = htmlOutput + lightboxOutput;
 
+      // FIXED: EVENT DELEGATION ATTACK FOR FLICKR LINKS
+      // Captures any clicks on anchor tags inside the dynamic gallery containing the Flickr domain
+      rootElement.addEventListener('click', function(event) {
+        const targetAnchor = event.target.closest('a');
+        if (targetAnchor && targetAnchor.href.includes('flickr.com')) {
+          event.preventDefault(); // Stop standard tracking redirection execution
+          
+          const destinationUrl = targetAnchor.href;
+          
+          // Force clear context tracking out of window execution scope
+          const secureWindow = window.open();
+          if (secureWindow) {
+            secureWindow.opener = null;
+            secureWindow.location.href = destinationUrl;
+          }
+        }
+      });
+
       galleryData.photoEvents.forEach((event, eventIdx) => {
         const trackNode = document.getElementById(`track-${eventIdx}`);
         const totalSlidesCount = event.media.length;
@@ -652,6 +670,7 @@ const descriptionHTML = hasDescription ? `
           `<p style="color:#ffffff; text-align:center; padding:40px; opacity:0.7;">Error generating media galleries. Verify JSON data paths.</p>`;
       });
   </script>
+
 
 <!-- SYSTEM PAGE WRAPPER CLOSE TAG BRICK WALL -->
 </div></div></div></section></div></div></div>
