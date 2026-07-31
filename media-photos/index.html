@@ -543,6 +543,13 @@ galleryData.photoEvents.forEach((event, eventIdx) => {
   const currentCaptionColor = isEvenAlbum ? '#33373e' : '#d1d9e6';
 
   const hasDescription = event.description && event.description.trim() !== "";
+  
+// 💡 SCRIPT TEXT BLOCK: We store the massive text safely here inside JavaScript variables
+let activeDescriptionText = event.description;
+
+if (event.description === "nabirm-launch-long-description") {
+  activeDescriptionText = "NABIRM management Team was beyond honored to meet with former President and Founding Father of Namibia, His Excellency, Dr. Sam Nujoma (RIP). We were accompanied by a special delegation from the Cabinet of the President of Sierra Leone, His Excellency, Ernest Bai Koroma. The Sierra Leonean delegation was sent to Namibia to support the NABIRM launch. <br><br> Group pictures: Standing: From left to right: Ipinge, A., Hon. Dr. George John Komba-Kono (Minister of State, Office of the Vice President), Hon. Mr Sahr Fengai Korgbende Kaimachiande III (Paramount Chief of the Gbense Kingdom & Member of Parliament), His Excellency & Founding Father of Namibia, Dr. Sam Nujoma, Hon. Amb. Dauda Sulaiman Kamara (Minister of Local Government & Rural Development), D. Watkins (Masada CEO), Olayinka Arowolo, (NABIRM CEO), Hon. Hage Geingob (former Minister of Trade & Industry, First Prime Minister, & former President of Namibia). Seated: Left to right: Dr. Olufunlola Arowolo, Alfred Seawright (NABIRM Founding Partner & CEO of Medical Place, Inc.), Dauda Kamara, Jr. (former Managing Director, NABIRM, Sierra Leone Operations).";
+}
   const descriptionHTML = hasDescription ? `
     <div style="width: 100%; max-width: 600px; max-height: 120px; overflow-y: auto; margin: -10px auto 24px auto; padding: 0 15px; box-sizing: border-box; scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
     <!-- FIXED: Added white-space: pre-line so the text safely converts \n into beautiful paragraph spacing gaps -->
