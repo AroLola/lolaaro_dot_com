@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 // Unified code block containing all 9 fonts with standard weight variations
-const CLEAN_FONT_CODE = `  <link rel="preconnect" href="https://googleapis.com">
+// Unified code block containing all 9 fonts with correct domain endpoints
+const CLEAN_FONT_CODE = `  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gentium+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Italiana&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">`;
+  <link href="https://googleapis.com" rel="stylesheet">`;
 
 // Matches the entire <style data-inline-fonts="">...</style> block containing the old code
 const fontStyleBlockPattern = /<style data-inline-fonts="">[\s\S]*?<\/style>/gi;
