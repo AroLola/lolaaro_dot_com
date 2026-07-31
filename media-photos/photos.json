@@ -60,19 +60,19 @@
         { "id": "g-14", "src": "/sitepics/collage.jpg", "caption": "" }
       ]
     },
-      {
+    {
       "id": "nabirm-press-gallery-album",
       "name": "NABIRM Press",
       "description": "",
-        "media": [      
-          { "id": "r-1", "src": "/sitepics/ng1.jpg", "caption": "" },
-          { "id": "r-2", "src": "/sitepics/ng2.jpg", "caption": "" },
-          { "id": "r-3", "src": "/sitepics/ng3.jpg", "caption": "" },
-          { "id": "r-4", "src": "/sitepics/ng4.jpg", "caption": "" },
-          { "id": "r-5", "src": "/sitepics/ng5.jpg", "caption": "" }
-         ]
-       },
-      {
+      "media": [      
+        { "id": "r-1", "src": "/sitepics/ng1.jpg", "caption": "" },
+        { "id": "r-2", "src": "/sitepics/ng2.jpg", "caption": "" },
+        { "id": "r-3", "src": "/sitepics/ng3.jpg", "caption": "" },
+        { "id": "r-4", "src": "/sitepics/ng4.jpg", "caption": "" },
+        { "id": "r-5", "src": "/sitepics/ng5.jpg", "caption": "" }
+      ]  
+    },
+ {
   "id": "nabirm-launch-gallery-album",
   "name": "NABIRM Launch",
   "description": "NABIRM launch - in attendance was The Honorable Hage Geingob (former Minister of Trade and Industry, First Prime Minister, and Former President of Namibia).",
