@@ -114,8 +114,8 @@
      {
       "id": "nabirm-press-gallery-album",
       "name": "NABIRM Press",
-"description": "NABIRM management Team was beyond honored to meet with former President and Founding Father of Namibia, His Excellency, Dr. Sam Nujoma (RIP). We were accompanied by a special delegation from the Cabinet of the President of Sierra Leone, His Excellency, Ernest Bai Koroma. The Sierra Leonean delegation was sent to Namibia to support the NABIRM launch." 
-  "media": [      
+       "description": "nabirm-launch-long-description"  
+       "media": [      
        { "id": "n-1", "src": "/sitepics/ng1.jpg", "caption": "" },
         { "id": "n-2", "src": "/sitepics/ng2.jpg", "caption": "" },
         { "id": "n-3", "src": "/sitepics/ng3.jpg", "caption": "" },
