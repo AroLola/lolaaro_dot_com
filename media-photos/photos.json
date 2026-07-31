@@ -257,13 +257,13 @@
      {
       "id": "ul-banquet-album",
       "name": "Honors Banquet",
-      "description": "Sigma Gamma Mu Honors Banquet: USAID - Middle Eastern Partnership Initiative Location: Lafayette, LA",
+      "description": "Sigma Gamma Mu Honors Banquet: Award received for 'contributions above and beyond the call of duty' in fulfilling the requirments of the USAID - Middle Eastern Partnership Initiative. Location: Lafayette, LA",
       "media": [
-         { "id": "y-1", "src": "/sitepics/tdpann1.png", "caption": "" },
-        { "id": "y-2", "src": "/sitepics/tdpann2.png", "caption": "" },
-        { "id": "y-3", "src": "/sitepics/tdpann3.png", "caption": "" },
-        { "id": "y-4", "src": "/sitepics/tdpann4.png", "caption": "" },
-        { "id": "y-5", "src": "/sitepics/tdpann5.png", "caption": "" }
+        { "id": "y-1", "src": "/sitepics/ul2.png", "caption": "" },
+        { "id": "y-2", "src": "/sitepics/ul3.jpg", "caption": "" },
+        { "id": "y-3", "src": "/sitepics/ul4.jpg", "caption": "" },
+        { "id": "y-4", "src": "/sitepics/ul5.jpg", "caption": "" },
+        { "id": "y-5", "src": "/sitepics/ul6.jpg", "caption": "" }
       ]
     }
   ]
