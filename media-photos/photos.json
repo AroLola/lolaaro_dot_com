@@ -41,8 +41,8 @@
     },
     {
       "id": "unhq-gallery-album",
-      "name": "United Nations - General Assembly",
-      "description": "UN Internship - group photo with former Secretary General, Ban Ki Moon. Location: UNHQ, New York, NY.",
+      "name": "UN - General Assembly",
+      "description": "United Nations Internship - group photo with former Secretary General, Ban Ki Moon. Location: UNHQ, New York, NY.",
       "media": [        
         { "id": "g-1", "src": "/sitepics/ungawdesc1.jpg", "caption": "" },
         { "id": "g-2", "src": "/sitepics/unga1.png", "caption": "" },
@@ -116,8 +116,8 @@
     },
      {
       "id": "bo-fundraiser-gallery-album",
-      "name": "UNANCA Celebrates UN Week",
-      "description": "Fundraiser for PResident Barack Obama. Location: Buckhead, Atlanta, GA.",
+      "name": "PBO Fundraiser",
+      "description": "Fundraiser for President Barack Obama. Location: Buckhead, Atlanta, GA.",
       "media": [
         { "id": "g-1", "src": "/sitepics/bo1.png", "caption": "" },
         { "id": "g-2", "src": "/sitepics/bo2.png", "caption": "" },
