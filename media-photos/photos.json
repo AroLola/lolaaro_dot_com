@@ -63,12 +63,12 @@
       {
       "id": "nabirm-launch-gallery-album",
       "name": "NABIRM Launch",
-      "description": "NABIRM launch - in attendance was The Honorable Hage Geingob (former Minister of Trade and Industry, First Prime Minister, and Former President of Namibia)."
+      "description": "NABIRM launch - in attendance was The Honorable Hage Geingob (former Minister of Trade and Industry, First Prime Minister, and Former President of Namibia).",
       "media": [  
         { "id": "n-1", "src": "/sitepics/a_img_0006.png", "caption": "" },
         { "id": "n-2", "src": "/sitepics/a_yimg_6405.jpg", "caption": "" },
         { "id": "n-3", "src": "/sitepics/a_yimg_6406.jpg", "caption": "" },
-        { "id": "n-4", "src": "/sitepics/img_3988.jpg", "caption": "" },
+        { "id": "n-4", "src": "/sitepics/img_3988.jpg", "caption": "The Honorable Hage Geingob (former Minister of Trade and Industry, First Prime Minister, and Former President of Namibia).",
         { "id": "n-5", "src": "/sitepics/img_3989.jpg", "caption": "" },
         { "id": "n-6", "src": "/sitepics/img_3990.jpg", "caption": "" },
         { "id": "n-7", "src": "/sitepics/img_3991.jpg", "caption": "" },
@@ -77,7 +77,7 @@
         { "id": "n-10", "src": "/sitepics/img_3994.jpg", "caption": "" },
         { "id": "n-11", "src": "/sitepics/img_3995.jpg", "caption": "" },
         { "id": "n-12", "src": "/sitepics/img_3996.jpg", "caption": "" },
-        { "id": "n-13" "src": "/sitepics/img_3997.jpg", "caption": "" },
+        { "id": "n-13", "src": "/sitepics/img_3997.jpg", "caption": "" },
         { "id": "n-14", "src": "/sitepics/img_3998.jpg", "caption": "" },
         { "id": "n-15", "src": "/sitepics/img_3999.jpg", "caption": "" },
         { "id": "n-16", "src": "/sitepics/img_4001.jpg", "caption": "" },
