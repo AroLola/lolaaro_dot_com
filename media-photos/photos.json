@@ -207,7 +207,7 @@
       "name": "University of Essex",
       "description": "Dynamic Modeling Seminar. Location: Essex, England",
       "media": [
-         { "id": "y-1", "src": "/sitepics/yblob-6fcd506.png", "caption": "Dynamic Modeling training seminar with Dr. Harold Clarke (RIP)." }
+         { "id": "y-1", "src": "/sitepics/blob-6fcd506.png", "caption": "Dynamic Modeling training seminar with Dr. Harold Clarke (RIP)." }
       ]
     },
     {
@@ -219,7 +219,7 @@
         { "id": "t-2", "src": "/sitepics/tdpann2.png", "caption": "" },
         { "id": "t-3", "src": "/sitepics/tdpann3.png", "caption": "" },
         { "id": "t-4", "src": "/sitepics/tdpann4.png", "caption": "" },
-        { "id": "t-5", "src": "/sitepics/tdpann53.png", "caption": "" }
+        { "id": "t-5", "src": "/sitepics/tdpann5.png", "caption": "" }
       ]
     },
       {
