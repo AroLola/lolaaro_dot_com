@@ -69,7 +69,9 @@
         { "id": "r-2", "src": "/sitepics/ng2.jpg", "caption": "" },
         { "id": "r-3", "src": "/sitepics/ng3.jpg", "caption": "" },
         { "id": "r-4", "src": "/sitepics/ng4.jpg", "caption": "" },
-        { "id": "r-5", "src": "/sitepics/ng5.jpg", "caption": "" }
+        { "id": "r-5", "src": "/sitepics/ng5.jpg", "caption": "" },
+        { "id": "r-6", "src": "/sitepics/ng7.jpg", "caption": "" },
+        { "id": "r-7", "src": "/sitepics/ng8.jpg", "caption": "" }
       ]
     },
  {
