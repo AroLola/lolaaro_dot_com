@@ -60,17 +60,17 @@
         { "id": "g-14", "src": "/sitepics/collage.jpg", "caption": "" }
       ]
     },
-    {
+     {
       "id": "nabirm-press-gallery-album",
       "name": "NABIRM Press",
-      "description": "nabirm-launch-long-description",
+      "description": "",
       "media": [      
         { "id": "r-1", "src": "/sitepics/ng1.jpg", "caption": "" },
         { "id": "r-2", "src": "/sitepics/ng2.jpg", "caption": "" },
         { "id": "r-3", "src": "/sitepics/ng3.jpg", "caption": "" },
         { "id": "r-4", "src": "/sitepics/ng4.jpg", "caption": "" },
         { "id": "r-5", "src": "/sitepics/ng5.jpg", "caption": "" }
-      ]  
+      ]
     },
  {
   "id": "nabirm-launch-gallery-album",
