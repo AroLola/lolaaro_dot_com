@@ -690,11 +690,12 @@ galleryData.photoEvents.forEach((event, eventIdx) => {
 
   const hasDescription = event.description && event.description.trim() !== "";
   const descriptionHTML = hasDescription ? `
-    <div style="width: 100%; max-width: 600px; margin: -10px auto 24px auto; padding: 0 10px; box-sizing: border-box;">
-      <p style="color: ${currentDescColor} !important; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: normal; margin: 0;">
-        ${event.description}
-      </p>
-    </div>
+    <div style="width: 100%; max-width: 600px; max-height: 120px; overflow-y: auto; margin: -10px auto 24px auto; padding: 0 15px; box-sizing: border-box; scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
+    <!-- FIXED: Added white-space: pre-line so the text safely converts \n into beautiful paragraph spacing gaps -->
+    <p style="color: ${currentDescColor} !important; font-size: 1.05rem; line-height: 1.5; text-align: center; white-space: pre-line !important; margin: 0;">
+      ${event.description}
+    </p>
+  </div>
   ` : '';
 
   // FIXED: Added width breakout layout math to stretch the backgrounds fully edge-to-edge
