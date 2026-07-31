@@ -6,7 +6,7 @@ const CLEAN_ICON_CODE = `<link rel="icon" href="/sitepics/blob-6ecdd09.png" size
 <link rel="apple-touch-icon" href="/sitepics/blob-6ecdd09.png">`;
 
 // Matches any icon or apple-touch-icon link tags pointing to the GoDaddy asset server
-const godaddyPattern = /<link rel="(?:apple-touch-icon|icon)"[^>]*href="https:\/\/img1\.wsimg\.com\/[^"]*"[^>]*>/gi;
+ const godaddyPattern = /<link rel="(?:apple-touch-icon|icon)"[^>]*?href="https:\/\/img1\.wsimg\.com\/[^"]*"[^>]*?>/gi;
 
 function walkAndClean(dir) {
   const files = fs.readdirSync(dir);
