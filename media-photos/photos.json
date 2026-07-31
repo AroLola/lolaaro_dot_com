@@ -205,9 +205,31 @@
     {
       "id": "essex-gallery-album",
       "name": "University of Essex",
-      "description": "Dynamic Modeling Seminar. Location: Essex, England",
+      "description": "Dynamic Modeling Seminar. Scholarship funded by Dr. Harold Clark (RIP) Location: Essex, England",
       "media": [
-         { "id": "y-1", "src": "/sitepics/blob-6fcd506.png", "caption": "Dynamic Modeling training seminar with Dr. Harold Clarke (RIP)." }
+         { "id": "y-1", "src": "/sitepics/blob-6fcd506.png", "caption": "Dynamic Modeling seminar - class of 7, with Dr. Harold Clarke (RIP)." },
+         { "id": "x-1", "src": "/sitepics/blob-6fcd506.png", "caption": "" },
+        { "id": "x-1", "src": "/sitepics/essex1.png", "caption": "" },
+        { "id": "x-2", "src": "/sitepics/essex2.png", "caption": "" },
+        { "id": "x-3", "src": "/sitepics/essex3.png", "caption": "" },
+        { "id": "x-4", "src": "/sitepics/essex4.png", "caption": "" },
+        { "id": "x-5", "src": "/sitepics/essex5.JPG", "caption": "" },
+        { "id": "x-6", "src": "/sitepics/essex6.JPG", "caption": "" },
+        { "id": "x-7", "src": "/sitepics/essex7.JPG", "caption": "" },
+        { "id": "x-8", "src": "/sitepics/essex8.JPG", "caption": "" },
+        { "id": "x-9", "src": "/sitepics/essex9.jpg", "caption": "" },
+        { "id": "x-10", "src": "/sitepics/essex10.JPG", "caption": "" },
+        { "id": "x-11", "src": "/sitepics/essex11.JPG", "caption": "" },
+        { "id": "x-12", "src": "/sitepics/essex12.JPG", "caption": "" },
+        { "id": "x-13", "src": "/sitepics/essex13.JPG", "caption": "" },
+        { "id": "x-14", "src": "/sitepics/essex14.JPG", "caption": "" },
+        { "id": "x-15", "src": "/sitepics/essex15.jpg", "caption": "Sundowners with Dr. Clarke (RIP)" },
+        { "id": "x-16", "src": "/sitepics/essex16.jpg", "caption": "Sundowners with Dr. Clarke (RIP)" },
+        { "id": "x-17", "src": "/sitepics/essex17.jpg", "caption": "" },
+        { "id": "x-18", "src": "/sitepics/essex18.jpg", "caption": "" },
+        { "id": "x-19", "src": "/sitepics/essex19.JPG", "caption": "" },
+        { "id": "x-20", "src": "/sitepics/essex20.JPG", "caption": "" },
+        { "id": "x-21", "src": "/sitepics/essex21.JPG", "caption": "" }
       ]
     },
     {
