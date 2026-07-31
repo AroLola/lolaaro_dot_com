@@ -116,7 +116,7 @@
     },
      {
       "id": "bo-fundraiser-gallery-album",
-      "name": "Fundraiser",
+      "name": "PBO Fundraiser",
       "description": "Fundraiser for President Barack Obama. Location: Buckhead, Atlanta, GA.",
       "media": [
         { "id": "g-1", "src": "/sitepics/bo1.png", "caption": "" },
@@ -128,6 +128,35 @@
         { "id": "g-7", "src": "/sitepics/bo7.png", "caption": "" },
         { "id": "g-8", "src": "/sitepics/bo8.jpg", "caption": "" },
         { "id": "g-9", "src": "/sitepics/bo9.jpg", "caption": "" }   
+      ]
+    },
+      {
+      "id": "usglc-summit-gallery-album",
+      "name": "USGLC Summit",
+      "description": "USGLC Leadership Summit. Location: Washington, D.C.",
+      "media": [
+        { "id": "l-1", "src": "/sitepics/img_4040.jpeg", "caption": "" },
+        { "id": "l-2", "src": "/sitepics/usglc1.png", "caption": "" },
+        { "id": "l-3", "src": "/sitepics/usglc2.png", "caption": "" },
+        { "id": "l-4", "src": "/sitepics/usglc3.png", "caption": "" },
+        { "id": "l-5", "src": "/sitepics/usglc4.png", "caption": "" },
+        { "id": "g-6", "src": "/sitepics/usglc5.png", "caption": "" },
+        { "id": "g-7", "src": "/sitepics/usglc6.png", "caption": "" },
+        { "id": "g-8", "src": "/sitepics/usglc7.png", "caption": "" },
+        { "id": "g-9", "src": "/sitepics/usglc8.png", "caption": "" },
+        { "id": "g-10", "src": "/sitepics/usglc9.png", "caption": "" } 
+      ]
+    },
+     {
+      "id": "usglc-dinner-gallery-album",
+      "name": "USGLC Tribute",
+      "description": "USGLC Tribute Dinner. Location: Washington, D.C.",
+      "media": [
+         { "id": "l-1", "src": "/sitepics/yimg_4104.jpg", "caption": "" },
+        { "id": "l-2", "src": "/sitepics/yimg_4105.jpg", "caption": "" },
+        { "id": "l-3", "src": "/sitepics/yimg_4123.jpg", "caption": "" },
+        { "id": "l-4", "src": "/sitepics/yimg_4128.jpg", "caption": "" },
+        { "id": "l-5", "src": "/sitepics/yimg_4151.jpg", "caption": "" } 
       ]
     }
   ]
