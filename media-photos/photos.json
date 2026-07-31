@@ -114,7 +114,7 @@
      {
       "id": "nabirm-press-gallery-album",
       "name": "NABIRM Press",
-       "description": "nabirm-launch-long-description"  
+       "description": ""  
        "media": [      
        { "id": "n-1", "src": "/sitepics/ng1.jpg", "caption": "" },
         { "id": "n-2", "src": "/sitepics/ng2.jpg", "caption": "" },
