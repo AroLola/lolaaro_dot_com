@@ -113,6 +113,22 @@
         { "id": "g-9", "src": "/sitepics/una23.jpg", "caption": "" },
         { "id": "g-10", "src": "/sitepics/una9.jpg", "caption": "" }
       ]
+    },
+     {
+      "id": "bo-fundraiser-gallery-album",
+      "name": "UNANCA Celebrates UN Week",
+      "description": "Fundraiser for PResident Barack Obama. Location: Buckhead, Atlanta, GA.",
+      "media": [
+        { "id": "g-1", "src": "/sitepics/bo1.png", "caption": "" },
+        { "id": "g-2", "src": "/sitepics/bo2.png", "caption": "" },
+        { "id": "g-3", "src": "/sitepics/bo3.png", "caption": "" },
+        { "id": "g-4", "src": "/sitepics/bo4.png", "caption": "" },
+        { "id": "g-5", "src": "/sitepics/bo5.png", "caption": "" },
+        { "id": "g-6", "src": "/sitepics/bo6.png", "caption": "" },
+        { "id": "g-7", "src": "/sitepics/bo7.png", "caption": "" },
+        { "id": "g-8", "src": "/sitepics/bo8.jpg", "caption": "" },
+        { "id": "g-9", "src": "/sitepics/bo9.jpg", "caption": "" }   
+      ]
     }
   ]
 }
