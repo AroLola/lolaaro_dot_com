@@ -63,7 +63,7 @@
       {
       "id": "nabirm-launch-gallery-album",
       "name": "NABIRM Launch",
-      "description": "NABIRM launch - in attendance: The Honorable Hage Geingob, former Minister of Trade & Industry, First Prime Minister, and Former President of Namibia (RIP)."
+      "description": "NABIRM launch - in attendance The Honorable Hage Geingob, former Minister of Trade and Industry, First Prime Minister, and Former President of Namibia."
       "media": [  
         { "id": "n-1", "src": "/sitepics/a_img_0006.png", "caption": "" },
         { "id": "n-2", "src": "/sitepics/a_yimg_6405.jpg", "caption": "" },
@@ -112,18 +112,6 @@
       ]
     },
      {
-      "id": "nabirm-press-gallery-album",
-      "name": "NABIRM Press",
-       "description": "",  
-       "media": [      
-       { "id": "r-1", "src": "/sitepics/ng1.jpg", "caption": "" },
-        { "id": "r-2", "src": "/sitepics/ng2.jpg", "caption": "" },
-        { "id": "r-3", "src": "/sitepics/ng3.jpg", "caption": "" },
-        { "id": "r-4", "src": "/sitepics/ng4.jpg", "caption": "" },
-        { "id": "r-5", "src": "/sitepics/ng5.jpg", "caption": "" }
-      ]
-    },
-     {
       "id": "un-sec-gallery-album",
       "name": "UN Headquarters",
       "description": "UNHQ, New York, NY",
@@ -160,15 +148,15 @@
       "name": "PBO Fundraiser",
       "description": "Fundraiser for President Barack Obama. Location: Buckhead, Atlanta, GA.",
       "media": [
-        { "id": "g-1", "src": "/sitepics/bo1.png", "caption": "" },
-        { "id": "g-2", "src": "/sitepics/bo2.png", "caption": "" },
-        { "id": "g-3", "src": "/sitepics/bo3.png", "caption": "" },
-        { "id": "g-4", "src": "/sitepics/bo4.png", "caption": "" },
-        { "id": "g-5", "src": "/sitepics/bo5.png", "caption": "" },
-        { "id": "g-6", "src": "/sitepics/bo6.png", "caption": "" },
-        { "id": "g-7", "src": "/sitepics/bo7.png", "caption": "" },
-        { "id": "g-8", "src": "/sitepics/bo8.jpg", "caption": "" },
-        { "id": "g-9", "src": "/sitepics/bo9.jpg", "caption": "" }   
+        { "id": "p-1", "src": "/sitepics/bo1.png", "caption": "" },
+        { "id": "p-2", "src": "/sitepics/bo2.png", "caption": "" },
+        { "id": "p-3", "src": "/sitepics/bo3.png", "caption": "" },
+        { "id": "p-4", "src": "/sitepics/bo4.png", "caption": "" },
+        { "id": "p-5", "src": "/sitepics/bo5.png", "caption": "" },
+        { "id": "p-6", "src": "/sitepics/bo6.png", "caption": "" },
+        { "id": "p-7", "src": "/sitepics/bo7.png", "caption": "" },
+        { "id": "p-8", "src": "/sitepics/bo8.jpg", "caption": "" },
+        { "id": "p-9", "src": "/sitepics/bo9.jpg", "caption": "" }   
       ]
     },
       {
