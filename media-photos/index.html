@@ -543,12 +543,12 @@ galleryData.photoEvents.forEach((event, eventIdx) => {
   const currentCaptionColor = isEvenAlbum ? '#33373e' : '#d1d9e6';
 
 // FIXED: Forces the layout container to build open if the album id matches the target group
-const isNabirmLaunch = event.id === "nabirm-launch-gallery-album";
-const hasDescription = (event.description && event.description.trim() !== "") || isNabirmLaunch;
+const isNabirmPress = event.id === "nabirm-press-gallery-album";
+const hasDescription = (event.description && event.description.trim() !== "") || isNabirmPress;
 
 let activeDescriptionText = event.description || "";
 
-if (isNabirmLaunch) {
+if (isNabirmPress) {
   activeDescriptionText = "NABIRM management Team was beyond honored to meet with former President and Founding Father of Namibia, His Excellency, Dr. Sam Nujoma (RIP). We were accompanied by a special delegation from the Cabinet of the President of Sierra Leone, His Excellency, Ernest Bai Koroma. The Sierra Leonean delegation was sent to Namibia to support the NABIRM launch. <br><br> Group pictures: Standing: From left to right: Ipinge, A., Hon. Dr. George John Komba-Kono (Minister of State, Office of the Vice President), Hon. Mr Sahr Fengai Korgbende Kaimachiande III (Paramount Chief of the Gbense Kingdom & Member of Parliament), His Excellency & Founding Father of Namibia, Dr. Sam Nujoma, Hon. Amb. Dauda Sulaiman Kamara (Minister of Local Government & Rural Development), D. Watkins (Masada CEO), Olayinka Arowolo, (NABIRM CEO), Hon. Hage Geingob (former Minister of Trade & Industry, First Prime Minister, & former President of Namibia). Seated: Left to right: Dr. Olufunlola Arowolo, Alfred Seawright (NABIRM Founding Partner & CEO of Medical Place, Inc.), Dauda Kamara, Jr. (former Managing Director, NABIRM, Sierra Leone Operations).";
 }
 
