@@ -116,7 +116,7 @@
     },
      {
       "id": "bo-fundraiser-gallery-album",
-      "name": "PBO Fundraiser",
+      "name": "Fundraiser",
       "description": "Fundraiser for President Barack Obama. Location: Buckhead, Atlanta, GA.",
       "media": [
         { "id": "g-1", "src": "/sitepics/bo1.png", "caption": "" },
