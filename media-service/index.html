@@ -658,9 +658,9 @@ section[class*="Welcome"] {
 
           <!-- AUTOMATED ASYNCHRONOUS BUILD ENGINE SCRIPT OVERRIDE -->
 <script>
-  fetch('./photos.json')
+  fetch('./service.json')
     .then(response => {
-      if (!response.ok) throw new Error('Could not read photos.json file assets');
+      if (!response.ok) throw new Error('Could not read service.json file assets');
       return response.json();
     })
     .then(galleryData => {
