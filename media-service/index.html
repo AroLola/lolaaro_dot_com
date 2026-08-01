@@ -609,6 +609,24 @@ section[class*="Welcome"] {
   height: auto !important;
 }
 
+/* 🛠️ FOOTER OVERSIZED RESTORATION ENGINE */
+/* Targets and resets the broken wrapper structural margins and paddings only on this service page */
+section[data-ux="Section"] .c1-il,
+section[data-ux="Section"] .c1-6e,
+section[data-ux="Section"] .c1-6f,
+section[data-ux="Section"] .c1-im {
+  padding-top: 15px !important;    /* Shrinks the huge top blank spacing gap */
+  padding-bottom: 15px !important; /* Shrinks the bottom layout vertical padding bounds */
+  min-height: auto !important;     /* Overrides any structural blowout sizing calculations */
+  height: auto !important;
+}
+
+section[data-ux="Section"].c1-ii.c1-ij.c1-ik {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 20px 0 !important;      /* Forces the row background spacing to remain compact */
+}
+   
 </style>
   <!-- END OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET --> 
 <!-- END CAROUSEL LIGHTBOX-->
