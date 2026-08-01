@@ -508,9 +508,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
         <div data-ux="GridCell" class="x-el x-el-div c2-1 c2-2 c2-1j c2-1q c2-1r c2-4t c2-1f c2-15 c2-17 c2-16 c2-18 c2-3 c2-4 c2-4u c2-4v c2-4w c2-5 c2-4x c2-4y c2-4z c2-6 c2-7 c2-8">
           <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-d c2-50 c2-51 c2-52 c2-53 c2-54 c2-55 c2-56 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
             <div tabindex="0" style="width: 100%; position: relative; outline: none;">
-  <!-- stillbirths and neonates thumbnail -->
-
- 
+<!-- stillbirths and neonates thumbnail -->
 <!-- THE HYBRID SMART-SCALING PDF PLATFORM -->
 
 <!-- 📥 CUSTOM DOWNLOAD BUTTON WITH BLUE CLICK EFFECT -->
@@ -529,10 +527,28 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 </div>
 
 <style>
-  /* 🚫 TARGETS AND HIDES ONLY THE ORIGINAL GODADDY LINK ELEMENT VIA ITS COMPONENT CLASS */
-  .c1-1d {
+  /* 🎯 SPECIFIC BREAKOUT PATCH FOR TRUNCATED SECTIONS (2 & 3) */
+  /* This isolates and repairs only the narrow widget wrappers without altering the other 8 working layout cards */
+  .widget-gallery,
+  .widget-gallery section,
+  .widget-pdf:nth-of-type(1),
+  .widget-pdf:nth-of-type(1) section,
+  div[id="b0bd3bb9-46af-4a57-aaab-ebce26adba73"] section,
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] section {
+    width: 100vw !important; /* Forces layout tracking windows full-bleed edge-to-edge */
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 🚫 TARGETS AND HIDES ONLY THE ORIGINAL TEXT LINK OUTSIDE THIS CONTAINER */
+  a[data-aid="PDF_DOWNLOAD_LINK_RENDERED"]:not(.download-link-custom) {
     display: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -628,8 +644,8 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
       // 📱 MOBILE DISPLAY WINDOW
       container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
-      // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW
-      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=40" width="100%" height="100%" allow="autoplay"></iframe>`;
+      // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW - DEFAULT 50% ZOOM
+      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=50" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
