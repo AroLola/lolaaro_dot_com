@@ -719,6 +719,30 @@ const descriptionHTML = hasDescription ? `
 <script crossorigin="Anonymous" src="./index/bs-util-c935f491.js"></script>
 <script crossorigin="Anonymous" src="./index/bs-wrapWithDeviceDetection-f9dc1d72.js"></script>
 
+     <script>
+  (function() {
+    // Global Interceptor: Listens for any click on the webpage
+    document.addEventListener('click', function(event) {
+      
+      // Checks if the clicked item is a link containing your custom 'data-url' attribute
+      const targetLink = event.target.closest('a[data-url]');
+      
+      if (targetLink) {
+        // Prevents the browser from executing '#' and triggering the local /media-service/#/ loop
+        event.preventDefault();
+        
+        // Extracts your hidden deep URL path from the JSON description element
+        const deepDestinationUrl = targetLink.getAttribute('data-url');
+        
+        if (deepDestinationUrl) {
+          // FORCES BREAKOUT: Opens the deep page path in a new clean window
+          // 'noopener,noreferrer' masks the iframe origin, stopping external platforms from redirecting to their homepage
+          window.open(deepDestinationUrl, '_blank', 'noopener,noreferrer');
+        }
+      }
+    });
+  })();
+</script>
 </body>
 </html>
 
