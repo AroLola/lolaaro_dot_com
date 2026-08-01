@@ -528,14 +528,13 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 
 <style>
   /* SPECIFIC BREAKOUT PATCH FOR TRUNCATED SECTIONS (2 & 3) */
-  /* This isolates and repairs only the narrow widget wrappers without altering the other 8 working layout cards */
   .widget-gallery,
   .widget-gallery section,
   .widget-pdf:nth-of-type(1),
   .widget-pdf:nth-of-type(1) section,
   div[id="b0bd3bb9-46af-4a57-aaab-ebce26adba73"] section,
   div[id="4492701a-8778-4e8b-ab48-21013d348bea"] section {
-    width: 100vw !important; /* Forces layout tracking windows full-bleed edge-to-edge */
+    width: 100vw !important; 
     position: relative !important;
     left: 50% !important;
     right: 50% !important;
@@ -544,7 +543,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     box-sizing: border-box !important;
   }
 
-  /* TARGETS AND HIDES ONLY THE ORIGINAL TEXT LINK OUTSIDE THIS CONTAINER */
+  /*  TARGETS AND HIDES ONLY THE ORIGINAL TEXT LINK OUTSIDE THIS CONTAINER */
   a[data-aid="PDF_DOWNLOAD_LINK_RENDERED"]:not(.download-link-custom) {
     display: none !important;
     visibility: hidden !important;
@@ -560,14 +559,14 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     align-items: center !important;
     justify-content: center !important;
     padding: 10px 22px !important;
-    color: #4a4a4a !important; /* Elegant dark grey text */
+    color: #4a4a4a !important; 
     text-decoration: none !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 14px !important;
     font-weight: 500 !important;
-    border: 1px solid #b5b5b5 !important; /* Soft grey border outline */
+    border: 1px solid #b5b5b5 !important; 
     border-radius: 4px !important;
-    background-color: rgba(255, 255, 255, 0.4) !important; /* Transparent wrapper */
+    background-color: rgba(255, 255, 255, 0.4) !important; 
     transition: all 0.2s ease-in-out !important;
     cursor: pointer !important;
   }
@@ -579,7 +578,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     border-color: #777777 !important;
   }
 
-  /* Active tap state: changes to blue, text turns white */
+  /* Active tap state */
   .download-link-custom:active,
   .download-link-custom:focus {
     background-color: #0076ff !important;
@@ -588,7 +587,6 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     box-shadow: 0 0 0 3px rgba(0, 118, 255, 0.3) !important;
   }
 
-  /* Forces the chevron arrow icon to turn white when clicked */
   .download-link-custom:active svg,
   .download-link-custom:focus svg {
     fill: #ffffff !important;
@@ -604,7 +602,18 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     overflow: hidden !important;
   }
   
-  .pdf-calibrated-engine iframe, 
+  .pdf-calibrated-engine iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+    
+    /* CSS SCALE OVERRIDE ENGINE (Forces desktop to scale smoothly) */
+    transform: scale(1.0) !important; 
+    transform-origin: top left !important;
+  }
+
   .pdf-calibrated-engine img {
     width: 100% !important;
     height: 100% !important;
@@ -624,13 +633,16 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
       margin-right: auto !important;
       overflow: hidden !important;
     }
+    .pdf-calibrated-engine iframe {
+      transform: none !important; /* Removes scale constraints on mobile */
+    }
   }
 </style>
 
 <!-- Main Design Framework Canvas Wrapper -->
 <div style="width: 100% !important; max-width: 1000px; margin: 15px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 0;">
   <div class="pdf-calibrated-engine" id="pdf-media-container">
-    <!-- Script populates mobile image canvas or desktop interactive document window instantly -->
+    <!-- Script populates elements instantly -->
   </div>
 </div>
 
@@ -639,37 +651,16 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     const container = document.getElementById('pdf-media-container');
     const basePdfUrl = 'wp1-stillbirthsandneonatal.pdf';
     const mobileImageUrl = 'wp1stillbirthsandneonates.jpg'; 
+    
+    // DYNAMIC TIMESTAMP GENERATOR TO DESTROY BROWSER ZOOM CACHE
+    const cacheBuster = '?v=' + new Date().getTime();
     
     if (window.innerWidth <= 767) {
       // MOBILE DISPLAY WINDOW
       container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
-      // DESKTOP INTERACTIVE DISPLAY WINDOW - DEFAULT 50% ZOOM
-      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=40" width="100%" height="100%" allow="autoplay"></iframe>`;
-    }
-  })();
-</script>
-
-
-<!-- Main Design Framework Canvas Wrapper -->
-<div style="width: 100% !important; max-width: 1000px; margin: 15px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 0;">
-  <div class="pdf-calibrated-engine" id="pdf-media-container">
-    <!-- Script populates mobile image canvas or desktop interactive document window instantly -->
-  </div>
-</div>
-
-<script>
-  (function() {
-    const container = document.getElementById('pdf-media-container');
-    const basePdfUrl = 'wp1-stillbirthsandneonatal.pdf';
-    const mobileImageUrl = 'wp1stillbirthsandneonates.jpg'; 
-    
-    if (window.innerWidth <= 767) {
-      // 📱 MOBILE DISPLAY WINDOW
-      container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
-    } else {
-      // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW - STOPS THE 38% OVERRIDE RESIZE GLITCH
-      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=100" width="100%" height="100%" allow="autoplay"></iframe>`;
+      // DESKTOP INTERACTIVE DISPLAY WINDOW - FIXED CACHE AND STABLE INSTRUCTIONS
+      container.innerHTML = `<iframe src="${basePdfUrl}${cacheBuster}#zoom=page-fit" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
