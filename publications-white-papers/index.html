@@ -528,14 +528,13 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 
 <style>
   /* 🎯 SPECIFIC BREAKOUT PATCH FOR TRUNCATED SECTIONS (2 & 3) */
-  /* This isolates and repairs only the narrow widget wrappers without altering the other 8 working layout cards */
   .widget-gallery,
   .widget-gallery section,
   .widget-pdf:nth-of-type(1),
   .widget-pdf:nth-of-type(1) section,
   div[id="b0bd3bb9-46af-4a57-aaab-ebce26adba73"] section,
   div[id="4492701a-8778-4e8b-ab48-21013d348bea"] section {
-    width: 100vw !important; /* Forces layout tracking windows full-bleed edge-to-edge */
+    width: 100vw !important; /* Retains the full-width deep blue section background canvas spacing */
     position: relative !important;
     left: 50% !important;
     right: 50% !important;
@@ -560,14 +559,14 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     align-items: center !important;
     justify-content: center !important;
     padding: 10px 22px !important;
-    color: #4a4a4a !important; /* Elegant dark grey text */
+    color: #4a4a4a !important; 
     text-decoration: none !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 14px !important;
     font-weight: 500 !important;
-    border: 1px solid #b5b5b5 !important; /* Soft grey border outline */
+    border: 1px solid #b5b5b5 !important; 
     border-radius: 4px !important;
-    background-color: rgba(255, 255, 255, 0.4) !important; /* Transparent wrapper */
+    background-color: rgba(255, 255, 255, 0.4) !important; 
     transition: all 0.2s ease-in-out !important;
     cursor: pointer !important;
   }
@@ -596,7 +595,8 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 
   /* 💻 DESKTOP PDF VIEWPORT FRAME */
   .pdf-calibrated-engine {
-    width: 100% !important;
+    width: 50% !important; /* 👈 Restricts outer framework element grid container size to exactly 50% on computers */
+    margin: 0 auto !important; /* Centers the 50% sizing column canvas layout box horizontally on screen */
     height: 80vh !important; 
     min-height: 450px !important;
     box-sizing: border-box !important;
@@ -610,16 +610,15 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     height: 100% !important;
     border: none !important;
     display: block !important;
-    margin: 0 auto !important;
   }
 
   /* 📱 MOBILE FREEZE CONSTRAINT */
   @media screen and (max-width: 767px) {
     .pdf-calibrated-engine {
+      width: 95% !important; /* 👈 Restores full scaling layout width specifically for smartphones */
       height: auto !important; 
       min-height: unset !important;
       max-height: unset !important;
-      width: 95% !important;
       margin-left: auto !important;
       margin-right: auto !important;
       overflow: hidden !important;
@@ -644,12 +643,11 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
       // 📱 MOBILE DISPLAY WINDOW
       container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
-      // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW - DEFAULT 50% ZOOM
-      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=50" width="100%" height="100%" allow="autoplay"></iframe>`;
+      // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW - STOPS THE 38% OVERRIDE RESIZE GLITCH
+      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=100" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
-
 
 <!-- Counting Stillbirths -->
     <div id="af954fa0-872d-4e6d-9026-d54ba833f868" class="widget widget-pdf widget-pdf-pdf-1">
