@@ -511,7 +511,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
   <!-- stillbirths and neonates thumbnail -->
 <!-- THE HYBRID SMART-SCALING PDF PLATFORM -->
 
-<!-- 📥 CUSTOM DOWNLOAD BUTTON WITH BLUE CLICK EFFECT -->
+<!-- CUSTOM DOWNLOAD BUTTON WITH BLUE CLICK EFFECT -->
 <div style="text-align: center; margin-bottom: 20px;">
   <a rel="noopener" role="link" aria-haspopup="true" target="_blank" 
      data-aid="CUSTOM_DOWNLOAD_BUTTON" 
@@ -527,12 +527,12 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 </div>
 
 <style>
-  /* 🔵 FULL-WIDTH DARK BLUE SECTION CONTAINER BACKGROUND ENGINE */
-  .widget-pdf, 
-  .widget-pdf section,
-  div[id*="4492701a-8778-4e8b-ab48-21013d348bea"] section[data-ux="Section"] {
-    background-color: #00204a !important; /* Deep dark blue background color */
-    width: 100vw !important; /* Spans the exact full view width of the device screen browser window */
+  /* FULL-WIDTH DEEP DARK SECTION CONTAINER BACKGROUND ENGINE - ISOLATED VERSION */
+  /* Targets only the explicit section container using its unique GoDaddy block identifier */
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"],
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] section {
+    background-color: #040414 !important; /* Updated deep background color */
+    width: 100vw !important; /* Spans the full view width of the browser window */
     position: relative !important;
     left: 50% !important;
     right: 50% !important;
@@ -543,22 +543,23 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     padding-bottom: 40px !important;
   }
 
-  /* 🤍 RECALIBRATES CONTENT TEXT INSIDE THE DARK BLUE ROW BAR TO STAY HIGH-CONTRAST WHITE */
-  .widget-pdf h1, 
-  .widget-pdf p, 
-  .widget-pdf span,
-  .widget-pdf div[data-aid="PDF_HEADING_RENDERED"],
-  .widget-pdf div[data-aid="PDF_DESCRIPTION_RENDERED"] {
-    color: #ffffff !important; /* Flips text elements to white */
+  /* RECALIBRATES CONTENT TEXT INSIDE THIS SPECIFIC ROW BAR TO STAY HIGH-CONTRAST WHITE */
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] h1, 
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] p, 
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] span,
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] div[data-aid="PDF_SECTION_TITLE_RENDERED"],
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] div[data-aid="PDF_HEADING_RENDERED"],
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] div[data-aid="PDF_DESCRIPTION_RENDERED"] {
+    color: #ffffff !important; /* Flips title, descriptive subtitle, and header spans to white */
   }
 
-  /* Keeps links like the Substack span visible against dark blue */
-  .widget-pdf a:not(.download-link-custom) {
+  /* Keeps links like the Substack span visible against the deep background */
+  div[id="4492701a-8778-4e8b-ab48-21013d348bea"] a:not(.download-link-custom) {
     color: #4ba3ff !important; /* Bright accessible blue color for inside hyperlinks */
     text-decoration: underline !important;
   }
 
-  /* 🚫 TARGETS AND HIDES ONLY THE ORIGINAL TEXT LINK OUTSIDE THIS CONTAINER */
+  /* TARGETS AND HIDES ONLY THE ORIGINAL TEXT LINK OUTSIDE THIS CONTAINER */
   a[data-aid="PDF_DOWNLOAD_LINK_RENDERED"]:not(.download-link-custom) {
     display: none !important;
     visibility: hidden !important;
@@ -574,14 +575,14 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     align-items: center !important;
     justify-content: center !important;
     padding: 10px 22px !important;
-    color: #ffffff !important; /* Flips text to white to pop out over the dark blue canvas */
+    color: #ffffff !important; /* White text to pop over dark canvas */
     text-decoration: none !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 14px !important;
     font-weight: 500 !important;
-    border: 1px solid rgba(255, 255, 255, 0.6) !important; /* Elegant light semi-transparent white border outline */
+    border: 1px solid rgba(255, 255, 255, 0.6) !important; /* Light semi-transparent border */
     border-radius: 4px !important;
-    background-color: rgba(255, 255, 255, 0.1) !important; /* Subtle frosted overlay canvas background shadow wrapper */
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Frosted glass effect overlay */
     transition: all 0.2s ease-in-out !important;
     cursor: pointer !important;
   }
@@ -607,7 +608,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     fill: currentColor !important;
   }
 
-  /* 💻 DESKTOP PDF VIEWPORT FRAME */
+  /* DESKTOP PDF VIEWPORT FRAME */
   .pdf-calibrated-engine {
     width: 100% !important;
     height: 80vh !important; 
@@ -626,7 +627,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     margin: 0 auto !important;
   }
 
-  /* 📱 MOBILE FREEZE CONSTRAINT */
+  /* MOBILE FREEZE CONSTRAINT */
   @media screen and (max-width: 767px) {
     .pdf-calibrated-engine {
       height: auto !important; 
@@ -654,14 +655,15 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     const mobileImageUrl = 'wp1stillbirthsandneonates.jpg'; 
     
     if (window.innerWidth <= 767) {
-      // 📱 MOBILE DISPLAY WINDOW
+      // MOBILE DISPLAY WINDOW
       container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
-      // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW - UPDATED DEFAULT VIEW WIDTH TO 50%
+      // DESKTOP INTERACTIVE DISPLAY WINDOW - DEFAULT 50% ZOOM
       container.innerHTML = `<iframe src="${basePdfUrl}#zoom=50" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
+
 
 <!-- Counting Stillbirths -->
     <div id="af954fa0-872d-4e6d-9026-d54ba833f868" class="widget widget-pdf widget-pdf-pdf-1">
