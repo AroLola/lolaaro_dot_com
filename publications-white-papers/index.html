@@ -509,55 +509,65 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
           <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-d c2-50 c2-51 c2-52 c2-53 c2-54 c2-55 c2-56 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
             <div tabindex="0" style="width: 100%; position: relative; outline: none;">
   <!-- stillbirths and neonates thumbnail -->
-<!-- THE STABLE INTEGRATED RESPONSIVE PDF PLATFORM -->
+<!-- THE LOCAL TOUCH-STABILIZED RESPONSIVE PDF PLATFORM -->
 <style>
-  /* 💻 DESKTOP SPECIFIC CORE: Anchors the layout container securely */
-  .pdf-dynamic-engine {
+  /* 💻 DESKTOP & UNIVERSAL BASE LAYOUT */
+  .pdf-native-engine {
     width: 100% !important;
     height: 80vh !important;
-    min-height: 580px !important;
-    max-height: 800px !important;
+    min-height: 520px !important;
+    max-height: 850px !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
     position: relative !important;
   }
   
-  .pdf-dynamic-engine iframe {
-    display: block !important;
+  .pdf-native-engine iframe {
+    width: 100% !important;
+    height: 100% !important;
     border: none !important;
+    display: block !important;
   }
 
-  /* 📱 MOBILE VIEWPORT SANITIZER: Overrides parent grid cells on small displays */
+  /* 📱 MOBILE VIEWPORT SANITIZER: Re-widens the frame and completely blocks horizontal shifting */
   @media screen and (max-width: 767px) {
-    .pdf-dynamic-engine {
+    .pdf-native-engine {
       width: 100% !important;
-      height: 65vh !important; /* Locks vertical height to keep layout visible */
-      min-height: 440px !important;
-      max-height: 600px !important;
-      overflow: auto !important;
+      height: 68vh !important; /* Fixed vertical ceiling to prevent canvas runaway */
+      min-height: 450px !important;
+      max-height: 620px !important;
+      
+      /* 🛡️ TOUCH PROTECTION ROUTER: Freezes the inner content window from moving or floating horizontally */
+      touch-action: pan-y !important; 
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
       -webkit-overflow-scrolling: touch !important;
     }
     
-    .pdf-dynamic-engine iframe {
+    .pdf-native-engine iframe {
       width: 100% !important;
       height: 100% !important;
+      /* Stops touch actions from dragging the raw PDF canvas around inside the frame boundaries */
+      pointer-events: auto !important; 
     }
   }
 </style>
 
-<!-- Main Wrapper Container Layout -->
+<!-- Main Wrapper Container Layout (Matches your original layout's full width parameters) -->
 <div style="width: 100% !important; max-width: 1000px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 0;">
-  <div class="pdf-dynamic-engine">
-    <!-- FIXED: Added explicit width/height inline markers, and updated URL path to #view=Fit to preserve full page rendering scaling -->
+  <div class="pdf-native-engine">
+    <!-- FIXED: Restored your local file asset path with #view=FitH to draw the pages cleanly without scaling cutoffs -->
     <iframe 
-      src="wp1-stillbirthsandneonatal.pdf#view=Fit" 
+      src="wp1-stillbirthsandneonatal.pdf#view=FitH&zoom=100" 
       width="100%" 
       height="100%" 
-      style="width: 100%; height: 100%; border: none; display: block;" 
+      style="width: 100%; height: 100%; border: none; display: block;"
       allow="autoplay">
       <p>Your browser does not support embedding PDFs. Please use the download button to read the document.</p>
     </iframe>
   </div>
 </div>
+
 
    <!-- Counting Stillbirths -->
     <div id="af954fa0-872d-4e6d-9026-d54ba833f868" class="widget widget-pdf widget-pdf-pdf-1">
