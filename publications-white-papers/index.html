@@ -511,7 +511,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 <!-- stillbirths and neonates thumbnail -->
 <!-- THE HYBRID SMART-SCALING PDF PLATFORM -->
 
-<!-- 📥 CUSTOM DOWNLOAD BUTTON WITH BLUE CLICK EFFECT -->
+<!-- CUSTOM DOWNLOAD BUTTON WITH BLUE CLICK EFFECT -->
 <div style="text-align: center; margin-bottom: 20px;">
   <a rel="noopener" role="link" aria-haspopup="true" target="_blank" 
      data-aid="CUSTOM_DOWNLOAD_BUTTON" 
@@ -527,7 +527,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 </div>
 
 <style>
-  /* 🎯 SPECIFIC BREAKOUT PATCH FOR TRUNCATED SECTIONS (2 & 3) */
+  /* SPECIFIC BREAKOUT PATCH FOR TRUNCATED SECTIONS (2 & 3) */
   /* This isolates and repairs only the narrow widget wrappers without altering the other 8 working layout cards */
   .widget-gallery,
   .widget-gallery section,
@@ -544,7 +544,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     box-sizing: border-box !important;
   }
 
-  /* 🚫 TARGETS AND HIDES ONLY THE ORIGINAL TEXT LINK OUTSIDE THIS CONTAINER */
+  /* TARGETS AND HIDES ONLY THE ORIGINAL TEXT LINK OUTSIDE THIS CONTAINER */
   a[data-aid="PDF_DOWNLOAD_LINK_RENDERED"]:not(.download-link-custom) {
     display: none !important;
     visibility: hidden !important;
@@ -594,7 +594,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     fill: #ffffff !important;
   }
 
-  /* 💻 DESKTOP PDF VIEWPORT FRAME */
+  /* DESKTOP PDF VIEWPORT FRAME */
   .pdf-calibrated-engine {
     width: 100% !important;
     height: 80vh !important; 
@@ -613,7 +613,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     margin: 0 auto !important;
   }
 
-  /* 📱 MOBILE FREEZE CONSTRAINT */
+  /* MOBILE FREEZE CONSTRAINT */
   @media screen and (max-width: 767px) {
     .pdf-calibrated-engine {
       height: auto !important; 
@@ -641,11 +641,11 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     const mobileImageUrl = 'wp1stillbirthsandneonates.jpg'; 
     
     if (window.innerWidth <= 767) {
-      // 📱 MOBILE DISPLAY WINDOW
+      // MOBILE DISPLAY WINDOW
       container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
       // DESKTOP INTERACTIVE DISPLAY WINDOW - DEFAULT 50% ZOOM
-      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=50" width="100%" height="100%" allow="autoplay"></iframe>`;
+      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=40" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
