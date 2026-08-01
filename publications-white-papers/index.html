@@ -511,7 +511,6 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
   <!-- stillbirths and neonates thumbnail -->
 <!-- THE HYBRID SMART-SCALING PDF PLATFORM -->
 <style>
-  /* 💻 DESKTOP PLATFORM FRAME */
   .pdf-calibrated-engine {
     width: 100% !important;
     height: 80vh !important; 
@@ -521,53 +520,45 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     overflow: hidden !important;
   }
   
-  .pdf-calibrated-engine iframe {
+  .pdf-calibrated-engine iframe, 
+  .pdf-calibrated-engine img {
     width: 100% !important;
     height: 100% !important;
     border: none !important;
     display: block !important;
   }
 
-  /* 📱 MOBILE VIEWPORT SANITIZER */
   @media screen and (max-width: 767px) {
     .pdf-calibrated-engine {
-      height: 53vh !important; 
-      min-height: 380px !important;
-      max-height: 520px !important;
+      height: auto !important; /* Let the static image define the clean height naturally */
+      min-height: unset !important;
+      max-height: unset !important;
       width: 90% !important;
       margin-left: auto !important;
       margin-right: auto !important;
-      
-      /* FREEZE CONSTRAINT: Keeps the scaled PDF from sliding side-to-side */
-      touch-action: pan-y !important; 
-      overflow-x: hidden !important;
-      overflow-y: hidden !important;
+      overflow: hidden !important;
     }
   }
 </style>
 
-<!-- Main Design Framework Wrapper -->
 <div style="width: 100% !important; max-width: 1000px; margin: 15px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 0;">
-  <div class="pdf-calibrated-engine">
-    <!-- The iframe starts empty and is filled instantly by the script below -->
-    <iframe id="dynamic-pdf-frame" width="100%" height="100%" allow="autoplay">
-      <p>Your browser does not support embedding PDFs. Please use the download button to read the document.</p>
-    </iframe>
+  <div class="pdf-calibrated-engine" id="pdf-media-container">
+    <!-- Script will inject either a static image or a desktop iframe here -->
   </div>
 </div>
 
 <script>
   (function() {
-    const pdfFrame = document.getElementById('dynamic-pdf-frame');
+    const container = document.getElementById('pdf-media-container');
     const basePdfUrl = 'wp1-stillbirthsandneonatal.pdf';
+    const mobileImageUrl = 'wp1-stillbirthsandneonates.jpg'; //pdf image file  
     
-    // Check if the user is visiting on a mobile device screen width
     if (window.innerWidth <= 767) {
-      // 📱 MOBILE: Loads your exact recommended #view=Fit to force-shrink the full page inside the box
-      pdfFrame.src = basePdfUrl + '#view=Fit';
+      // 📱 MOBILE: Inject a static, un-movable frozen image card that fits perfectly
+      container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
-      // 💻 DESKTOP: Loads your preferred 40% layout zoom view
-      pdfFrame.src = basePdfUrl + '#zoom=40';
+      // 💻 DESKTOP: Inject the original native interactive iframe engine
+      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=40" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
