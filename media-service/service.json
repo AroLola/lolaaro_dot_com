@@ -30,7 +30,8 @@
         { "id": "b-1", "src": "/sitepics/rc4.png", "caption": "" },
         { "id": "b-2", "src": "/sitepics/rc5.png", "caption": "" },
         { "id": "b-3", "src": "/sitepics/rc6.png", "caption": "" },
-        { "id": "b-4", "src": "/sitepics/rc7.png", "caption": "" }
+        { "id": "b-4", "src": "/sitepics/rc7.png", "caption": "" },
+        { "id": "b-5", "src": "/sitepics/rc6.png", "caption": "" }
       ]
     }
   ]
