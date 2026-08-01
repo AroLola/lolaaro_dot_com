@@ -608,25 +608,7 @@ section[class*="Welcome"] {
   opacity: 1 !important;
   height: auto !important;
 }
-
-/* 🛠️ FOOTER OVERSIZED RESTORATION ENGINE */
-/* Targets and resets the broken wrapper structural margins and paddings only on this service page */
-section[data-ux="Section"] .c1-il,
-section[data-ux="Section"] .c1-6e,
-section[data-ux="Section"] .c1-6f,
-section[data-ux="Section"] .c1-im {
-  padding-top: 15px !important;    /* Shrinks the huge top blank spacing gap */
-  padding-bottom: 15px !important; /* Shrinks the bottom layout vertical padding bounds */
-  min-height: auto !important;     /* Overrides any structural blowout sizing calculations */
-  height: auto !important;
-}
-
-section[data-ux="Section"].c1-ii.c1-ij.c1-ik {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 20px 0 !important;      /* Forces the row background spacing to remain compact */
-}
-   
+  
 </style>
   <!-- END OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET --> 
 <!-- END CAROUSEL LIGHTBOX-->
@@ -842,6 +824,70 @@ const descriptionHTML = hasDescription ? `
           <!-- ======================================================= -->
           <!-- END OF RUNTIME INJECTION                                -->
           <!-- ======================================================= -->
+<!-- MEDIASERVICE GLOBAL INTERCEPTOR & FOOTER REPAIR CANVAS -->
+
+<style>
+  /*LOCAL MEDIA-SERVICE FOOTER VERTICAL COLLAPSE ENGINE */
+  /* Targets only the explicit footer class blocks generated on this specific index page URL */
+  section[data-ux="Section"].c1-ii.c1-ij.c1-ik,
+  section[data-ux="Section"].c1-ii .c1-25,
+  section[data-ux="Section"].c1-ii .c1-26,
+  section[data-ux="Section"].c1-ii .c1-5e,
+  section[data-ux="Section"].c1-ii .c1-6e,
+  section[data-ux="Section"].c1-ii .c1-6f {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    padding-top: 5px !important;    /* Instantly drops the huge vertical blank whitespace gap */
+    padding-bottom: 5px !important; /* Instantly drops the massive bottom layout vertical bounds */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Internal layout wrapper reset constraints */
+  section[data-ux="Section"].c1-ii div[data-ux="SectionContainer"],
+  section[data-ux="Section"].c1-ii div[data-ux="Layout"],
+  section[data-ux="Section"].c1-ii div[data-ux="Container"] {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin: 0 auto !important;
+    height: auto !important;
+  }
+
+  /* Completely flattens and deletes hidden empty database tracking text elements */
+  section[data-ux="Section"].c1-ii p:empty {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+</style>
+
+<script>
+  (function() {
+    // Global Interceptor: Listens for any click on the webpage
+    document.addEventListener('click', function(event) {
+      
+      // Checks if the clicked item is a link containing your JSON description 'data-url' attribute
+      const targetLink = event.target.closest('a[data-url]');
+      
+      if (targetLink) {
+        // Prevents the browser from executing '#' and triggering the local /media-service/#/ loop
+        event.preventDefault();
+        
+        // Extracts your hidden deep URL path from the JSON description element
+        const deepDestinationUrl = targetLink.getAttribute('data-url');
+        
+        if (deepDestinationUrl) {
+          // FORCES BREAKOUT: Opens the deep page path in a new clean window
+          // 'noopener,noreferrer' masks the iframe origin, stopping external platforms from redirecting to their homepage
+          window.open(deepDestinationUrl, '_blank', 'noopener,noreferrer');
+        }
+      }
+    });
+  })();
+</script>
 
   <!--Footnote -->
   <section data-ux="Section" class="x-el x-el-section c1-1 c1-2 c1-ii c1-ij c1-ik c1-b c1-c c1-m c1-n c1-d c1-e c1-f c1-g"><div data-ux="SectionContainer" class="x-el x-el-div c1-1 c1-2 c1-25 c1-26 c1-17 c1-15 c1-27 c1-b c1-c c1-5e c1-d c1-5f c1-6e c1-6f c1-il c1-e c1-5g c1-f c1-5h c1-g"><div data-ux="Layout" class="x-el x-el-div c1-1 c1-2 c1-6l c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="Container" class="x-el x-el-div c1-1 c1-2 c1-25 c1-26 c1-17 c1-15 c1-27 c1-16 c1-b c1-c c1-im c1-5e c1-d c1-5f c1-e c1-5g c1-f c1-5h c1-g"><p data-ux="FooterText" data-aid="FOOTER_BUSINESS_NAME_RENDERED" data-typography="BodyAlpha" class="x-el x-el-p c1-1 c1-2 c1-1g c1-1h c1-4j c1-10 c1-in c1-8z c1-4e c1-b c1-io c1-c c1-ip c1-d c1-e c1-f c1-g"> </p><p data-ux="FooterText" data-aid="FOOTER_ADDRESS_RENDERED" data-typography="BodyAlpha" class="x-el x-el-p c1-1 c1-2 c1-1g c1-1h c1-4j c1-10 c1-in c1-8z c1-b c1-io c1-c c1-7e c1-ip c1-d c1-e c1-f c1-g"> </p><p data-ux="FooterText" data-aid="FOOTER_PHONE_RENDERED" data-typography="BodyAlpha" class="x-el x-el-p c1-1 c1-2 c1-1g c1-1h c1-4j c1-10 c1-12 c1-8z c1-b c1-io c1-c c1-7e c1-ip c1-d c1-e c1-f c1-g">Lamentations 3:37</p></div><div data-ux="Grid" class="x-el x-el-div c1-1 c1-2 c1-z c1-6g c1-6h c1-6i c1-10 c1-11 c1-12 c1-13 c1-x c1-6l c1-b c1-c c1-d c1-e c1-f c1-g"><div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-6g c1-6c c1-6q c1-2f c1-27 c1-2l c1-1b c1-2m c1-1c c1-b c1-c c1-d c1-iq c1-ir c1-e c1-f c1-g"><div data-ux="FooterDetails" data-aid="FOOTER_COPYRIGHT_RENDERED" data-typography="DetailsAlpha" class="x-el c1-1 c1-2 c1-1g c1-1h c1-4j c1-10 c1-12 c1-8z c1-b c1-is c1-88 c1-7e c1-8e c1-fs c1-8j c1-8k c1-8l x-rt"><p style="margin:0"><span>Copyright © 2026 Olufunlola A. Arowolo, Ph.D. - All Rights Reserved.</span></p></div></div><div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-6g c1-6c c1-6q c1-2f c1-27 c1-2l c1-1b c1-2m c1-1c c1-b c1-c c1-d c1-iq c1-ir c1-e c1-f c1-g"><p data-ux="FooterDetails" data-aid="FOOTER_POWERED_BY_RENDERED" data-typography="DetailsAlpha" class="x-el x-el-p c1-1 c1-2 c1-1g c1-1h c1-4j c1-4h c1-12 c1-8z c1-b c1-is c1-88 c1-7e c1-8e c1-it c1-3w c1-8j c1-8k c1-8l"><span> </span></p></div></div></div></div></section>  </div></div></div><div id="5a738609-ec16-49fc-a1e0-720422db138c" class="widget widget-messaging widget-messaging-messaging-1"></div><div id="65c2bf75-fbe6-4c23-926a-8717fc9d3021" class="widget widget-popup widget-popup-popup-1"></div><div id="d9a056ca-1592-4ba3-b584-797013950eb5" class="widget widget-cookie-banner widget-cookie-banner-cookie-1"></div></div></div></div>
