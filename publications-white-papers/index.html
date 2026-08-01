@@ -514,7 +514,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 <!-- 📥 CUSTOM DOWNLOAD BUTTON WITH BLUE CLICK EFFECT -->
 <div style="text-align: center; margin-bottom: 20px;">
   <a rel="noopener" role="link" aria-haspopup="true" target="_blank" 
-     data-aid="PDF_DOWNLOAD_LINK_RENDERED" 
+     data-aid="CUSTOM_DOWNLOAD_BUTTON" 
      data-tccl="ux2.pdf.download_link.click,click" 
      href="wp1-stillbirthsandneonatal.pdf" 
      class="download-link-custom">
@@ -527,13 +527,13 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 </div>
 
 <style>
-   /* HIDES THE OLD OUTSIDE LINK ENGINE WHEREVER IT LURKS */
-  :not(.download-link-custom) > [data-aid="PDF_DOWNLOAD_LINK_RENDERED"] {
+  /* 🚫 TARGETS AND HIDES ONLY THE ORIGINAL GODADDY LINK ELEMENT VIA ITS COMPONENT CLASS */
+  .c1-1d {
     display: none !important;
     visibility: hidden !important;
-    opacity: 0 !important;
     height: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
   }
 
   /* Styling for the custom action button */
@@ -592,6 +592,7 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     height: 100% !important;
     border: none !important;
     display: block !important;
+    margin: 0 auto !important;
   }
 
   /* 📱 MOBILE FREEZE CONSTRAINT */
@@ -619,18 +620,17 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
   (function() {
     const container = document.getElementById('pdf-media-container');
     const basePdfUrl = 'wp1-stillbirthsandneonatal.pdf';
-    const mobileImageUrl = 'wp1stillbirthsandneonates.jpg'; 
+    const mobileImageUrl = 'wp1-cover.png'; 
     
     if (window.innerWidth <= 767) {
       // 📱 MOBILE DISPLAY WINDOW
       container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
       // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW
-      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=50" width="100%" height="100%" allow="autoplay"></iframe>`;
+      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=40" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
-
 
 <!-- Counting Stillbirths -->
     <div id="af954fa0-872d-4e6d-9026-d54ba833f868" class="widget widget-pdf widget-pdf-pdf-1">
