@@ -527,6 +527,15 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
 </div>
 
 <style>
+   /* HIDES THE OLD OUTSIDE LINK ENGINE WHEREVER IT LURKS */
+  :not(.download-link-custom) > [data-aid="PDF_DOWNLOAD_LINK_RENDERED"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+  }
+
   /* Styling for the custom action button */
   .download-link-custom {
     display: inline-flex !important;
