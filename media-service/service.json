@@ -2,7 +2,7 @@
   "photoEvents": [
     {
       "id": "red-cross-hispanic-drive-gallery-album",
-      "name": "Red Cross Hispanic Community Drive",
+      "name": "Red Cross Drive",
       "description": "Red Cross - Hispanic Community Drive. Full event album accessible <a href='#' data-url='https://www.flickr.com/photos/dfwredcross/albums/72157635571453372/' class='flickr-link' style='color: #00e6ff; text-decoration: underline; font-weight: normal;'> here</a>.",       "media": [
         { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" },
         { "id": "r-2", "src": "/sitepics/rc2.png", "caption": "" },
@@ -21,6 +21,17 @@
         { "id": "k-2", "src": "/sitepics/km2.png", "caption": "" },
          { "id": "k-3", "src": "/sitepics/km3.png", "caption": "" }
       ]
-    }
+    },
+    {
+      "id": "red-cross-cards-gallery-album",
+      "name": "Red Cross Rally",
+       "description": "Red Cross event: Cowboy Rally Day-Christmas cards for overseas troops. Full event album accessible <a href='#' data-url='https://www.flickr.com/photos/dfwredcross/albums/72157637348516864/' class='flickr-link' style='color: #00e6ff; text-decoration: underline; font-weight: normal;'> here</a>.",         { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" },
+        { "id": "r-2", "src": "/sitepics/rc2.png", "caption": "" },
+        { "id": "r-3", "src": "/sitepics/rc3.jpg", "caption": "" },
+        { "id": "r-4", "src": "/sitepics/a1.jpg", "caption": "" },
+        { "id": "r-5", "src": "/sitepics/a2.jpg", "caption": "" },
+        { "id": "r-6", "src": "/sitepics/a3.jpg", "caption": "" }
+      ]
+    },
   ]
 }
