@@ -509,61 +509,56 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
           <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-d c2-50 c2-51 c2-52 c2-53 c2-54 c2-55 c2-56 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
             <div tabindex="0" style="width: 100%; position: relative; outline: none;">
   <!-- stillbirths and neonates thumbnail -->
-<!-- THE DUAL-RESPONSIVE PDF ENGINE -->
+<!-- THE STABLE INTEGRATED RESPONSIVE PDF PLATFORM -->
 <style>
-  /* 💻 DEFAULT: High-performance constraints built specifically for Desktop screens */
+  /* 💻 DESKTOP SPECIFIC CORE: Anchors the layout container securely */
   .pdf-dynamic-engine {
-    width: 100%;
-    height: 85vh; /* Sets a generous vertical reading plane for desktop */
-    min-height: 600px;
-    box-sizing: border-box;
+    width: 100% !important;
+    height: 80vh !important;
+    min-height: 580px !important;
+    max-height: 800px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
   }
+  
   .pdf-dynamic-engine iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
+    display: block !important;
+    border: none !important;
   }
 
-  /* 📱 MOBILE RESPONSIVE ROUTER: Overrides the constraints safely for cell phone screens */
+  /* 📱 MOBILE VIEWPORT SANITIZER: Overrides parent grid cells on small displays */
   @media screen and (max-width: 767px) {
     .pdf-dynamic-engine {
-      position: relative !important;
       width: 100% !important;
-      height: 75vh !important; /* Prevents vertical canvas runaway */
-      min-height: 480px !important;
-      max-height: 680px !important;
+      height: 65vh !important; /* Locks vertical height to keep layout visible */
+      min-height: 440px !important;
+      max-height: 600px !important;
       overflow: auto !important;
       -webkit-overflow-scrolling: touch !important;
     }
+    
     .pdf-dynamic-engine iframe {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
       width: 100% !important;
       height: 100% !important;
     }
   }
 </style>
 
-<!-- Clean, lightweight layout container structure -->
-<div style="width: 100%; max-width: 1000px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 0;">
+<!-- Main Wrapper Container Layout -->
+<div style="width: 100% !important; max-width: 1000px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 0;">
   <div class="pdf-dynamic-engine">
-    <!-- FIXED: Added FitH (Fit Horizontal) alongside zoom properties to lock structural width constraints on both views -->
-    <iframe src="wp1-stillbirthsandneonatal.pdf#view=FitH&zoom=100" allow="autoplay">
+    <!-- FIXED: Added explicit width/height inline markers, and updated URL path to #view=Fit to preserve full page rendering scaling -->
+    <iframe 
+      src="wp1-stillbirthsandneonatal.pdf#view=Fit" 
+      width="100%" 
+      height="100%" 
+      style="width: 100%; height: 100%; border: none; display: block;" 
+      allow="autoplay">
       <p>Your browser does not support embedding PDFs. Please use the download button to read the document.</p>
     </iframe>
   </div>
 </div>
 
-<!-- FIXED: Synchronized the backup link string so it targets your correct white paper asset path instead of wp2 -->
-<a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" data-aid="PDF_LINK_OVERLAY" target="_blank" 
-  href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-el-a c2-57 c2-58 c2-a c2-b c2-c c2-59 c2-e c2-24 c2-23 c2-5a c2-1u c2-3 c2-5b c2-4 c2-5c c2-5d c2-v c2-5e c2-5 c2-6 c2-7 c2-8">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" data-ux="Icon" data-aid="chevronRight" class="x-el x-el-svg c2-1 c2-2 c2-w c2-x c2-10 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8">
-    <path fill-rule="evenodd" d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.697 0 0 1 .032-1.016"></path>
-  </svg>
-</a>
-  </div></div></div>
    <!-- Counting Stillbirths -->
     <div id="af954fa0-872d-4e6d-9026-d54ba833f868" class="widget widget-pdf widget-pdf-pdf-1">
 <div data-ux="Widget" role="region" id="af954fa0-872d-4e6d-9026-d54ba833f868" class="x-el x-el-div x-el c1-1 c1-2 c1-aw c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
