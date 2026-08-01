@@ -510,8 +510,24 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
             <div tabindex="0" style="width: 100%; position: relative; outline: none;">
   <!-- stillbirths and neonates thumbnail -->
 <!-- THE HYBRID SMART-SCALING PDF PLATFORM -->
+
+<!-- 📥 CUSTOM DOWNLOAD BUTTON WITH BLUE CLICK EFFECT -->
+<div style="text-align: center; margin-bottom: 20px;">
+  <a rel="noopener" role="link" aria-haspopup="true" target="_blank" 
+     data-aid="PDF_DOWNLOAD_LINK_RENDERED" 
+     data-tccl="ux2.pdf.download_link.click,click" 
+     href="wp1-stillbirthsandneonatal.pdf" 
+     class="download-link-custom">
+      <span style="margin-right: 6px;">Download PDF</span>
+      <!-- Native Chevron Icon -->
+      <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" style="display: inline-block; vertical-align: middle;">
+        <path fill-rule="evenodd" d="M7.236 4.195a.773.773 0 0 1 1.06.031l7.743 7.883-7.742 7.42a.773.773 0 0 1-1.06 0 .697.697 0 0 1 0-1.017l6.712-6.433-6.745-6.868a.697.697 0 0 1 .032-1.016"></path>
+      </svg>
+  </a>
+</div>
+
 <style>
-  /* 🎯 NEW CLASS FOR THE DOWNLOAD BUTTON */
+  /* Styling for the custom action button */
   .download-link-custom {
     display: inline-flex !important;
     align-items: center !important;
@@ -526,31 +542,32 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     border-radius: 4px !important;
     background-color: rgba(255, 255, 255, 0.4) !important; /* Transparent wrapper */
     transition: all 0.2s ease-in-out !important;
+    cursor: pointer !important;
   }
 
-  /* ⚡ HOVER STYLE */
+  /* Hover state */
   .download-link-custom:hover {
     background-color: rgba(0, 0, 0, 0.05) !important;
     color: #111111 !important;
     border-color: #777777 !important;
   }
 
-  /* 🔵 CLICKED / ACTIVE INTERACTION (Turns blue when clicked or tapped) */
+  /* Active tap state: changes to blue, text turns white */
   .download-link-custom:active,
   .download-link-custom:focus {
-    background-color: #0076ff !important; /* Turns bright blue */
-    color: #ffffff !important; /* Flips text to white */
+    background-color: #0076ff !important;
+    color: #ffffff !important;
     border-color: #0056b3 !important;
     box-shadow: 0 0 0 3px rgba(0, 118, 255, 0.3) !important;
   }
 
-  /* Force the inside chevron arrow icon to turn white during the blue click */
+  /* Forces the chevron arrow icon to turn white when clicked */
   .download-link-custom:active svg,
   .download-link-custom:focus svg {
     fill: #ffffff !important;
   }
 
-  /* 💻 DESKTOP PLATFORM FRAME */
+  /* 💻 DESKTOP PDF VIEWPORT FRAME */
   .pdf-calibrated-engine {
     width: 100% !important;
     height: 80vh !important; 
@@ -568,13 +585,13 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     display: block !important;
   }
 
-  /* 📱 MOBILE VIEWPORT SANITIZER */
+  /* 📱 MOBILE FREEZE CONSTRAINT */
   @media screen and (max-width: 767px) {
     .pdf-calibrated-engine {
       height: auto !important; 
       min-height: unset !important;
       max-height: unset !important;
-      width: 90% !important;
+      width: 95% !important;
       margin-left: auto !important;
       margin-right: auto !important;
       overflow: hidden !important;
@@ -582,13 +599,11 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
   }
 </style>
 
-<!-- Main Design Framework Wrapper -->
+<!-- Main Design Framework Canvas Wrapper -->
 <div style="width: 100% !important; max-width: 1000px; margin: 15px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 6px; overflow: hidden; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 0;">
-  
   <div class="pdf-calibrated-engine" id="pdf-media-container">
-    <!-- Script flushes container and swaps layouts seamlessly -->
+    <!-- Script populates mobile image canvas or desktop interactive document window instantly -->
   </div>
-
 </div>
 
 <script>
@@ -598,14 +613,15 @@ href="wp1-stillbirthsandneonatal.pdf" data-typography="LinkAlpha" class="x-el x-
     const mobileImageUrl = 'wp1stillbirthsandneonates.jpg'; 
     
     if (window.innerWidth <= 767) {
-      // 📱 MOBILE
+      // 📱 MOBILE DISPLAY WINDOW
       container.innerHTML = `<img src="${mobileImageUrl}" alt="PDF Document Preview" style="width:100%; height:auto; object-fit:contain;">`;
     } else {
-      // 💻 DESKTOP
-      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=40" width="100%" height="100%" allow="autoplay"></iframe>`;
+      // 💻 DESKTOP INTERACTIVE DISPLAY WINDOW
+      container.innerHTML = `<iframe src="${basePdfUrl}#zoom=50" width="100%" height="100%" allow="autoplay"></iframe>`;
     }
   })();
 </script>
+
 
 <!-- Counting Stillbirths -->
     <div id="af954fa0-872d-4e6d-9026-d54ba833f868" class="widget widget-pdf widget-pdf-pdf-1">
