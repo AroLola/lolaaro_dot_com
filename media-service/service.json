@@ -25,7 +25,7 @@
     {
       "id": "red-cross-cards-gallery-album",
       "name": "Red Cross Rally",
-       "description": "Red Cross event: Cowboy Rally Day-Christmas cards for overseas troops. Full event album accessible <a href='#' data-url='https://www.flickr.com/photos/dfwredcross/albums/72157637348516864/' class='flickr-link' style='color: #00e6ff; text-decoration: underline; font-weight: normal;'> here</a>.",         { "id": "r-1", "src": "/sitepics/rc-1.png", "caption": "" },
+       "description": "Red Cross event: Cowboy Rally Day-Christmas cards for overseas troops. Full event album accessible <a href='#' data-url='https://www.flickr.com/photos/dfwredcross/albums/72157637348516864/' class='flickr-link' style='color: #00e6ff; text-decoration: underline; font-weight: normal;'> here</a>.",         
        "media": [
         { "id": "b-1", "src": "/sitepics/rc4.png", "caption": "" },
         { "id": "b-2", "src": "/sitepics/rc5.png", "caption": "" },
