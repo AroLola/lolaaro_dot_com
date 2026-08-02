@@ -75,9 +75,10 @@
   flex: 0 0 100% !important;
   width: 100% !important;
   max-width: 900px !important;
-  /* CHANGED: Switched to flex to let child elements calculate heights perfectly */
   display: flex !important; 
-  justify-content: center;
+  justify-content: center !important;
+  align-items: center !important;
+  float: none !important; /* Overrides inline slider floats */
 }
 
 .slide-split-row {
@@ -85,44 +86,54 @@
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   width: 100% !important;
+  max-width: 100% !important;
   height: 480px !important;
-  align-items: center;
-  overflow: hidden; /* ADDED: Prevents visual spilling if content shifts */
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
 .slide-media-box {
-  /* CHANGED: Flex basis 65% with strict limits */
   flex: 0 0 65% !important; 
   width: 65% !important;
+  max-width: 65% !important;
   height: 100% !important;
   display: flex !important;
-  align-items: center;
-  justify-content: center;
-  background: #02060c;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #02060c !important;
+  position: relative !important;
 }
+
 .slide-media-box img {
-  /* CHANGED: Auto sizing maintains exact proportions within max limits */
-  width: auto !important;
-  height: auto !important;
+  display: block !important;
+  position: absolute !important; /* Forces layout tracking to parent frame */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important; /* Perfect absolute centering */
   max-width: 100% !important;
   max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
   object-fit: contain !important;
-  object-position: center !important;
 }
+
 .slide-caption-box {
-  /* CHANGED: Flex basis 35% with strict limits */
   flex: 0 0 35% !important;
   width: 35% !important;
+  max-width: 35% !important;
   height: 100% !important;
   display: flex !important;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
   padding: 24px !important;
   box-sizing: border-box !important;
-  background: #000000;
+  background: #000000 !important;
   white-space: normal !important;
-  overflow-y: auto; /* ADDED: Adds a scrollbar to text if it gets too long for 480px */
+  overflow-y: auto !important;
 }
+
 .slide-caption-box p {
   margin: 0 !important;
   color: #ffffff !important;
@@ -135,6 +146,7 @@
 .slide-split-row.empty-caption .slide-media-box {
   flex: 0 0 100% !important;
   width: 100% !important;
+  max-width: 100% !important;
 }
 .slide-split-row.empty-caption .slide-caption-box {
   display: none !important;
