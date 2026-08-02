@@ -75,54 +75,54 @@
   flex: 0 0 100% !important;
   width: 100% !important;
   max-width: 900px !important;
-  display: flex !important; 
-  justify-content: center !important;
-  align-items: center !important;
-  float: none !important; /* Overrides inline slider floats */
+  /* FORCES the carousel script to stop using floating boundaries */
+  display: block !important; 
+  float: none !important;
+  margin: 0 auto !important; 
 }
 
 .slide-split-row {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
+  display: grid !important; /* Switched from flex to grid to guarantee split dimensions */
+  grid-template-columns: 65% 35% !important;
   width: 100% !important;
   max-width: 100% !important;
   height: 480px !important;
-  align-items: center !important;
-  justify-content: center !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
 }
 
 .slide-media-box {
-  flex: 0 0 65% !important; 
-  width: 65% !important;
-  max-width: 65% !important;
+  width: 100% !important;
   height: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
   background: #02060c !important;
+  /* Centering block backup */
+  display: block !important;
+  text-align: center !important; 
   position: relative !important;
 }
 
 .slide-media-box img {
-  display: block !important;
-  position: absolute !important; /* Forces layout tracking to parent frame */
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important; /* Perfect absolute centering */
+  display: inline-block !important;
+  vertical-align: middle !important;
+  
+  /* Strict bounding limits to prevent cutting off */
   max-width: 100% !important;
   max-height: 100% !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
+  
+  /* Absolute fail-safe centering math */
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: auto !important; 
 }
 
 .slide-caption-box {
-  flex: 0 0 35% !important;
-  width: 35% !important;
-  max-width: 35% !important;
+  width: 100% !important;
   height: 100% !important;
   display: flex !important;
   align-items: center !important;
@@ -142,11 +142,9 @@
   text-align: left !important;
 }
 
-/* IF CAPTION IS EMPTY "": Expand slide media frame to 100% full width */
-.slide-split-row.empty-caption .slide-media-box {
-  flex: 0 0 100% !important;
-  width: 100% !important;
-  max-width: 100% !important;
+/* IF CAPTION IS EMPTY "": Convert grid columns to full width */
+.slide-split-row.empty-caption {
+  grid-template-columns: 100% 0% !important;
 }
 .slide-split-row.empty-caption .slide-caption-box {
   display: none !important;
