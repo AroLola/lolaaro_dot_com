@@ -75,8 +75,9 @@
   flex: 0 0 100% !important;
   width: 100% !important;
   max-width: 900px !important;
-  display: inline-block;
-  vertical-align: top;
+  /* CHANGED: Switched to flex to let child elements calculate heights perfectly */
+  display: flex !important; 
+  justify-content: center;
 }
 
 .slide-split-row {
@@ -86,10 +87,13 @@
   width: 100% !important;
   height: 480px !important;
   align-items: center;
+  overflow: hidden; /* ADDED: Prevents visual spilling if content shifts */
 }
 
 .slide-media-box {
-  flex: 1 1 65% !important;
+  /* CHANGED: Flex basis 65% with strict limits */
+  flex: 0 0 65% !important; 
+  width: 65% !important;
   height: 100% !important;
   display: flex !important;
   align-items: center;
@@ -97,13 +101,18 @@
   background: #02060c;
 }
 .slide-media-box img {
+  /* CHANGED: Auto sizing maintains exact proportions within max limits */
+  width: auto !important;
+  height: auto !important;
   max-width: 100% !important;
   max-height: 100% !important;
   object-fit: contain !important;
   object-position: center !important;
 }
 .slide-caption-box {
-  flex: 1 1 35% !important;
+  /* CHANGED: Flex basis 35% with strict limits */
+  flex: 0 0 35% !important;
+  width: 35% !important;
   height: 100% !important;
   display: flex !important;
   align-items: center;
@@ -112,6 +121,7 @@
   box-sizing: border-box !important;
   background: #000000;
   white-space: normal !important;
+  overflow-y: auto; /* ADDED: Adds a scrollbar to text if it gets too long for 480px */
 }
 .slide-caption-box p {
   margin: 0 !important;
@@ -123,7 +133,8 @@
 
 /* IF CAPTION IS EMPTY "": Expand slide media frame to 100% full width */
 .slide-split-row.empty-caption .slide-media-box {
-  flex: 1 1 100% !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
 }
 .slide-split-row.empty-caption .slide-caption-box {
   display: none !important;
@@ -188,15 +199,19 @@
   max-width: 56rem;
   max-height: 85vh;
   width: 100%;
+  height: 100%; /* Keeps the container bounded */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Centers the image vertically */
   position: relative;
 }
 .lightbox-content-box img {
-  width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
+  max-width: 100%; /* Prevents horizontal overflow */
+  max-height: 80vh; /* Prevents vertical overflow */
+  width: auto; /* Maintains original aspect ratio */
+  height: auto; /* Maintains original aspect ratio */
+  object-fit: contain; /* Ensures the whole image fits without cropping */
   border-radius: 8px;
 }
 .lightbox-close-btn {
