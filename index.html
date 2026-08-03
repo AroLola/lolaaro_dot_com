@@ -811,19 +811,20 @@ section[class*="Welcome"] {
       width: 100%;
       box-sizing: border-box;
     }
-   .slide-split-row {
+      .slide-split-row {
       width: 100%;
-      height: auto !important; /* FIXED: Removed the locked 520px height to prevent empty space */
+      height: 520px !important; /* RESTORED: Locked height to keep the slider compact */
       position: relative;
     }
     .slide-media-box {
       width: 100%;
-      height: auto !important;
+      height: 100% !important;
     }
     .slide-media-box img {
       width: 100% !important;
-      height: auto !important; /* FIXED: Tells height to scale naturally with the width */
-      object-fit: normal !important; /* FIXED: Drops containment rules so the image fills the width */
+      height: 100% !important;
+      object-fit: contain !important; /* RESTORED: Shows the whole photo safely without cropping */
+      object-position: center !important; /* Keeps it neatly centered inside the black box */
       display: block;
     }
     .slide-caption-box {
