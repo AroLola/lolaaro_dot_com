@@ -65,6 +65,23 @@
         { "id": "c-11", "src": "/sitepics/yimg_7928-6e146e0.png", "caption": "" },
         { "id": "c-12", "src": "/sitepics/yimg_7928-c9bd477.png", "caption": "" }
       ]
+    },
+    {
+    "id": "red-cross-texasdb-gallery-album",
+      "name": "Texas de Brazil",
+       "description": "Red Cross Fundraiser - Texas de Brazil. Full event album accessible <a href='#' data-url='https://www.flickr.com/photos/dfwredcross/albums/72157636160546515/' class='flickr-link' style='color: #00e6ff; text-decoration: underline; font-weight: normal;'> here</a>.",         
+       "media": [
+        { "id": "d-1", "src": "/sitepics/rc10.png", "caption": "" },
+        { "id": "d-2", "src": "/sitepics/rc11.png", "caption": "" },
+        { "id": "d-3", "src": "/sitepics/rc12.png", "caption": "" },
+        { "id": "d-4", "src": "/sitepics/rc13.png", "caption": "" },
+        { "id": "d-5", "src": "/sitepics/rc8.png", "caption": "" },
+        { "id": "d-6", "src": "/sitepics/rc9.png", "caption": "" },
+        { "id": "-7", "src": "/sitepics/rcw1.jpg", "caption": "" },
+        { "id": "-8", "src": "/sitepics/rcw2.jpg", "caption": "" },
+        { "id": "-9", "src": "/sitepics/rcw3.jpg", "caption": "" },
+        { "id": "-10", "src": "/sitepics/rcw4.jpg", "caption": "" }
+      ]
     }
   ]
 }
