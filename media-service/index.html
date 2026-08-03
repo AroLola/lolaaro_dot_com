@@ -52,10 +52,10 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* 2. THE VIEWPORT CLIPPER WINDOW */
+ /* 2. THE VIEWPORT CLIPPER WINDOW */
 .dynamic-carousel-viewport {
   overflow: hidden !important;
-  white-space: nowrap !important;
+  white-space: normal !important; /* FIXED: Changed from nowrap to let flex items sizes calculate accurately */
   width: 100% !important;
 }
 
@@ -74,13 +74,11 @@
 .dynamic-carousel-slide {
   flex: 0 0 100% !important;
   width: 100% !important;
-  max-width: 900px !important;
-  /* FORCES the carousel script to stop using floating boundaries */
-  display: block !important; 
-  float: none !important;
-  margin: 0 auto !important; 
+  max-width: 100% !important;   /* FIXED: Changed from 900px to strictly match viewport bounds */
+  box-sizing: border-box !important;
+  display: block !important;     /* FIXED: Changed from inline-block to prevent inline line-break shifting */
 }
-
+ 
 .slide-split-row {
   display: grid !important; /* Switched from flex to grid to guarantee split dimensions */
   grid-template-columns: 65% 35% !important;
