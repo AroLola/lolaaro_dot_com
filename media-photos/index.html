@@ -55,7 +55,7 @@
 /* 2. THE VIEWPORT CLIPPER WINDOW */
 .dynamic-carousel-viewport {
   overflow: hidden !important;
-  white-space: nowrap !important;
+  white-space: normal !important; /* FIXED: Changed from nowrap to let flex items sizes calculate accurately */
   width: 100% !important;
 }
 
@@ -74,9 +74,9 @@
 .dynamic-carousel-slide {
   flex: 0 0 100% !important;
   width: 100% !important;
-  max-width: 900px !important;
-  display: inline-block;
-  vertical-align: top;
+  max-width: 100% !important;   /* FIXED: Changed from 900px to strictly match viewport bounds */
+  box-sizing: border-box !important;
+  display: block !important;     /* FIXED: Changed from inline-block to prevent inline line-break shifting */
 }
 
 .slide-split-row {
