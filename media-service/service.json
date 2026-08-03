@@ -85,7 +85,7 @@
     },
      {
     "id": "red-cross-golf-gallery-album",
-      "name": "Swinf for Relief",
+      "name": "Swing for Relief",
        "description": "Red Cross Swing for Relief Fundraiser. View the full event album <a href='#' data-url=' https://www.flickr.com/photos/dfwredcross/albums/72157635814777446/page2' class='flickr-link' style='color: #00e6ff; text-decoration: underline; font-weight: normal;'> here</a>.",     
        "media": [
         { "id": "d-1", "src": "/sitepics/rc10.png", "caption": "" },
@@ -98,6 +98,27 @@
         { "id": "-8", "src": "/sitepics/rcw2.jpg", "caption": "" },
         { "id": "-9", "src": "/sitepics/rcw3.jpg", "caption": "" },
         { "id": "-10", "src": "/sitepics/rcw4.jpg", "caption": "" }
+      ]
+    },
+      {
+    "id": "red-cross-school-renov-gallery-album",
+      "name": "School Rennovation",
+       "description": "Red Cross DFW - school rennovation project.",
+        "media": [
+         { "id": "f-1", "src": "/sitepics/1061.jpg", "caption": "" },
+        { "id": "f-2", "src": "/sitepics/2274.5.jpg", "caption": "" },
+        { "id": "f-3", "src": "/sitepics/4007.5.jpg", "caption": "" },
+        { "id": "f-4", "src": "/sitepics/4042.jpg", "caption": "" },
+        { "id": "f-5", "src": "/sitepics/4045.jpg", "caption": "" },
+        { "id": "f-6", "src": "/sitepics/4062.jpg", "caption": "" },
+        { "id": "f-7", "src": "/sitepics/4080.jpg", "caption": "" },
+        { "id": "f-8", "src": "/sitepics/4114.jpg", "caption": "" },
+        { "id": "f-9", "src": "/sitepics/4158.jpg", "caption": "" },
+        { "id": "f-10", "src": "/sitepics/4178.jpg", "caption": "" },
+        { "id": "f-11", "src": "/sitepics/4202.jpg", "caption": "" },
+        { "id": "f-12", "src": "/sitepics/5088.jpg", "caption": "" },
+        { "id": "f-13", "src": "/sitepics/5124.jpg", "caption": "" },
+        { "id": "f-14", "src": "/sitepics/5138.jpg", "caption": "" }
       ]
     }
   ]
