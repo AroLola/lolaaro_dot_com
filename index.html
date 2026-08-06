@@ -820,13 +820,13 @@ section[class*="Welcome"] {
       width: 100%;
       height: 100% !important;
     }
-    .slide-media-box img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important; /* RESTORED: Shows the whole photo safely without cropping */
-      object-position: center !important; /* Keeps it neatly centered inside the black box */
-      display: block;
-    }
+   .slide-media-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Changed from contain to stretch and cover the entire canvas width */
+  object-position: center !important; /* Keeps the camera focus perfectly locked on the mid portion */
+  display: block;
+}
     .slide-caption-box {
       position: absolute;
       bottom: 0;
