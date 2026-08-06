@@ -306,84 +306,84 @@
   color: rgb(4, 7, 92) !important; 
 } 
 
-/* NEW: HAMBURGER TRIGGER TOGGLE COMPONENT BUTTON (Hidden on Desktop) */
-#customMobileBurger {
-  display: none !important;
-}
+/* Mobile Responsive Scaling Configuration Styles */ 
+@media (max-width: 768px) { 
+  /* --- RETAINED: Your Carousel & Thumbnail Slider Rules --- */
+  .slide-split-row { 
+    height: 280px !important; /* Automatically shrinks slider box height cleanly on phone resolutions */ 
+  } 
+  .thumb-row-container { 
+    grid-template-columns: repeat(4, 1fr) !important; /* Locks small navigation row trays for phone views */ 
+    gap: 8px !important; 
+  } 
+  .thumb-card { 
+    height: 55px !important; 
+  } 
+  .lightbox-close-btn { 
+    right: 10px; 
+    top: -40px; 
+  }
 
-/* RESPONSIVE MOBILE DRAWERS INTERFACE STYLES */ 
-@media (max-width: 768px) {
+  /* --- ADDED: Right-Justified Hamburger Drawer Menu Engine Rules --- */
   .global-nav-wrapper { 
     background-color: rgb(19, 20, 33) !important; 
     padding: 12px 20px !important;
     display: block !important;
   } 
 
-  /* Expose hamburger lines box layout trigger on mobile devices */
-  #customMobileBurger {
+  /* Forces the hamburger button container box to display on mobile devices */
+  .custom-mobile-burger {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    gap: 4px !important;
-    width: 24px !important;
-    height: 24px !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
-    margin-left: auto !important;
-    padding: 0 !important;
   }
 
-  .burger-strip-line {
-    display: block !important;
-    width: 24px !important;
-    height: 2px !important;
-    background-color: #ffffff !important;
-    transition: transform 0.2s ease, opacity 0.2s ease !important;
-  }
-
-  /* Default state: Hide the capsule links list on mobile layout load */
+  /* Right-justified navigation drawer track layout */
   .global-nav-container { 
     display: none !important;
     flex-direction: column !important; 
-    align-items: stretch !important; 
+    align-items: flex-end !important; /* Right-aligns all navigation pill item blocks */
     gap: 10px !important; 
-    padding: 20px 0 10px 0 !important; 
+    padding: 60px 20px 20px 20px !important; 
     width: 100% !important;
+    box-sizing: border-box !important;
   } 
 
-  /* Exposed State Class: Reveals vertical stack when active */
+  /* Activated Class State: Reveals the menu options dropdown block drawer */
   .global-nav-container.open-drawer-active {
     display: flex !important;
   }
 
   .global-nav-dropdown-container { 
-    width: 100% !important; 
+    width: auto !important; /* Removes stretching so width hugs text closely */
   } 
 
+  /* Right-justifies text on pill items */
   .global-nav-dropdown-trigger, .global-nav-pill-item { 
     display: block !important; 
-    text-align: center !important; 
-    width: 100% !important; 
+    text-align: right !important; 
+    width: auto !important; 
     box-sizing: border-box !important; 
   } 
 
+  /* Right-justified nested sub-menu dropdown panel configuration */
   .global-nav-dropdown-container:hover .global-nav-dropdown-menu { 
     position: static !important; 
     transform: none !important; 
     display: block !important; 
-    width: 100% !important; 
+    width: auto !important; 
     box-shadow: none !important; 
     background-color: rgba(255, 255, 255, 0.05) !important; 
     margin-top: 4px !important; 
     border-radius: 8px !important; 
     border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+    padding: 6px 0 !important;
   } 
 
   .global-nav-dropdown-link { 
     color: #ffffff !important; 
-    text-align: center !important; 
-    padding: 12px 20px !important; 
+    text-align: right !important; /* Right-aligns internal text items like White Papers */
+    padding: 10px 20px !important; 
   } 
 
   .global-nav-dropdown-link:hover { 
@@ -391,17 +391,17 @@
     color: #ffffff !important; 
   } 
 
-  /* Transform burger stripes into an X when drawer toggles open */
+  /* Morphing rotation matrices to form a crisp closing X shape button */
   .burger-active-state .burger-strip-line:nth-child(1) {
-    transform: translateY(6px) rotate(45deg) !important;
+    transform: translateY(7px) rotate(45deg) !important;
   }
   .burger-active-state .burger-strip-line:nth-child(2) {
     opacity: 0 !important;
   }
   .burger-active-state .burger-strip-line:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg) !important;
+    transform: translateY(-7px) rotate(-45deg) !important;
   }
-} 
+}
 
 /* MOBILE PDF AUTO-FIT FIX RESIZER */ 
 iframe[src*=".pdf"], object[data*=".pdf"], embed[src*=".pdf"], .pdf-viewer-frame { 
@@ -466,13 +466,14 @@ header[data-aid="HEADER"], div[class*="Welcome"], section[class*="Welcome"] {
 <body class="x  x-fonts-josefin-slab x-fonts-righteous x-fonts-cantarell x-fonts-dancing-script x-fonts-eb-garamond">
 
  <!-- THE STABLE INDEPENDENT SINGLE-DROPDOWN NAVIGATION BAR --> 
-<div class="global-nav-wrapper"> 
+<!-- THE STABLE INDEPENDENT SINGLE-DROPDOWN NAVIGATION BAR --> 
+<div class="global-nav-wrapper" style="width: 100% !important; background-color: rgb(19, 20, 33) !important; padding: 16px 0 !important; border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important; display: flex !important; justify-content: center !important; box-sizing: border-box !important; position: relative !important; z-index: 999999 !important;"> 
   
-  <!-- THE HAMBURGER TOGGLE BUTTON (Configured with inline hidden rules for desktop) -->
-  <button id="customMobileBurger" aria-label="Toggle Navigation Options Menu" style="display: none !important;">
-    <span class="burger-strip-line"></span>
-    <span class="burger-strip-line"></span>
-    <span class="burger-strip-line"></span>
+  <!-- THE HAMBURGER BUTTON: Uses a class instead of ID and features robust inline style fallbacks -->
+  <button class="custom-mobile-burger" aria-label="Toggle Navigation Options Menu" style="display: none; background: transparent !important; border: none !important; cursor: pointer !important; width: 30px !important; height: 24px !important; padding: 0 !important; position: absolute !important; right: 20px !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 1000001 !important;">
+    <span class="burger-strip-line" style="display: block !important; width: 24px !important; height: 2px !important; background-color: #ffffff !important; margin: 5px auto !important; transition: transform 0.2s ease, opacity 0.2s ease !important;"></span>
+    <span class="burger-strip-line" style="display: block !important; width: 24px !important; height: 2px !important; background-color: #ffffff !important; margin: 5px auto !important; transition: transform 0.2s ease, opacity 0.2s ease !important;"></span>
+    <span class="burger-strip-line" style="display: block !important; width: 24px !important; height: 2px !important; background-color: #ffffff !important; margin: 5px auto !important; transition: transform 0.2s ease, opacity 0.2s ease !important;"></span>
   </button>
 
   <!-- LINKS TRACK -->
@@ -500,7 +501,7 @@ header[data-aid="HEADER"], div[class*="Welcome"], section[class*="Welcome"] {
 <!-- TOGGLE EVENT INTERCEPTOR SCRIPT -->
 <script>
   (function() {
-    var trigger = document.getElementById('customMobileBurger');
+    var trigger = document.querySelector('.custom-mobile-burger');
     var drawer = document.getElementById('customNavContainer');
     if (!trigger || !drawer) return;
 
