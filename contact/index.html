@@ -367,7 +367,7 @@ section[class*="Welcome"] {
           <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"> 
             <textarea id="contact-msg" role="textbox" aria-multiline="true" rows="4" aria-label="Message" name="message" required data-ux="InputTextArea" placeholder="Write your message here..." data-aid="CONTACT_FORM_MESSAGE" class="x-el x-el-textarea c2-1 c2-2 c2-50 c2-51 c2-3q c2-52 c2-53 c2-54 c2-55 c2-3t c2-3u c2-57 c2-58 c2-59 c2-3j c2-5r c2-3 c2-5a c2-4 c2-4d c2-5b c2-5c c2-5d c2-5e c2-5f c2-5m c2-5n c2-5 c2-6 c2-7 c2-8" style="color: #ffffff !important; background-color: rgba(255, 255, 255, 0.1) !important; border: 1px solid #ffffff !important; padding: 10px; border-radius: 4px;"></textarea> </div> </div> 
       
-                 <!-- hCaptcha Integration Component --> 
+                    <!-- hCaptcha Integration Component --> 
         <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-47 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8" style="margin-bottom: 20px;"> 
           <div class="h-captcha" data-captcha="true" data-theme="dark"></div> 
         </div> 
@@ -375,94 +375,85 @@ section[class*="Welcome"] {
     </div> 
   </div> 
 
-  <!-- Submit Row (This is your ONLY active button and cleanly closes the form element) --> 
+  <!-- Submit Row (The only active send button) --> 
   <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"> 
     <div data-ux="Block" data-aid="CONTACT_FORM_CONTROLS" class="x-el x-el-div controls c2-1 c2-2 c2-d c2-1i c2-f c2-4g c2-67 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"> 
       <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"> 
-        <button id="submitBtn" data-ux-btn="primary" customborderwidth="small" data-ux="ButtonPrimary" type="submit" class="x-el x-el-button c2-9 c2-2 c2-19 c2-1a c2-1b c2-e c2-1g c2-1h c2-f c2-1i c2-1j c2-a c2-c c2-b c2-g c2-1k c2-3q c2-3r c2-3s c2-3t c2-3u c2-3v c2-1p c2-1q c2-1r c2-h c2-j c2-1s c2-4 c2-1u c2-1v c2-1z c2-5 c2-6 c2-7 c2-8">Send</button> 
+        <button data-ux-btn="primary" customborderwidth="small" data-ux="ButtonPrimary" type="submit" class="x-el x-el-button c2-9 c2-2 c2-19 c2-1a c2-1b c2-e c2-1g c2-1h c2-f c2-1i c2-1j c2-a c2-c c2-b c2-g c2-1k c2-3q c2-3r c2-3s c2-3t c2-3u c2-3v c2-1p c2-1q c2-1r c2-h c2-j c2-1s c2-4 c2-1u c2-1v c2-1z c2-5 c2-6 c2-7 c2-8">Send</button> 
       </div> 
     </div> 
   </div> 
 </form>
 
-<!-- Unified Custom Inline Success Card Structure --> 
+<!-- Custom Inline Success Card Structure --> 
 <div id="thankYouMessage" style="display: none; background-color: #090133 !important; padding: 40px; border-radius: 8px; text-align: center; color: white; max-width: 100%; border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 10px;"> 
   <div style="width: 48px; height: 48px; border-radius: 50%; background-color: rgba(16, 185, 129, 0.2); color: #10b981; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto; font-size: 20px; font-weight: bold;">✓</div> 
   <h4 style="color: #ffffff !important; margin-top: 0; margin-bottom: 10px; font-family: inherit; font-size: 22px;">Message Received!</h4> 
   <p style="color: rgba(255, 255, 255, 0.8); margin: 0; font-family: inherit; font-size: 15px; line-height: 1.5;">Thank you, your transmission was routed successfully. We will follow up with your inquiry shortly.</p> 
 </div>
 
-<!--  FULL CONTACT FORM INTERCEPTOR SCRIPT (Pointed to correct API gateway URL) -->
+<!-- ULTRA-COMPATIBLE ENGINE SCRIPT -->
 <script>
-  (function() {
-    var form = document.getElementById('contactForm');
-    if (!form) return;
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
+  async function handleFormSubmission(event, formElement) {
+    event.preventDefault();
+    
+    var btn = formElement.querySelector('button[type="submit"]');
+    var originalBtnText = btn ? btn.textContent : "Send";
+    
+    if (btn) {
+      btn.textContent = "Sending...";
+      btn.disabled = true;
+    }
+    
+    var formData = new FormData(formElement);
+    
+    try {
+      var response = await fetch("https://web3forms.com", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: formData
+      });
       
-      var currentForm = e.target;
-      var btn = document.getElementById('submitBtn');
-      var originalBtnText = btn ? btn.textContent : "Send";
+      var result = await response.json();
       
-      if (btn) {
-        btn.textContent = "Sending...";
-        btn.disabled = true;
+      if (result.success) {
+        formElement.style.display = 'none';
+        var thankYouCard = document.getElementById('thankYouMessage');
+        if (thankYouCard) {
+          thankYouCard.style.display = 'block';
+        }
+      } else {
+        alert("Submission Rejected: " + (result.message || "Please complete the hCaptcha checkmark."));
+        if (btn) {
+          btn.textContent = originalBtnText;
+          btn.disabled = false;
+        }
+      }
+    } catch (error) {
+      console.error("Transmission fault caught:", error);
+      
+      /* Fail over cleanly to Web3Forms direct gateway route instead of crashing into a local 405 error page */
+      if (btn) btn.textContent = "Redirecting...";
+      
+      var directPostForm = document.createElement('form');
+      directPostForm.method = 'POST';
+      directPostForm.action = 'https://web3forms.com';
+      
+      for (var pair of formData.entries()) {
+        var hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = pair[0];
+        hiddenField.value = pair[1];
+        directPostForm.appendChild(hiddenField);
       }
       
-      var formData = new FormData(currentForm);
-      
-      try {
-        /* FIXED URL: Points exactly to the submission engine gateway */
-        var response = await fetch("https://web3forms.com", {
-          method: "POST",
-          headers: {
-            "Accept": "application/json"
-          },
-          body: formData
-        });
-        
-        var result = await response.json();
-        
-        if (result.success) {
-          currentForm.style.display = 'none';
-          var thankYouCard = document.getElementById('thankYouMessage');
-          if (thankYouCard) {
-            thankYouCard.style.display = 'block';
-          }
-        } else {
-          alert("Submission Rejected: " + (result.message || "Please complete the hCaptcha checkmark validation."));
-          if (btn) {
-            btn.textContent = originalBtnText;
-            btn.disabled = false;
-          }
-        }
-      } catch (error) {
-        console.error("Transmission fault caught:", error);
-        
-        /* Fallback: Direct window poster that targets the correct API page to avoid GoDaddy 405 error */
-        if (btn) btn.textContent = "Redirecting...";
-        
-        var directPostForm = document.createElement('form');
-        directPostForm.method = 'POST';
-        directPostForm.action = 'https://web3forms.com';
-        
-        for (var pair of formData.entries()) {
-          var hiddenField = document.createElement('input');
-          hiddenField.type = 'hidden';
-          hiddenField.name = pair[0];
-          hiddenField.value = pair[1];
-          directPostForm.appendChild(hiddenField);
-        }
-        
-        document.body.appendChild(directPostForm);
-        directPostForm.submit();
-      }
-    });
-  })();
+      document.body.appendChild(directPostForm);
+      directPostForm.submit();
+    }
+  }
 </script>
 
-<!-- CRITICAL GODADDY SECTION CLOSURES (Kept once at the very end to protect layout alignment) --> 
+<!-- CRITICAL GODADDY SECTION CLOSURES (Do not modify or delete) --> 
 </div></div></div></div></section></div>
 
 
