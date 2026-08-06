@@ -23,190 +23,246 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   
+ <!-- START OF COMPLETE RIGHT-JUSTIFIED MOBILE NAVIGATION ENGINE -->
 <style>
-.global-nav-wrapper {
-  width: 100% !important;
-  background-color: rgb(19, 20, 33) !important; /* UPDATED: Deep, rich dark royal blue color backdrop */
-  padding: 16px 0 !important;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important;
-  display: flex !important;
-  justify-content: center !important;
-  box-sizing: border-box !important;
-  position: relative !important;
-  z-index: 999999 !important;
-}
+  /* --- DESKTOP BASICS DEFAULT RULES --- */
+  .global-nav-wrapper { 
+    width: 100% !important; 
+    background-color: rgb(19, 20, 33) !important; 
+    padding: 16px 0 !important; 
+    border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important; 
+    display: flex !important; 
+    justify-content: center !important; 
+    box-sizing: border-box !important; 
+    position: relative !important; 
+    z-index: 999999 !important; 
+  } 
+  .global-nav-container { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    flex-wrap: wrap !important; 
+    justify-content: center !important; 
+    align-items: center !important; 
+    gap: 12px 10px !important; 
+    max-width: 1100px !important; 
+    width: 100% !important; 
+    padding: 0 20px !important; 
+    box-sizing: border-box !important; 
+  } 
+  .global-nav-pill-item, .global-nav-dropdown-trigger { 
+    display: inline-block !important; 
+    white-space: nowrap !important; 
+    padding: 10px 18px !important; 
+    border-radius: 9999px !important; 
+    font-family: system-ui, -apple-system, sans-serif !important; 
+    font-size: 0.88rem !important; 
+    font-weight: 600 !important; 
+    color: #ffffff !important; 
+    background: rgba(255, 255, 255, 0.12) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.25) !important; 
+    text-decoration: none !important; 
+    transition: all 0.2s ease-in-out !important; 
+    cursor: pointer !important; 
+  } 
+  .global-nav-pill-item:hover, .global-nav-pill-item.active-page, .global-nav-dropdown-container:hover .global-nav-dropdown-trigger { 
+    background: #ffffff !important; 
+    color: rgb(4, 7, 92) !important; 
+    border-color: #ffffff !important; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important; 
+  } 
+  .global-nav-dropdown-container { 
+    position: relative !important; 
+    display: inline-block !important; 
+  } 
+  .global-nav-dropdown-menu { 
+    display: none !important; 
+    position: absolute !important; 
+    top: 100% !important; 
+    left: 50% !important; 
+    transform: translateX(-50%) translateY(8px) !important; 
+    background-color: #ffffff !important; 
+    min-width: 220px !important; 
+    border-radius: 12px !important; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important; 
+    padding: 8px 0 !important; 
+    list-style: none !important; 
+    margin: 0 !important; 
+    z-index: 1000000 !important; 
+    border: 1px solid rgba(0, 0, 0, 0.05) !important; 
+  } 
+  .global-nav-dropdown-menu::before { 
+    content: "" !important; 
+    position: absolute !important; 
+    top: -12px !important; 
+    left: 0 !important; 
+    width: 100% !important; 
+    height: 12px !important; 
+    background: transparent !important; 
+  } 
+  .global-nav-dropdown-container:hover .global-nav-dropdown-menu { 
+    display: block !important; 
+  } 
+  .global-nav-dropdown-link { 
+    display: block !important; 
+    padding: 10px 20px !important; 
+    color: #333333 !important; 
+    font-family: system-ui, -apple-system, sans-serif !important; 
+    font-size: 0.88rem !important; 
+    font-weight: 500 !important; 
+    text-decoration: none !important; 
+    text-align: left !important; 
+    transition: all 0.2s ease !important; 
+    white-space: nowrap !important; 
+  } 
+  .global-nav-dropdown-link:hover, .global-nav-dropdown-link.active-subpage { 
+    background-color: rgba(4, 7, 92, 0.08) !important; 
+    color: rgb(4, 7, 92) !important; 
+  } 
 
-.global-nav-container {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 12px 10px !important;
-  max-width: 1100px !important;
-  width: 100% !important;
-  padding: 0 20px !important;
-  box-sizing: border-box !important;
-}
+  /* --- MOBILE BREAKPOINT OVERRIDES (MAX-WIDTH: 768PX) --- */
+  @media (max-width: 768px) { 
+    /* Retained Gallery Configurations */
+    .slide-split-row { height: 280px !important; } 
+    .thumb-row-container { grid-template-columns: repeat(4, 1fr) !important; gap: 8px !important; } 
+    .thumb-card { height: 55px !important; } 
+    .lightbox-close-btn { right: 10px; top: -40px; }
 
-/* THE NAV PILL BUTTONS */
-.global-nav-pill-item, .global-nav-dropdown-trigger {
-  display: inline-block !important;
-  white-space: nowrap !important;
-  padding: 10px 18px !important;
-  border-radius: 9999px !important;
-  font-family: system-ui, -apple-system, sans-serif !important;
-  font-size: 0.88rem !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important; /* Slightly softened capsule overlay contrast */
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease-in-out !important;
-  cursor: pointer !important;
-}
+    /* Structural wrapper setup for layout padding on mobile devices */
+    .global-nav-wrapper { 
+      background-color: rgb(19, 20, 33) !important; 
+      padding: 16px 20px !important;
+      display: block !important;
+    } 
 
-.global-nav-pill-item:hover,
-.global-nav-pill-item.active-page,
-.global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
-  background: #ffffff !important;
-  color: rgb(4, 7, 92) !important; /* Flips text directly to your dark theme color text */
-  border-color: #ffffff !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
-}
+    /* Force the custom mobile button container box to display */
+    .fixed-mobile-burger-trigger {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      gap: 5px !important;
+      width: 24px !important;
+      height: 24px !important;
+      background: transparent !important;
+      border: none !important;
+      cursor: pointer !important;
+      position: absolute !important;
+      right: 20px !important;
+      top: 22px !important;
+      z-index: 1000001 !important;
+      padding: 0 !important;
+    }
 
-/* THE DROPDOWN POSITIONING ARCHITECTURE */
-.global-nav-dropdown-container {
-  position: relative !important;
-  display: inline-block !important;
-}
+    .burger-strip-line {
+      display: block !important;
+      width: 24px !important;
+      height: 2px !important;
+      background-color: #ffffff !important;
+      transition: transform 0.2s ease, opacity 0.2s ease !important;
+    }
 
-.global-nav-dropdown-menu {
-  display: none !important;
-  position: absolute !important;
-  top: 100% !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(8px) !important;
-  background-color: #ffffff !important;
-  min-width: 220px !important;
-  border-radius: 12px !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
-  padding: 8px 0 !important;
-  list-style: none !important;
-  margin: 0 !important;
-  z-index: 1000000 !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-}
+    /* Collapse default rows down to a clean, right-justified vertical tracking stack drawer */
+    .global-nav-container { 
+      display: none !important;
+      flex-direction: column !important; 
+      align-items: flex-end !important; /* Forces right justification across all buttons */
+      gap: 12px !important; 
+      padding: 45px 0 10px 0 !important; 
+      width: 100% !important;
+      box-sizing: border-box !important;
+    } 
 
-/* make dropdown stick when clicked */
-.global-nav-dropdown-menu::before {
-  content: "" !important;
-  position: absolute !important;
-  top: -12px !important; /* Reaches upward 12 pixels to seal the gap completely */
-  left: 0 !important;
-  width: 100% !important;
-  height: 12px !important; /* Total bridge block height */
-  background: transparent !important; /* Stays completely invisible to users */
-}
+    /* Activated state selector rule: Pops the drawer open */
+    .global-nav-container.open-drawer-active {
+      display: flex !important;
+    }
 
-.global-nav-dropdown-container:hover .global-nav-dropdown-menu {
-  display: block !important;
-}
+    .global-nav-dropdown-container { 
+      width: auto !important; 
+    } 
 
-.global-nav-dropdown-link {
-  display: block !important;
-  padding: 10px 20px !important;
-  color: #333333 !important;
-  font-family: system-ui, -apple-system, sans-serif !important;
-  font-size: 0.88rem !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-  text-align: left !important;
-  transition: all 0.2s ease !important;
-  white-space: nowrap !important;
-}
+    .global-nav-dropdown-trigger, .global-nav-pill-item { 
+      display: block !important; 
+      text-align: right !important; /* Right-justifies parent text strings */
+      width: auto !important; 
+      box-sizing: border-box !important; 
+    } 
 
-.global-nav-dropdown-link:hover,
-.global-nav-dropdown-link.active-subpage {
-  background-color: rgba(4, 7, 92, 0.08) !important;
-  color: rgb(4, 7, 92) !important;
-}
+    /* Dropdown tracking nested parameters setup */
+    .global-nav-dropdown-container:hover .global-nav-dropdown-menu { 
+      position: static !important; 
+      transform: none !important; 
+      display: block !important; 
+      width: auto !important; 
+      box-shadow: none !important; 
+      background-color: rgba(255, 255, 255, 0.05) !important; 
+      margin-top: 4px !important; 
+      border-radius: 8px !important; 
+      border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+      padding: 4px 0 !important;
+    } 
 
-/* RESPONSIVE MOBILE DROP-DOWN HANDLERS */
-@media (max-width: 768px) {
-  .global-nav-wrapper {
-    background-color: rgb(0, 2, 20) !important; /* Midnight dark shade blue logic for mobile device frames */
+    .global-nav-dropdown-link { 
+      color: #ffffff !important; 
+      text-align: right !important; /* Right-aligns nested page tags like White Papers */
+      padding: 10px 16px !important; 
+    } 
+
+    .global-nav-dropdown-link:hover { 
+      background-color: rgba(255, 255, 255, 0.15) !important; 
+      color: #ffffff !important; 
+    } 
+
+    /* Rotates lines into a crisp closing X shape shape transformation */
+    .burger-active-state .burger-strip-line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg) !important;
+    }
+    .burger-active-state .burger-strip-line:nth-child(2) {
+      opacity: 0 !important;
+    }
+    .burger-active-state .burger-strip-line:nth-child(3) {
+      transform: translateY(-7px) rotate(-44deg) !important;
+    }
   }
-  .global-nav-container {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 8px !important;
-    padding: 0 16px !important;
-  }
-  .global-nav-dropdown-container {
-    width: 100% !important;
-  }
-  .global-nav-dropdown-trigger, .global-nav-pill-item {
-    display: block !important;
-    text-align: center !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .global-nav-dropdown-container:hover .global-nav-dropdown-menu {
-    position: static !important;
-    transform: none !important;
-    display: block !important;
-    width: 100% !important;
-    box-shadow: none !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    margin-top: 4px !important;
-    border-radius: 8px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-  .global-nav-dropdown-link {
-    color: #ffffff !important;
-    text-align: center !important;
-    padding: 12px 20px !important;
-  }
-  .global-nav-dropdown-link:hover {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    color: #ffffff !important;
-  }
-}
 
-/* MOBILE PDF AUTO-FIT FIX RESIZER */
-iframe[src*=".pdf"], object[data*=".pdf"], embed[src*=".pdf"], .pdf-viewer-frame {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 500px !important;
-  height: 75vh !important;
-  box-sizing: border-box !important;
-}
+  /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
 
-/* Permanent concealment of broken site builder scripts - ADJUSTED FOR INDEX */
-#freemium-ad, 
-div[class*="widget-navigation"], 
-nav[data-ux="Block"], 
-a[data-aid="HAMBURGER_MENU_LINK"], 
-div[id*="-navId-mobile"], 
-div[id*="-navContainerId-mobile"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  height: 0 !important;
-}
+  /* MOBILE PDF AUTO-FIT FIX RESIZER */
+  iframe[src*=".pdf"], 
+  object[data*=".pdf"], 
+  embed[src*=".pdf"], 
+  .pdf-viewer-frame { 
+    width: 100% !important; 
+    max-width: 100% !important; 
+    min-height: 500px !important; 
+    height: 75vh !important; 
+    box-sizing: border-box !important; 
+  }
 
-/* SAFELY FORCES YOUR INDEX WELCOME HEADER BANNER BOX TO BE VISIBLE */
-header[data-aid="HEADER"], 
-div[class*="Welcome"], 
-section[class*="Welcome"] {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  height: auto !important;
-}
+  /* Permanent concealment of broken site builder scripts - ADJUSTED FOR INDEX */
+  #freemium-ad, 
+  div[class*="widget-navigation"], 
+  nav[data-ux="Block"], 
+  a[data-aid="HAMBURGER_MENU_LINK"], 
+  div[id*="-navId-mobile"], 
+  div[id*="-navContainerId-mobile"] { 
+    display: none !important; 
+    visibility: hidden !important; 
+    opacity: 0 !important; 
+    pointer-events: none !important; 
+    height: 0 !important; 
+  }
+
+  /* SAFELY FORCES YOUR INDEX WELCOME HEADER BANNER BOX TO BE VISIBLE */
+  header[data-aid="HEADER"], 
+  div[class*="Welcome"], 
+  section[class*="Welcome"] { 
+    display: block !important; 
+    visibility: visible !important; 
+    opacity: 1 !important; 
+    height: auto !important; 
+  }
 </style>
+
 <!-- END OF THE SELF-CONTAINED NAVIGATION & PDF STYLESHEET --> 
 
 <script>
@@ -260,29 +316,64 @@ section[class*="Welcome"] {
 </head>
 <body class="x  x-fonts-josefin-slab x-fonts-italiana x-fonts-josefin-slab x-fonts-righteous x-fonts-dancing-script x-fonts-eb-garamond">
 <!-- THE STABLE INDEPENDENT SINGLE-DROPDOWN NAVIGATION BAR -->
-<div class="global-nav-wrapper">
-  <div class="global-nav-container">
+<!-- THE STABLE INDEPENDENT SINGLE-DROPDOWN NAVIGATION BAR --> 
+<div class="global-nav-wrapper"> 
+  
+  <!-- THE HAMBURGER TOGGLE BUTTON -->
+  <button class="fixed-mobile-burger-trigger" aria-label="Toggle Navigation Options Menu" style="display: none;">
+    <span class="burger-strip-line"></span>
+    <span class="burger-strip-line"></span>
+    <span class="burger-strip-line"></span>
+  </button>
+
+  <!-- LINKS TRACK -->
+  <div class="global-nav-container" id="customNavContainer"> 
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Home</a> 
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Photos</a> 
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Service</a> 
     
-    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Home</a>
-    <a href="https://lolaarowolo.com/media-photos/" class="global-nav-pill-item">Photos</a>
-    <a href="https://lolaarowolo.com/media-service/" class="global-nav-pill-item">Service</a>
+    <!-- SINGLE PUBLICATIONS DROPDOWN BUCKET --> 
+    <div class="global-nav-dropdown-container"> 
+      <a class="global-nav-dropdown-trigger active-page">Publications ▾</a> 
+      <div class="global-nav-dropdown-menu"> 
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link">White Papers</a> 
+        <!-- Sub-highlight applied directly to the internal Reports reference -->
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link active-subpage">Reports</a> 
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link">Contributions</a> 
+        <a href="https://lolaarowolo.com" class="global-nav-dropdown-link">Lectures</a> 
+      </div> 
+    </div> 
     
-    <!-- SINGLE PUBLICATIONS DROPDOWN BUCKET -->
-    <div class="global-nav-dropdown-container">
-      <a class="global-nav-dropdown-trigger">Publications ▾</a>
-      <div class="global-nav-dropdown-menu">
-        <a href="https://lolaarowolo.com/publications-white-papers/" class="global-nav-dropdown-link">White Papers</a>
-        <a href="https://lolaarowolo.com/publications-reports/" class="global-nav-dropdown-link">Reports</a>
-        <a href="https://lolaarowolo.com/publications-contributions/" class="global-nav-dropdown-link">Contributions</a>
-        <a href="https://lolaarowolo.com/publications-lectures/" class="global-nav-dropdown-link">Lectures</a>
-      </div>
-    </div>
-    
-    <a href="https://lolaarowolo.com/professional-experience/" class="global-nav-pill-item">Professional Experience</a>
-    <a href="https://lolaarowolo.com/contact/" class="global-nav-pill-item">Contact</a>
-    
-  </div>
-</div> 
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Professional Experience</a> 
+    <a href="https://lolaarowolo.com" class="global-nav-pill-item">Contact</a> 
+  </div> 
+</div>
+
+<!-- TOGGLE EVENT INTERCEPTOR SCRIPT -->
+<script>
+  (function() {
+    var trigger = document.querySelector('.fixed-mobile-burger-trigger');
+    var drawer = document.getElementById('customNavContainer');
+    if (!trigger || !drawer) return;
+
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      drawer.classList.toggle('open-drawer-active');
+      trigger.classList.toggle('burger-active-state');
+    });
+
+    document.addEventListener('click', function() {
+      drawer.classList.remove('open-drawer-active');
+      trigger.classList.remove('burger-active-state');
+    });
+
+    drawer.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  })();
+</script>
+
+  
   <!-- reports layout -->
   <div id="layout-6-a-88-dc-85-1938-47-c-8-a-24-d-4-fd-9523-a-22-aa" class="layout layout-layout layout-layout-layout-28 locale-en-US lang-en">
     <div data-ux="Page" id="page-18291" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-4 c1-5 c1-6 c1-7 c1-8 c1-9 c1-a c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
