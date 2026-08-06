@@ -473,20 +473,52 @@
   }
 
   /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
-  iframe[src*=".pdf"], object[data*=".pdf"], embed[src*=".pdf"], .pdf-viewer-frame { width: 100% !important; max-width: 100% !important; min-height: 500px !important; height: 75vh !important; box-sizing: border-box !important; }
-  #freemium-ad, div[class*="widget-navigation"], nav[data-ux="Block"], a[data-aid="HAMBURGER_MENU_LINK"], div[id*="-navId-mobile"], div[id*="-navContainerId-mobile"] { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; }
-  header[data-aid="HEADER"], div[class*="Welcome"], section[class*="Welcome"] { display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important; }
+
+  /* MOBILE PDF AUTO-FIT FIX RESIZER */
+  iframe[src*=".pdf"], 
+  object[data*=".pdf"], 
+  embed[src*=".pdf"], 
+  .pdf-viewer-frame { 
+    width: 100% !important; 
+    max-width: 100% !important; 
+    min-height: 500px !important; 
+    height: 75vh !important; 
+    box-sizing: border-box !important; 
+  }
+
+  /* Permanent concealment of broken site builder scripts - ADJUSTED FOR INDEX */
+  #freemium-ad, 
+  div[class*="widget-navigation"], 
+  nav[data-ux="Block"], 
+  a[data-aid="HAMBURGER_MENU_LINK"], 
+  div[id*="-navId-mobile"], 
+  div[id*="-navContainerId-mobile"] { 
+    display: none !important; 
+    visibility: hidden !important; 
+    opacity: 0 !important; 
+    pointer-events: none !important; 
+    height: 0 !important; 
+  }
+
+  /* SAFELY FORCES YOUR INDEX WELCOME HEADER BANNER BOX TO BE VISIBLE */
+  header[data-aid="HEADER"], 
+  div[class*="Welcome"], 
+  section[class*="Welcome"] { 
+    display: block !important; 
+    visibility: visible !important; 
+    opacity: 1 !important; 
+    height: auto !important; 
+  }
+
 </style>
-
-
 <!-- END OF THE FIXED NAVIGATION, TYPOGRAPHY & PDF STYLESHEET -->
 <!-- END CAROUSEL LIGHTBOX-->
   
 <script crossorigin="Anonymous" src="./media-photos/bs-layout28-Theme-publish-Theme-bd6e6d3f.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-_rollupPluginBabelHelpers-5804ec33.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-defaultSocialIconPack-a2c518b6.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-imageToHeaderTreatments-cbda470b.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-index-52fbaa26.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-index2-30d4bb8e.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-index3-f772c0ef.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-linkIndicator-c1af92dd.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-loaders-fffeeba5.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-modernThinRound-ced97fbd.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-overlayTypes-6afcb3a5.js"></script><script crossorigin="Anonymous" src="./media-photos/Carousel-7574d33c.js"></script><script crossorigin="Anonymous" src="./media-photos/ColorSwatch-4196a0a9.js"></script><script crossorigin="Anonymous" src="./media-photos/DynamicFontScaler-6cccd626.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-dataAids-dc689f22.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-navigationDrawer-27f5f1f5.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-searchFormLocations-c86f2a99.js"></script><script crossorigin="Anonymous" src="./media-photos/_commonjsHelpers-67085353.js"></script><script crossorigin="Anonymous" src="./media-photos/_react_commonjs-external-a1351e34.js"></script><script crossorigin="Anonymous" src="./media-photos/_rollupPluginBabelHelpers-8ce54c82.js"></script><script crossorigin="Anonymous" src="./media-photos/interopRequireDefault-c83974f7.js"></script><script crossorigin="Anonymous" src="./media-photos/dynamicFontScaler-ecd443bf.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-FlyoutMenu-Component-b4b95853.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-LinkAwareComponent-0e7597ad.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-gallery1-Gallery-6c519392.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-Toggle-0f009dec.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-CustomArrows-49960b5a.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-dataAids-71c78b3f.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-directionalKeyHandlers-43e11c5a.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-util-c935f491.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-wrapWithDeviceDetection-f9dc1d72.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-Hamburger-Component-8956ad4f.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-MobileFlyoutMenu-Component-cde69336.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-gallery2-Gallery-1c62877d.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-AbsLink-5de6a485.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-GalleryImage-cac21684.js"></script><script crossorigin="Anonymous" src="./media-photos/bs-renderLightbox-52de508b.js"></script><script crossorigin="Anonymous" src="./media-photos/RichText-e0049770.js"></script><script crossorigin="Anonymous" src="./media-photos/_react-dom_commonjs-external-61540793.js"></script><script crossorigin="Anonymous" src="./media-photos/index-f85dddbe.js"></script>
 </head>
 <body class="x  x-fonts-josefin-slab x-fonts-josefin-slab x-fonts-righteous x-fonts-dancing-script x-fonts-italiana x-fonts-eb-garamond">
- 
- <!-- THE STABLE INDEPENDENT SINGLE-DROPDOWN NAVIGATION BAR --> 
+
+<!-- THE STABLE INDEPENDENT SINGLE-DROPDOWN NAVIGATION BAR --> 
 <div class="global-nav-wrapper"> 
   
   <!-- THE HAMBURGER TOGGLE BUTTON -->
@@ -495,6 +527,7 @@
     <span class="burger-strip-line"></span>
     <span class="burger-strip-line"></span>
   </button>
+
 
  <!-- THE STABLE INDEPENDENT NAVIGATION MARKUP --> 
 <div class="global-nav-wrapper"> 
