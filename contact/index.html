@@ -388,6 +388,24 @@ section[class*="Welcome"] {
 <!-- Automated Web3Forms Anti-Spam Pipeline Script Wrapper -->
 <script src="https://web3forms.com/client/script.js" async defer></script>
 
+      <!-- Script to self-heal and clear inputs when returning via the back button -->
+<script>
+  (function() {
+    window.addEventListener('pageshow', function(event) {
+      /* If the page is pulled directly from the browser's back-forward cache memory */
+      if (event.persisted) {
+        window.location.reload();
+      } else {
+        /* Fallback for traditional page loads: Clear form fields manually on render initialization */
+        var forms = document.getElementsByTagName('form');
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].reset();
+        }
+      }
+    });
+  })();
+</script>
+
 <!-- Critical Section Closures to Maintain Layout Alignment --> 
 </div></div></div></div></section></div>
 
