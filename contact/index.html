@@ -367,7 +367,7 @@ section[class*="Welcome"] {
           <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"> 
             <textarea id="contact-msg" role="textbox" aria-multiline="true" rows="4" aria-label="Message" name="message" required data-ux="InputTextArea" placeholder="Write your message here..." data-aid="CONTACT_FORM_MESSAGE" class="x-el x-el-textarea c2-1 c2-2 c2-50 c2-51 c2-3q c2-52 c2-53 c2-54 c2-55 c2-3t c2-3u c2-57 c2-58 c2-59 c2-3j c2-5r c2-3 c2-5a c2-4 c2-4d c2-5b c2-5c c2-5d c2-5e c2-5f c2-5m c2-5n c2-5 c2-6 c2-7 c2-8" style="color: #ffffff !important; background-color: rgba(255, 255, 255, 0.1) !important; border: 1px solid #ffffff !important; padding: 10px; border-radius: 4px;"></textarea> </div> </div> 
       
-                    <!-- hCaptcha Integration Component --> 
+                 <!-- hCaptcha Integration Component --> 
         <div data-ux="Block" class="x-el x-el-div c2-1 c2-2 c2-47 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8" style="margin-bottom: 20px;"> 
           <div class="h-captcha" data-captcha="true" data-theme="dark"></div> 
         </div> 
@@ -394,7 +394,8 @@ section[class*="Welcome"] {
 
 <!-- ULTRA-COMPATIBLE ENGINE SCRIPT -->
 <script>
-  async function handleFormSubmission(event, formElement) {
+  /* Explicitly bind the submission engine directly to the global window scope */
+  window.handleFormSubmission = async function(event, formElement) {
     event.preventDefault();
     
     var btn = formElement.querySelector('button[type="submit"]');
@@ -432,7 +433,7 @@ section[class*="Welcome"] {
     } catch (error) {
       console.error("Transmission fault caught:", error);
       
-      /* Fail over cleanly to Web3Forms direct gateway route instead of crashing into a local 405 error page */
+      /* Cloudflare Fallback: Instead of form.submit() which causes a 405 error, build an invisible direct window poster */
       if (btn) btn.textContent = "Redirecting...";
       
       var directPostForm = document.createElement('form');
@@ -450,11 +451,12 @@ section[class*="Welcome"] {
       document.body.appendChild(directPostForm);
       directPostForm.submit();
     }
-  }
+  };
 </script>
 
-<!-- CRITICAL GODADDY SECTION CLOSURES (Do not modify or delete) --> 
+<!-- CRITICAL SECTION CLOSURES --> 
 </div></div></div></div></section></div>
+
 
 
 <!-- Map Block inside its isolated layout cell -->    
