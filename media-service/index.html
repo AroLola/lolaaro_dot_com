@@ -278,6 +278,9 @@
 }
 /* 1. START OF THE FIXED PHOTOS NAVIGATION, TYPOGRAPHY & PDF STYLESHEET. REFINED NAVIGATION BAR (DARK MIDNIGHT NAVY BACKDROP) */
  /* --- DESKTOP BASICS DEFAULT RULES --- */
+  <!-- START OF COMPLETE SERVICE NAVIGATION ENGINE -->
+<style>
+  /* --- DESKTOP BASICS DEFAULT RULES (Applies to Large Monitors) --- */
   .global-nav-wrapper { 
     width: 100% !important; 
     background-color: rgb(19, 20, 33) !important; 
@@ -289,6 +292,8 @@
     position: relative !important; 
     z-index: 999999 !important; 
   } 
+  
+  /* FIXED: Restored core desktop wrapper properties outside of mobile boundaries */
   .global-nav-container { 
     display: flex !important; 
     flex-direction: row !important; 
@@ -301,6 +306,7 @@
     padding: 0 20px !important; 
     box-sizing: border-box !important; 
   } 
+  
   .global-nav-pill-item, .global-nav-dropdown-trigger { 
     display: inline-block !important; 
     white-space: nowrap !important; 
@@ -316,16 +322,19 @@
     transition: all 0.2s ease-in-out !important; 
     cursor: pointer !important; 
   } 
+  
   .global-nav-pill-item:hover, .global-nav-pill-item.active-page, .global-nav-dropdown-container:hover .global-nav-dropdown-trigger { 
     background: #ffffff !important; 
     color: rgb(4, 7, 92) !important; 
     border-color: #ffffff !important; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important; 
   } 
+  
   .global-nav-dropdown-container { 
     position: relative !important; 
     display: inline-block !important; 
   } 
+  
   .global-nav-dropdown-menu { 
     display: none !important; 
     position: absolute !important; 
@@ -342,6 +351,7 @@
     z-index: 1000000 !important; 
     border: 1px solid rgba(0, 0, 0, 0.05) !important; 
   } 
+  
   .global-nav-dropdown-menu::before { 
     content: "" !important; 
     position: absolute !important; 
@@ -351,9 +361,11 @@
     height: 12px !important; 
     background: transparent !important; 
   } 
+  
   .global-nav-dropdown-container:hover .global-nav-dropdown-menu { 
     display: block !important; 
   } 
+  
   .global-nav-dropdown-link { 
     display: block !important; 
     padding: 10px 20px !important; 
@@ -366,6 +378,7 @@
     transition: all 0.2s ease !important; 
     white-space: nowrap !important; 
   } 
+  
   .global-nav-dropdown-link:hover, .global-nav-dropdown-link.active-subpage { 
     background-color: rgba(4, 7, 92, 0.08) !important; 
     color: rgb(4, 7, 92) !important; 
@@ -373,20 +386,12 @@
 
   /* --- MOBILE BREAKPOINT OVERRIDES (MAX-WIDTH: 768PX) --- */
   @media (max-width: 768px) { 
-    /* Retained Gallery Configurations */
-    .slide-split-row { height: 280px !important; } 
-    .thumb-row-container { grid-template-columns: repeat(4, 1fr) !important; gap: 8px !important; } 
-    .thumb-card { height: 55px !important; } 
-    .lightbox-close-btn { right: 10px; top: -40px; }
-
-    /* Structural wrapper setup for layout padding on mobile devices */
     .global-nav-wrapper { 
       background-color: rgb(19, 20, 33) !important; 
       padding: 16px 20px !important;
       display: block !important;
     } 
 
-    /* Force the custom mobile button container box to display */
     .fixed-mobile-burger-trigger {
       display: flex !important;
       flex-direction: column !important;
@@ -412,18 +417,16 @@
       transition: transform 0.2s ease, opacity 0.2s ease !important;
     }
 
-    /* Collapse default rows down to a clean, right-justified vertical tracking stack drawer */
     .global-nav-container { 
       display: none !important;
       flex-direction: column !important; 
-      align-items: flex-end !important; /* Forces right justification across all buttons */
+      align-items: flex-end !important; /* Right justification trigger */
       gap: 12px !important; 
       padding: 45px 0 10px 0 !important; 
       width: 100% !important;
       box-sizing: border-box !important;
     } 
 
-    /* Activated state selector rule: Pops the drawer open */
     .global-nav-container.open-drawer-active {
       display: flex !important;
     }
@@ -434,12 +437,11 @@
 
     .global-nav-dropdown-trigger, .global-nav-pill-item { 
       display: block !important; 
-      text-align: right !important; /* Right-justifies parent text strings */
+      text-align: right !important; 
       width: auto !important; 
       box-sizing: border-box !important; 
     } 
 
-    /* Dropdown tracking nested parameters setup */
     .global-nav-dropdown-container:hover .global-nav-dropdown-menu { 
       position: static !important; 
       transform: none !important; 
@@ -455,16 +457,10 @@
 
     .global-nav-dropdown-link { 
       color: #ffffff !important; 
-      text-align: right !important; /* Right-aligns nested page tags like White Papers */
+      text-align: right !important; 
       padding: 10px 16px !important; 
     } 
 
-    .global-nav-dropdown-link:hover { 
-      background-color: rgba(255, 255, 255, 0.15) !important; 
-      color: #ffffff !important; 
-    } 
-
-    /* Rotates lines into a crisp closing X shape shape transformation */
     .burger-active-state .burger-strip-line:nth-child(1) {
       transform: translateY(7px) rotate(45deg) !important;
     }
@@ -477,45 +473,11 @@
   }
 
   /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
-
-  /* MOBILE PDF AUTO-FIT FIX RESIZER */
-  iframe[src*=".pdf"], 
-  object[data*=".pdf"], 
-  embed[src*=".pdf"], 
-  .pdf-viewer-frame { 
-    width: 100% !important; 
-    max-width: 100% !important; 
-    min-height: 500px !important; 
-    height: 75vh !important; 
-    box-sizing: border-box !important; 
-  }
-
-  /* Permanent concealment of broken site builder scripts - ADJUSTED FOR INDEX */
-  #freemium-ad, 
-  div[class*="widget-navigation"], 
-  nav[data-ux="Block"], 
-  a[data-aid="HAMBURGER_MENU_LINK"], 
-  div[id*="-navId-mobile"], 
-  div[id*="-navContainerId-mobile"] { 
-    display: none !important; 
-    visibility: hidden !important; 
-    opacity: 0 !important; 
-    pointer-events: none !important; 
-    height: 0 !important; 
-  }
-
-  /* SAFELY FORCES YOUR INDEX WELCOME HEADER BANNER BOX TO BE VISIBLE */
-  header[data-aid="HEADER"], 
-  div[class*="Welcome"], 
-  section[class*="Welcome"] { 
-    display: block !important; 
-    visibility: visible !important; 
-    opacity: 1 !important; 
-    height: auto !important; 
-  }
-
+  iframe[src*=".pdf"], object[data*=".pdf"], embed[src*=".pdf"], .pdf-viewer-frame { width: 100% !important; max-width: 100% !important; min-height: 500px !important; height: 75vh !important; box-sizing: border-box !important; }
+  #freemium-ad, div[class*="widget-navigation"], nav[data-ux="Block"], a[data-aid="HAMBURGER_MENU_LINK"], div[id*="-navId-mobile"], div[id*="-navContainerId-mobile"] { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; }
+  header[data-aid="HEADER"], div[class*="Welcome"], section[class*="Welcome"] { display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important; }
 </style>
-  
+
 
 <!-- END OF THE FIXED NAVIGATION, TYPOGRAPHY & PDF STYLESHEET -->
 <!-- END CAROUSEL LIGHTBOX-->
