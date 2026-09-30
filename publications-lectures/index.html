@@ -396,6 +396,35 @@ ul#n-12125-navListId-mobile,
     .global-nav-dropdown-link.active-subpage {
       background-color: rgba(255, 255, 255, 0.15) !important;
     }
+   /* 1. FORCE ALL NAV ITEMS, BUTTONS, & DROPDOWN TRIGGERS TO STAY WHITE WITH A FAINT GRAY HOVER */
+    .global-nav-pill-item, 
+    .global-nav-dropdown-trigger,
+    .global-nav-pill-item:hover, 
+    .global-nav-pill-item.active-page, 
+    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger,
+    .global-nav-dropdown-container:focus .global-nav-dropdown-trigger,
+    .global-nav-dropdown-container:active .global-nav-dropdown-trigger { 
+      background: rgba(255, 255, 255, 0.12) !important; 
+      color: #ffffff !important; 
+      border: 1px solid rgba(255, 255, 255, 0.25) !important; 
+      box-shadow: none !important;
+    } 
+    /* 2. APPLY YOUR PERFECT FAINT GRAY HIGHLIGHT WHEN ANY TAB IS PRESSED/HOVERED ON MOBILE */
+    .global-nav-pill-item:hover,
+    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
+      background: rgba(255, 255, 255, 0.22) !important;
+    }
+    /* 3. ENSURE ALL LINKS INSIDE THE OPEN DROPDOWN PANEL STAY WHITE AS WELL */
+    .global-nav-dropdown-link,
+    .global-nav-dropdown-link:hover, 
+    .global-nav-dropdown-link.active-subpage { 
+      color: #ffffff !important; 
+      background-color: transparent !important;
+    }
+    /* 4. OPTIONAL: MILD TRANSLUCENT HIGHLIGHT FOR AN ACTIVE SUBPAGE LINK INSIDE THE DROPDOWN */
+    .global-nav-dropdown-link.active-subpage {
+      background-color: rgba(255, 255, 255, 0.15) !important;
+    }
   }
 
   /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
