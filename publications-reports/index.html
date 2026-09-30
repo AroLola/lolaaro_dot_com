@@ -222,20 +222,28 @@
     .burger-active-state .burger-strip-line:nth-child(3) {
       transform: translateY(-7px) rotate(-44deg) !important;
     }
-     /* FORCES THE REPORTS TAB TO STAY DARK & IMMUNE TO BLUE/WHITE SELECTION HOVER ON MOBILE */
+     /* RESTORES THE OTHER 3 TABS BACK TO THEIR ORIGINAL WORKING STATE */
+    .global-nav-pill-item:hover, 
+    .global-nav-pill-item.active-page {
+      background: #ffffff !important; 
+      color: rgb(4, 7, 92) !important; 
+      border-color: #ffffff !important;
+    }
+
+    /* SPECIFICALLY TARGETS ONLY THE DROPDOWN CONTAINER (REPORTS) TO PREVENT THE BLUE BLEED */
     .global-nav-dropdown-container .global-nav-dropdown-trigger,
-    .global-nav-pill-item.active-page,
-    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
+    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger,
+    .global-nav-dropdown-container:focus .global-nav-dropdown-trigger,
+    .global-nav-dropdown-container:active .global-nav-dropdown-trigger {
       background: rgba(255, 255, 255, 0.12) !important;
       color: #ffffff !important;
       border-color: rgba(255, 255, 255, 0.25) !important;
       box-shadow: none !important;
     }
 
-    /* Keeps the active child sub-link highlighted cleanly within the drawer */
-    .global-nav-dropdown-link.active-subpage {
-      background-color: rgba(255, 255, 255, 0.25) !important;
-      color: #ffffff !important;
+    /* APPLIES YOUR PERFECT FAINT GRAY HOVER HIGHLIGHT EXCLUSIVELY TO THE DROPDOWN ON MOBILE */
+    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
+      background: rgba(255, 255, 255, 0.2) !important;
     }
   }
 
