@@ -337,6 +337,26 @@ ul#n-12125-navListId-mobile,
     .burger-active-state .burger-strip-line:nth-child(3) {
       transform: translateY(-7px) rotate(-44deg) !important;
     }
+    /* 1. GLOBAL MOBILE CATCH-ALL: STRIPS ALL BLUE FROM ANY ACTIVE/HOVERED NAV ITEM */
+    .global-nav-wrapper a:hover, 
+    .global-nav-wrapper a:active, 
+    .global-nav-wrapper a:focus,
+    .global-nav-container a:hover,
+    .global-nav-container a:active,
+    .global-nav-container a:focus,
+    .global-nav-container .active,
+    .global-nav-container .active-page {
+      background: rgba(255, 255, 255, 0.12) !important; 
+      color: #ffffff !important; 
+      border-color: rgba(255, 255, 255, 0.25) !important; 
+      box-shadow: none !important;
+    }
+
+    /* 2. RE-APPLIES YOUR PREFERRED FAINT GRAY HIGHLIGHT WHEN TAPPED */
+    .global-nav-wrapper a:hover,
+    .global-nav-container a:hover {
+      background: rgba(255, 255, 255, 0.22) !important;
+    }
   }
 
   /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
