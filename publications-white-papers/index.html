@@ -337,26 +337,34 @@ ul#n-12125-navListId-mobile,
     .burger-active-state .burger-strip-line:nth-child(3) {
       transform: translateY(-7px) rotate(-44deg) !important;
     }
-    /* 1. GLOBAL MOBILE CATCH-ALL: STRIPS ALL BLUE FROM ANY ACTIVE/HOVERED NAV ITEM */
-    .global-nav-wrapper a:hover, 
-    .global-nav-wrapper a:active, 
-    .global-nav-wrapper a:focus,
-    .global-nav-container a:hover,
-    .global-nav-container a:active,
-    .global-nav-container a:focus,
-    .global-nav-container .active,
-    .global-nav-container .active-page {
-      background: rgba(255, 255, 255, 0.12) !important; 
-      color: #ffffff !important; 
-      border-color: rgba(255, 255, 255, 0.25) !important; 
+        /* FORCE EVERY PIECE OF TEXT & LINK INSIDE THE NAVIGATION WRAPPER TO BE WHITE */
+    .global-nav-wrapper,
+    .global-nav-wrapper *,
+    .global-nav-container,
+    .global-nav-container * {
+      color: #ffffff !important;
+      background-color: transparent !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      text-decoration: none !important;
       box-shadow: none !important;
     }
 
-    /* 2. RE-APPLIES YOUR PREFERRED FAINT GRAY HIGHLIGHT WHEN TAPPED */
-    .global-nav-wrapper a:hover,
-    .global-nav-container a:hover {
-      background: rgba(255, 255, 255, 0.22) !important;
+    /* FORCES THE HIGHER LEVEL PILL BOX BUTTONS BACK TO THE CORRECT SEMI-TRANSLUCENT DARK THEME */
+    .global-nav-wrapper .global-nav-pill-item, 
+    .global-nav-wrapper .global-nav-dropdown-trigger {
+      background-color: rgba(255, 255, 255, 0.12) !important;
+      display: block !important;
     }
+
+    /* THE ONLY HOVER PERMITTED: YOUR FAINT GRAY HIGHLIGHT BACKDROP */
+    .global-nav-wrapper .global-nav-pill-item:hover,
+    .global-nav-wrapper .global-nav-dropdown-trigger:hover,
+    .global-nav-wrapper a:hover,
+    .global-nav-wrapper *:hover {
+      background-color: rgba(255, 255, 255, 0.22) !important;
+      color: #ffffff !important;
+    }
+
   }
 
   /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
