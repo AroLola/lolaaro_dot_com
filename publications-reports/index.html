@@ -222,6 +222,21 @@
     .burger-active-state .burger-strip-line:nth-child(3) {
       transform: translateY(-7px) rotate(-44deg) !important;
     }
+     /* FORCES THE REPORTS TAB TO STAY DARK & IMMUNE TO BLUE/WHITE SELECTION HOVER ON MOBILE */
+    .global-nav-dropdown-container .global-nav-dropdown-trigger,
+    .global-nav-pill-item.active-page,
+    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: #ffffff !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: none !important;
+    }
+
+    /* Keeps the active child sub-link highlighted cleanly within the drawer */
+    .global-nav-dropdown-link.active-subpage {
+      background-color: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
   }
 
   /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
