@@ -233,7 +233,7 @@ ul#n-12125-navListId-mobile,
     color: rgb(4, 7, 92) !important; 
   } 
 
-  /* --- MOBILE BREAKPOINT OVERRIDES (MAX-WIDTH: 768PX) --- */
+ /* --- MOBILE BREAKPOINT OVERRIDES (MAX-WIDTH: 768PX) --- */
   @media (max-width: 768px) { 
     /* Retained Gallery Configurations */
     .slide-split-row { height: 280px !important; } 
@@ -308,10 +308,10 @@ ul#n-12125-navListId-mobile,
       display: block !important; 
       width: auto !important; 
       box-shadow: none !important; 
-      background-color: rgba(255, 255, 255, 0.05) !important; 
+      background-color: rgba(0, 0, 0, 0.4) !important; 
       margin-top: 4px !important; 
       border-radius: 8px !important; 
-      border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+      border: 1px solid rgba(255, 255, 255, 0.15) !important; 
       padding: 4px 0 !important;
     } 
 
@@ -336,37 +336,38 @@ ul#n-12125-navListId-mobile,
     .burger-active-state .burger-strip-line:nth-child(3) {
       transform: translateY(-7px) rotate(-44deg) !important;
     }
-    /* 1. GLOBAL MOBILE CATCH-ALL: STRIPS ALL BLUE FROM ANY ACTIVE/HOVERED NAV ITEM */
-    .global-nav-wrapper a:hover, 
-    .global-nav-wrapper a:active, 
-    .global-nav-wrapper a:focus,
-    .global-nav-container a:hover,
-    .global-nav-container a:active,
-    .global-nav-container a:focus,
-    .global-nav-container .active,
-    .global-nav-container .active-page {
+     /* 1. FORCE ALL NAV ITEMS, BUTTONS, & DROPDOWN TRIGGERS TO STAY WHITE WITH A FAINT GRAY HOVER */
+    .global-nav-pill-item, 
+    .global-nav-dropdown-trigger,
+    .global-nav-pill-item:hover, 
+    .global-nav-pill-item.active-page, 
+    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger,
+    .global-nav-dropdown-container:focus .global-nav-dropdown-trigger,
+    .global-nav-dropdown-container:active .global-nav-dropdown-trigger { 
       background: rgba(255, 255, 255, 0.12) !important; 
       color: #ffffff !important; 
-      border-color: rgba(255, 255, 255, 0.25) !important; 
+      border: 1px solid rgba(255, 255, 255, 0.25) !important; 
       box-shadow: none !important;
-    }
+    } 
 
-    /* 2. RE-APPLIES YOUR PREFERRED FAINT GRAY HIGHLIGHT WHEN TAPPED */
-    .global-nav-wrapper a:hover,
-    .global-nav-container a:hover {
+    /* 2. APPLY YOUR PERFECT FAINT GRAY HIGHLIGHT WHEN ANY TAB IS PRESSED/HOVERED ON MOBILE */
+    .global-nav-pill-item:hover,
+    .global-nav-dropdown-container:hover .global-nav-dropdown-trigger {
       background: rgba(255, 255, 255, 0.22) !important;
     }
-   ul[data-ux="List"] li a:hover, 
-.nav-item a:hover, 
-div[id^="bs-"] a:hover, 
-ul[data-ux="List"] li a:active, 
-.nav-item a:active, 
-ul[data-ux="List"] li a:focus, 
-.nav-item a:focus {
-    background-color: #060645 !important; 
-    color: #ffcc00 !important; /* Changes text to a high-contrast yellow */
-    text-decoration: none !important; 
-    border-color: #060645 !important; 
+
+    /* 3. ENSURE ALL LINKS INSIDE THE OPEN DROPDOWN PANEL STAY WHITE AS WELL */
+    .global-nav-dropdown-link,
+    .global-nav-dropdown-link:hover, 
+    .global-nav-dropdown-link.active-subpage { 
+      color: #ffffff !important; 
+      background-color: transparent !important;
+    }
+
+    /* 4. OPTIONAL: MILD TRANSLUCENT HIGHLIGHT FOR AN ACTIVE SUBPAGE LINK INSIDE THE DROPDOWN */
+    .global-nav-dropdown-link.active-subpage {
+      background-color: rgba(255, 255, 255, 0.15) !important;
+    }
   }
 
   /* --- CRITICAL CORE SYSTEM LAYOUT FIXES --- */
